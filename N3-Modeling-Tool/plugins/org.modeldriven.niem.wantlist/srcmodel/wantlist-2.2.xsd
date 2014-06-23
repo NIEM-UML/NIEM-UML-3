@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+    attributeFormDefault="qualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://niem.gov/niem/wantlist/2.2"
+    version="1"
+    xmlns:w="http://niem.gov/niem/wantlist/2.2"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="WantList" type="w:WantListType"/>
+
+    <xsd:complexType name="WantListType">
+        <xsd:sequence>
+            <xsd:element name="Attribute" type="w:AttributeType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Element" type="w:ElementType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Type" type="w:TypeType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="product" use="required" type="xsd:string"/>
+        <xsd:attribute name="release" use="required" type="w:VersionType"/>
+        <xsd:attribute name="nillableDefault" use="required" type="xsd:boolean"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="VersionType">
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="[0-9]+(\.[0-9]+)*((alpha|beta|rc)[0-9]+)?(-[A-z]+)*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="AttributeType">
+        
+        <xsd:attribute name="name" use="required" type="xsd:QName"/>
+        <xsd:attribute name="qualifier" use="optional" type="xsd:NCName"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="ElementType">
+        
+        <xsd:attribute name="name" use="required" type="xsd:QName"/>
+        <xsd:attribute name="qualifier" use="optional" type="xsd:NCName"/>
+        <xsd:attribute name="isReference" use="required" type="xsd:boolean"/>
+        <xsd:attribute name="nillable" use="required" type="xsd:boolean"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="TypeType">
+        <xsd:sequence>
+            <xsd:element name="AttributeInType" type="w:AttributeInTypeType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="ElementInType" type="w:ElementInTypeType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Facet" type="w:FacetType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="UnionMember" type="w:UnionMemberType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        
+        <xsd:attribute name="name" use="required" type="xsd:QName"/>
+        <xsd:attribute name="isRequested" use="required" type="xsd:boolean"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="AttributeInTypeType">
+        
+        <xsd:attribute name="name" use="required" type="xsd:QName"/>
+        <xsd:attribute name="qualifier" use="optional" type="xsd:NCName"/>
+        <xsd:attribute name="minOccurs" use="optional" type="xsd:nonNegativeInteger"/>
+        <xsd:attribute name="maxOccurs" use="optional" type="xsd:nonNegativeInteger"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="ElementInTypeType">
+        
+        <xsd:attribute name="name" use="required" type="xsd:QName"/>
+        <xsd:attribute name="qualifier" use="optional" type="xsd:NCName"/>
+        <xsd:attribute name="isReference" use="required" type="xsd:boolean"/>
+        <xsd:attribute name="minOccurs" use="optional" type="xsd:nonNegativeInteger"/>
+        <xsd:attribute name="maxOccurs" use="optional" type="w:allNNI"/>
+        <xsd:attribute name="choice" use="optional" type="w:PositiveIntegerListType"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="FacetType">
+        <xsd:attribute name="facet" use="required" type="w:FacetFacetType"/>
+        <xsd:attribute name="value" use="required"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="FacetFacetType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="minExclusive"/>
+            <xsd:enumeration value="minInclusive"/>
+            <xsd:enumeration value="maxExclusive"/>
+            <xsd:enumeration value="maxInclusive"/>
+            <xsd:enumeration value="totalDigits"/>
+            <xsd:enumeration value="fractionDigits"/>
+            <xsd:enumeration value="length"/>
+            <xsd:enumeration value="minLength"/>
+            <xsd:enumeration value="maxLength"/>
+            <xsd:enumeration value="enumeration"/>
+            <xsd:enumeration value="whiteSpace"/>
+            <xsd:enumeration value="pattern"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+  
+    <xsd:complexType name="UnionMemberType">
+        <xsd:attribute name="type" use="required" type="xsd:QName"/>
+    </xsd:complexType>
+  
+    <xsd:simpleType name="allNNI">
+        <xsd:annotation>
+            <xsd:documentation>for maxOccurs</xsd:documentation>
+        </xsd:annotation>
+        <xsd:union memberTypes="xsd:nonNegativeInteger">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:NMTOKEN">
+                    <xsd:enumeration value="unbounded"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:union>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PositiveIntegerListType">
+        <xsd:annotation>
+            <xsd:documentation>for choice indexes</xsd:documentation>
+        </xsd:annotation>
+        <xsd:list itemType="xsd:positiveInteger"/>
+    </xsd:simpleType>
+</xsd:schema>

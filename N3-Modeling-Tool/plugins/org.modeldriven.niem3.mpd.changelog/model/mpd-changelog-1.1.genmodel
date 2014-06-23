@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modeldriven.niem3.mpd.changelog/src" modelPluginID="org.modeldriven.niem3.mpd.changelog"
+    modelName="Mpd-changelog-1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mpd-changelog-1.1.xsd</foreignModel>
+  <genPackages prefix="_2" basePackage="gov.niem.niem.structures" resource="XML" disposableProviderFactory="true"
+      ecorePackage="gov.niem.structures._21.ecore#/">
+    <genClasses image="false" ecoreClass="gov.niem.structures._21.ecore#//AugmentationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//AugmentationType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//AugmentationType/metadata"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gov.niem.structures._21.ecore#//ComplexObjectType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//ComplexObjectType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//ComplexObjectType/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//ComplexObjectType/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.structures._21.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.structures._21.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.structures._21.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference gov.niem.structures._21.ecore#//DocumentRoot/augmentation"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference gov.niem.structures._21.ecore#//DocumentRoot/metadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//DocumentRoot/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//DocumentRoot/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//DocumentRoot/metadata1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//DocumentRoot/ref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//DocumentRoot/sequenceID"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gov.niem.structures._21.ecore#//MetadataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//MetadataType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.structures._21.ecore#//ReferenceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//ReferenceType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//ReferenceType/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.structures._21.ecore#//ReferenceType/ref"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="_1" basePackage="gov.niem.reference.niem.resource.mpd.changelog._1"
+      resource="XML" disposableProviderFactory="true" ecorePackage="gov.niem.changelog._11.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gov.niem.changelog._11.ecore#//ChangeCodeSimpleType">
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.changelog._11.ecore#//ChangeCodeSimpleType/newRequirement"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.changelog._11.ecore#//ChangeCodeSimpleType/bugFix"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.changelog._11.ecore#//ChangeCodeSimpleType/refactoring"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.changelog._11.ecore#//ChangeCodeSimpleType/harmonization"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.changelog._11.ecore#//ChangeCodeSimpleType/generalImprovement"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="gov.niem.changelog._11.ecore#//ChangeCodeSimpleTypeObject"/>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ChangeCodeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.changelog._11.ecore#//ChangeCodeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.changelog._11.ecore#//ChangeCodeType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.changelog._11.ecore#//ChangeCodeType/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.changelog._11.ecore#//ChangeCodeType/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ChangeInformationType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeInformationType/changeSummaryText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeInformationType/changeReasonText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeInformationType/changeFullDescriptionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeInformationType/changeNCCTIssueNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeInformationType/changeCode"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ChangeLogEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute gov.niem.changelog._11.ecore#//ChangeLogEntryType/changeInformationAbstractGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogEntryType/changeInformationAbstract"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ChangeLogType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/changeLogSummaryText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/changeLogSubmitterName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/changeLogApplicationInstructionsText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/changeInformation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/newPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/newTypeEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/newTypeContainsPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/newFacetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/newNamespaceEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/modifiedPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/modifiedTypeEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/modifiedTypeContainsPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/modifiedFacetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/modifiedNamespaceEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/removedPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/removedTypeEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/removedTypeContainsPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/removedFacetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ChangeLogType/removedNamespaceEntry"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute gov.niem.changelog._11.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeFullDescriptionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeInformation"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeInformationAbstract"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeInformationReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeLog"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeLogApplicationInstructionsText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeLogSubmitterName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeLogSummaryText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeNCCTIssueNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeReasonText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/changeSummaryText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/modifiedFacetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/modifiedNamespaceEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/modifiedPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/modifiedTypeContainsPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/modifiedTypeEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newFacet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newFacetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newNamespaceEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newTypeContainsProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newTypeContainsPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/newTypeEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/originalFacet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/originalNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/originalProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/originalType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/originalTypeContainsProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedFacet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedFacetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedNamespaceEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedTypeContainsProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedTypeContainsPropertyEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/removedTypeEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/updatedFacet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/updatedNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/updatedProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/updatedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//DocumentRoot/updatedTypeContainsProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ModifiedFacetEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedFacetEntryType/originalFacet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedFacetEntryType/updatedFacet"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ModifiedNamespaceEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedNamespaceEntryType/originalNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedNamespaceEntryType/updatedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ModifiedPropertyEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedPropertyEntryType/originalProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedPropertyEntryType/updatedProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ModifiedTypeContainsPropertyEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedTypeContainsPropertyEntryType/originalTypeContainsProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedTypeContainsPropertyEntryType/updatedTypeContainsProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//ModifiedTypeEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedTypeEntryType/originalType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//ModifiedTypeEntryType/updatedType"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//NewFacetEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//NewFacetEntryType/newFacet"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//NewNamespaceEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//NewNamespaceEntryType/newNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//NewPropertyEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//NewPropertyEntryType/newProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//NewTypeContainsPropertyEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//NewTypeContainsPropertyEntryType/newTypeContainsProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//NewTypeEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//NewTypeEntryType/newType"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//RemovedFacetEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//RemovedFacetEntryType/removedFacet"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//RemovedNamespaceEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//RemovedNamespaceEntryType/removedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//RemovedPropertyEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//RemovedPropertyEntryType/removedProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//RemovedTypeContainsPropertyEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//RemovedTypeContainsPropertyEntryType/removedTypeContainsProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.changelog._11.ecore#//RemovedTypeEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.changelog._11.ecore#//RemovedTypeEntryType/removedType"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="_2" basePackage="gov.niem.niem.proxy.xsd" resource="XML" disposableProviderFactory="true"
+      ecorePackage="gov.niem.proxy._2.ecore#/">
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//AnyURI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//AnyURI/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//AnyURI/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//AnyURI/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//AnyURI/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Base64Binary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Base64Binary/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Base64Binary/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Base64Binary/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Base64Binary/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Boolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Boolean/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Boolean/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Boolean/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Boolean/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Date">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Date/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Date/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Date/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Date/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//DateTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//DateTime/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//DateTime/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//DateTime/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//DateTime/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Decimal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Decimal/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Decimal/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Decimal/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Decimal/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Duration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Duration/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Duration/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Duration/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Duration/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//GMonth">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GMonth/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GMonth/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GMonth/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GMonth/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//GYear">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYear/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYear/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYear/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYear/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//GYearMonth">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYearMonth/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYearMonth/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYearMonth/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//GYearMonth/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//HexBinary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//HexBinary/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//HexBinary/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//HexBinary/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//HexBinary/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Integer/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Integer/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Integer/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Integer/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//NonNegativeInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//NonNegativeInteger/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//NonNegativeInteger/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//NonNegativeInteger/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//NonNegativeInteger/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//String">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//String/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//String/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//String/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//String/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Time/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Time/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Time/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Time/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.proxy._2.ecore#//Token">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Token/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Token/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Token/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.proxy._2.ecore#//Token/metadata"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="_1" basePackage="gov.niem.reference.niem.resource.model._1"
+      resource="XML" disposableProviderFactory="true" ecorePackage="gov.niem.resource.model._1.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleType">
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleType/enumeration"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleType/pattern"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleType/minInclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleType/maxInclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleType/maxExclusive"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gov.niem.resource.model._1.ecore#//TypeContentStyleCodeSimpleType">
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//TypeContentStyleCodeSimpleType/CCC"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//TypeContentStyleCodeSimpleType/CSC"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//TypeContentStyleCodeSimpleType/S"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeSimpleType">
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeSimpleType/atomic"/>
+      <genEnumLiterals ecoreEnumLiteral="gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeSimpleType/list"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="gov.niem.resource.model._1.ecore#//FacetCategoryCodeSimpleTypeObject"/>
+    <genDataTypes ecoreDataType="gov.niem.resource.model._1.ecore#//TypeContentStyleCodeSimpleTypeObject"/>
+    <genDataTypes ecoreDataType="gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeSimpleTypeObject"/>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//FacetCategoryCodeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//FacetCategoryCodeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//FacetCategoryCodeType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//FacetCategoryCodeType/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//FacetCategoryCodeType/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//FacetType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//FacetType/typeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//FacetType/facetCategoryCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//FacetType/facetText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//FacetType/facetDefinitionText"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//NamespaceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//NamespaceType/namespaceURI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//NamespaceType/namespacePrefixText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//NamespaceType/namespaceVersionText"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//PropertyObjectType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyDefinitionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyDataTypeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertySubstitutionGroupHeadQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyElementIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyAbstractIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyInlineIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyReferenceIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//PropertyObjectType/propertyAugmentationOfTypeQualifiedName"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//QName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//QName/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//QName/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//QName/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//QName/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//TypeContainsPropertyType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeContainsPropertyType/typeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeContainsPropertyType/propertyQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeContainsPropertyType/propertyMinOccursText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeContainsPropertyType/propertyMaxOccursText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeContainsPropertyType/propertyInlineIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeContainsPropertyType/propertyReferenceIndicator"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//TypeContentStyleCodeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeContentStyleCodeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeContentStyleCodeType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeContentStyleCodeType/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeContentStyleCodeType/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//TypeObjectType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeDefinitionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeBaseTypeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeContentStyleCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeSimpleStyleCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeAssociationIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeAugmentationIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeAdapterIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//TypeObjectType/typeMetadataIndicator"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeType/linkMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//TypeSimpleStyleCodeType/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="gov.niem.resource.model._1.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute gov.niem.resource.model._1.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/facet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/facetCategoryCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/facetDefinitionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/facetText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/namespacePrefixText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/namespaceURI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/namespaceVersionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyAbstractIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyAugmentationOfTypeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyDataTypeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyDefinitionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyElementIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyInlineIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyMaxOccursText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyMinOccursText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertyReferenceIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/propertySubstitutionGroupHeadQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeAdapterIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeAssociationIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeAugmentationIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeBaseTypeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeContainsProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeContentStyleCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeDefinitionText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeMetadataIndicator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeQualifiedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gov.niem.resource.model._1.ecore#//DocumentRoot/typeSimpleStyleCode"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

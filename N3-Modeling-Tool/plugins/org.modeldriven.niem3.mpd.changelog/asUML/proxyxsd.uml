@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_f6k2cJG8EeCfSqoDk30-aQ" name="proxyxsd">
+    <ownedComment xmi:id="_f6k2cZG8EeCfSqoDk30-aQ" annotatedElement="_f6k2cJG8EeCfSqoDk30-aQ">
+      <body>Proxy types that carry dictionary metadata and have XML data type simple contents.&#xD;
+The appinfo schema provides support for high level&#xD;
+    data model concepts and additional syntax to support the NIEM&#xD;
+    conceptual model and validation of NIEM-conformant&#xD;
+    instances.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2cpG8EeCfSqoDk30-aQ" name="AnyURI">
+      <ownedAttribute xmi:id="_f6k2c5G8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#AnyURI"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2dJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2dZG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2dpG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2d5G8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2eJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2eZG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2epG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2e5G8EeCfSqoDk30-aQ" name="Base64Binary">
+      <ownedComment xmi:id="_f6k2fJG8EeCfSqoDk30-aQ" annotatedElement="_f6k2e5G8EeCfSqoDk30-aQ">
+        <body>A data type for Base64-encoded binary data.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2fZG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Base64Binary"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2fpG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2f5G8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2gJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2gZG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2gpG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2g5G8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2hJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2hZG8EeCfSqoDk30-aQ" name="Boolean">
+      <ownedComment xmi:id="_f6k2hpG8EeCfSqoDk30-aQ" annotatedElement="_f6k2hZG8EeCfSqoDk30-aQ">
+        <body>A data type for binary-valued logic (true/false).</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2h5G8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2iJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2iZG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2ipG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2i5G8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2jJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2jZG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2jpG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2j5G8EeCfSqoDk30-aQ" name="Date">
+      <ownedComment xmi:id="_f6k2kJG8EeCfSqoDk30-aQ" annotatedElement="_f6k2j5G8EeCfSqoDk30-aQ">
+        <body>A data type for a calendar date with the format CCYY-MM-DD.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2kZG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Date"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2kpG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2k5G8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2lJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2lZG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2lpG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2l5G8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2mJG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2mZG8EeCfSqoDk30-aQ" name="DateTime">
+      <ownedAttribute xmi:id="_f6k2mpG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#DateTime"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2m5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2nJG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2nZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2npG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2n5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2oJG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2oZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2opG8EeCfSqoDk30-aQ" name="Decimal">
+      <ownedComment xmi:id="_f6k2o5G8EeCfSqoDk30-aQ" annotatedElement="_f6k2opG8EeCfSqoDk30-aQ">
+        <body>A data type for arbitrary precision decimal numbers.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2pJG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Decimal"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2pZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2ppG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2p5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2qJG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2qZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2qpG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2q5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2rJG8EeCfSqoDk30-aQ" name="Duration">
+      <ownedComment xmi:id="_f6k2rZG8EeCfSqoDk30-aQ" annotatedElement="_f6k2rJG8EeCfSqoDk30-aQ">
+        <body>A data type for a duration of time with the format PnYnMnDTnHnMnS, where nY is the number of years, nM is the number of months, nD is the number of days, nH is the number of hours, nM is the number of minutes, and nS is the number of seconds. </body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2rpG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Duration"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2r5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2sJG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2sZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2spG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2s5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2tJG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2tZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2tpG8EeCfSqoDk30-aQ" name="GMonth">
+      <ownedComment xmi:id="_f6k2t5G8EeCfSqoDk30-aQ" annotatedElement="_f6k2tpG8EeCfSqoDk30-aQ">
+        <body>A data type for a Gregorian month with the format --MM--.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2uJG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#GMonth"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2uZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2upG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2u5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2vJG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2vZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2vpG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2v5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2wJG8EeCfSqoDk30-aQ" name="GYear">
+      <ownedComment xmi:id="_f6k2wZG8EeCfSqoDk30-aQ" annotatedElement="_f6k2wJG8EeCfSqoDk30-aQ">
+        <body>A data type for a Gregorian calendar year with the format CCYY.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2wpG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#GYear"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2w5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2xJG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2xZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2xpG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2x5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2yJG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2yZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k2ypG8EeCfSqoDk30-aQ" name="GYearMonth">
+      <ownedComment xmi:id="_f6k2y5G8EeCfSqoDk30-aQ" annotatedElement="_f6k2ypG8EeCfSqoDk30-aQ">
+        <body>A data type for a specific gregorian month in a specific gregorian year.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k2zJG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#GYearMonth"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2zZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k2zpG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k2z5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k20JG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k20ZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k20pG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k205G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k21JG8EeCfSqoDk30-aQ" name="HexBinary">
+      <ownedComment xmi:id="_f6k21ZG8EeCfSqoDk30-aQ" annotatedElement="_f6k21JG8EeCfSqoDk30-aQ">
+        <body>A data type for hex-encoded binary data.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k21pG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#HexBinary"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k215G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k22JG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k22ZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k22pG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k225G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k23JG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k23ZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6k23pG8EeCfSqoDk30-aQ" name="Integer">
+      <ownedComment xmi:id="_f6k235G8EeCfSqoDk30-aQ" annotatedElement="_f6k23pG8EeCfSqoDk30-aQ">
+        <body>A data type for the standard mathematical concept of integer numbers.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6k24JG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k24ZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6k24pG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6k245G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldgJG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldgZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldgpG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldg5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6ldhJG8EeCfSqoDk30-aQ" name="NonNegativeInteger">
+      <ownedComment xmi:id="_f6ldhZG8EeCfSqoDk30-aQ" annotatedElement="_f6ldhJG8EeCfSqoDk30-aQ">
+        <body>A data type for an integer with a minimum value of 0.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6ldhpG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#NonNegativeInteger"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldh5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldiJG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldiZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldipG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldi5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldjJG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldjZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6ldjpG8EeCfSqoDk30-aQ" name="Time">
+      <ownedComment xmi:id="_f6ldj5G8EeCfSqoDk30-aQ" annotatedElement="_f6ldjpG8EeCfSqoDk30-aQ">
+        <body>A data type for an instant of time with the format hh:mm:ss.sss.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6ldkJG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Time"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldkZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldkpG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldk5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldlJG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldlZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldlpG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldl5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6ldmJG8EeCfSqoDk30-aQ" name="Token">
+      <ownedComment xmi:id="_f6ldmZG8EeCfSqoDk30-aQ" annotatedElement="_f6ldmJG8EeCfSqoDk30-aQ">
+        <body>A data type for tokenized strings.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6ldmpG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Token"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldm5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldnJG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldnZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldnpG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldn5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldoJG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldoZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_f6ldopG8EeCfSqoDk30-aQ" name="String">
+      <ownedComment xmi:id="_f6ldo5G8EeCfSqoDk30-aQ" annotatedElement="_f6ldopG8EeCfSqoDk30-aQ">
+        <body>A data type for character strings in XML.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_f6ldpJG8EeCfSqoDk30-aQ" name="value" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldpZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldppG8EeCfSqoDk30-aQ" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#ID"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldp5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldqJG8EeCfSqoDk30-aQ" name="linkMetadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldqZG8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f6ldqpG8EeCfSqoDk30-aQ" name="metadata" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#IDREFS"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6ldq5G8EeCfSqoDk30-aQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:id="_f6ldrJG8EeCfSqoDk30-aQ">
+      <eAnnotations xmi:id="_f6ldrZG8EeCfSqoDk30-aQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_f6ldrpG8EeCfSqoDk30-aQ" base_Package="_f6k2cJG8EeCfSqoDk30-aQ" nsPrefix="proxyxsd" nsURI="http://niem.gov/niem/proxy/xsd/2.0"/>
+  <Ecore:EClass xmi:id="_f6ldr5G8EeCfSqoDk30-aQ" xmlName="anyURI" xmlContentKind="Simple" base_DataType="_f6k2cpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6ldsJG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2c5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6ldsZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2dZG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6ldspG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2d5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6lds5G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2eZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6ldtJG8EeCfSqoDk30-aQ" xmlName="base64Binary" xmlContentKind="Simple" base_DataType="_f6k2e5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6ldtZG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2fZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6ldtpG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2f5G8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6ldt5G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2gZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6lduJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2g5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6lduZG8EeCfSqoDk30-aQ" xmlName="boolean" xmlContentKind="Simple" base_DataType="_f6k2hZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6ldupG8EeCfSqoDk30-aQ" xmlName=":0" isUnsettable="true" xmlFeatureKind="Simple" base_Property="_f6k2h5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEkJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2iZG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6mEkZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2i5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEkpG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2jZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6mEk5G8EeCfSqoDk30-aQ" xmlName="date" xmlContentKind="Simple" base_DataType="_f6k2j5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mElJG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2kZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mElZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2k5G8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6mElpG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2lZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEl5G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2l5G8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6mEmJG8EeCfSqoDk30-aQ" xmlName="dateTime" xmlContentKind="Simple" base_DataType="_f6k2mZG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEmZG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2mpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEmpG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2nJG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6mEm5G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2npG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEnJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2oJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6mEnZG8EeCfSqoDk30-aQ" xmlName="decimal" xmlContentKind="Simple" base_DataType="_f6k2opG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEnpG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2pJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mEn5G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2ppG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6mroJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2qJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mroZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2qpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6mropG8EeCfSqoDk30-aQ" xmlName="duration" xmlContentKind="Simple" base_DataType="_f6k2rJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mro5G8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2rpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mrpJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2sJG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6mrpZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2spG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mrppG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2tJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6mrp5G8EeCfSqoDk30-aQ" xmlName="gMonth" xmlContentKind="Simple" base_DataType="_f6k2tpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6mrqJG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2uJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nSsJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2upG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6nSsZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2vJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nSspG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2vpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6nSs5G8EeCfSqoDk30-aQ" xmlName="gYear" xmlContentKind="Simple" base_DataType="_f6k2wJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nStJG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2wpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nStZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2xJG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6nStpG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2xpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nSt5G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2yJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6nSuJG8EeCfSqoDk30-aQ" xmlName="gYearMonth" xmlContentKind="Simple" base_DataType="_f6k2ypG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nSuZG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k2zJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6nSupG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k2zpG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6n5wJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k20JG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6n5wZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k20pG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6n5wpG8EeCfSqoDk30-aQ" xmlName="hexBinary" xmlContentKind="Simple" base_DataType="_f6k21JG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6n5w5G8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k21pG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6n5xJG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k22JG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6n5xZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k22pG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6n5xpG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k23JG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6n5x5G8EeCfSqoDk30-aQ" xmlName="integer" xmlContentKind="Simple" base_DataType="_f6k23pG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6n5yJG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6k24JG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6n5yZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6k24pG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6n5ypG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldgJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6og0JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldgpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6og0ZG8EeCfSqoDk30-aQ" xmlName="nonNegativeInteger" xmlContentKind="Simple" base_DataType="_f6ldhJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6og0pG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6ldhpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6og05G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldiJG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6og1JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldipG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6og1ZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldjJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6og1pG8EeCfSqoDk30-aQ" xmlName="time" xmlContentKind="Simple" base_DataType="_f6ldjpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6og15G8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6ldkJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6og2JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldkpG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6og2ZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldlJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pH4JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldlpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6pH4ZG8EeCfSqoDk30-aQ" xmlName="token" xmlContentKind="Simple" base_DataType="_f6ldmJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pH4pG8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6ldmpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pH45G8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldnJG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6pH5JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldnpG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pH5ZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldoJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EClass xmi:id="_f6pH5pG8EeCfSqoDk30-aQ" xmlName="string" xmlContentKind="Simple" base_DataType="_f6ldopG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pH55G8EeCfSqoDk30-aQ" xmlName=":0" xmlFeatureKind="Simple" base_Property="_f6ldpJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pH6JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldppG8EeCfSqoDk30-aQ" isID="true"/>
+  <Ecore:EAttribute xmi:id="_f6pH6ZG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldqJG8EeCfSqoDk30-aQ"/>
+  <Ecore:EAttribute xmi:id="_f6pu8JG8EeCfSqoDk30-aQ" xmlNamespace="http://niem.gov/niem/structures/2.0" xmlFeatureKind="Attribute" base_Property="_f6ldqpG8EeCfSqoDk30-aQ"/>
+</xmi:XMI>

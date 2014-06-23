@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emof:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml"
+    xmi:id="catalog" name="catalog" uri="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.Catalog" name="Catalog">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="catalog"/>
+        <details key="kind" value="elementOnly"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.Catalog.group" name="group" isOrdered="true" isUnique="false"
+        lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="group"/>
+          <details key="name" value="group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.public" name="public" isOrdered="true"
+        lower="0" upper="*" type="catalog.Public" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="public"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.system" name="system" isOrdered="true"
+        lower="0" upper="*" type="catalog.System" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="system"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.uri" name="uri" isOrdered="true" lower="0"
+        upper="*" type="catalog.Uri" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="uri"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.rewriteSystem" name="rewriteSystem" isOrdered="true"
+        lower="0" upper="*" type="catalog.RewriteSystem" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="rewriteSystem"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.rewriteURI" name="rewriteURI" isOrdered="true"
+        lower="0" upper="*" type="catalog.RewriteURI" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="rewriteURI"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.delegatePublic" name="delegatePublic"
+        isOrdered="true" lower="0" upper="*" type="catalog.DelegatePublic" isDerived="true"
+        isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegatePublic"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.delegateSystem" name="delegateSystem"
+        isOrdered="true" lower="0" upper="*" type="catalog.DelegateSystem" isDerived="true"
+        isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegateSystem"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.delegateURI" name="delegateURI" isOrdered="true"
+        lower="0" upper="*" type="catalog.DelegateURI" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegateURI"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.nextCatalog" name="nextCatalog" isOrdered="true"
+        lower="0" upper="*" type="catalog.NextCatalog" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="nextCatalog"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.group1" name="group1" isOrdered="true"
+        lower="0" upper="*" type="catalog.Group" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="group"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.any" name="any" isOrdered="true" isUnique="false"
+        lower="0" upper="*" isDerived="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="elementWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":11"/>
+          <details key="processing" value="skip"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.prefer" name="prefer" isOrdered="true"
+        lower="0" type="catalog.SystemOrPublic">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="prefer"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Catalog.anyAttribute" name="anyAttribute" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":14"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.DelegatePublic" name="DelegatePublic">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="delegatePublic"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.DelegatePublic.catalog" name="catalog" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="catalog"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegatePublic.id" name="id" isOrdered="true"
+        lower="0" isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegatePublic.publicIdStartString" name="publicIdStartString"
+        isOrdered="true" type="catalog.PartialPublicIdentifier">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="publicIdStartString"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegatePublic.anyAttribute" name="anyAttribute"
+        isOrdered="true" isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.DelegateSystem" name="DelegateSystem">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="delegateSystem"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.DelegateSystem.catalog" name="catalog" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="catalog"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegateSystem.id" name="id" isOrdered="true"
+        lower="0" isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegateSystem.systemIdStartString" name="systemIdStartString"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="systemIdStartString"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegateSystem.anyAttribute" name="anyAttribute"
+        isOrdered="true" isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.DelegateURI" name="DelegateURI">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="delegateURI"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.DelegateURI.catalog" name="catalog" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="catalog"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegateURI.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegateURI.uriStartString" name="uriStartString"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="uriStartString"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DelegateURI.anyAttribute" name="anyAttribute"
+        isOrdered="true" isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.DocumentRoot" name="DocumentRoot">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=""/>
+        <details key="kind" value="mixed"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.mixed" name="mixed" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="elementWildcard"/>
+          <details key="name" value=":mixed"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.xMLNSPrefixMap" name="xMLNSPrefixMap"
+        isOrdered="true" lower="0" upper="*" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="xmlns:prefix"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EStringToStringMapEntry"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.xSISchemaLocation" name="xSISchemaLocation"
+        isOrdered="true" lower="0" upper="*" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="xsi:schemaLocation"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EStringToStringMapEntry"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.catalog" name="catalog" isOrdered="true"
+        lower="0" upper="-2" type="catalog.Catalog" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="catalog"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.delegatePublic" name="delegatePublic"
+        isOrdered="true" lower="0" upper="-2" type="catalog.DelegatePublic" isDerived="true"
+        isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegatePublic"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.delegateSystem" name="delegateSystem"
+        isOrdered="true" lower="0" upper="-2" type="catalog.DelegateSystem" isDerived="true"
+        isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegateSystem"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.delegateURI" name="delegateURI" isOrdered="true"
+        lower="0" upper="-2" type="catalog.DelegateURI" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegateURI"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.group" name="group" isOrdered="true"
+        lower="0" upper="-2" type="catalog.Group" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="group"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.nextCatalog" name="nextCatalog" isOrdered="true"
+        lower="0" upper="-2" type="catalog.NextCatalog" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="nextCatalog"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.public" name="public" isOrdered="true"
+        lower="0" upper="-2" type="catalog.Public" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="public"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.rewriteSystem" name="rewriteSystem"
+        isOrdered="true" lower="0" upper="-2" type="catalog.RewriteSystem" isDerived="true"
+        isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="rewriteSystem"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.rewriteURI" name="rewriteURI" isOrdered="true"
+        lower="0" upper="-2" type="catalog.RewriteURI" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="rewriteURI"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.system" name="system" isOrdered="true"
+        lower="0" upper="-2" type="catalog.System" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="system"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.DocumentRoot.uri" name="uri" isOrdered="true"
+        lower="0" upper="-2" type="catalog.Uri" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="uri"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.Group" name="Group">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="group"/>
+        <details key="kind" value="elementOnly"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.Group.group" name="group" isOrdered="true" isUnique="false"
+        lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="group"/>
+          <details key="name" value="group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.public" name="public" isOrdered="true" lower="0"
+        upper="*" type="catalog.Public" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="public"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.system" name="system" isOrdered="true" lower="0"
+        upper="*" type="catalog.System" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="system"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.uri" name="uri" isOrdered="true" lower="0"
+        upper="*" type="catalog.Uri" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="uri"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.rewriteSystem" name="rewriteSystem" isOrdered="true"
+        lower="0" upper="*" type="catalog.RewriteSystem" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="rewriteSystem"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.rewriteURI" name="rewriteURI" isOrdered="true"
+        lower="0" upper="*" type="catalog.RewriteURI" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="rewriteURI"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.delegatePublic" name="delegatePublic" isOrdered="true"
+        lower="0" upper="*" type="catalog.DelegatePublic" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegatePublic"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.delegateSystem" name="delegateSystem" isOrdered="true"
+        lower="0" upper="*" type="catalog.DelegateSystem" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegateSystem"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.delegateURI" name="delegateURI" isOrdered="true"
+        lower="0" upper="*" type="catalog.DelegateURI" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="delegateURI"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.nextCatalog" name="nextCatalog" isOrdered="true"
+        lower="0" upper="*" type="catalog.NextCatalog" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="nextCatalog"/>
+          <details key="namespace" value="##targetNamespace"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.any" name="any" isOrdered="true" isUnique="false"
+        lower="0" upper="*" isDerived="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="elementWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":10"/>
+          <details key="processing" value="skip"/>
+          <details key="group" value="#group:0"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.prefer" name="prefer" isOrdered="true" lower="0"
+        type="catalog.SystemOrPublic">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="prefer"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Group.anyAttribute" name="anyAttribute" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":13"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.NextCatalog" name="NextCatalog">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="nextCatalog"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.NextCatalog.catalog" name="catalog" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="catalog"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.NextCatalog.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.NextCatalog.anyAttribute" name="anyAttribute"
+        isOrdered="true" isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":2"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="catalog.PartialPublicIdentifier"
+      name="PartialPublicIdentifier">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="partialPublicIdentifier"/>
+        <details key="baseType" value="pubIdChars"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>java.lang.String</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="catalog.PubIdChars" name="PubIdChars">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="pubIdChars"/>
+        <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>java.lang.String</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.Public" name="Public">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="public"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.Public.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Public.publicId" name="publicId" isOrdered="true"
+        type="catalog.PublicIdentifier">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="publicId"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Public.uri" name="uri" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="uri"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Public.anyAttribute" name="anyAttribute" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="catalog.PublicIdentifier" name="PublicIdentifier">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="publicIdentifier"/>
+        <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>java.lang.String</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.RewriteSystem" name="RewriteSystem">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="rewriteSystem"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.RewriteSystem.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.RewriteSystem.rewritePrefix" name="rewritePrefix"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="rewritePrefix"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.RewriteSystem.systemIdStartString" name="systemIdStartString"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="systemIdStartString"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.RewriteSystem.anyAttribute" name="anyAttribute"
+        isOrdered="true" isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.RewriteURI" name="RewriteURI">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="rewriteURI"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.RewriteURI.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.RewriteURI.rewritePrefix" name="rewritePrefix"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="rewritePrefix"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.RewriteURI.uriIdStartString" name="uriIdStartString"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="uriIdStartString"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.RewriteURI.anyAttribute" name="anyAttribute" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.System" name="System">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="system"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.System.id" name="id" isOrdered="true" lower="0"
+        isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.System.systemId" name="systemId" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="systemId"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.System.uri" name="uri" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="uri"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.System.anyAttribute" name="anyAttribute" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="catalog.SystemOrPublic" name="SystemOrPublic">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="systemOrPublic"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedLiteral xmi:id="catalog.SystemOrPublic.system" name="system"/>
+    <ownedLiteral xmi:id="catalog.SystemOrPublic.public" name="public">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="catalog.SystemOrPublicObject" name="SystemOrPublicObject">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="systemOrPublic:Object"/>
+        <details key="baseType" value="systemOrPublic"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>org.eclipse.emf.common.util.Enumerator</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="catalog.Uri" name="Uri">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="uri"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="catalog.Uri.id" name="id" isOrdered="true" lower="0" isID="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="id"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Uri.name" name="name" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="name"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Uri.uri" name="uri" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="uri"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="catalog.Uri.anyAttribute" name="anyAttribute" isOrdered="true"
+        isUnique="false" lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attributeWildcard"/>
+          <details key="wildcards" value="##other"/>
+          <details key="name" value=":3"/>
+          <details key="processing" value="lax"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+  </ownedType>
+  <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+    <nsPrefix>catalog</nsPrefix>
+  </xmi:Extension>
+</emof:Package>

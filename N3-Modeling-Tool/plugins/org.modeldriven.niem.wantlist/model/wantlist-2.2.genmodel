@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modeldriven.niem.wantlist/src" modelPluginID="org.modeldriven.niem.wantlist"
+    modelName="Wantlist-2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../srcmodel/wantlist-2.2.xsd</foreignModel>
+  <genPackages prefix="wantlist" basePackage="gov.niem.niem.wantlist" resource="XML"
+      disposableProviderFactory="true" ecorePackage="_2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//AllNNIMember1">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//AllNNIMember1/unbounded"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//FacetFacetType">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/minExclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/minInclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/maxExclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/maxInclusive"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/totalDigits"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/fractionDigits"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/length"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/minLength"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/maxLength"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/enumeration"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/whiteSpace"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//FacetFacetType/pattern"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="_2.ecore#//AllNNI"/>
+    <genDataTypes ecoreDataType="_2.ecore#//AllNNIMember1Object"/>
+    <genDataTypes ecoreDataType="_2.ecore#//FacetFacetTypeObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//PositiveIntegerListType"/>
+    <genDataTypes ecoreDataType="_2.ecore#//VersionType"/>
+    <genClasses ecoreClass="_2.ecore#//AttributeInTypeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//AttributeInTypeType/maxOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//AttributeInTypeType/minOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//AttributeInTypeType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//AttributeInTypeType/qualifier"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//AttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//AttributeType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//AttributeType/qualifier"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/wantList"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ElementInTypeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementInTypeType/choice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementInTypeType/isReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementInTypeType/maxOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementInTypeType/minOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementInTypeType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementInTypeType/qualifier"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ElementType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementType/isReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementType/nillable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ElementType/qualifier"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//FacetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FacetType/facet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FacetType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//TypeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//TypeType/attributeInType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//TypeType/elementInType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//TypeType/facet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//TypeType/unionMember"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//TypeType/isRequested"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//TypeType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//UnionMemberType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//UnionMemberType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//WantListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//WantListType/attribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//WantListType/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//WantListType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//WantListType/nillableDefault"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//WantListType/product"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//WantListType/release"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

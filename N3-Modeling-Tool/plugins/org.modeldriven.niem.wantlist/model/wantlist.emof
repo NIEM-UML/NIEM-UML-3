@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emof:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml"
+    xmi:id="_2" name="_2" uri="http://niem.gov/niem/wantlist/2.2">
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="_2.AllNNI" name="AllNNI">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="for maxOccurs"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="allNNI"/>
+        <details key="memberTypes" value="http://www.eclipse.org/emf/2003/XMLType#nonNegativeInteger allNNI_._member_._1"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>java.lang.Object</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="_2.AllNNIMember1" name="AllNNIMember1">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="allNNI_._member_._1"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedLiteral xmi:id="_2.AllNNIMember1.unbounded" name="unbounded"/>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="_2.AllNNIMember1Object" name="AllNNIMember1Object">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="allNNI_._member_._1:Object"/>
+        <details key="baseType" value="allNNI_._member_._1"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>org.eclipse.emf.common.util.Enumerator</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.AttributeInTypeType" name="AttributeInTypeType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="AttributeInTypeType"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.AttributeInTypeType.maxOccurs" name="maxOccurs" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="maxOccurs"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NonNegativeInteger"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.AttributeInTypeType.minOccurs" name="minOccurs" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="minOccurs"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NonNegativeInteger"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.AttributeInTypeType.name" name="name" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="name"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//QName"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.AttributeInTypeType.qualifier" name="qualifier" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="qualifier"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NCName"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.AttributeType" name="AttributeType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="AttributeType"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.AttributeType.name" name="name" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="name"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//QName"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.AttributeType.qualifier" name="qualifier" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="qualifier"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NCName"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.DocumentRoot" name="DocumentRoot">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=""/>
+        <details key="kind" value="mixed"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.DocumentRoot.mixed" name="mixed" isOrdered="true" isUnique="false"
+        lower="0" upper="*">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="elementWildcard"/>
+          <details key="name" value=":mixed"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EFeatureMapEntry"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.DocumentRoot.xMLNSPrefixMap" name="xMLNSPrefixMap"
+        isOrdered="true" lower="0" upper="*" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="xmlns:prefix"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EStringToStringMapEntry"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.DocumentRoot.xSISchemaLocation" name="xSISchemaLocation"
+        isOrdered="true" lower="0" upper="*" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="xsi:schemaLocation"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EStringToStringMapEntry"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.DocumentRoot.wantList" name="wantList" isOrdered="true"
+        lower="0" upper="-2" type="_2.WantListType" isDerived="true" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="WantList"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <volatile>true</volatile>
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.ElementInTypeType" name="ElementInTypeType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="ElementInTypeType"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.ElementInTypeType.choice" name="choice" isOrdered="true"
+        lower="0" type="_2.PositiveIntegerListType">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="choice"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementInTypeType.isReference" name="isReference" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="isReference"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementInTypeType.maxOccurs" name="maxOccurs" isOrdered="true"
+        lower="0" type="_2.AllNNI">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="maxOccurs"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementInTypeType.minOccurs" name="minOccurs" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="minOccurs"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NonNegativeInteger"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementInTypeType.name" name="name" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="name"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//QName"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementInTypeType.qualifier" name="qualifier" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="qualifier"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NCName"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.ElementType" name="ElementType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="ElementType"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.ElementType.isReference" name="isReference" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="isReference"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementType.name" name="name" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="name"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//QName"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementType.nillable" name="nillable" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="nillable"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.ElementType.qualifier" name="qualifier" isOrdered="true"
+        lower="0">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="qualifier"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//NCName"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="_2.FacetFacetType" name="FacetFacetType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="FacetFacetType"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedLiteral xmi:id="_2.FacetFacetType.minExclusive" name="minExclusive"/>
+    <ownedLiteral xmi:id="_2.FacetFacetType.minInclusive" name="minInclusive">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.maxExclusive" name="maxExclusive">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.maxInclusive" name="maxInclusive">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>3</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.totalDigits" name="totalDigits">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>4</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.fractionDigits" name="fractionDigits">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>5</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.length" name="length">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>6</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.minLength" name="minLength">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>7</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.maxLength" name="maxLength">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>8</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.enumeration" name="enumeration">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>9</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.whiteSpace" name="whiteSpace">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>10</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_2.FacetFacetType.pattern" name="pattern">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>11</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="_2.FacetFacetTypeObject" name="FacetFacetTypeObject">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="FacetFacetType:Object"/>
+        <details key="baseType" value="FacetFacetType"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>org.eclipse.emf.common.util.Enumerator</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.FacetType" name="FacetType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="FacetType"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.FacetType.facet" name="facet" isOrdered="true" type="_2.FacetFacetType">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="facet"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.FacetType.value" name="value" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="value"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//AnySimpleType"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="_2.PositiveIntegerListType" name="PositiveIntegerListType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="for choice indexes"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="PositiveIntegerListType"/>
+        <details key="itemType" value="http://www.eclipse.org/emf/2003/XMLType#positiveInteger"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>java.util.List</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.TypeType" name="TypeType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="TypeType"/>
+        <details key="kind" value="elementOnly"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.TypeType.attributeInType" name="attributeInType" isOrdered="true"
+        lower="0" upper="*" type="_2.AttributeInTypeType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="AttributeInType"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.TypeType.elementInType" name="elementInType" isOrdered="true"
+        lower="0" upper="*" type="_2.ElementInTypeType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="ElementInType"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.TypeType.facet" name="facet" isOrdered="true" lower="0"
+        upper="*" type="_2.FacetType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="Facet"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.TypeType.unionMember" name="unionMember" isOrdered="true"
+        lower="0" upper="*" type="_2.UnionMemberType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="UnionMember"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.TypeType.isRequested" name="isRequested" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="isRequested"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.TypeType.name" name="name" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="name"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//QName"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.UnionMemberType" name="UnionMemberType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="UnionMemberType"/>
+        <details key="kind" value="empty"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.UnionMemberType.type" name="type" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="type"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//QName"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:PrimitiveType" xmi:id="_2.VersionType" name="VersionType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="VersionType"/>
+        <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#token"/>
+        <details key="pattern" value="[0-9]+(\.[0-9]+)*((alpha|beta|rc)[0-9]+)?(-[A-z]+)*"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <instanceClassName>java.lang.String</instanceClassName>
+    </xmi:Extension>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="_2.WantListType" name="WantListType">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="WantListType"/>
+        <details key="kind" value="elementOnly"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <ownedAttribute xmi:id="_2.WantListType.attribute" name="attribute" isOrdered="true"
+        lower="0" upper="*" type="_2.AttributeType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="Attribute"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.WantListType.element" name="element" isOrdered="true"
+        lower="0" upper="*" type="_2.ElementType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="Element"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.WantListType.type" name="type" isOrdered="true" lower="0"
+        upper="*" type="_2.TypeType" isComposite="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="Type"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.WantListType.nillableDefault" name="nillableDefault"
+        isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="nillableDefault"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <unsettable>true</unsettable>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.WantListType.product" name="product" isOrdered="true">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="product"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <type xmi:type="emof:PrimitiveType" href="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2.WantListType.release" name="release" isOrdered="true"
+        type="_2.VersionType">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="release"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+    <nsPrefix>_2</nsPrefix>
+  </xmi:Extension>
+</emof:Package>

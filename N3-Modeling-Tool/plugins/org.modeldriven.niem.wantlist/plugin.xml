@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://niem.gov/niem/wantlist/2"
+            class="gov.niem.niem.wantlist._2._2Package"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="wlxml"
+            class="gov.niem.niem.wantlist._2.util._2ResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated wantlist-2.2 -->
+      <package
+            uri="http://niem.gov/niem/wantlist/2.2"
+            class="gov.niem.niem.wantlist._2.wantlistPackage"
+            genModel="model/wantlist-2.2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated wantlist-2.2 -->
+      <parser
+            type="wantlist"
+            class="gov.niem.niem.wantlist._2.util.wantlistResourceFactoryImpl"/>
+   </extension>
+</plugin>

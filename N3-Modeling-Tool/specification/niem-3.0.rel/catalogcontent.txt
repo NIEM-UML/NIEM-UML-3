@@ -1,0 +1,132 @@
+  PersonType">
+          nc:PersonAccentText
+          nc:PersonAgeDescriptionText
+          nc:PersonAgeMeasure
+          
+          nc:PersonBirthDate
+          nc:PersonBirthLocation
+          nc:PersonBloodType
+          nc:PersonBodyXRaysAvailable
+          nc:PersonBuild
+          nc:PersonCapability
+          nc:PersonCircumcisionIndicator
+          nc:PersonCitizenship
+          nc:PersonComplexionText
+          nc:PersonDeathDate
+          nc:PersonDependentQuantity
+          nc:PersonDescriptionText
+          nc:PersonDigitalImage
+          nc:PersonDigitizedSignatureImage
+          nc:PersonDisguiseDescriptionText
+          nc:PersonOrganDonor
+          nc:PersonEducationLevelText
+          nc:PersonEthnicity
+          nc:PersonEyeColor
+          nc:PersonEyewear
+          nc:PersonFacialHair
+          nc:PersonHairLength
+          nc:PersonHairStyle
+          nc:PersonGeneralAppearanceDescriptionText
+          nc:PersonHairAppearanceText
+          nc:PersonHairCategoryText
+          nc:PersonHairColor
+          nc:PersonHandednessText
+          nc:PersonHeightDescriptionText
+          nc:PersonHeightMeasure
+          nc:PersonHumanResourceIdentification
+          nc:PersonInjury
+          nc:PersonJewelryDescriptionText
+          nc:PersonLanguageEnglishIndicator
+          nc:PersonLearningDisabilityText
+          nc:PersonLicenseIdentification
+          nc:PersonLivingIndicator
+          nc:PersonMedicalCondition
+          nc:PersonMedicalDescriptionText
+          nc:PersonMedicalFileIndicator
+          nc:PersonMedicationRequiredText
+          nc:PersonMentalStateText
+          nc:PersonMilitarySummary
+          nc:PersonMoodDescriptionText
+          nc:PersonName
+          nc:PersonNationalIdentification
+          nc:PersonOrganDonatorIndicator
+          nc:PersonOtherIdentification
+          nc:PersonPassportIdentification
+          nc:PersonPhysicalDisabilityText
+          nc:PersonPhysicalFeature
+          nc:PersonPrimaryLanguage
+          nc:PersonRace
+          nc:PersonReligion
+          nc:PersonResident
+          nc:PersonSecondaryLanguage
+          nc:PersonSecurityClearance
+          nc:PersonSex
+          nc:PersonSexualOrientationText
+          nc:PersonSkinTone
+          nc:PersonSpeechDescriptionText
+          nc:PersonSSNIdentification
+          nc:PersonStateIdentification
+          nc:PersonTaxIdentification
+          nc:PersonUnionStatus
+          nc:PersonUSCitizenIndicator
+          nc:PersonVisionPrescriptionText
+          nc:PersonWeightDescriptionText
+          nc:PersonWeightMeasure
+          nc:PersonXRayImage
+          nc:PersonNationality
+          nc:PersonAugmentationPoint
+ MeasureType">
+          nc:MeasureValue
+          nc:MeasureCommentText
+          nc:MeasureDate
+          nc:MeasureError
+          nc:MeasureUnit
+          nc:Measurer
+          nc:MeasureMethodText
+          nc:MeasureEstimatedIndicator
+          nc:MeasureAugmentationPoint
+  <xs:element name="MeasureUnitText" type="nc:TextType" substitutionGroup="nc:MeasureUnit" nillable="true">
+  <xs:element name="SpeedUnitCode" type="unece:VelocityCodeType" substitutionGroup="nc:MeasureUnit" nillable="true">
+  <xs:element name="TemperatureUnitCode" type="unece:TemperatureUnitCodeType" substitutionGroup="nc:MeasureUnit" nillable="true">
+  <xs:element name="TimeUnitCode" type="unece:TimeCodeType" substitutionGroup="nc:MeasureUnit" nillable="true">
+  <xs:element name="VolumeUnitCode" type="unece:VolumeUnitCodeType" substitutionGroup="nc:MeasureUnit" nillable="true">
+    <xs:element name="WeightUnitCode" type="unece:MassCodeType" substitutionGroup="nc:MeasureUnit" nillable="true">
+  <xs:element name="LengthUnitCode" type="unece:LengthCodeType" substitutionGroup="nc:MeasureUnit" nillable="true">
+  <xs:element name="MeasureErrorText" type="nc:TextType" substitutionGroup="nc:MeasureError" nillable="true">
+  <xs:element name="MeasureErrorValue" type="niem-xs:decimal" substitutionGroup="nc:MeasureError" nillable="true">
+  <xs:element name="MeasureQualityText" type="nc:TextType" substitutionGroup="nc:MeasureError" nillable="true">
+  <xs:element name="MeasurePoint" substitutionGroup="nc:MeasureValue" abstract="true">
+  <xs:element name="MeasureUnsignedIntegerValue" type="niem-xs:unsignedInt" substitutionGroup="nc:MeasurePoint" nillable="true">
+    <xs:element name="MeasureDecimalValue" type="niem-xs:decimal" substitutionGroup="nc:MeasurePoint" nillable="true">
+  <xs:element name="MeasureDoubleValue" type="niem-xs:double" substitutionGroup="nc:MeasurePoint" nillable="true">
+  <xs:element name="MeasureIntegerValue" type="niem-xs:integer" substitutionGroup="nc:MeasurePoint" nillable="true">
+  
+  <xs:element name="MeasureRange" substitutionGroup="nc:MeasureValue" abstract="true">
+    <xs:element name="MeasureUnsignedIntegerRange" type="nc:UnsignedIntegerRangeType" substitutionGroup="nc:MeasureRange" nillable="true">
+  <xs:element name="MeasureDecimalRange" type="nc:DecimalRangeType" substitutionGroup="nc:MeasureRange" nillable="true">
+  <xs:element name="MeasureDoubleRange" type="nc:DoubleRangeType" substitutionGroup="nc:MeasureRange" nillable="true">
+  <xs:element name="MeasureIntegerRange" type="nc:IntegerRangeType" substitutionGroup="nc:MeasureRange" nillable="true">
+  
+<xs:element name="MeasureValueList" substitutionGroup="nc:MeasureValue" abstract="true">
+  <xs:element name="MeasureDecimalValueList" type="nc:DecimalListType" substitutionGroup="nc:MeasureValueList" nillable="true">
+  <xs:element name="MeasureDoubleValueList" type="nc:DoubleListType" substitutionGroup="nc:MeasureValueList" nillable="true">
+  <xs:element name="MeasureIntegerValueList" type="nc:IntegerListType" substitutionGroup="nc:MeasureValueList" nillable="true">
+  <xs:element name="MeasureTextList" type="nc:StringListType" substitutionGroup="nc:MeasureValueList" nillable="true">
+  <xs:element name="MeasureValueText" type="nc:TextType" substitutionGroup="nc:MeasureValue" nillable="true">
+  <xs:complexType name="DateType">
+          <xs:element ref="nc:DateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DateAccuracy" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:DateMarginOfErrorDuration" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:DateAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="DateTime" type="niem-xs:dateTime" substitutionGroup="nc:DateRepresentation" nillable="true">
+<xs:element name="YearDate" type="niem-xs:gYear" substitutionGroup="nc:DateRepresentation" nillable="true">
+  <xs:element name="YearMonthDate" type="niem-xs:gYearMonth" substitutionGroup="nc:DateRepresentation" nillable="true">
+  <xs:element name="Date" type="niem-xs:date" substitutionGroup="nc:DateRepresentation" nillable="true">
+  <xs:complexType name="TextType">
+        <xs:attribute ref="nc:partialIndicator" use="optional"/>
+        <xs:attribute ref="nc:truncationIndicator" use="optional"/>
+        <xs:attribute ref="xml:lang" use="optional"/>
+                
+1414 elements
+180 types
+          
