@@ -1,0 +1,260 @@
+//import org.modeldriven.mda.qvto.web; // java blackbox; contains just a few helpers
+import NIEMplatformBinding;
+//modeltype UML "strict" uses 'http://www.eclipse.org/uml2/3.0.0/UML';
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype ECORE  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+//modeltype WSDL uses 'http://www.eclipse.org/wsdl/2003/WSDL';
+//modeltype SOAP uses 'http://www.ibm.com/wsdl/2003/SOAP';
+modeltype SOAP uses 'http://www.eclipse.org/wsdl/2003/SOAP';
+
+transformation soaml(in uml:UML
+//	,in targetLocation:XSD
+//	,out xsd:XSD
+//	,out wsdl:WSDL
+	)
+//	extends transformation wsdl
+	;
+//	main() {}	
+/////////////////////////////////////	
+property schemaForSchema:XSD::XSDSchema=null;
+property schemaForSchemaNamespace:String=schemaForSchemaNamespace;
+property soaMLProfile:String='SoaML Profile';
+property soaMLProfileParticipant:String=soaMLProfile+'::'+'Participant';
+property provisioningProfileServicesArchitecture:String=soaMLProfile+'::'+'ServicesArchitecture';
+property soaMLProfileProvider:String=soaMLProfile+'::'+'Provider';
+property soaMLProfileConsumer:String=soaMLProfile+'::'+'Consumer';
+property soaMLProfileMessageType:String=soaMLProfile+'::'+'MessageType';
+//property jeeProvisioningProfile:String='JEE Provisioning Profile';// no longer used
+//property jeeProvisioningProfileJeeWebService:String=jeeProvisioningProfile+'::'+'JEE Web Service';// no longer used
+//property provisioningProfile:String='Provisioning Profile';// no longer used
+//property provisioningProfileProvision:String=provisioningProfile+'::'+'Provision';// no longer used
+//property modelDrivenProfile:String='Model Driven Profile';// no longer used
+//property informationProfile:String='InformationProfile';// no longer used
+//property informationProfileEntity:String=informationProfile+'::'+'Entity';// no longer used
+property policyProfile:String='Policy Profile';
+property policyProfileAuthentication:String=policyProfile+'::'+'Authentication';
+property policyProfileReliability:String=policyProfile+'::'+'Reliability';
+
+query UML::Stereotype::getStereotypeName():String=self.namespace.name+'::'+self.name;
+/*
+query UML::Element::stereotypedBy(name:String):Boolean{
+	return self.appliedStereotypeInstance.classifier->select(s|s.oclIsKindOf(UML::Stereotype)).oclAsType(UML::Stereotype)->select(s|s.getStereotypeName()=name)->notEmpty();
+}
+*/
+query UML::Element::umlDisplayMetaName():String{
+	return ' <'+self.oclAsType(ECORE::EObject).eClass().name+'>';
+}
+query UML::Element::umlDisplayName():String{
+	var stereotypes:String='';
+	self.appliedStereotypeInstance.classifier->select(s|s.oclIsKindOf(UML::Stereotype)).oclAsType(UML::Stereotype)->forEach(stereotype){
+		stereotypes:=stereotypes+' <<'+stereotype.getStereotypeName()+'>>';
+	};
+	return stereotypes
+		+' <'+self.oclAsType(ECORE::EObject).eClass().name+'>'
+		+if(self.oclIsKindOf(UML::NamedElement))then (' '+self.oclAsType(UML::NamedElement).qualifiedName) else '' endif
+		;
+}
+
+//query UML::Node::isProvision():Boolean{return self.stereotypedBy('');}
+//////////////////////////////////////////////////////////////////////////////////////////
+property baseNamespace:String='http://my.org/';
+property selfPrefix:String='tns';
+query String::toURI():String{return self.toNCName();}
+query String::toNCName():String{return self.trim().replace(' ','');}
+//query UML::NamedElement::getTargetNamespaceQualifiedName():String{
+//	if(self.owner.oclIsUndefined())then {return self.getName();}else{}endif;
+//	return self.owner.oclAsType(UML::NamedElement).getTargetNamespaceQualifiedName()+'::'+self.getName();
+//	}
+query UML::NamedElement::getTargetNamespacePath():String{
+	//return self.getTargetNamespaceQualifiedName().replace('::','/').toURI();
+	var catalog:UML::Package:=self.getNearestPackage().getNearesProfileApplication(structureProfile);
+	var relativePath:String='';
+	if(catalog.oclIsUndefined())then{
+		relativePath:=self.qualifiedName;
+	}else{
+//		relativePath:=self.qualifiedName.substringAfter(catalog.qualifiedName);
+		relativePath:=self.qualifiedName.substringAfter(catalog.qualifiedName+'::');
+	}endif;
+	relativePath:=relativePath.replace('::','/');
+//	if(relativePath='')then {relativePath:='./';}else{relativePath:='.'+relativePath;}endif;
+	if(relativePath='')then {relativePath:='./';}endif;
+	return relativePath;
+	}
+query UML::Namespace::getLocation(extension:String):String=self.getTargetNamespacePath()+extension;
+query UML::Namespace::getSchemaLocation():String=self.getLocation('.xsd');
+query UML::NamedElement::getTargetNamespace():String{return baseNamespace+self.getTargetNamespacePath();}
+query UML::Package::isGlobalSchema():Boolean{return self.name='UMLPrimitiveTypes';}
+query UML::Namespace::getRelativeLocation(referencingPackage:UML::Namespace,extension:String):String=
+//	referencingPackage.getRelativeToRoot()+self.getLocation(extension);
+	referencingPackage.namespace.getRelativeToRoot()+self.getLocation(extension);
+query UML::Namespace::getRelativeSchemaLocation(referencingPackage:UML::Namespace):String=
+	self.getRelativeLocation(referencingPackage,'.xsd');
+query UML::Namespace::getRelativeToRoot():String{
+	if(self.namespace.oclIsUndefined())then {return "";}else{}endif;
+	if(self.oclIsKindOf(UML::Package) and self.oclAsType(UML::Package).isProfileApplied(structureProfile))then {return "";}else{}endif;
+	return self.namespace.getRelativeToRoot()+'../';
+}
+query UML::NamedElement::getName():String{
+	if((self.name="")and self.oclIsKindOf(UML::Property))then{
+		return self.oclAsType(UML::Property).type.name.toNCName();
+	}else{
+		if((self.name="")and self.oclIsKindOf(UML::Parameter))then{
+			return self.oclAsType(UML::Parameter).type.name.toNCName();
+		}else{
+		}endif;
+	}endif;
+	return self.name.toNCName();
+}	
+helper transitiveClosure(inout classifiers:Set(UML::Classifier)):Set(UML::Classifier){
+	var transitive:Set(UML::Classifier)=Set{};
+	transitive+=classifiers;
+	transitive+=transitive.getAllAttributes().type->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType((UML::Classifier))
+		->union(transitive.general)->asSet();
+	log('transitiveClosure '+transitive->size().repr()+', '+classifiers->size().repr());	
+	// following loops
+	if(transitive->size()=classifiers->size())then{}else{transitive+=transitiveClosure(transitive);}endif;
+	return transitive;
+}	
+query UML::Classifier::allFeatures():Set(UML::Feature){
+	var allParents:Set(UML::Classifier)=Set{};
+	allParents+=self;
+	allParents+=self.getAllParents();
+	return allParents.feature->asSet();
+}	
+/*
+query UML::Classifier::getAllAttributes():Set(UML::Property){
+	var allParents:Set(UML::Classifier)=Set{};
+	allParents+=self;
+	allParents+=self.getAllParents();
+	return allParents.attribute->asSet();
+}
+*/
+query UML::Classifier::getAllUsedInterfaces():Set(UML::Interface){
+	var allUsedInterfaces:Set(UML::Interface)=Set{};
+//	if(self.oclIsKindOf(UML::Component)) then {
+		var allParents:Set(UML::Classifier)=Set{};
+		allParents+=self;
+		allParents+=self.getAllParents();
+		allUsedInterfaces:= allParents->select(p|p.oclIsKindOf(UML::Component)).oclAsType(UML::Component).required->asSet();
+		allUsedInterfaces+= allParents->select(p|p.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).clientDependency
+			->select(u|u.oclIsKindOf(UML::Usage)).oclAsType(UML::Usage).supplier
+			->select(p|p.oclIsKindOf(UML::Interface)).oclAsType(UML::Interface)
+			->asSet();
+			
+//		} endif;
+		return allUsedInterfaces;
+}	
+	
+query UML::Classifier::getAllParents():Set(UML::Classifier){
+	var allParents:Set(UML::Classifier)=Set{};
+	//allParents+=self;
+	//allParents+=self.getAllParents();
+	return self.getAllParentsRecursive(allParents);
+}	
+query UML::Classifier::getAllParentsRecursive(inout allParents:Set(UML::Classifier)):Set(UML::Classifier){
+	if(allParents->includes(self))then {return allParents}endif;
+	var parents:Set(UML::Classifier)=allParents;
+	parents+=self;
+	return self.general.getAllParentsRecursive(parents)->asSet();
+}	
+query 	UML::BehavioralFeature::returnType():UML::Classifier=if(self.oclIsKindOf(UML::Reception)) then null else self.ownedParameter
+		->select(p|
+			(
+				(p.direction=UML::ParameterDirectionKind::_return)
+				or(p.direction=UML::ParameterDirectionKind::_inout)
+				or(p.direction=UML::ParameterDirectionKind::_out)
+			)	
+			and p.type.oclIsKindOf(UML::Classifier)
+		)
+		->first().type.oclAsType(UML::Classifier)
+		endif;
+
+query UML::Property::isEffectiveComposite():Boolean=self.aggregation<>UML::AggregationKind::none;
+query UML::Property::isXReference():Boolean=not(self.association.oclIsUndefined())and not(self.isEffectiveComposite());
+//query UML::Classifier::isEntity():Boolean=self.stereotypedBy(informationProfileEntity);// no longer used
+query UML::MultiplicityElement::cardinality():String='['+self.lower.repr()+'...'+if(self.upper<0)then '*' else self.upper.repr() endif +']';
+//////////////////////////wsdl related queries
+/////////////////////////////////////	
+query UML::NamedElement::getWsdlPartLocation(part:String):String=self.getTargetNamespacePath()+part+'.wsdl';
+query UML::NamedElement::getWsdlLocation():String=self.getWsdlPartLocation('');
+query UML::Classifier::getRealizedInterfaces():Set(UML::Interface){
+	if(self.oclIsKindOf(UML::Interface))then{return Set{self.oclAsType(UML::Interface)};}else{}endif;
+	return self.oclAsType(UML::Class).getAllImplementedInterfaces();
+}
+query UML::BehavioredClassifier::getAllImplementedInterfaces():Set(UML::Interface){
+	return self.interfaceRealization.contract->asSet();
+}
+query UML::BehavioralFeature::getInputParameter():UML::NamedElement{log('getInputParameter illegal call');return null;}
+query UML::Reception::getInputParameter():UML::NamedElement=self.signal;
+query UML::Operation::getInputParameter():UML::NamedElement{
+	self.ownedParameter
+		->select(p|(p.direction=UML::ParameterDirectionKind::_in)or(p.direction=UML::ParameterDirectionKind::_inout))
+		->forEach(parameter){return parameter;};
+	return null;
+}
+query UML::BehavioralFeature::getOutputParameter():UML::NamedElement{log('getOutputParameter illegal call');return null;}
+query UML::Reception::getOutputParameter():UML::NamedElement=null;
+query UML::Operation::getOutputParameter():UML::NamedElement{
+	var inputParameter:UML::NamedElement=self.getInputParameter();
+	self.ownedParameter
+		->select(p|
+			(p<>inputParameter)and(
+			(p.direction=UML::ParameterDirectionKind::_out)
+			or(p.direction=UML::ParameterDirectionKind::_return)
+			or(p.direction=UML::ParameterDirectionKind::_inout)
+			))
+		->forEach(parameter){return parameter;};
+	return null;
+}
+query UML::NamedElement::getUmlType():UML::Classifier{
+	if(self.oclIsKindOf(UML::Parameter))then{return self.oclAsType(UML::Parameter).type.oclAsType(UML::Classifier);}else{}endif;
+	return self.oclAsType(UML::Classifier);
+}
+query UML::Classifier::allBehavioralFeatures():Sequence(UML::BehavioralFeature)=
+	self.allFeatures()->select(f|f.oclIsKindOf(UML::BehavioralFeature)).oclAsType(UML::BehavioralFeature)->asSequence();
+query UML::NamedElement::isUniqueInputName(owningInterface:UML::Interface):Boolean{
+	var myName:String=self.getName();
+	return owningInterface.allBehavioralFeatures()
+		->select(f|
+			((f.getInputParameter()<>self) and not(f.getInputParameter().oclIsUndefined())and(f.getInputParameter().getName()=myName))
+			or(not(f.getOutputParameter().oclIsUndefined())and(f.getOutputParameter().getName()=myName))
+		)
+		->isEmpty();
+}
+query UML::NamedElement::uniqueInputNameSuffix(owningInterface:UML::Interface):String{
+	if(self.isUniqueInputName(owningInterface))then {return "";}else{}endif;
+	if(self.oclIsKindOf(UML::Parameter))then{
+		var parameter:UML::Parameter=self.oclAsType(UML::Parameter);
+		var operation:UML::Operation=parameter.operation;
+		return owningInterface.allBehavioralFeatures()->indexOf(operation).repr();
+	}else{}endif;
+	return "";
+}
+//query UML::Interface::locationURI():String=self.getWsdlLocation();
+//query UML::NamedElement::locationURI():String=self.getWsdlLocation();
+query UML::NamedElement::locationURI():String=self.getTargetNamespacePath();
+
+//query UML::Interface::transportURI():String='http://schemas.xmlsoap.org/soap/http';
+query UML::Classifier::transportURI():String='http://schemas.xmlsoap.org/soap/http';
+query UML::NamedElement::style():String="document";
+query UML::BehavioralFeature::use():String="literal";
+query UML::BehavioralFeature::soapActionURI():String=self.getTargetNamespace();
+query UML::BehavioralFeature::allBehavioralFeatureTypes():Set(UML::Classifier){
+		var input:UML::NamedElement:=self.getInputParameter();
+		var output:UML::NamedElement:=self.getOutputParameter();
+		var inputs:Set(UML::Classifier):=if(input.oclIsUndefined())then Set{} else Set{input.getUmlType()} endif;
+		var outputs:Set(UML::Classifier):=if(output.oclIsUndefined())then Set{} else Set{output.getUmlType()} endif;
+		return inputs->union(outputs)->union(self.raisedException.oclAsType(UML::Classifier))->asSet();
+}
+// indirection through messageType
+//query UML::BehavioralFeature::allBehavioralFeaturePackages():Set(UML::Package)=self.allBehavioralFeatureTypes().attribute.type.package->asSet();
+query UML::BehavioralFeature::allBehavioralFeaturePackages():Set(UML::Package)=
+	self.allBehavioralFeatureTypes().attribute.usesTopLevelProperty().getNearestPackage()->asSet();
+query UML::Interface::allInterfaceSchemaPackages():Set(UML::Package)=self.allBehavioralFeatures().allBehavioralFeaturePackages()->asSet();
+query UML::Classifier::allSchemaPackages():Set(UML::Package)=self.getRealizedInterfaces().allInterfaceSchemaPackages()->asSet();
+query 	UML::Property::usesTopLevelProperty():UML::Property=
+	self.clientDependency->select(d|d.oclIsKindOf(UML::Usage))
+	.supplier->select(s|s.oclIsKindOf(UML::Property))
+	.oclAsType(UML::Property)->asSequence()->first();
+	

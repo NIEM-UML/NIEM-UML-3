@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom_template>
+    <icon>mds.small.gif</icon>
+    <iconLabel>NIEM IEPD-All Project</iconLabel>
+    <perspective>Software Architect</perspective>
+    <tooltip>NIEM IEPD Project with  All NIEM Reference Models</tooltip>
+    <banner_title>NIEM IEPD-All Project</banner_title>
+    <banner_description>Create a new NIEM IEPD project with UML Profile for NIEM plus All NIEM Reference Models.</banner_description>
+    <banner_icon>mds.small.gif</banner_icon>
+    <category_id>NIEM Modeling</category_id>
+</custom_template>

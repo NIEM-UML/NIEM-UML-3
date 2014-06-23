@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="template2gra.build" default="build" basedir="." >
+    <property name="workspace" location="${basedir}/.."/>
+    <target name="build.old" description="templates to GRA artifacts" >
+    	<xslt style="templateToGra.xsl"  basedir="template" destdir="gratargetartifact"
+    	       extension=".wsdl">
+    		 <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    	</xslt>
+    </target>
+    <target name="build" description="post-processing xmi" >
+    	<xslt style="eclipseToOmgEmof.xsl"  basedir="xmi.eclipse" destdir="emof.omg.nonnormative"
+    	       extension=".emof" includes="*.emof">
+    		 <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    	</xslt>
+    	<xslt style="magicDrawToOmgUml.xsl"  basedir="xmi.magicdraw" destdir="xmi.omg"
+    	       extension=".xmi" includes="*.xml">
+    		 <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    	</xslt>
+    </target>
+</project>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        id="org.modeldriven.magicdraw.niem.qvt"
+        name="NIEM"
+        licenseId="NIEM"
+        version="17.0.2"
+        internalVersion="1702010"
+        provider-name="modeldriven.org"
+        class="org.modeldriven.magicdraw.niem.qvt.NIEMQVTPlugin">
+
+    <requires>
+        <api version="1.2"/>
+        <required-plugin id="com.nomagic.magicdraw.qvt" name="QVT Operational" internalVersion="1702010"/>
+    </requires>
+<!--
+        version="17.0.4"
+        internalVersion="1704010"
+        <required-plugin id="com.nomagic.magicdraw.qvt" name="QVT Operational" internalVersion="1704010"/>
+        <required-plugin id="com.nomagic.magicdraw.merge" name="Project Merge" internalVersion="1702010"/>
+        version="17.0.2"
+1702001
+1702010
+1701001
+
+-->
+    <runtime>
+    
+        <library name="lib/lucene-analyzers-common-4.0.0-BETA.jar"/>
+        <library name="lib/lucene-core-4.0.0-BETA.jar"/>
+        <library name="lib/lucene-queryparser-4.0.0-BETA.jar"/>
+        <library name="lib/lucene-memory-4.0.0-BETA.jar"/>
+        
+        <library name="lib/lucene-highlighter-4.0.0-BETA.jar"/>
+        
+    
+        <library name="lib/org.eclipse.acceleo.common_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.compatibility_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.engine_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.model_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.parser_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.profiler_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.traceability_3.0.2.v20110217-1127.jar"/>
+        <library name="lib/org.eclipse.acceleo.traceability.model_3.0.2.v20110217-1127.jar"/>
+
+        <library name="lib/org.eclipse.equinox.registry_3.5.0.v20100503.jar"/>
+        <library name="lib/org.eclipse.equinox.common_3.6.0.v20100503.jar"/>
+        <library name="lib/org.eclipse.core.runtime.compatibility_3.2.100.v20100505.jar"/>
+        <library name="lib/org.eclipse.core.runtime_3.6.0.v20100505.jar"/>
+        <library name="lib/org.eclipse.emf.codegen_2.6.0.v20100914-1218.jar"/>
+        <library name="lib/org.eclipse.emf.codegen.ecore_2.6.1.v20100914-1218.jar"/>
+        
+        <library name="lib/org.eclipse.osgi_3.6.2.R36x_v20110210.jar"/>
+<!--        
+        <library name="lib/org.eclipse.xsd_2.6.0.v20100914-1218.jar"/>
+        <library name="lib/org.eclipse.xsd.ecore.converter_2.6.0.v20100914-1218.jar"/>
+        <library name="lib/org.eclipse.xsd.ecore.exporter_2.5.0.v20100521-1855.jar"/>
+        <library name="lib/org.eclipse.xsd.ecore.importer_2.6.0.v20100521-1855.jar"/>
+        <library name="lib/org.eclipse.xsd.mapping_2.6.0.v20100914-1218.jar"/>
+ -->      
+
+        <library name="lib/org.eclipse.wst.wsdl_1.2.300.v201109010430.jar"/>
+        <library name="lib/org.eclipse.xsd_2.8.0.v20120319-0555.jar"/>
+        <library name="lib/org.eclipse.xsd.ecore.converter_2.6.0.v20120319-0555.jar"/>
+        <library name="lib/org.eclipse.xsd.ecore.exporter_2.5.0.v20120319-0555.jar"/>
+        <library name="lib/org.eclipse.xsd.ecore.importer_2.6.0.v20120319-0555.jar"/>
+        <library name="lib/org.eclipse.xsd.mapping_2.6.0.v20120319-0555.jar"/>
+
+        <library name="lib/org.modeldriven.niem3.mpd.catalog_0.0.1.201308031636.jar"/>
+        <library name="lib/org.modeldriven.niem3.mpd.catalog.oasis_0.0.1.201308031638.jar"/>
+        <library name="lib/gov.niem.reference.mpd.changelog_0.0.1.201109250848.jar"/>
+        <library name="lib/org.modeldriven.niem.schematron_1.0.0.201301160736.jar"/>
+        
+        <library name="lib/org.modeldriven.niem.wantlist_1.0.0.jar"/>
+        <!--
+        <library name="lib/saxon9-jdom.jar"/>
+        <library name="lib/saxon9-s9api.jar"/>
+        <library name="lib/saxon9-xpath.jar"/>
+        <library name="lib/saxon9.jar"/>
+        -->
+        <library name="lib/saxon9he.jar"/>
+        
+        <library name="org.modeldriven.magicdraw.niem.qvt.jar"/>
+    </runtime>
+        <help path="help.jar" name="help.hs"/>
+</plugin>

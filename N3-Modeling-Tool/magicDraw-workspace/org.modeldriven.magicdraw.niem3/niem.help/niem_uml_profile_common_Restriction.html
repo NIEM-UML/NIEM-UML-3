@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>&lt;&lt;Restriction>></h1>
+A Restriction Realization represents a relationship between two type definitions: the first is derived by restriction from the second. The two types must either both be NIEMType Classes or both be DataTypes. If the two types are Classes, then the attributes of the client class must be a subset of the attributes of the supplier class and omitted attributes must have a multiplicity lower bound of zero. if the two classes are DataTypes, then the client type is considered to have a value space that is a subset of that of the supplier, as may be further specified using a ValueRestriction stereotype on the client.
+
+This relationship is implemented in XML Schema through the base attribute on the xsd:restriction element of the first type definition, the actual value of which resolves to the second type definition. If a type is a ValueRestriction the generalization owned by that type is implicitly an XSDRestriction. Sections 3.4 and 3.14 of XML Schema Structures address the use of restriction in XML Schema; Sections 6.5.2 and 6.5.3 of NIEM NDR v1.3 address the use of restriction in NIEM-conformant XML Schema.
+ <p/>
+	View Comprehensive <a 
+	href="http://lib.modeldriven.org/MDLibrary/trunk/Specifications/NIEM/magicdraw/reports/NIEM-UML_Profile/web.report.html?refid=NIEM_UML_Profile-NIEM_Common_Profile-Restriction"
+	 target="_blank">&lt;&lt;Restriction>></a> Detail Report in a new window
+</body></html>

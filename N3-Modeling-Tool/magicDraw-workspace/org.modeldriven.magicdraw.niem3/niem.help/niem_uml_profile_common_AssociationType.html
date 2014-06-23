@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>&lt;&lt;AssociationType>></h1>
+AssociationType is a NIEMType class that represents a NIEM association type. A NIEM association type establishes a relationship between objects, along with the properties of that relationship. A NIEM association is an instance of an association type. Associations are used when a simple NIEM property is insufficient to model the relationship clearly and when properties of a UML Association or AssociationClass may not necessarily be sufficient to reflect the variability of a NIEM association. Consequently, the AssociationType Stereotype is applied to a UML Class. Since an AssociationClass is also a Class, the AssociationType Stereotype may be applied to a UML AssociationClass where appropriate.  
+
+Note that a UML AssociationClass specializing another AssociationClass must have the same number of ends as the other AssociationClass and must have at least two ends. This UML constraint prevents the usage of AssociationClass to model abstract NIEM association types that are intended to be extended by subtypes with additional ends.  A UML AssociationClass can specialize an abstract UML Class.
+
+AssociationType is implemented in XML Schema as a complex type definition with complex content. Section 3.4 of XML Schema Structures addresses complex type definitions in XML Schema; Section 7.4.3 of NIEM NDR v1.3 addresses association types in NIEM-conformant XML Schema.
+ <p/>
+	View Comprehensive <a 
+	href="http://lib.modeldriven.org/MDLibrary/trunk/Specifications/NIEM/magicdraw/reports/NIEM-UML_Profile/web.report.html?refid=NIEM_UML_Profile-NIEM_Common_Profile-AssociationType"
+	 target="_blank">&lt;&lt;AssociationType>></a> Detail Report in a new window
+</body></html>

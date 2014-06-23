@@ -1,0 +1,690 @@
+//import org.modeldriven.mda.qvto.web; // java blackbox; contains just a few helpers
+//import soaml2xsd;
+import soaml;
+import soamlPlatformBinding;
+import NIEMmpdmodel2artifact;
+import NIEMpsm2xsd;
+//modeltype UML "strict" uses 'http://www.eclipse.org/uml2/3.0.0/UML';
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype ECORE  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+modeltype WSDL uses 'http://www.eclipse.org/wsdl/2003/WSDL';
+//modeltype SOAP uses 'http://www.ibm.com/wsdl/2003/SOAP';
+modeltype SOAP uses 'http://www.eclipse.org/wsdl/2003/SOAP';
+//modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';
+modeltype CAT  uses 'urn:oasis:names:tc:entity:xmlns:xml:catalog';
+
+modeltype CHANGELOG uses 'http://reference.niem.gov/niem/resource/mpd/changelog/1.0/';
+//modeltype PROXY uses 'http://niem.gov/niem/proxy/xsd/2.0';
+modeltype WANTLIST uses 'http://niem.gov/niem/wantlist/2';// EXTRA
+
+transformation soaml2wsdl(in uml:UML
+	,in schemaForProxy:XSD,in schemaForStructures:XSD,in schemaForAppinfo:XSD,in schemaForAppinfo2:XSD,
+	out changeLog:CHANGELOG,out xsd:XSD,inout blackboxAdapter:ECORE,out cat:CAT
+	,out wantlist:WANTLIST // EXTRA//	,in targetLocation:XSD
+//	,out xsd:XSD
+	,out wsdl:WSDL
+	)
+//	extends transformation wsdl,soaml2xsd
+	extends soaml
+	,soamlPlatformBinding
+	,NIEMmpdmodel2artifact
+//	,NIEMpsm2xsd(uml:UML,schemaForProxy:XSD,schemaForStructures:XSD,schemaForAppinfo:XSD,schemaForAppinfo2:XSD,xsd:XSD)
+	,NIEMpsm2xsd
+	;
+//	main() {}	
+property soapNamespace:String='http://schemas.xmlsoap.org/wsdl/soap/';
+property soapPrefix:String='soap';
+property wsawsNamespace:String='http://www.w3.org/2006/05/addressing/wsdl';
+property wsawsPrefix:String='wsaws';
+property wspNamespace:String='http://schemas.xmlsoap.org/ws/2004/09/policy';
+property wspPrefix:String='wsp';
+property wsuNamespace:String='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd';
+property wsuPrefix:String='wsu';
+property wsrmNamespace:String='http://schemas.xmlsoap.org/ws/2005/02/rm/policy';
+property wsrmPrefix:String='wsrm';
+property spNamespace:String='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy';
+property spPrefix:String='sp';
+
+property mpoNamespace:String='http://modelDriven.org/schema/modelPro/override';
+property mpoPrefix:String='mpo';
+////////////////////abstract methods
+abstract helper UML::Collaboration::ServiceDefinitionWsdlAnnotation(element:WSDL::Definition);
+abstract helper UML::Class::BindingDefinitionWsdlAnnotation(element:WSDL::Definition,port:UML::Port);
+abstract helper UML::Classifier::DefinitionWsdlAnnotation(element:WSDL::WSDLElement);
+
+abstract helper UML::Class::JavaService();
+///////////////////////////////queries and helpers
+query WSDL::Input::parts():String="request";
+query WSDL::Output::parts():String="response";
+query WSDL::WSDLElement::getContainer():WSDL::WSDLElement=self.oclAsType(ECORE::EObject).eContainer().oclAsType(WSDL::WSDLElement);
+
+query WSDL::Operation::findUmlOperation():UML::BehavioralFeature{
+	//return self.allBehavioralFeatures()->select(f|(f.map Operation())=wsdlOperation)->first();
+//	return wsdlOperation.invresolveoneIn(BindingOperation);
+//	return wsdlOperation.invresolveoneIn(UML::BehavioralFeature::Operation);
+	return self.invresolveone(UML::BehavioralFeature);
+//	return self.invresolveone(UML::Operation);
+}
+
+helper WSDL::WSDLElement::setMpoModifiable(){
+	//  provide some indicator as to whether or not this segment is modifiable
+	self.setElementAttribute(mpoNamespace,'mpo:modifiable','');
+}
+////////////////////////////extensions
+constructor SOAP::SOAPAddress::SOAPAddress(locationURIin:String){
+	locationURI:=locationURIin;
+}
+
+constructor SOAP::SOAPFault::SOAPFault(nameIn:String,useIn:String){
+	name:=nameIn;
+	use:=useIn;
+}
+
+constructor SOAP::SOAPBinding::SOAPBinding(transportURIin:String,stylein:String){
+	transportURI:=transportURIin;
+	style:=stylein;
+}
+constructor SOAP::SOAPBody::SOAPBody(useIn:String,partsIn:String,inout eBinding:WSDL::ExtensibleElement){
+	use:=useIn;
+	eBinding.eExtensibilityElements+=result;
+	// defer this until containment setup?
+	result.setElementAttribute('parts',partsIn);
+
+}
+constructor SOAP::SOAPOperation::SOAPOperation(soapActionIn:String,stylein:String){
+	soapActionURI:=soapActionIn;
+	style:=stylein;
+}
+
+constructor WSDL::UnknownExtensibilityElement::UnknownExtensibilityElement(namespace:String,name:String){
+	result.setElementType(namespace,name);
+}
+constructor WSDL::Namespace::Namespace(uriIn:String,prefixIn:String){
+	URI:=uriIn;
+	prefix:=prefixIn;
+}
+	
+helper wsawsUsingAddressing():WSDL::UnknownExtensibilityElement{
+	var wsawsUsingAddressing:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wsawsNamespace,'UsingAddressing');
+	return wsawsUsingAddressing;
+}
+helper wsrmRMAssertion():WSDL::UnknownExtensibilityElement{
+	var wsrmRMAssertion:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wsrmNamespace,'RMAssertion');
+	return wsrmRMAssertion;
+}
+
+helper wspPolicyReference(uri:String):WSDL::UnknownExtensibilityElement{
+	var wspPolicyReference:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'PolicyReference');
+	wspPolicyReference.setElementAttribute('URI',uri);
+	return wspPolicyReference;
+}
+helper wspPolicyReliableMessaging(inout element:WSDL::ExtensibleElement){
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	element.eExtensibilityElements+=wspPolicy;
+	wspPolicy.setElementAttribute(wsuNamespace,'wsu:Id','ReliableMessaging');
+	var wspExactlyOne:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'ExactlyOne');
+	wspPolicy.children+=wspExactlyOne;
+	var wspEAll:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'All');
+	wspExactlyOne.children+=wspEAll;
+	wspEAll.children+=wsawsUsingAddressing();
+	wspEAll.children+=wsrmRMAssertion();
+	return;
+}
+helper wspPolicyAuthentication(inout element:WSDL::ExtensibleElement){
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	element.eExtensibilityElements+=wspPolicy;
+	wspPolicy.setElementAttribute(wsuNamespace,'wsu:Id','PasswordAuthenticationOverSSL');
+	var wspExactlyOne:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'ExactlyOne');
+	wspPolicy.children+=wspExactlyOne;
+	var wspEAll:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'All');
+	wspExactlyOne.children+=wspEAll;
+	spSymmetricBinding(wspEAll);
+	spWss11(wspEAll);
+	spTrust10(wspEAll);
+	return;
+}
+helper spWss11(inout element:WSDL::UnknownExtensibilityElement){
+	var spWss11:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'Wss11');
+	element.children+=spWss11;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spWss11.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'MustSupportRefKeyIdentifier');
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'MustSupportRefIssuerSerial');
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'MustSupportRefThumbprint');
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'MustSupportRefEncryptedKey');
+	return;
+}
+helper spTrust10(inout element:WSDL::UnknownExtensibilityElement){
+	var spTrust10:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'Trust10');
+	element.children+=spTrust10;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spTrust10.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'RequireClientEntropy');
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'RequireServerEntropy');
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'MustSupportIssuedTokens');
+	return;
+}
+helper spLayout(inout element:WSDL::UnknownExtensibilityElement,layoutPolicy:String){
+	var spLayout:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'Layout');
+	element.children+=spLayout;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spLayout.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,layoutPolicy);
+	return;
+}
+helper spAlgorithmSuite(inout element:WSDL::UnknownExtensibilityElement){
+	var spAlgorithmSuite:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'AlgorithmSuite');
+	element.children+=spAlgorithmSuite;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spAlgorithmSuite.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'Basic128');
+	return;
+}
+helper spSymmetricBinding(inout element:WSDL::UnknownExtensibilityElement){
+	var spSymmetricBinding:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'SymmetricBinding');
+	element.children+=spSymmetricBinding;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spSymmetricBinding.children+=wspPolicy;
+	spProtectionToken(wspPolicy);
+	spLayout(wspPolicy,'Strict');
+	spAlgorithmSuite(wspPolicy);
+	return;
+}
+helper spProtectionToken(inout element:WSDL::UnknownExtensibilityElement){
+	var spProtectionToken:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'ProtectionToken');
+	element.children+=spProtectionToken;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spProtectionToken.children+=wspPolicy;
+	spSecureConversationToken(wspPolicy);
+	return;
+}
+helper spSecureConversationToken(inout element:WSDL::UnknownExtensibilityElement){
+	var spSecureConversationToken:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'SecureConversationToken');
+	element.children+=spSecureConversationToken;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spSecureConversationToken.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'RequireDerivedKeys');
+	spBootstrapPolicy(wspPolicy);
+	return;
+}
+helper spBootstrapPolicy(inout element:WSDL::UnknownExtensibilityElement){
+	var spBootstrapPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'BootstrapPolicy');
+	element.children+=spBootstrapPolicy;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spBootstrapPolicy.children+=wspPolicy;
+	spTransportBinding(wspPolicy);
+	spSignedSupportingTokens(wspPolicy);
+	spWss10(wspPolicy);
+	var encryptedParts:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'EncryptedParts');
+	wspPolicy.children+=encryptedParts;
+	encryptedParts.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'Body');
+	var signedParts:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'SignedParts');
+	wspPolicy.children+=signedParts;
+	signedParts.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'Body');
+	spHeader(signedParts,'To','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'From','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'FaultTo','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'ReplyTo','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'MessageID','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'RelatesTo','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'Action','http://www.w3.org/2005/08/addressing');
+	spHeader(signedParts,'AckRequested','http://schemas.xmlsoap.org/ws/2005/02/rm');
+	spHeader(signedParts,'SequenceAcknowledgement','http://schemas.xmlsoap.org/ws/2005/02/rm');
+	spHeader(signedParts,'Sequence','http://schemas.xmlsoap.org/ws/2005/02/rm');
+	return;
+}
+helper spHeader(inout element:WSDL::UnknownExtensibilityElement,name:String,namespace:String){
+	var spHeader:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'Header');
+	element.children+=spHeader;
+	spHeader.setElementAttribute('Name',name);
+	spHeader.setElementAttribute('Namespace',namespace);
+	return;
+}
+helper spWss10(inout element:WSDL::UnknownExtensibilityElement){
+	var spWss10:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'Wss10');
+	element.children+=spWss10;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spWss10.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'MustSupportRefKeyIdentifier');
+	return;
+}
+helper spSignedSupportingTokens(inout element:WSDL::UnknownExtensibilityElement){
+	var spSignedSupportingTokens:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'SignedSupportingTokens');
+	element.children+=spSignedSupportingTokens;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spSignedSupportingTokens.children+=wspPolicy;
+	spUsernameToken(wspPolicy);
+	return;
+}
+helper spUsernameToken(inout element:WSDL::UnknownExtensibilityElement){
+	var spUsernameToken:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'SignedSupportingTokens');
+	element.children+=spUsernameToken;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spUsernameToken.children+=wspPolicy;
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'WssUsernameToken10');
+	return;
+}
+helper spTransportBinding(inout element:WSDL::UnknownExtensibilityElement){
+	var spTransportBinding:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'TransportBinding');
+	element.children+=spTransportBinding;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spTransportBinding.children+=wspPolicy;
+	spTransportToken(wspPolicy);
+	spLayout(wspPolicy,'Lax');
+	wspPolicy.children+=new WSDL::UnknownExtensibilityElement(spNamespace,'IncludeTimestamp');
+	spAlgorithmSuite(wspPolicy);
+	return;
+}
+helper spTransportToken(inout element:WSDL::UnknownExtensibilityElement){
+	var spTransportToken:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'TransportToken');
+	element.children+=spTransportToken;
+	var wspPolicy:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(wspNamespace,'Policy');
+	spTransportToken.children+=wspPolicy;
+	spHttpsToken(wspPolicy);
+	return;
+}
+helper spHttpsToken(inout element:WSDL::UnknownExtensibilityElement){
+	var spHttpsToken:WSDL::UnknownExtensibilityElement=new WSDL::UnknownExtensibilityElement(spNamespace,'HttpsToken');
+	element.children+=spHttpsToken;
+	spHttpsToken.setElementAttribute('spHttpsToken','false');
+	return;
+}
+	        
+//////////////////////////////////////////////////////////////////////////////////////////wsdl leaf mapping
+// possible mapping:
+//		<<Participant>> is Definition
+//		port.type (ServiceInterface) is Service
+//		<<ServiceInterface>> is service  
+//		realized interface is service port
+//			service port-->1 binding
+//			binding-->1 portType
+//		Interface is portType 
+
+
+//      architecture-->* participant-->*port-->1 serviceInterface -->(1?)interface
+//		definition  -->* service    -->*port -->1 binding         -->1 portType
+//	
+mapping 	UML::Collaboration::ServiceDefinition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getTargetNamespace()+'Service';
+//	location:=self.getWsdlPartLocation('Service');
+	location:=self.getWsdlPartLocation('');
+	//eNamespaces+=new WSDL::Namespace(self.getBindingNamespace(),'serviceBinding');
+	self.setCommonDefinitionFeatures(result);
+//	eServices+=self.map Service(result);
+//	eServices+=self.ownedPort.map Service(result);
+	eServices+=self.service().map Service(result);
+	// import the bindings
+//	eImports+=self.getRealizedInterfaces().map ServiceImport(self,result);
+//	eImports+=self.map ServiceImport(self,result);
+	self.service().port()
+	->select(port|not(port.binding().portType(port).oclIsUndefined()))
+	->forEach(port){
+		eImports+=port.binding().map ServiceImport(self,port);
+	};
+	self.ServiceDefinitionWsdlAnnotation(result);
+	
+	
+}	
+query UML::Collaboration::service():Set(UML::Component)=self.collaborationRole.type->select(r|r.oclIsKindOf(UML::Component)).oclAsType(UML::Component)->asSet();
+query UML::Component::port():Set(UML::Port)=self.ownedPort;
+//query UML::Component::binding():Set(UML::Class)=self.port().type->select(t|t.oclIsKindOf(UML::Class)).oclAsType(UML::Class)->asSet();
+query UML::Port::binding():UML::Class=self.type->select(t|t.oclIsKindOf(UML::Class)).oclAsType(UML::Class)->asSequence()->first();
+query UML::Class::portType(port:UML::Port):UML::Interface=
+	if(port.isConjugated)
+		then self.getAllUsedInterfaces()->asSequence()->first() 
+		else self.getRealizedInterfaces()->asSequence()->first()
+		endif;
+//query UML::Collaboration::getBindingNamespace():String=self.getTargetNamespace()+'Binding';		
+helper UML::Classifier::setCommonDefinitionFeatures(inout definition:WSDL::Definition):Void{
+	definition.setQName(self.getName());
+	definition.eNamespaces+=new WSDL::Namespace(wsawsNamespace,wsawsPrefix);
+	definition.eNamespaces+=new WSDL::Namespace(soapNamespace,soapPrefix);
+	definition.eNamespaces+=new WSDL::Namespace(wspNamespace,wspPrefix);
+	definition.eNamespaces+=new WSDL::Namespace(wsuNamespace,wsuPrefix);
+	definition.eNamespaces+=new WSDL::Namespace(mpoNamespace,mpoPrefix);
+	definition.eNamespaces+=new WSDL::Namespace(wsrmNamespace,wsrmPrefix);
+	definition.eNamespaces+=new WSDL::Namespace(spNamespace,spPrefix);
+
+	definition.updateDocument();
+	
+}		
+mapping 	UML::Class::BindingDefinition(port:UML::Port):WSDL::Definition@wsdl 
+{
+//	targetNamespace:=self.getBindingNamespace();
+	targetNamespace:=self.getTargetNamespace();
+//	location:=self.getWsdlPartLocation('Binding');
+	location:=self.getWsdlPartLocation('');
+	self.setCommonDefinitionFeatures(result);
+//	eBindings+=self.map Binding(service,port);
+	eBindings+=self.map Binding(port);		
+	
+	// import the portTypes
+	eImports+=self.map BindingImport(self,port);
+	self.BindingDefinitionWsdlAnnotation(result,port);
+}
+/*	
+mapping 	UML::Collaboration::BindingDefinition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getBindingNamespace();
+	result.setQName(self.getName());
+	location:=self.getWsdlPartLocation('Binding');
+	eNamespaces+=new WSDL::Namespace(wsawsNamespace,wsawsPrefix);
+	eNamespaces+=new WSDL::Namespace(soapNamespace,soapPrefix);
+	eNamespaces+=new WSDL::Namespace(wspNamespace,wspPrefix);
+	eNamespaces+=new WSDL::Namespace(wsuNamespace,wsuPrefix);
+	eNamespaces+=new WSDL::Namespace(mpoNamespace,mpoPrefix);
+	eNamespaces+=new WSDL::Namespace(wsrmNamespace,wsrmPrefix);
+	eNamespaces+=new WSDL::Namespace(spNamespace,spPrefix);
+	result.updateDocument();
+//	eBindings+=self.getRealizedInterfaces().map Binding(self);
+//	eBindings+=self.ownedPort.type.map Binding(self);
+	self.service()->forEach(service){
+		
+	 	service.port()->forEach(port){
+			eBindings+=port.binding().map Binding(service,port);
+		};
+	};
+	//eBindings+=self.service().binding().map Binding(self);
+
+	// import the portTypes
+//	eImports+=self.getRealizedInterfaces().map BindingImport(self,result);
+	eImports+=self.map BindingImport(self,result);
+	self.BindingDefinitionWsdlAnnotation(result);
+}
+*/	
+mapping 	UML::Interface::Definition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getTargetNamespace();
+	location:=self.getWsdlLocation();
+	self.allInterfaceSchemaPackages().toPsmPackage()->forEach(schema){
+		var targetNamespace:String=schema.targetNamespace;
+		var prefix:String=schema.getSchemaPrefix();
+		eNamespaces+=new WSDL::Namespace(targetNamespace,prefix);
+	};
+	self.setCommonDefinitionFeatures(result);
+	ePortTypes+=self.map PortType();
+	eMessages+=ePortTypes.eOperations->select(o|not(o.eInput.oclIsUndefined())).eInput.eMessage
+		->union(ePortTypes.eOperations->select(o|not(o.eOutput.oclIsUndefined())).eOutput.eMessage)
+		->union(ePortTypes.eOperations.eFaults.eMessage)->asSet();
+	// import the schemas
+	eImports+=self.allInterfaceSchemaPackages().map Import(self,result);
+	self.DefinitionWsdlAnnotation(result);
+	
+}	
+/*
+mapping 	UML::Collaboration::Definition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getTargetNamespace();
+	result.setQName(self.getName());
+	location:=self.getWsdlLocation();
+	self.service().port()->forEach(port){
+		port.binding().allSchemaPackages().toPsmPackage()->forEach(schema){
+			var targetNamespace:String=schema.targetNamespace;
+			var prefix:String=schema.getSchemaPrefix();
+			eNamespaces+=new WSDL::Namespace(targetNamespace,prefix);
+		};
+	};
+	result.updateDocument();
+//	ePortTypes+=self.getRealizedInterfaces().map PortType();
+//	ePortTypes+=self.ownedPort.type.getRealizedInterfaces().map PortType();
+	self.service().port()->forEach(port){
+		ePortTypes+=port.binding().portType(port).map PortType();
+	};
+	//ePortTypes+=self.service().binding().portType().map PortType();
+	eMessages+=ePortTypes.eOperations->select(o|not(o.eInput.oclIsUndefined())).eInput.eMessage
+		->union(ePortTypes.eOperations->select(o|not(o.eOutput.oclIsUndefined())).eOutput.eMessage)
+		->union(ePortTypes.eOperations.eFaults.eMessage)->asSet();
+	// import the schemas
+	self.service().port()->forEach(port){
+		eImports+=port.binding().allSchemaPackages().map Import(self,result);
+	};
+//	eImports+=self.service().binding().allSchemaPackages().map Import(self,result);
+	self.DefinitionWsdlAnnotation(result);
+	
+}	
+*/
+//mapping UML::Classifier::Service(in definition:WSDL::Definition):WSDL::Service@wsdl
+mapping UML::Component::Service(in definition:WSDL::Definition):WSDL::Service@wsdl
+	when{self.port()->exists(port|not(port.binding().portType(port).oclIsUndefined()))}
+{
+	
+	result.setQName(self.getName()+'Service');
+//	ePorts+=self.getRealizedInterfaces().map Port(definition,result,self);
+	ePorts+=self.port().map Port(definition,result,self);
+	
+}
+	
+/*
+mapping 	UML::Classifier::ServiceDefinition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getTargetNamespace()+'Service';
+	result.setQName(self.getName());
+	location:=self.getWsdlPartLocation('Service');
+	result.updateDocument();
+	eServices+=self.map Service(result);
+	// import the bindings
+//	eImports+=self.getRealizedInterfaces().map ServiceImport(self,result);
+	eImports+=self.map ServiceImport(self,result);
+	self.ServiceDefinitionWsdlAnnotation(result);
+	
+}	
+mapping 	UML::Classifier::BindingDefinition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getTargetNamespace()+'Binding';
+	result.setQName(self.getName());
+	location:=self.getWsdlPartLocation('Binding');
+	eNamespaces+=new WSDL::Namespace(wsawsNamespace,wsawsPrefix);
+	eNamespaces+=new WSDL::Namespace(soapNamespace,soapPrefix);
+	eNamespaces+=new WSDL::Namespace(wspNamespace,wspPrefix);
+	eNamespaces+=new WSDL::Namespace(wsuNamespace,wsuPrefix);
+	eNamespaces+=new WSDL::Namespace(mpoNamespace,mpoPrefix);
+	eNamespaces+=new WSDL::Namespace(wsrmNamespace,wsrmPrefix);
+	eNamespaces+=new WSDL::Namespace(spNamespace,spPrefix);
+	result.updateDocument();
+	eBindings+=self.getRealizedInterfaces().map Binding(self);
+
+	// import the portTypes
+//	eImports+=self.getRealizedInterfaces().map BindingImport(self,result);
+	eImports+=self.map BindingImport(self,result);
+	self.BindingDefinitionWsdlAnnotation(result);
+}	
+mapping 	UML::Classifier::Definition():WSDL::Definition@wsdl 
+{
+	
+	targetNamespace:=self.getTargetNamespace();
+	result.setQName(self.getName());
+	location:=self.getWsdlLocation();
+	result.updateDocument();
+	self.allSchemaPackages().toPsmPackage()->forEach(schema){
+		var targetNamespace:String=schema.targetNamespace;
+		var prefix:String=schema.getSchemaPrefix();
+		eNamespaces+=new WSDL::Namespace(targetNamespace,prefix);
+	};
+	ePortTypes+=self.getRealizedInterfaces().map PortType();
+	eMessages+=ePortTypes.eOperations->select(o|not(o.eInput.oclIsUndefined())).eInput.eMessage
+		->union(ePortTypes.eOperations->select(o|not(o.eOutput.oclIsUndefined())).eOutput.eMessage)
+		->union(ePortTypes.eOperations.eFaults.eMessage)->asSet();
+	// import the schemas
+	eImports+=self.allSchemaPackages().map Import(self,result);
+	self.DefinitionWsdlAnnotation(result);
+	
+}	
+
+mapping UML::Classifier::Service(in definition:WSDL::Definition):WSDL::Service@wsdl
+{
+	
+	result.setQName(self.getName()+'Service');
+	ePorts+=self.getRealizedInterfaces().map Port(definition,result,self);
+	
+}
+*/
+//mapping UML::Interface::Port(in definition:WSDL::Definition,in service:WSDL::Service,serviceInterface:UML::Classifier):WSDL::Port@wsdl
+mapping UML::Port::Port(in definition:WSDL::Definition,in service:WSDL::Service,participant:UML::Component):WSDL::Port@wsdl
+	when{not(self.binding().portType(self).oclIsUndefined())}
+{
+	
+	name:=self.getName()+'Port';
+//	eBinding:=self.map Binding(serviceInterface);
+//	eBinding:=self.binding().map Binding(participant,self);
+	eBinding:=self.binding().map Binding(self);
+	// must define address
+//	eExtensibilityElements+=new SOAPAddress(self.locationURI());
+	eExtensibilityElements+=new SOAPAddress(self.binding().locationURI());
+	
+}
+//mapping UML::Interface::Binding(serviceInterface:UML::Classifier):WSDL::Binding@wsdl
+//mapping UML::Class::Binding(participant:UML::Component,port:UML::Port):WSDL::Binding@wsdl
+mapping UML::Class::Binding(port:UML::Port):WSDL::Binding@wsdl
+	when{not(self.portType(port).oclIsUndefined())}
+{
+	
+//	ePortType:=self.map PortType();
+	ePortType:=self.portType(port).map PortType();
+//	ePortType:=self.portType().map PortType();
+	result.setQName(self.getName()+port.getName()+'Binding');
+	eBindingOperations+=ePortType.eOperations.map BindingOperation(self);
+	// must define binding
+	eExtensibilityElements+=new SOAPBinding(self.transportURI(),self.style());
+	//     	<wsaws:UsingAddressing/>
+	eExtensibilityElements+=wsawsUsingAddressing();
+	/*
+	if(serviceInterface.stereotypedBy(policyProfileAuthentication))then{
+		eExtensibilityElements+=wspPolicyReference('#PasswordAuthenticationOverSSL');
+	}else{}endif;
+	if(serviceInterface.stereotypedBy(policyProfileReliability))then{
+		eExtensibilityElements+=wspPolicyReference('#ReliableMessaging');
+	}else{}endif;
+	*/
+	
+}
+mapping UML::Interface::PortType():WSDL::PortType@wsdl
+{
+	
+	result.setQName(self.getName());
+	eOperations+=self.allBehavioralFeatures().map Operation(result,self);
+	
+}
+//mapping WSDL::Operation::BindingOperation(context:UML::Interface):WSDL::BindingOperation@wsdl
+mapping WSDL::Operation::BindingOperation(context:UML::Class):WSDL::BindingOperation@wsdl
+{
+	
+	name:=self.name;
+	eOperation:=self;
+	var umlOperation:UML::BehavioralFeature=self.findUmlOperation();
+//	var umlOperation:UML::BehavioralFeature=context.ownedOperation->select(o|o.name=self.name)->asSequence()->first();
+	
+	eExtensibilityElements+=new SOAPOperation(umlOperation.soapActionURI(),umlOperation.style());
+	//result.setElementAttribute(mpoNamespace,'mpo:modifieable','');
+	eBindingInput:=self.eInput.map BindingInput();
+	eBindingOutput:=self.eOutput.map BindingOutput();
+	eBindingFaults:=self.eFaults.map BindingFault();
+	
+}
+
+mapping WSDL::Input::BindingInput():WSDL::BindingInput@wsdl
+{
+	name:=self.name;
+	eInput:=self;
+//	var umlOperation:UML::BehavioralFeature=self.getContainer().oclAsType(WSDL::Operation).findUmlOperation();
+//	eExtensibilityElements+=new SOAPBody(umlOperation.use(),self.parts());
+//	result.setElementAttribute(wsawsNamespace,'wsaws:Action',umlOperation.soapActionURI());
+}
+mapping WSDL::Output::BindingOutput():WSDL::BindingOutput@wsdl
+{
+	name:=self.name;
+	eOutput:=self;
+//	var umlOperation:UML::BehavioralFeature=self.getContainer().oclAsType(WSDL::Operation).findUmlOperation();
+//	eExtensibilityElements+=new SOAPBody(umlOperation.use(),self.parts());
+//	result.setElementAttribute(wsawsNamespace,'wsaws:Action',umlOperation.soapActionURI()+'Response');
+}
+mapping WSDL::Fault::BindingFault():WSDL::BindingFault@wsdl
+{
+	name:=self.name;
+	eFault:=self;
+//	var umlOperation:UML::BehavioralFeature=self.getContainer().oclAsType(WSDL::Operation).findUmlOperation();
+//	eExtensibilityElements+=new SOAPFault(self.name,umlOperation.use());
+}
+	
+mapping UML::BehavioralFeature::Operation(portType:WSDL::PortType,owningInterface:UML::Interface):WSDL::Operation@wsdl
+{
+	
+	name:=self.getName();
+	eInput:=self.getInputParameter().map Input(portType,owningInterface);
+	eOutput:=self.getOutputParameter().map Output(portType);
+	eFaults:=self.raisedException.map Fault(portType);
+	
+}
+mapping UML::Type::Fault(portType:WSDL::PortType):WSDL::Fault@wsdl
+{
+	name:=self.getName();
+	eMessage:=self.oclAsType(UML::Classifier).map Message(portType);
+}
+mapping UML::NamedElement::Input(portType:WSDL::PortType,owningInterface:UML::Interface):WSDL::Input@wsdl
+{
+	// name must be unique amongst all input/output names in portType 
+	name:=self.getName()+self.uniqueInputNameSuffix(owningInterface);
+	eMessage:=self.getUmlType().map Message(portType);
+}
+mapping UML::NamedElement::Output(portType:WSDL::PortType):WSDL::Output@wsdl
+{
+	name:=self.getName();
+	eMessage:=self.getUmlType().map Message(portType);
+}
+mapping UML::Classifier::Message(in portType:WSDL::PortType):WSDL::Message@wsdl
+{
+	result.setQName(self.getName());
+	eParts+=self.map Part(portType);
+}
+mapping UML::Classifier::Part(in portType:WSDL::PortType):WSDL::Part@wsdl
+{
+		
+	
+	name:=self.getName();
+//	typeDefinition:=self.map AbstractTypeDefinition();
+	// we should actually do an element here
+	//typeDefinition:=self.toPsmClassifier();
+	var xsdElementDeclaration:XSD::XSDElementDeclaration=self.attribute.usesTopLevelProperty().toPsmTopLevelElement()->asSequence()->first();
+	elementDeclaration:=xsdElementDeclaration;
+	result.setElementName(xsdElementDeclaration);
+	
+}
+mapping UML::Package::Import(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+{
+	
+	//eSchema:=self.map Schema();
+	var xsdSchema:XSD::XSDSchema=self.toPsmPackage();
+	eSchema:=xsdSchema;
+	namespaceURI:=xsdSchema.targetNamespace;
+	locationURI:=self.getRelativeSchemaLocation(referencingPackage);
+}
+//mapping UML::Interface::ServiceImport(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+//mapping UML::Classifier::ServiceImport(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+//mapping UML::Collaboration::ServiceImport(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+mapping UML::Class::ServiceImport(referencingPackage:UML::Namespace,port:UML::Port):WSDL::Import@wsdl
+{
+	log('ServiceImport '+self.qualifiedName);
+	eDefinition:=self.map BindingDefinition(port);
+	namespaceURI:=eDefinition.targetNamespace;
+//	locationURI:=self.getRelativeLocation(referencingPackage,'Binding.wsdl');
+	locationURI:=self.getRelativeLocation(referencingPackage,'.wsdl');
+	self.JavaService();
+}
+//mapping UML::Interface::BindingImport(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+//mapping UML::Classifier::BindingImport(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+//mapping UML::Collaboration::BindingImport(referencingPackage:UML::Namespace,definition:WSDL::Definition):WSDL::Import@wsdl
+mapping UML::Class::BindingImport(referencingPackage:UML::Namespace,port:UML::Port):WSDL::Import@wsdl
+{
+//	eDefinition:=self.map Definition();
+	eDefinition:=self.portType(port).map Definition();
+	namespaceURI:=eDefinition.targetNamespace;
+//	locationURI:=self.getRelativeLocation(referencingPackage,'.wsdl');
+	locationURI:=self.portType(port).getRelativeLocation(referencingPackage,'.wsdl');
+}

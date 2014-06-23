@@ -1,0 +1,1598 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+ <tocitem text="NIEM-UML" target="niem_uml">
+	  <tocitem text="NIEM-UML Modeling Guide" target="niem_uml_modeling_guide"/>
+	  <tocitem text="NIEM-UML Profile and Libraries" target="niem_uml_profile"/>
+	  <tocitem text="Projects" target="niem_uml_projects">
+		  <tocitem text="Creating an IEPD Project" target="niem_uml_projects_creatinganiepd">
+		  </tocitem>
+		  <tocitem text="Searching" target="niem_uml_projects_searching">
+		  </tocitem>
+		  <tocitem text="Managing an EIEM" target="niem_uml_projects_managinganeiem">
+		  </tocitem>
+	  </tocitem>
+	  <tocitem text="Modeling" target="niem_uml_modeling">
+	  
+		  <tocitem text="Subsetting" target="niem_uml_modeling_subsetting">
+		  </tocitem>
+		  <tocitem text="XML Instance Documents" target="niem_uml_modeling_xmlsampleinstancedocument">
+		  </tocitem>
+		  <tocitem text="Specification Tables" target="niem_uml_modeling_specificationtables">
+		  </tocitem>
+		  <tocitem text="Working with model elements" target="niem_uml_modeling_workingwithmodelelements">
+			  <tocitem text="Selecting an element" target="niem_uml_modeling_selectinganelement">
+				  <tocitem text="Property Selection constrained by Restriction or Reference" target="niem_uml_profile_common_propertySelectionRestriction">
+				  </tocitem>
+				  <tocitem text="Property Creation constrained to XML Primitive Type" target="niem_uml_profile_common_propertyPrimitiveType">
+				  </tocitem>
+				  <tocitem text="Property Selection for substitutionGroup" target="niem_uml_profile_common_propertySubstitutionGroup">
+				  </tocitem>
+				  <tocitem text="Property Selection for subset <<InformationModel>> Classes" target="niem_uml_profile_common_propertySubset">
+				  </tocitem>
+				  <tocitem text="Classifier Selection for subset <<InformationModel>>s" target="niem_uml_profile_common_classifierSubset">
+				  </tocitem>
+				  <tocitem text="<<InformationModel>> Selection for subsetting reference <<InformationModel>>s" target="niem_uml_profile_common_packageSubset">
+				  </tocitem>
+				  <tocitem text="<<InformationModel>> Selection for constraint subsetting <<InformationModel>>s" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_constraintsubset">
+				  </tocitem>
+				  <tocitem text="Element Selection for defining subset <<InformationModel>>s" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_definesubset">
+				  </tocitem>
+				  <tocitem text="Property Selection for subset Group Decomposition" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_substitutiongroupdecomposition">
+				  </tocitem>
+				  <tocitem text="Property Selection for subset Wildcard Decomposition" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_wildcarddecomposition">
+				  </tocitem>
+				  
+				  <tocitem text="Property Selection for <<Restriction>> Group Decomposition" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_restrictionsubstitutiongroupdecomposition">
+				  </tocitem>
+				  <tocitem text="Property Selection for <<Restriction>> Wildcard Decomposition" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_restrictionwildcarddecomposition">
+				  </tocitem>
+				  
+				  <tocitem text="Instance Specification Selection for a NIEM Reference Element" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_instanceref">
+				  </tocitem>
+				  <tocitem text="Instance Specification Selection for a NIEM metadata Reference" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_metadataref">
+				  </tocitem>
+				  <tocitem text="Enumeration Literal Selection for a defining feature of type Enumeration" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_enumerationliteralref">
+				  </tocitem>
+				  <tocitem text="InstanceSpecification Selection for adding NIEM Reference Element Values" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_instancerefvalue">
+				  </tocitem>
+				  <tocitem text="Type Selection for adding NIEM Containment Element Values" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_instancecontainmentvalue">
+				  </tocitem>
+				  <tocitem text="Property Selection for adding Slots to an Instance Specification" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_slotproperty">
+				  </tocitem>
+				  <tocitem text="Exchange Element Selection for adding Instance Documents" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_exchangeelement">
+				  </tocitem>
+				  <tocitem text="Classifier Selection for creating Entity Diagrams" target="niem_uml_modeling_workingwithmodelelements_selectinganelement_entitydiagram">
+				  </tocitem>
+				  
+			  </tocitem>
+			  <tocitem text="Information Models" target="niem_uml_modeling_workingwithmodelelements_informationmodels">
+			  </tocitem>
+			  <tocitem text="Classifiers" target="niem_uml_modeling_workingwithmodelelements_classifiers">
+			  </tocitem>
+			  <tocitem text="Properties" target="niem_uml_modeling_workingwithmodelelements_properties">
+			  </tocitem>
+			  <tocitem text="Relationships" target="niem_uml_modeling_workingwithmodelelements_relationships">
+			  </tocitem>
+			  
+		  </tocitem>
+	  <!-- 
+	  <tocitem text="NIEM-UML Profile" target="niem_uml_profile">
+		  <tocitem text="PIM" target="niem_uml_profile_pim">
+			  <tocitem text="DefaultPurposeCode" target="niem_uml_profile_pim_defaultPurposeCode">
+			  </tocitem>
+			  <tocitem text="Augments" target="niem_uml_profile_pim_Augments">
+			  </tocitem>
+			  <tocitem text="InformationModel" target="niem_uml_profile_pim_InformationModel">
+			  </tocitem>
+			  <tocitem text="ReferenceName" target="niem_uml_profile_pim_ReferenceName">
+			  </tocitem>
+			  <tocitem text="RoleOf" target="niem_uml_profile_pim_RoleOf">
+			  </tocitem>
+			  <tocitem text="RolePlayedBy" target="niem_uml_profile_pim_RolePlayedBy">
+			  </tocitem>
+		  </tocitem>
+		  <tocitem text="Common" target="niem_uml_profile_common">
+			  <tocitem text="AdapterType" target="niem_uml_profile_common_AdapterType">
+			  </tocitem>
+			  <tocitem text="Application" target="niem_uml_profile_common_Application">
+			  </tocitem>
+			  <tocitem text="AssociationType" target="niem_uml_profile_common_AssociationType">
+			  </tocitem>
+			  <tocitem text="AugmentationApplication" target="niem_uml_profile_common_AugmentationApplication">
+			  </tocitem>
+			  <tocitem text="AugmentationType" target="niem_uml_profile_common_AugmentationType">
+			  </tocitem>
+			  <tocitem text="Choice" target="niem_uml_profile_common_Choice">
+			  </tocitem>
+			  <tocitem text="Documentation" target="niem_uml_profile_common_Documentation">
+			  </tocitem>
+			  <tocitem text="List" target="niem_uml_profile_common_List">
+			  </tocitem>
+			  <tocitem text="MetadataApplication" target="niem_uml_profile_common_MetadataApplication">
+			  </tocitem>
+			  <tocitem text="MetadataType" target="niem_uml_profile_common_MetadataType">
+			  </tocitem>
+			  <tocitem text="Namespace" target="niem_uml_profile_common_Namespace">
+			  </tocitem>
+			  <tocitem text="NIEMType" target="niem_uml_profile_common_NIEMType">
+			  </tocitem>
+			  <tocitem text="ObjectType" target="niem_uml_profile_common_ObjectType">
+			  </tocitem>
+			  <tocitem text="PropertyHolder" target="niem_uml_profile_common_PropertyHolder">
+			  </tocitem>
+			  <tocitem text="References" target="niem_uml_profile_common_References">
+			  </tocitem>
+			  <tocitem text="Restriction" target="niem_uml_profile_common_Restriction">
+			  </tocitem>
+			  <tocitem text="Union" target="niem_uml_profile_common_Union">
+			  </tocitem>
+			  <tocitem text="ValueRestriction" target="niem_uml_profile_common_ValueRestriction">
+			  </tocitem>
+		  </tocitem>
+		  <tocitem text="PSM" target="niem_uml_profile_psm">
+			  <tocitem text="XSDProcessContentsCode" target="niem_uml_profile_psm_XSDProcessContentsCode">
+			  </tocitem>
+			  <tocitem text="XSDPropertyKindCode" target="niem_uml_profile_psm_XSDPropertyKindCode">
+			  </tocitem>
+			  <tocitem text="XSDWhiteSpaceCode" target="niem_uml_profile_psm_XSDWhiteSpaceCode">
+			  </tocitem>
+			  <tocitem text="SequenceID" target="niem_uml_profile_psm_SequenceID">
+			  </tocitem>
+			  <tocitem text="XSDAnyProperty" target="niem_uml_profile_psm_XSDAnyProperty">
+			  </tocitem>
+			  <tocitem text="XSDDeclaration" target="niem_uml_profile_psm_XSDDeclaration">
+			  </tocitem>
+			  <tocitem text="XSDProperty" target="niem_uml_profile_psm_XSDProperty">
+			  </tocitem>
+			  <tocitem text="XSDRepresentationRestriction" target="niem_uml_profile_psm_XSDRepresentationRestriction">
+			  </tocitem>
+			  <tocitem text="XSDSimpleContent" target="niem_uml_profile_psm_XSDSimpleContent">
+			  </tocitem>
+		  </tocitem>
+		  <tocitem text="ModelPackageDescription" target="niem_uml_profile_mpd">
+			  <tocitem text="POCType" target="niem_uml_profile_mpd_POCType">
+			  </tocitem>
+			  <tocitem text="ModelPackageDescriptionClassCode" target="niem_uml_profile_mpd_ModelPackageDescriptionClassCode">
+			  </tocitem>
+			  <tocitem text="NatureCode" target="niem_uml_profile_mpd_NatureCode">
+			  </tocitem>
+			  <tocitem text="PurposeCode" target="niem_uml_profile_mpd_PurposeCode">
+			  </tocitem>
+			  <tocitem text="RelationshipCode" target="niem_uml_profile_mpd_RelationshipCode">
+			  </tocitem>
+			  <tocitem text="ModelPackageDescription" target="niem_uml_profile_mpd_ModelPackageDescription">
+			  </tocitem>
+			  <tocitem text="ModelPackageDescriptionFile" target="niem_uml_profile_mpd_ModelPackageDescriptionFile">
+			  </tocitem>
+			  <tocitem text="ModelPackageDescriptionFileSet" target="niem_uml_profile_mpd_ModelPackageDescriptionFileSet">
+			  </tocitem>
+			  <tocitem text="ModelPackageDescriptionRelationship" target="niem_uml_profile_mpd_ModelPackageDescriptionRelationship">
+			  </tocitem>
+		  </tocitem>
+			  -->
+	  </tocitem>
+	  <tocitem text="Analysis" target="niem_uml_analysis">
+	  
+		  <tocitem text="Change Log" target="niem_uml_analysis_changelog">
+		  </tocitem>
+		  <tocitem text="Active Validation" target="niem_uml_analysis_activevalidation">
+		  </tocitem>
+		  <tocitem text="Business Rules" target="niem_uml_analysis_businessrules">
+		  </tocitem>
+	  </tocitem>
+	  <tocitem text="Tools" target="niem_uml_tools">
+		  <tocitem text="Export" target="niem_uml_tools_export">
+		  </tocitem>
+		  <tocitem text="Import" target="niem_uml_tools_import">
+		  </tocitem>
+		  
+	  </tocitem>
+	  
+  </tocitem>
+  <!-- 		
+   <tocitem text="Options of MagicDraw UML Help" target="magicdraw_uml_help_options_of_magicdraw_uml_help_html" />
+   </tocitem>
+  <tocitem text="Getting Started" target="main_window" >
+   <tocitem text="How to get the needed license?" target="getting_started_how_to_get_the_needed_license__htm" />
+   <tocitem text="Unlocking MagicDraw" target="getting_started_unlocking_magicdraw_htm" />
+   <tocitem text="License Manager dialog" target="dialog.unlock_key" />
+   <tocitem text="Activating commercial license after the purchase" target="getting_started_activating_commercial_license_after_the_purchase_commercial_license_activation_process_htm" >
+    <tocitem text="Activation process" target="select_activation_features_dialog" />
+    <tocitem text="Commercial license types" target="getting_started_activating_commercial_license_after_the_purchase_commercial_license_types_htm" />
+    <tocitem text="Host ID" target="getting_started_activating_commercial_license_after_the_purchase_host_id_htm" />
+    <tocitem text="Identification" target="getting_started_activating_commercial_license_after_the_purchase_identification_htm" />
+    <tocitem text="Registration" target="getting_started_activating_commercial_license_after_the_purchase_registration_htm" />
+    <tocitem text="Deactivation" target="getting_started_activating_commercial_license_after_the_purchase_deactivation_htm" />
+    </tocitem>
+   <tocitem text="MagicDraw configuration files location" target="getting_started_magicdraw_configuration_files_location_htm" />
+   <tocitem text="MagicDraw Editions" target="getting_started_editions_html" >
+    <tocitem text="Personal Edition" target="getting_started_editions_html_personal_edition" />
+    <tocitem text="Standard Edition" target="getting_started_editions_html_standard_edition" />
+    <tocitem text="Professional Edition" target="getting_started_editions_html_professional_edition" />
+    <tocitem text="Architect Edition" target="getting_started_editions_html_magicdraw_architect_edition" />
+    <tocitem text="Enterprise Edition" target="getting_started_editions_html_enterprise_edition" />
+    <tocitem text="Reader Edition" target="getting_started_editions_html_reader_edition" />
+    </tocitem>
+   <tocitem text="Welcome Screen" target="getting_started_welcome_screen_htm" />
+   <tocitem text="News Reader" target="LIGHT_RSS_READER" />
+   <tocitem text="Hints Associated to User's Actions" target="getting_started_hints_htm" />
+   <tocitem text="Productivity Tips Displayed in Progress Window" target="getting_started_productivity_tip_htm" />
+   <tocitem text="Tutorials for UML diagrams" target="getting_started_tutorials_for_uml_diagrams_htm" />
+   <tocitem text="Feature Licensing" target="feature_licensing" />
+   <tocitem text="Migration to UML 2" target="migration_to_uml20" />
+   <tocitem text="Report an Issue" target="hlp.bug" />
+   <tocitem text="Submitting unhandled errors" target="unhandled_errors" />
+   <tocitem text="User Registration" target="getting_started_user_registration_htm" />
+   <tocitem text="Updating MagicDraw UML" target="getting_started_updating_magicdraw_uml_updating_magicdraw_html" >
+    <tocitem text="Automatic update" target="getting_started_updating_magicdraw_uml_automatic_update_auto_update_html" >
+     <tocitem text="Updating MagicDraw Client (Auto-update)" target="getting_started_updating_magicdraw_uml_automatic_update_updating_client_html" />
+     <tocitem text="To enable an automatic checking for MagicDraw updates" target="getting_started_updating_magicdraw_uml_automatic_update_to_enable_an_automatic_checking_for_magicdraw_updates_htm" />
+     </tocitem>
+    <tocitem text="Manually Updating to the New Version of the MagicDraw Client" target="getting_started_updating_magicdraw_uml_updating_version_html" />
+    <tocitem text="Manually Updating to MagicDraw Service Pack " target="getting_started_updating_magicdraw_uml_manually_update_html" />
+    <tocitem text="Auto-Check for Updates dialog box" target="auto_check_for_updates" />
+    <tocitem text="HTTP Proxy Server Connection dialog box" target="dialog.http_proxy" />
+    <tocitem text="New Updates dialog box" target="new_updates" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Tour around MagicDraw">
+   <tocitem text="Customize Work Environment" target="tour_around_magicdraw_customize_work_environment_customize_work_environment_html" >
+    <tocitem text="Perspectives selection" target="perspectives_selection" />
+    <tocitem text="Customizing Perspectives" target="tour_around_magicdraw_customize_work_environment_customizing_perspectives_html" />
+    <tocitem text="MagicDraw Startup dialog box" target="md_startup_dialog" />
+    <tocitem text="Select Perspective dialog box" target="perspectives_dialog" />
+    <tocitem text="Customize Perspectives dialog box" target="customize_perspectives_dialog" />
+    <tocitem text="Customizing Look &amp; Feel" target="tour_around_magicdraw_customize_work_environment_customize_lookandfeel_html" />
+    <tocitem text="Customizing the interface style" target="tour_around_magicdraw_customize_work_environment_customize_interface_html" />
+    <tocitem text="Custom Properties dialog box" target="opt.customprop" />
+    <tocitem text="Defining MagicDraw language" target="tour_around_magicdraw_customize_work_environment_defining_language_html" />
+    <tocitem text="Assigning shortcut keys" target="tour_around_magicdraw_customize_work_environment_environment_shortcuts_html" />
+    <tocitem text="Customizing Environment Options" target="opt.env" >
+     <tocitem text="Using Environment Options dialog" target="tour_around_magicdraw_customize_work_environment_customizing_environment_options_using_environment_options_dialog_htm" />
+     <tocitem text="Common elements in Environment Options dialog" target="tour_around_magicdraw_customize_work_environment_customizing_environment_options_common_elements_in_environment_options_dialog_htm" />
+     <tocitem text="Path Variables" target="use_path_variables" />
+     <tocitem text="Launcher Properties dialog box" target="launcher_properties" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Using Browser" target="brw.brw" >
+    <tocitem text="Browser windows">
+     <tocitem text="Containment tree" target="tour_around_magicdraw_using_browser_browser_windows_containment_tree_html" />
+     <tocitem text="Diagrams tree" target="tour_around_magicdraw_using_browser_browser_windows_diagrams_tree_html" />
+     <tocitem text="Inheritance tree" target="tour_around_magicdraw_using_browser_browser_windows_inheritance_tree_html" />
+     <tocitem text="Model Extension tree" target="tour_around_magicdraw_using_browser_browser_windows_model_extension_tree_html" />
+     <tocitem text="Search Results tree" target="tour_around_magicdraw_using_browser_browser_windows_search_results_tree_html" />
+     <tocitem text="Zoom Control panel" target="tour_around_magicdraw_using_browser_browser_windows_zoom_control_tab_html" />
+     <tocitem text="Documentation panel" target="tour_around_magicdraw_using_browser_browser_windows_documentation_tab_html" />
+     <tocitem text="Properties panel" target="tour_around_magicdraw_using_browser_browser_windows_properties_tab_html" />
+     </tocitem>
+    <tocitem text="Changing the position of the Browser window" target="tour_around_magicdraw_using_browser_browser_position_html" />
+    <tocitem text="Changing the size of the Browser and it's parts" target="tour_around_magicdraw_using_browser_browser_change_size_html" />
+    <tocitem text="Closing or reopening a Browser window" target="tour_around_magicdraw_using_browser_browser_closing_html" />
+    <tocitem text="Displaying modules in the Browser" target="question_show_modules" />
+    <tocitem text="Opening element in new tab" target="tour_around_magicdraw_using_browser_open_element_in_new_frame_html" />
+    <tocitem text="Dragging-and-dropping a selected item in the Browser window" target="tour_around_magicdraw_using_browser_model_elements_drag_html" />
+    <tocitem text="Opening an already created diagrams from the Browser window" target="tour_around_magicdraw_using_browser_browser_opening_diagram_html" />
+    <tocitem text="Creating a model element or a diagram in the Browser window" target="tour_around_magicdraw_using_browser_model_elements_create_html" />
+    <tocitem text="Cutting, copying elements in the Browser window" target="tour_around_magicdraw_using_browser_browser_copy_paste_html" />
+    <tocitem text="Deleting a model element from the Browser window" target="tour_around_magicdraw_using_browser_model_elements_delete_html" />
+    <tocitem text="Colors of text in the Browser window" target="tour_around_magicdraw_using_browser_browser_colors_html" />
+    <tocitem text="Selecting elements in the Browser window" target="tour_around_magicdraw_using_browser_browser_tracing_html" />
+    <tocitem text="Go To action in the Browser window" target="tour_around_magicdraw_using_browser_browser_go_to_html" />
+    <tocitem text="Renaming the selected diagram or element in the Browser window" target="tour_around_magicdraw_using_browser_browser_rename_element_html" />
+    <tocitem text="Showing full information in the Browser window" target="tour_around_magicdraw_using_browser_browser_full_html" />
+    <tocitem text="Alphabetically sort items in the Browser window" target="tour_around_magicdraw_using_browser_browser_sorting_html" />
+    <tocitem text="Filtering items">
+     <tocitem text="Filtering items in the Browser window" target="tour_around_magicdraw_using_browser_filtering_items_browser_filter_html" />
+     <tocitem text="Items Filter dialog box" target="brw.flt" />
+     </tocitem>
+    <tocitem text="Customize Properties dialog box" target="Customize_Properties" />
+    </tocitem>
+   <tocitem text="Saving as images">
+    <tocitem text="Saving diagram as image" target="file.image" />
+    <tocitem text="Setting image export options" target="image_export_options_dialog" />
+    <tocitem text="Copying as a BMP, EMF, JPG or PNG" target="tour_around_magicdraw_saving_as_images_diagram_pastetoword_html" />
+    </tocitem>
+   <tocitem text="Printing">
+    <tocitem text="Printing the active diagram" target="tour_around_magicdraw_printing_print_active_diagram_html" />
+    <tocitem text="Printing selected symbols" target="tour_around_magicdraw_printing_print_selected_symbols_html" />
+    <tocitem text="Printing selected diagrams" target="tour_around_magicdraw_printing_print_selected_diagrams_html" />
+    <tocitem text="Print dialog box" target="file.print" />
+    <tocitem text="Print Options dialog box" target="file.opt" >
+     <tocitem text="Print Options tab" target="tour_around_magicdraw_printing_print_options_html_print_options_tab" />
+     <tocitem text="Print Header Footer tab" target="tour_around_magicdraw_printing_print_options_html_print_header_footer_tab" />
+     </tocitem>
+    <tocitem text="Print Preview dialog box" target="file.preview" />
+    </tocitem>
+   <tocitem text="User References" target="tour_around_magicdraw_user_references_user_references_html" >
+    <tocitem text="Menus" target="tour_around_magicdraw_user_references_menus_menus_htm" >
+     <tocitem text="File menu" target="file.tree" />
+     <tocitem text="Edit menu" target="edit.tree" />
+     <tocitem text="View menu" target="view.tree" />
+     <tocitem text="Layout menu" target="lay.tree" />
+     <tocitem text="Diagrams menu" target="dgr.tree" />
+     <tocitem text="Options menu" target="opt.tree" />
+     <tocitem text="Tools menu" target="tools.tree" />
+     <tocitem text="Analyze menu" target="tour_around_magicdraw_user_references_menus_analyze_menu_html" />
+     <tocitem text="Collaborate menu" target="mu.tree" />
+     <tocitem text="Window menu" target="wind.tree" />
+     <tocitem text="Help menu" target="hlp.tree" />
+     </tocitem>
+    <tocitem text="Toolbars" target="edit_toolbar_action" >
+     <tocitem text="Main toolbar" target="tour_around_magicdraw_user_references_toolbars_main_toolbar_html" />
+     <tocitem text="Collaboration toolbar" target="team.tree" />
+     <tocitem text="HTML toolbar" target="toolbar.html_editor" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Multiple Monitors Support" target="tour_around_magicdraw_multiple_monitors_multiple_monitor_html" />
+   <tocitem text="Performance Improvements" target="performance_improvements_htm" >
+    <tocitem text="Memory Monitor" target="Memory_Monitor" />
+    <tocitem text="Using Memory Monitor" target="tour_around_magicdraw_performance_improvements_memory_monitor_using_memory_monitor_htm" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Floating license" target="floating_license_floating_server_description_html" >
+   <tocitem text="Installing and unlocking FLEXnet License Server" target="floating_license_installing_and_unlocking_flexnet_license_server_htm" />
+   <tocitem text="Starting MagicDraw and Connecting to the FLEXnet License Server" target="floating_license_starting_magicdraw_and_connecting_to_the_flexnet_license_server_htm" />
+   <tocitem text="Connecting offline to FLEXnet license server" target="floating_license_connecting_offline_to_floating_server_html" />
+   <tocitem text="FLEXnet License Server Connection dialog" target="fl_login" />
+   <tocitem text="Select Edition/Plugin dialog" target="select_edition_and_version" />
+   </tocitem>
+  <tocitem text="Working with Projects" target="new_project_dialog" >
+   <tocitem text="Creating a new workspace for a project" target="new_project_dialog" />
+   <tocitem text="Editing or reviewing (opening) an already created project" target="working_with_projects_opening_project_html" />
+   <tocitem text="Importing a project or a project module" target="working_with_projects_import_project_html" />
+   <tocitem text="Exporting Projects" target="working_with_projects_exporting_projects_exporting_projects_htm" >
+    <tocitem text="Exporting Projects as Templates" target="working_with_projects_exporting_projects_exporting_projects_as_templates_htm" />
+    <tocitem text="Exporting Project as Eclipse UML2 (v1.x / v2.x / v3.x) XMI File" target="working_with_projects_exporting_projects_exporting_project_as_eclipse_uml2_(v1_x___v2_x___v3_x)_xmi_file_htm" >
+     <tocitem text="To export a project as an Eclipse UML2 (v1.x / v2.x / v3.x) XMI file" target="working_with_projects_exporting_projects_to_export_a_project_as_an_eclipse_uml2_(v1_x___v2_x___v3_x)_xmi_file_htm" />
+     <tocitem text="To change export property values" target="working_with_projects_exporting_projects_to_change_export_property_values_htm" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Project options" target="working_with_projects_project_options_project_options_htm" >
+    <tocitem text="Setting Project Options" target="opt.prj" >
+     <tocitem text="To open the Project Options dialog" target="working_with_projects_setting_project_options_to_open_the_project_options_dialog_htm" />
+     <tocitem text="Using Project Options dialog" target="working_with_projects_setting_project_options_using_project_options_dialog_htm" />
+     <tocitem text="Common elements in Project Options dialog" target="working_with_projects_setting_project_options_common_elements_in_project_options_dialog_htm" />
+     </tocitem>
+    <tocitem text="Specifying documentation of code generation" target="working_with_projects_project_options_specifying_documentation_of_code_generation__html" />
+    <tocitem text="Set Classpath dialog box" target="opt.javapth" />
+    <tocitem text="Set Include Path dialog box" target="opt.cpppth" />
+    <tocitem text="Define Conditional Symbols dialog box" target="define_conditional_symbols" />
+    </tocitem>
+   <tocitem text="Creating a project from a template">
+    <tocitem text="Creating a new project from an existing template" target="working_with_projects_creating_a_project_from_a_template_creating_html" />
+    <tocitem text="New From Template dialog box" target="file.template" />
+    <tocitem text="Export Template dialog box" target="dialog.save_as_template" />
+    </tocitem>
+   <tocitem text="Creating a project from existing source">
+    <tocitem text="Creating a new project from an existing source" target="working_with_projects_creating_a_project_from_existing_source_creating_a_new_project_from_an_existing_source_htm" />
+    <tocitem text="New from existing source dialog box" target="working_with_projects_creating_a_project_from_existing_source_new_from_existing_source_dialog_box_html" />
+    </tocitem>
+   <tocitem text="Creating a Use Case project">
+    <tocitem text="Creating a new Use Case project" target="working_with_projects_creating_a_use_case_project_creating_a_new_use_case_project_html" />
+    <tocitem text="Use case project dialog box" target="working_with_projects_creating_a_use_case_project_use_case_project_dialog_box_htm" />
+    </tocitem>
+   <tocitem text="Cutting, copying elements amongst different projects" target="working_with_projects_model_elements_copy_html" />
+   <tocitem text="Saving a project" target="working_with_projects_saving_html" />
+   <tocitem text="Switching between loaded project files" target="working_with_projects_switching_btwprojects_html" />
+   <tocitem text="Undo the last action" target="working_with_projects_restoring_last_action_htm" />
+   <tocitem text="Changing limit of undo list" target="working_with_projects_undo_changingstep_html" />
+   <tocitem text="Closing a project" target="working_with_projects_closing_all_html" />
+   <tocitem text="Project Properties dialog" target="dialog.project_info" >
+    <tocitem text="General tab" target="working_with_projects_project_information_html_general_tab" />
+    <tocitem text="Description tab" target="working_with_projects_project_information_html_description_tab" />
+    <tocitem text="Modules tab" target="working_with_projects_project_information_html_modules_tab" />
+    </tocitem>
+   <tocitem text="MOF support" target="working_with_projects_mof_support_mof_support_htm" >
+    <tocitem text="Exporting projects to MOF files" target="working_with_projects_mof_support_exporting_projects_to_mof_files_htm" >
+     <tocitem text="To export a project to a MOF file" target="working_with_projects_mof_support_to_export_a_project_to_a_mof_file_htm" />
+     <tocitem text="To export selected packages to a MOF file" target="working_with_projects_mof_support_to_export_selected_packages_to_a_mof_file_htm" />
+     <tocitem text="Exported elements validation" target="working_with_projects_mof_support_exported_elements_validation_htm" />
+     </tocitem>
+    <tocitem text="To import a project from a MOF file" target="working_with_projects_mof_support_to_import_a_project_from_a_mof_file_htm" />
+    </tocitem>
+   <tocitem text="Ecore support" target="working_with_projects_ecore_support_ecore_support_htm" >
+    <tocitem text="Creating projects for Ecore modeling" target="working_with_projects_ecore_support_creating_projects_for_ecore_modeling_htm" >
+     <tocitem text="To create a new project from the Ecore template" target="working_with_projects_ecore_support_to_create_a_new_project_from_the_ecore_template_htm" />
+     <tocitem text="To apply the Ecore profile to a project" target="working_with_projects_ecore_support_to_apply_the_ecore_profile_to_a_project_htm" />
+     <tocitem text="To use the standard Ecore library in a project" target="working_with_projects_ecore_support_to_use_the_standard_ecore_library_in_a_project_htm" />
+     </tocitem>
+    <tocitem text="Ecore modeling" target="working_with_projects_ecore_support_ecore_modeling_htm" >
+     <tocitem text="Diagrams and elements in Ecore models" target="working_with_projects_ecore_support_diagrams_and_elements_in_ecore_models_htm" />
+     <tocitem text="Element properties in Ecore models" target="working_with_projects_ecore_support_element_properties_in_ecore_models_htm" />
+     <tocitem text="Annotation modeling" target="working_with_projects_ecore_support_annotation_modeling_htm" >
+      <tocitem text="To create an Ecore annotation" target="working_with_projects_ecore_support_to_create_an_ecore_annotation_htm" />
+      <tocitem text="To create a key-value pair" target="working_with_projects_ecore_support_to_create_a_key-value_pair_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Exporting projects to Ecore files" target="working_with_projects_ecore_support_exporting_projects_to_ecore_files_htm" >
+     <tocitem text="To export a project to an Ecore file" target="working_with_projects_ecore_support_to_export_a_project_to_an_ecore_file_htm" />
+     <tocitem text="To export selected packages to Ecore file" target="working_with_projects_ecore_support_to_export_selected_packages_to_ecore_file_htm" />
+     <tocitem text="Exporting project with modules" target="working_with_projects_ecore_support_exporting_project_with_modules_htm" />
+     <tocitem text="Exported data type mappings" target="working_with_projects_ecore_support_exported_data_type_mappings_htm" />
+     <tocitem text="Ecore elements validation" target="working_with_projects_ecore_support_ecore_elements_validation_htm" >
+      <tocitem text="To run the Ecore validation" target="working_with_projects_ecore_support_to_run_the_ecore_validation_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Importing projects from Ecore files" target="working_with_projects_ecore_support__importing_projects_from_ecore_files_htm" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Modeling" target="modelling_modelling_with_uml_2_modelling_with_uml_2_0_html" >
+   <tocitem text="Modeling with UML" target="modelling_modelling_with_uml_2_modelling_with_uml_2_0_html" >
+    <tocitem text="UML in Class diagram" target="modelling_modelling_with_uml_2_uml20_in_class_diagram_html" />
+    <tocitem text="UML in Use Case diagram" target="modelling_modelling_with_uml_2_uml20_in_use_case_diagram_html" />
+    <tocitem text="UML in Sequence diagram" target="modelling_modelling_with_uml_2_uml20_in_sequence_diagram_html" />
+    <tocitem text="UML in State diagram" target="modelling_modelling_with_uml_2_uml_2_0_in_state_diagram_html" />
+    <tocitem text="UML in Activity diagram" target="modelling_modelling_with_uml_2_uml_2_0_in_activity_diagram_html" />
+    <tocitem text="UML in Implementation diagram" target="modelling_modelling_with_uml_2_uml2_0_in_component_diagram_html" />
+    <tocitem text="UML in Composite Structure diagram" target="modelling_modelling_with_uml_2_uml20_in_composite_structure_diagram_html" />
+    </tocitem>
+   <tocitem text="Diagrams" target="modelling_diagrams_uml_diagrams_htm" >
+    <tocitem text="How to work with diagrams" target="modelling_diagrams_how_to_work_with_diagrams_diagram_basics_htm" >
+     <tocitem text="Diagram toolbars" target="modelling_diagrams_how_to_work_with_diagrams_diagram_toolbars_using_diagram_toolbar_html" >
+      <tocitem text="Common diagram toolbar" target="modelling_diagrams_how_to_work_with_diagrams_diagram_toolbars_common_diagram_toolbar_html" />
+      <tocitem text="Profiling Mechanism toolbar" target="modelling_diagrams_how_to_work_with_diagrams_diagram_toolbars_profiling_mechanism_toolbar_html" />
+      <tocitem text="Information Flows toolbar" target="modelling_diagrams_how_to_work_with_diagrams_diagram_toolbars_information_flows_toolbar_htm" />
+      </tocitem>
+     <tocitem text="Drawing Diagram Shapes" target="modelling_diagrams_how_to_work_with_diagrams_drawing_diagram_shapes_htm" />
+     <tocitem text="Overviewing other diagrams" target="DiagramShape_specification" >
+      <tocitem text="Creating a diagram overview shape" target="modelling_diagrams_how_to_work_with_diagrams_overviewing_other_diagrams_creating_a_diagram_overview_shape_htm" />
+      <tocitem text="Modifying the content of a diagram over view shape" target="modelling_diagrams_how_to_work_with_diagrams_overviewing_other_diagrams_modifying_the_content_of_a_diagram_overview_shape_htm" />
+      <tocitem text="Diagram overview shape environment" target="modelling_diagrams_how_to_work_with_diagrams_overviewing_other_diagrams_diagram_overview_shape_environment_htm" />
+      <tocitem text="How to..." target="modelling_diagrams_how_to_work_with_diagrams_overviewing_other_diagrams_how_to_htm" />
+      </tocitem>
+     <tocitem text="Diagram frame" target="modelling_diagrams_how_to_work_with_diagrams_diagram_frames_diagram_frame_htm" >
+      <tocitem text="How to show/ hide the diagram frame" target="modelling_diagrams_how_to_work_with_diagrams_diagram_frames_to_show_hide_the_diagram_frame_do_one_of_the_following_htm" />
+      <tocitem text="Diagram frame properties" target="modelling_diagrams_how_to_work_with_diagrams_diagram_frames_to_change_the_diagram_frame_properties_htm" />
+      <tocitem text="How to hide the icon on the diagram frame" target="modelling_diagrams_how_to_work_with_diagrams_diagram_frames_to_hide_the_icon_on_the_diagram_frame_htm" />
+      <tocitem text="How to display the context stereotype icon instead of the diagram stereotype icon on the diagram frame" target="modelling_diagrams_how_to_work_with_diagrams_diagram_frames_to_display_the_context_stereotype_icon_instead_of_the_diagram_htm" />
+      <tocitem text="How to display the abbreviated diagram type" target="modelling_diagrams_how_to_work_with_diagrams_diagram_frames_to_display_the_abbreviated_diagram_type_htm" />
+      </tocitem>
+     <tocitem text="Displaying the Diagram Info table on the diagram pane" target="modelling_diagrams_how_to_work_with_diagrams_diagram_info_html" />
+     <tocitem text="Editing the Diagram Info table" target="modelling_diagrams_how_to_work_with_diagrams_editing_diagram_info_html" />
+     <tocitem text="Linking diagrams" target="modelling_diagrams_how_to_work_with_diagrams_linking_diagrams_html" />
+     <tocitem text="Changing grid state (visibility)" target="modelling_diagrams_how_to_work_with_diagrams_diagram_change_grid_html" />
+     <tocitem text="Closing the selected diagram" target="modelling_diagrams_how_to_work_with_diagrams_closing_diagram_html" />
+     <tocitem text="Viewing closed diagrams" target="modelling_diagrams_how_to_work_with_diagrams_recently_closed_diagrams_html" />
+     <tocitem text="Layouting diagrams">
+      <tocitem text="Layouting diagrams description" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_layouting_description_html" />
+      <tocitem text="Diagram Layout Options dialog box" target="Diagram_Layout_Options" />
+      <tocitem text="Othogonal Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_orthogonal_layouter_html" />
+      <tocitem text="Hierarchic Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_hierarchic_layouter_html" />
+      <tocitem text="Organic Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_organic_layouter_html" />
+      <tocitem text="Tree Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_tree_layouter_html" />
+      <tocitem text="Circular Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_circular_layouter_html" />
+      <tocitem text="Organic Path Router Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_organic_path_router_html" />
+      <tocitem text="Orthogonal Path Router Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_orthogonal_path_router_html" />
+      <tocitem text="Class Diagram Layouter" target="modelling_diagrams_how_to_work_with_diagrams_layouting_diagrams_class_diagram_layouter_html" />
+      </tocitem>
+     <tocitem text="Zooming">
+      <tocitem text="Zooming a diagram" target="modelling_diagrams_how_to_work_with_diagrams_zooming_browser_zoom_html" />
+      <tocitem text="Determination of zoom step size" target="modelling_diagrams_how_to_work_with_diagrams_zooming_diagram_zoom_step_html" />
+      <tocitem text="Fitting a current diagram in a window" target="modelling_diagrams_how_to_work_with_diagrams_zooming_diagram_fit_in_window_html" />
+      <tocitem text="Select Diagrams dialog box" target="select_diagrams" />
+      </tocitem>
+     <tocitem text="Diagram full screen mode" target="modelling_diagrams_how_to_work_with_diagrams_diagram_full_screen_mode_htm" />
+     <tocitem text="Selecting the group of shapes" target="selecting_the_group_of_shapes" />
+     <tocitem text="Diagrams dialog box" target="dialog.diagrams" />
+     <tocitem text="Create Diagram dialog box" target="common.creatediagram" />
+     <tocitem text="Customize Diagrams dialog box" target="custom_diagrams" />
+     <tocitem text="Customize Diagram Wizard dialog box" target="custom_diagram_wizard" >
+      <tocitem text="Diagram type and diagram icon specification" target="modelling_diagrams_how_to_work_with_diagrams_custom_diagram_wizard_html_diagram_type_and_diagram_icon_specification" />
+      <tocitem text="Modules that will be used in the new diagram type" target="modelling_diagrams_how_to_work_with_diagrams_custom_diagram_wizard_html_modules_that_will_be_used_in_the_new_diagram_type" />
+      <tocitem text="Customize Diagrams dialog box" target="custom_diagrams" />
+      <tocitem text="New diagram toolbar" target="modelling_diagrams_how_to_work_with_diagrams_custom_diagram_wizard_html_new_diagram_toolbar" />
+      <tocitem text="New diagram buttons" target="modelling_diagrams_how_to_work_with_diagrams_custom_diagram_wizard_html_new_diagram_buttons" />
+      <tocitem text="Symbol properties for diagram elements and stereotypes" target="modelling_diagrams_how_to_work_with_diagrams_custom_diagram_wizard_html_symbol_properties_for_diagram_elements_and_stereotypes" />
+      </tocitem>
+     <tocitem text="Edit Button dialog box" target="edit_button" >
+      <tocitem text="Symbol Properties" target="modelling_diagrams_how_to_work_with_diagrams_edit_button_html_symbol_properties" />
+      <tocitem text="Element Properties" target="modelling_diagrams_how_to_work_with_diagrams_edit_button_html_element_properties" />
+      </tocitem>
+     <tocitem text="Diagram Properties dialog box" target="common.vprop" />
+     </tocitem>
+    <tocitem text="Class Diagram" target="Class_Diagram" >
+     <tocitem text="Layout hierarchically symbols of Class diagram" target="modelling_diagrams_class_diagram_diagram_layout_hierarchy_html" />
+     <tocitem text="Class Diagram Wizard" target="tools.clwiz" >
+      <tocitem text="Specify Name and Package" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_specify_name_and_package" />
+      <tocitem text="Select Elements" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_select_elements" />
+      <tocitem text="Select Relationships" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_select_relationships" />
+      <tocitem text="Specify Symbols Properties" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_specify_symbols_properties" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Use Case Diagram">
+     <tocitem text="Use Case diagram description" target="Use_Case_Diagram" />
+     <tocitem text="Change Use Case Numbering dialog box" target="change_use_case_numbering" >
+      <tocitem text="Use Cases" target="modelling_diagrams_use_case_diagram_change_use_case_numbering_dialog_box_html_use_cases" />
+      <tocitem text="Packages" target="modelling_diagrams_use_case_diagram_change_use_case_numbering_dialog_box_html_packages" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Communication Diagram" target="Communication_Diagram" >
+     <tocitem text="Communication Diagram elements" target="modelling_diagrams_communication_diagram_communication_diagram_elements_htm" />
+     <tocitem text="Change Communication Numbering dialog box" target="clb.numb" />
+     </tocitem>
+    <tocitem text="Sequence Diagram" target="Sequence_Diagram" >
+     <tocitem text="Sequence diagram elements" target="modelling_diagrams_sequence_diagram_sequence_diagram_elements_htm" />
+     <tocitem text="Combined fragments" target="CombinedFragment_specification" />
+     <tocitem text="Messages in Sequence diagrams" target="SeqMessage_specification" />
+     </tocitem>
+    <tocitem text="State Machine Diagram" target="State_Diagram" >
+     <tocitem text="State Machine Diagram elements" target="modelling_diagrams_state_machine_diagram_state_machine_diagram_elements_htm" />
+     </tocitem>
+    <tocitem text="Protocol State Machine Diagram" target="modelling_diagrams_protocol_state_machine_diagram_protocol_state_machine_diagram_htm" >
+     <tocitem text="Protocol State Machine Diagram elements" target="modelling_diagrams_protocol_state_machine_diagram_protocol_state_machine_diagram_elements_htm" />
+     </tocitem>
+    <tocitem text="Activity Diagram" target="Activity_Diagram" >
+     <tocitem text="Activity diagram description" target="Activity_Diagram" />
+     <tocitem text="Smart Activity diagram layout using centerlines" target="modelling_diagrams_activity_diagram_smart_activity_diagram_layout_using_centerlines_htm" />
+     <tocitem text="Activity diagram orientation" target="modelling_diagrams_activity_diagram_activity_diagram_orientation_htm" />
+     </tocitem>
+    <tocitem text="Component diagram description" target="Component_Diagram" />
+    <tocitem text="Composite Structure diagram description" target="Composite_Structure_Diagram" >
+     <tocitem text="Displaying existing Parts on the Composite Structure diagram creation" target="modelling_diagrams_composite_structure_diagram_selecting_parts_on_the_composite_structure_diagram_creation_htm" />
+     </tocitem>
+    <tocitem text="Interaction Overview diagram description" target="Interaction_Overview_Diagram" />
+    <tocitem text="Time diagram description" target="Time_Diagram" />
+    <tocitem text="Deployment diagram description" target="Deployment_Diagram" />
+    <tocitem text="Package diagram description" target="Package_Diagram" />
+    <tocitem text="Profile diagram description" target="Profile_Diagram" />
+    <tocitem text="User Interface Modeling diagram description" target="User_Interface_Modeling_Diagram" />
+    <tocitem text="Object diagram description" target="Object_Diagram" />
+    <tocitem text="Struts diagram description" target="Struts_Diagram" />
+    <tocitem text="Web diagram description" target="Web_Diagram" />
+    <tocitem text="CORBA IDL Diagram">
+     <tocitem text="CORBA IDL diagram description" target="CORBA_IDL_Diagram" />
+     <tocitem text="Order Elements dialog box" target="order_elements" />
+     </tocitem>
+    <tocitem text="WSDL diagram description" target="WSDL_Diagram" />
+    <tocitem text="Robustness diagram description" target="Robustness_Diagram" />
+    <tocitem text="Networking diagram description" target="modelling_diagrams_networking_diagram_description_htm" />
+    <tocitem text="Content Diagram" target="Content_Diagram" >
+     <tocitem text="Content diagram description" target="Content_Diagram" />
+     <tocitem text="Content Diagram Wizard" target="content.wizard" >
+      <tocitem text="Specify Name and Package" target="modelling_diagrams_content_diagram_content_diagram_wizard_html_specify_name_and_package" />
+      <tocitem text="Select Diagrams Types" target="modelling_diagrams_content_diagram_content_diagram_wizard_html_select_diagrams_types" />
+      <tocitem text="Select Diagrams" target="modelling_diagrams_content_diagram_content_diagram_wizard_html_select_diagrams" />
+      </tocitem>
+     <tocitem text="Working with Content diagram shapes" target="modelling_diagrams_content_diagram_content_diagram_shapes_html" />
+     </tocitem>
+    <tocitem text="Generic Table" target="modelling_diagrams_generic_table_new_generic_tablenotethis_feature_is_available_in_standard_htm" >
+     <tocitem text="Creating generic tables" target="modelling_diagrams_generic_table_creating_generic_tables_htm" />
+     <tocitem text="Using generic tables" target="modelling_diagrams_generic_table_using_generic_tables_htm" >
+      <tocitem text="Setting detailed column names" target="modelling_diagrams_generic_table_setting_detailed_column_names_htm" />
+      <tocitem text="Modifying generic table" target="modelling_diagrams_generic_table_modifying_generic_table_htm" />
+      <tocitem text="Exporting generic table" target="modelling_diagrams_generic_table_exporting_generic_table_htm" />
+      <tocitem text="Manipulations in generic table" target="modelling_diagrams_generic_table_manipulations_in_generic_table_htm" />
+      </tocitem>
+     <tocitem text="Generic table environment " target="modelling_diagrams_generic_table_generic_table_environment_htm" >
+      <tocitem text="Generic table toolbars" target="modelling_diagrams_generic_table_generic_table_toolbars_htm" />
+      <tocitem text="Generic table shortcut menu" target="modelling_diagrams_generic_table_generic_table_shortcut_menu_htm" />
+      <tocitem text="Element row shortcut menu" target="modelling_diagrams_generic_table_element_row_shortcut_menu_htm" />
+      </tocitem>
+     </tocitem>
+    </tocitem>
+   <tocitem text="Working with model elements" target="modelling_working_with_model_elements_model_elements_work_html" >
+    <tocitem text="Specifying elements properties" target="modelling_working_with_model_elements_specifying_elements_properties_model_elements_specify_html" >
+     <tocitem text="Element Specification window" target="element_dialog_box" >
+      <tocitem text="Specification window toolbar" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_specification_toolbar_htm" />
+      <tocitem text="Quick filter" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_quick_filter_htm" />
+      <tocitem text="Tabs of Specification window" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_tabs_of_specification_window_htm" >
+       <tocitem text="Attributes pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_attributes_tab_html" />
+       <tocitem text="Inner Elements pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_inner_elements_tab_html" />
+       <tocitem text="Operations pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_operations_tab_html" />
+       <tocitem text="Relations pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_relations_tab_html" />
+       <tocitem text="Tags pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_tagged_values_tab_html" />
+       <tocitem text="Constraints pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_constraints_tab_html" />
+       <tocitem text="Behaviors pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_behaviors_pane_html" />
+       <tocitem text="Documentation / Hyperlinks pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_documentation_hyperlinks_branch_html" />
+       <tocitem text="Traceability pane" target="modelling_working_with_model_elements_specifying_elements_properties_element_specification_window_tabs_of_specification_dialog_boxes_traceability_pane_htm" />
+       </tocitem>
+      </tocitem>
+     <tocitem text="General properties for all elements" target="modelling_working_with_model_elements_specifying_elements_properties_general_properties_for_all_elements_html" />
+     <tocitem text="Default Property Values" target="modelling_working_with_model_elements_specifying_elements_properties_default_value_properties_default_property_values_htm" >
+      <tocitem text="To set the default properties for the whole project" target="modelling_working_with_model_elements_specifying_elements_properties_default_value_properties_to_set_the_default_properties_for_the_whole_project_htm" />
+      <tocitem text="To set the default properties for the specific diagram" target="modelling_working_with_model_elements_specifying_elements_properties_default_value_properties_copy_of_to_set_the_default_properties_for_the_specific_diagram_htm" />
+      <tocitem text="Sharing the default property values" target="modelling_working_with_model_elements_specifying_elements_properties_default_value_properties_sharing_the_default_property_values_htm" />
+      </tocitem>
+     <tocitem text="Editing Property Values" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_editing_property_values_htm" >
+      <tocitem text="Editing textual properties" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_editing_textual_properties_htm" >
+       <tocitem text="Editing long textual values" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_editing_long_textual_values_htm" />
+       <tocitem text="Editing multiline textual values" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_editing_multiline_textual_values_htm" >
+        <tocitem text="To open the multiline textual values editor" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_open_the_multiline_textual_values_editor_htm" />
+        </tocitem>
+       </tocitem>
+      <tocitem text="Editing logical values" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_editing_logical_values_htm" />
+      <tocitem text="Selecting values" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_selecting_values_htm" >
+       <tocitem text="Selecting single property value from non-editable list" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_selecting_single_property_value_from_non-editable_list_htm" />
+       <tocitem text="Selecting single property value from editable list" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_selecting_single_property_value_from_editable_list_htm" >
+        <tocitem text="To select a property value from a predefined list" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_select_a_property_value_from_a_predefined_list_htm" />
+        <tocitem text="To assign a property value via the element Selection dialog" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_assign_a_property_value_via_the_element_selection_dialog_htm" />
+        <tocitem text="To remove a value selected for a single value type property" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_remove_a_value_selected_for_a_single_value_type_property_htm" />
+        </tocitem>
+       <tocitem text="Selecting multiple property values" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_selecting_multiple_property_values_htm" />
+       </tocitem>
+      <tocitem text="Cases of advanced editing" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_cases_of_advanced_editing_htm" >
+       <tocitem text="Creating inner element as property value" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_creating_inner_element_as_property_value_htm" >
+        <tocitem text="To create an inner element as a property value" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_create_an_inner_element_as_a_property_value_htm" />
+        <tocitem text="To remove an inner element from a property value list" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_remove_an_inner_element_from_a_property_value_list_htm" />
+        </tocitem>
+       <tocitem text="Assigning value specification as property value" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_assigning_value_specification_as_property_value_htm" >
+        <tocitem text="To assign a value specification" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_assign_a_value_specification_htm" />
+        <tocitem text="To change an assigned value specification" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_change_an_assigned_value_specification_htm" />
+        </tocitem>
+       <tocitem text="Editing property values in property groups" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_editing_property_values_in_property_groups_htm" >
+        <tocitem text="To create an owned element as a property value" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_create_an_owned_element_as_a_property_value_htm" />
+        <tocitem text="To remove an owned element" target="modelling_working_with_model_elements_specifying_elements_properties_editing_propert_values_to_remove_an_owned_element_htm" />
+        </tocitem>
+       </tocitem>
+      </tocitem>
+     </tocitem>
+    <tocitem text="Working with shapes and symbol properties">
+     <tocitem text="Style engine" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_style_engine_html" >
+      <tocitem text="Setting symbols properties" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_symbol_properties_html" />
+      <tocitem text="Symbol properties style description" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_properties_style_description_html" />
+      <tocitem text="Applying new style for already created element symbol" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_apply_new_style_html" />
+      <tocitem text="Properties derivation" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_properties_derivation_html" />
+      <tocitem text="Extend by Diagram dialog box" target="extend_by_diagram" />
+      <tocitem text="Property extension by diagram" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_properties_extension_by_diagram_html" />
+      <tocitem text="Stereotype properties">
+       <tocitem text="Stereotype properties" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_stereotype_properties_stereotype_properties_html" />
+       <tocitem text="Adding stereotype to the branch" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_stereotype_properties_adding_stereotype_to_the_branch_html" />
+       <tocitem text="Removing a stereotype from the branch" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_stereotype_properties_removing_stereotype_from_the_branch_html" />
+       <tocitem text="Changing stereotype properties" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_stereotype_properties_changing_stereotype_properties_html" />
+       <tocitem text="Applying stereotype properties to an already created symbol with an assigned stereotype" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_stereotype_properties_applying_stereotype_properties_html" />
+       <tocitem text="Applying stereotype properties when assigning stereotype to element" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_style_engine_stereotype_properties_applying_stereotype_properties_when_html" />
+       </tocitem>
+      <tocitem text="Select Properties to Apply dialog" target="select_properties" />
+      <tocitem text="Select Stereotypes dialog" target="select_stereotypes" />
+      </tocitem>
+     <tocitem text="Compartment Edit dialog" target="common.cptr" />
+     <tocitem text="Deleting a shape from a diagram" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_delete_element_html" />
+     <tocitem text="Choosing a name for a new shape" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_assign_name_html" />
+     <tocitem text="Cutting, copying shapes in a diagram" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_copy_paste_html" />
+     <tocitem text="Dragging a number of the same symbol" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_drag_multiple_html" />
+     <tocitem text="Setting symbol's properties" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_edit_properties_html" />
+     <tocitem text="Resizing shapes" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_resize_shape_html" />
+     <tocitem text="Showing / hiding constraints, stereotypes and / or tagged values on the diagram pane" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_shape_style_html" />
+     <tocitem text="Displaying /hiding the owner on the shape" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_diagram_show_hide_owner_html" />
+     <tocitem text="Drawing a number of the same shape on the diagram pane sequentially" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_draw_multiple_shapes_html" />
+     <tocitem text="Changing symbol properties for multiple symbols" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_changing_symbol_properties_for_multiple_symbols_htm" />
+     <tocitem text="Font dialog" target="opt.font" />
+     <tocitem text="Properties dialogs" target="modelling_working_with_model_elements_working_with_shapes_and_symbol_properties_properties_html" />
+     <tocitem text="Symbols properties" target="symbol_properties" />
+     </tocitem>
+    <tocitem text="Working with classifiers" target="modelling_working_with_model_elements_working_with_classifiers_model_elements_manage_classes_html" >
+     <tocitem text="Adding a classifier from shortcut menu" target="modelling_working_with_model_elements_working_with_classifiers_add_classifier_html" />
+     <tocitem text="Controlling the list of operations and attributes that are visible on the diagram" target="modelling_working_with_model_elements_working_with_classifiers_diagram_compartment_edit_html" />
+     <tocitem text="Showing / hiding assigned classifier" target="modelling_working_with_model_elements_working_with_classifiers_diagram_show_hide_classifier_html" />
+     <tocitem text="Displaying stereotypes for attributes or operations and sort by stereotype" target="modelling_working_with_model_elements_working_with_classifiers_diagrams_attribute_stereotype_html" />
+     <tocitem text="Showing / hiding the visibility for attributes and operations" target="modelling_working_with_model_elements_working_with_classifiers_diagrams_attribute_visibility_html" />
+     <tocitem text="Showing properties for attributes / operations" target="modelling_working_with_model_elements_working_with_classifiers_diagrams_attributes_operations_html" />
+     <tocitem text="Creating a new attribute or operation" target="modelling_working_with_model_elements_working_with_classifiers_model_elements_create_attribute_html" />
+     <tocitem text="Modifying an attribute and operation on the diagram pane" target="modelling_working_with_model_elements_working_with_classifiers_model_elements_modify_html" />
+     </tocitem>
+    <tocitem text="Working with paths" target="modelling_working_with_model_elements_working_with_paths_model_elements_relation_html" >
+     <tocitem text="Creating relationships among shapes that already are created in model data" target="modelling_working_with_model_elements_working_with_paths_diagram_create_paths_html" />
+     <tocitem text="Relations creation from model" target="modelling_working_with_model_elements_working_with_paths_relations_creation_from_model_htm" />
+     <tocitem text="Showing / hiding path's name" target="modelling_working_with_model_elements_working_with_paths_paths_show_hide_name_html" />
+     <tocitem text="Inserting shape on path" target="modelling_working_with_model_elements_working_with_paths_inserting_shape_on_path_html" />
+     <tocitem text="Grouping generalization / realization / containment paths into tree" target="modelling_working_with_model_elements_working_with_paths_diagram_create_tree_html" />
+     <tocitem text="Making rounded corners" target="modelling_working_with_model_elements_working_with_paths_making_rounded_corners_htm" />
+     <tocitem text="Creating line jumps" target="modelling_working_with_model_elements_working_with_paths_creating_line_jums_htm" />
+     </tocitem>
+    <tocitem text="Selecting an element" target="element_selection_dlg" >
+     <tocitem text="Element selection views" target="modelling_working_with_model_elements_selecting_an_element_element_selection_views__htm" />
+     <tocitem text="Element search criteria and modes" target="modelling_working_with_model_elements_selecting_an_element_element_search_criteria_and_modes__htm" />
+     <tocitem text="Element creation mode" target="modelling_working_with_model_elements_selecting_an_element_element_creation_mode__htm" />
+     <tocitem text="Elements multiple selection" target="modelling_working_with_model_elements_selecting_an_element_elements_multiple_selection_htm" />
+     </tocitem>
+    <tocitem text="Model element documentation">
+     <tocitem text="Open / write documentation for a model element" target="modelling_working_with_model_elements_model_element_documentation_model_elements_documentation_html" />
+     <tocitem text="Displaying documentation on the diagram pane" target="modelling_working_with_model_elements_model_element_documentation_retrieve_documentation_html" />
+     <tocitem text="Comment Specification dialog box" target="Comment_specification" />
+     </tocitem>
+    <tocitem text="Smart manipulation">
+     <tocitem text="Smart Manipulation description" target="modelling_working_with_model_elements_smart_manipulators_smart_manipulation_html" />
+     <tocitem text="Creating new element at the end of relationship" target="modelling_working_with_model_elements_smart_manipulators_smart_manipulation_options_html" />
+     <tocitem text="Hiding smart manipulation" target="modelling_working_with_model_elements_smart_manipulators_smart_manipulation_hide_html" />
+     </tocitem>
+    <tocitem text="Hyperlinking">
+     <tocitem text="Adding hyperlink" target="dialog.insert_hyperlink" >
+      <tocitem text="File tab" target="modelling_working_with_model_elements_hyperlinking_insert_hyperlink_html_file_tab" />
+      <tocitem text="Web Page tab" target="modelling_working_with_model_elements_hyperlinking_insert_hyperlink_html_web_page_tab" />
+      <tocitem text="Element Symbol tab" target="modelling_working_with_model_elements_hyperlinking_insert_hyperlink_html_element_symbol_tab" />
+      <tocitem text="Caliber Requirement" target="modelling_working_with_model_elements_hyperlinking_insert_hyperlink_html_caliber_requirement" />
+      </tocitem>
+     <tocitem text="Editing hyperlinks" target="hyperlinks" />
+     <tocitem text="Adding a hyperlink to a note, text box or separator text" target="modelling_working_with_model_elements_hyperlinking_diagram_add_hyperlink_html" />
+     </tocitem>
+    <tocitem text="Generic Numbering Mechanism" target="modelling_working_with_model_elements_generic_numbering_mechanism_generic_numbering_mechanism_htm" >
+     <tocitem text="Working with Generic Numbering Mechanism" target="modelling_working_with_model_elements_generic_numbering_mechanism_using_generic_numbering_mechanism_htm" >
+      <tocitem text="Automatic numbering" target="modelling_working_with_model_elements_generic_numbering_mechanism_automatic_numbering_htm" />
+      <tocitem text="Manual numbering" target="modelling_working_with_model_elements_generic_numbering_mechanism_manual_numbering_htm" />
+      </tocitem>
+     <tocitem text="Element Numbering dialog" target="Element_Numbering_dialog" />
+     </tocitem>
+    <tocitem text="HTML Editor" target="advanced_html_editor" >
+     <tocitem text="HTML Source Editor dialog box" target="dialog.html_source_editor" />
+     <tocitem text="How to set the note / text box / separator text as HTML" target="modelling_working_with_model_elements_html_editor_to_set_the_note_text_box_separator_text_as_html_htm" />
+     <tocitem text="How to turn on the HTML mode in a dialog" target="modelling_working_with_model_elements_html_editor_to_turn_on_the_html_mode_in_a_dialog_htm" />
+     <tocitem text="How to use the HTML editor toolbar for editing a tagged value" target="modelling_working_with_model_elements_html_editor_to_use_the_html_editor_toolbar_for_editing_a_tagged_value_htm" />
+     <tocitem text="HTML editor toolbar" target="modelling_working_with_model_elements_html_editor_html_editor_toolbarbuttonfunctionfont_propertiesselect_font_htm" />
+     <tocitem text="Advanced HTML editor" target="modelling_working_with_model_elements_html_editor_advanced_html_editor_advanced_html_editor_htm" >
+      <tocitem text="How to open the Advanced HTML Editor dialog" target="modelling_working_with_model_elements_html_editor_advanced_html_editor_to_open_the_advanced_html_editor_dialog_htm" />
+      <tocitem text="How to insert an image into HTML text" target="modelling_working_with_model_elements_html_editor_advanced_html_editor_to_insert_an_image_into_html_text_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Class by Pattern" target="class.class_by_pattern_item" />
+    <tocitem text="Pattern Wizard" target="class.pattern" />
+    <tocitem text="Making multiple selections" target="modelling_working_with_model_elements_model_elements_select_html" />
+    <tocitem text="Enhanced drag and drop" target="modelling_working_with_model_elements_enhanced_drag_and_drop_html" />
+    <tocitem text="Assigning type of element" target="modelling_working_with_model_elements_assigning_type_html" />
+    <tocitem text="Inserting inner elements into the selected class or package" target="modelling_working_with_model_elements_model_elements_inner_html" />
+    <tocitem text="To select model elements in the Browser tree" target="modelling_analyzing_model_elements_diagram_find_element_browser_html" />
+    <tocitem text="Converting elements" target="convert_element" />
+    <tocitem text="Replacing elements" target="replace_element" />
+    <tocitem text="Copying/Opening element URLs" target="open_element_url" />
+    <tocitem text="Showing owner on the symbol" target="modelling_working_with_model_elements_showing_owner_htm" />
+    <tocitem text="Adding a classifier from shortcut menu" target="modelling_working_with_model_elements_working_with_classifiers_add_classifier_html" />
+    <tocitem text="Representing Conveyed Information" target="add_conveyed_information" />
+    <tocitem text="Display Related Elements dialog" target="display_related_elements" />
+    <tocitem text="Changing a note / text box text from text to HTML" target="modelling_working_with_model_elements_diagram_note_html_html" />
+    <tocitem text="HTML Source Editor dialog" target="dialog.html_source_editor" />
+    <tocitem text="Select Extension Element Storage dialog box" target="select_storage" />
+    </tocitem>
+   <tocitem text="Model Elements description" target="modelling_model_elements_description_uml_2_0_elements_html" >
+    <tocitem text="Abstraction" target="Abstraction_specification" />
+    <tocitem text="Action" target="Action_specification" >
+     <tocitem text="Accept Event Action" target="AcceptEventAction_specification" >
+      <tocitem text="Assigning Signals to Accept Event Action" target="modelling_model_elements_description_action_accept_event_action_new_assigning_signals_htm" />
+      <tocitem text="Using Time Event Shape" target="TimeEvent_specification" />
+      <tocitem text="Specifying the Is Unmarshall property" target="modelling_model_elements_description_action_accept_event_action_specifying_the_is_unmarshall_property_htm" />
+      </tocitem>
+     <tocitem text="Call Behavior Action" target="CallBehaviorAction_specification" />
+     <tocitem text="Call Operation Action" target="CallOperationAction_specification" />
+     <tocitem text="Opaque Action" target="OpaqueAction_specification" />
+     <tocitem text="Send Signal Action" target="SignalAction_specification" >
+      <tocitem text="Assigning Signals to Signal Acction" target="modelling_model_elements_description_action_send_signal_action_assigning_signals_htm" />
+      </tocitem>
+     <tocitem text="Working with actions" target="modelling_model_elements_description_action_working_with_actions_htm" >
+      <tocitem text="Advancing actions: applying duration constraint" target="modelling_model_elements_description_action_advancing_actions_applying_duration_constraint_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Activity" target="Activity_specification" />
+    <tocitem text="Activity Final Node" target="ActivityFinalNode_specification" />
+    <tocitem text="Activity Parameter Node" target="ActivityParameterNode_specification" />
+    <tocitem text="Actor" target="Actor_specification" />
+    <tocitem text="Anchor" target="common.anchor" />
+    <tocitem text="Artifact" target="Artifact_specification" />
+    <tocitem text="Assembly Connector" target="modelling_model_elements_description_assembly_connector_html" />
+    <tocitem text="Association" target="Association_specification" >
+     <tocitem text="Navigable owned association ends" target="modelling_model_elements_description_association_navigable_owned_association_ends_htm" />
+     </tocitem>
+    <tocitem text="Association Class" target="AssociationClass_specification" />
+    <tocitem text="Class">
+     <tocitem text="Class" target="Class_specification" />
+     <tocitem text="Active Class" target="element.active_class" />
+     <tocitem text="Drawing associated classes" target="modelling_model_elements_description_class_class_association_class_html" />
+     </tocitem>
+    <tocitem text="Collaboration" target="Collaboration_specification" />
+    <tocitem text="Collaboration Use" target="CollaborationUse_specification" />
+    <tocitem text="Combined fragments" target="CombinedFragment_specification" />
+    <tocitem text="Comment" target="modelling_model_elements_description_comment_htm" />
+    <tocitem text="Communication Path " target="CommunicationPath_specification" />
+    <tocitem text="Component" target="Component_specification" />
+    <tocitem text="Component Realization" target="ComponentRealization_specification" />
+    <tocitem text="Conditional Node" target="ConditionalNode_specification" />
+    <tocitem text="Connection Point Reference" target="ConnectionPointReference_specification" />
+    <tocitem text="Connector" target="Connector_specification" />
+    <tocitem text="Connector End" target="ConnectorEnd_specification" />
+    <tocitem text="Constraint">
+     <tocitem text="Constraint" target="Constraint_specification" />
+     <tocitem text="Defining a new constraint" target="modelling_model_elements_description_constraint_model_elements_create_constraints_html" />
+     <tocitem text="Applying a constraint to an element" target="modelling_model_elements_description_constraint_constraint_relationship_html" />
+     </tocitem>
+    <tocitem text="Containment">
+     <tocitem text="Creating a containment path" target="modelling_model_elements_description_containment_class_containment_tree_html" />
+     <tocitem text="Containment" target="ContainmentLink" />
+     <tocitem text="Grouping generalization / containment paths into tree" target="modelling_working_with_model_elements_working_with_paths_diagram_create_tree_html" />
+     </tocitem>
+    <tocitem text="Content shape" target="ContentShape" />
+    <tocitem text="Control Flow" target="ControlFlow_specification" />
+    <tocitem text="Data Store Node" target="DataStoreNode_specification" />
+    <tocitem text="Data Type" target="DataType_specification" />
+    <tocitem text="Decision Node/Merge Node" target="DecisionMergeNode_specification" />
+    <tocitem text="Delegation Connector" target="modelling_model_elements_description_delegation_connector_html" />
+    <tocitem text="Dependency" target="Dependency_specification" />
+    <tocitem text="Deployment" target="Deployment_specification" />
+    <tocitem text="Deployment Specification" target="DeploymentSpecification_specification" />
+    <tocitem text="Device" target="Device_specification" />
+    <tocitem text="Duration Constraint" target="DurationConstraint_specification" />
+    <tocitem text="Element Import" target="ElementImport_specification" />
+    <tocitem text="Enumeration" target="Enumeration_specification" />
+    <tocitem text="Enumeration Literal" target="EnumerationLiteral_specification" />
+    <tocitem text="Event" target="modelling_model_elements_description_event_events_htm" >
+     <tocitem text="Event types" target="modelling_model_elements_description_event_event_types_htm" />
+     <tocitem text="Usability of Events" target="modelling_model_elements_description_event_usability_htm" />
+     </tocitem>
+    <tocitem text="Exception Handler" target="ExceptionHandler_specification" />
+    <tocitem text="Execution Environment" target="ExecutionEnvironment_specification" />
+    <tocitem text="Expansion Nodes" target="modelling_model_elements_description_expansion_nodes_htm" />
+    <tocitem text="Expansion Region" target="ExpansionRegion_specification" />
+    <tocitem text="Extend" target="Extend_specification" />
+    <tocitem text="Extension" target="Extension_specification" />
+    <tocitem text="Extension Point" target="use.ext" />
+    <tocitem text="Final State" target="FinalState_specification" />
+    <tocitem text="Flow Final Node" target="FlowFinalNode_specification" />
+    <tocitem text="Fork /Join Node" target="ForkJoinNode_specification" />
+    <tocitem text="Function Behavior" target="FunctionBehavior_specification" />
+    <tocitem text="Gate" target="Gate_specification" >
+     <tocitem text="Gate" target="Gate_specification" />
+     <tocitem text="Selecting formal gate when drawing message" target="select_formal_gate_dialog" />
+     </tocitem>
+    <tocitem text="Generalization" target="Generalization_specification" >
+     <tocitem text="Generalization set" target="modelling_model_elements_description_generalization_generalization_set_html" />
+     <tocitem text="Making generalization set tree" target="modelling_model_elements_description_generalization_making_generalization_set_tree_html" />
+     <tocitem text="Grouping generalization / containment paths into tree" target="modelling_working_with_model_elements_working_with_paths_diagram_create_tree_html" />
+     <tocitem text="Drawing a generalization line between associations" target="modelling_working_with_model_elements_working_with_paths_association_generalization_html" />
+     <tocitem text="Generalizable elements" target="element.generalizable_elements" />
+     </tocitem>
+    <tocitem text="Image" target="Image_specification" />
+    <tocitem text="Image Shape" target="modelling_model_elements_description_image_shape_htm" />
+    <tocitem text="Include" target="Include_specification" />
+    <tocitem text="Information Flow" target="modelling_model_elements_description_information_flow_htm" />
+    <tocitem text="Information Item" target="InformationItem_specification" />
+    <tocitem text="Initial Node" target="InitialNode_specification" />
+    <tocitem text="Input Pin and Output Pin" target="Pin_specification" />
+    <tocitem text="Instance ">
+     <tocitem text="Instance Specification" target="InstanceSpecification_specification" />
+     <tocitem text="Dragging Instance shape on Instance" target="select_slot_to_assign" />
+     </tocitem>
+    <tocitem text="Interaction" target="Interaction_specification" />
+    <tocitem text="Interaction Operand" target="InteractionOperand_specification" />
+    <tocitem text="Interaction operator " target="modelling_model_elements_description_interaction_operator_html" />
+    <tocitem text="Interaction Use" target="InteractionUse_specification" />
+    <tocitem text="Interface">
+     <tocitem text="Interface" target="Interface_specification" />
+     <tocitem text="Changing the interface shape style" target="modelling_model_elements_description_interface_diagrams_interface_reflection_html" />
+     <tocitem text="Provided and required interfaces" target="modelling_model_elements_description_interface_provided_required_interfaces_html" />
+     <tocitem text="Provided/Required interfaces in the Composite Structure diagram" target="modelling_model_elements_description_interface_provided_required_interfaces_in_the_composite_structure_diagram_htm" />
+     </tocitem>
+    <tocitem text="Interface Realization" target="InterfaceRealization_specification" />
+    <tocitem text="Interruptible Activity Region" target="InterruptibleActivityRegion_Specification" />
+    <tocitem text="Lifeline">
+     <tocitem text="Lifeline" target="Lifeline_specification" />
+     <tocitem text="Creating lifelines easily" target="modelling_model_elements_description_lifeline_create_instances_efectivelly_html" />
+     </tocitem>
+    <tocitem text="Link">
+     <tocitem text="Link" target="Link_specification" />
+     <tocitem text="Drawing a link between two instance specifications" target="modelling_model_elements_description_link_drawing_link_html" />
+     </tocitem>
+    <tocitem text="Loop Node" target="LoopNode_specification" />
+    <tocitem text="Manifestation" target="Manifestation_specification" />
+    <tocitem text="Message" target="Message_specification" >
+     <tocitem text="Common Actions with Messages" target="modelling_model_elements_description_message_common_actions_with_messages_htm" >
+      <tocitem text="To set an action type for a message" target="modelling_model_elements_description_message_to_set_an_action_type_for_a_message_htm" />
+      <tocitem text="To show / hide message numbers" target="modelling_model_elements_description_message_to_show_hide_message_numbers_htm" />
+      <tocitem text="Assigning operations to messages" target="modelling_model_elements_description_message_assigning_operations_to_messages_htm" >
+       <tocitem text="To assign an operation to a message" target="modelling_model_elements_description_message_to_assign_an_operation_to_a_message_htm" />
+       <tocitem text="To create a new operation for a message" target="modelling_model_elements_description_message_to_create_a_new_operation_for_a_message_htm" />
+       </tocitem>
+      <tocitem text="Assigning signals to messages" target="modelling_model_elements_description_message_assigning_signals_to_messages_htm" >
+       <tocitem text="To assign a signal to a message using a drag-and-drop operation" target="modelling_model_elements_description_message_to_asssign_a_signal_to_a_message_using_a_drag-and-drop_operation_htm" />
+       <tocitem text="To assign a signal to a message via the message Specification window" target="modelling_model_elements_description_message_to_asssign_a_signal_to_a_message_via_the_message_specification_window_htm" />
+       </tocitem>
+      <tocitem text="Creating signal receptions for messages" target="modelling_model_elements_description_message_creating_signal_receptions_for_messages_htm" >
+       <tocitem text="To create a new signal reception for the message" target="modelling_model_elements_description_message_to_create_a_new_signal_reception_for_the_message_htm" />
+       </tocitem>
+      </tocitem>
+     <tocitem text="Messages in Sequence and Time Diagrams" target="modelling_model_elements_description_message_messages_in_sequence_and_time_diagrams_htm" >
+      <tocitem text="Creating nested activation" target="modelling_model_elements_description_message_creating_nested_activation_htm" >
+       <tocitem text="To create a nested activation" target="modelling_model_elements_description_message_to_create_a_nested_activation_htm" />
+       <tocitem text="To merge a nested activation with a parent activation" target="modelling_model_elements_description_message_to_merge_a_nested_activation_with_a_parent_activation_htm" />
+       <tocitem text="To model parallel executions for a non-active lifeline" target="modelling_model_elements_description_message_to_model_parallel_executions_for_a_non-active_lifeline_htm" />
+       <tocitem text="To model parallel executions for an active lifeline" target="modelling_model_elements_description_message_to_model_parallel_executions_for_an_active_lifeline_htm" />
+       <tocitem text="To model a callback message" target="modelling_model_elements_description_message_to_model_a_callback_message_htm" />
+       </tocitem>
+      </tocitem>
+     <tocitem text="Messages in Communication Diagrams" target="modelling_model_elements_description_message_messages_in_communication_diagrams_htm" >
+      <tocitem text="To assign a message to a connector" target="modelling_model_elements_description_message_to_assign_a_message_to_a_connector_htm" />
+      <tocitem text="To set the advanced numbering of messages" target="modelling_model_elements_description_message_to_set_the_advanced_numbering_of_messages_htm" />
+      <tocitem text="To remove the advanced numbering of messages" target="modelling_model_elements_description_message_to_remove_the_advanced_numering_of_messages_htm" />
+      </tocitem>
+     <tocitem text="Activators and predecessors" target="modelling_model_elements_description_message_activators_and_predecessors_htm" >
+      <tocitem text="To show predecessors beside the message number" target="modelling_model_elements_description_message_to_show_predecessors_beside_the_message_number_htm" />
+      <tocitem text="To change an activator number of messages" target="modelling_model_elements_description_message_to_change_an_activator_number_of_messages_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Message Occurrence Specification" target="MessageOccurrenceSpecification_specification" />
+    <tocitem text="Model" target="Model_specification" />
+    <tocitem text="N-ary Association" target="class.nnary" />
+    <tocitem text="Node" target="Node_specification" />
+    <tocitem text="Note">
+     <tocitem text="Note" target="Note_specification" />
+     <tocitem text="Linking documentation, constraints and tagged values to note" target="modelling_model_elements_description_note_diagram_note_with_data_html" />
+     </tocitem>
+    <tocitem text="Object Flow" target="ObjectFlow_specification" />
+    <tocitem text="Object Node" target="ObjectNode_specification" />
+    <tocitem text="Opaque Behavior" target="modelling_model_elements_description_opaque_behavior_htm" />
+    <tocitem text="Operation">
+     <tocitem text="Operation" target="Operation_specification" />
+     <tocitem text="Operation's Concurrency" target="element.concurrency" />
+     <tocitem text="Displaying operations in sequence and class diagrams" target="modelling_model_elements_description_operation_operation_in_cl_and_sq_diagr_html" />
+     <tocitem text="Select Operations to Implement/Override dialog box" target="class.selop" />
+     </tocitem>
+    <tocitem text="Package" target="Package_specification" >
+     <tocitem text="Displaying Package Inner Elements in a Diagram" target="select_inner_elements" />
+     <tocitem text="Showing a list of elements assigned to a package on a package shape" target="modelling_model_elements_description_package_diagram_show_list_html" />
+     <tocitem text="Changing a package header (name and stereotype) position" target="modelling_model_elements_description_package_diagrams_package_name_position_html" />
+     <tocitem text="Package Dependency Diagram Wizard" target="tools.packwiz" >
+      <tocitem text="Specify Name and Package" target="modelling_analyzing_model_elements_model_visualizer_package_dependency_diagram_wizard_html_specify_name_and_package" />
+      <tocitem text="Select Packages" target="modelling_analyzing_model_elements_model_visualizer_package_dependency_diagram_wizard_html_select_packages" />
+      <tocitem text="Specify Symbols Properties" target="modelling_analyzing_model_elements_model_visualizer_package_dependency_diagram_wizard_html_specify_symbols_properties" />
+      <tocitem text="Displaying dependency details" target="modelling_analyzing_model_elements_model_visualizer_displaying_dependency_details_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Package Import" target="PackageImport_specification" />
+    <tocitem text="Package Merge" target="PackageMerge_specification" />
+    <tocitem text="Parameter">
+     <tocitem text="Parameter" target="Parameter_specification" />
+     <tocitem text="Parameters synchronization with Arguments" target="modelling_model_elements_description_parameter_parameters_synchronization_with_arguments_htm" />
+     <tocitem text="Synchronization between Operation Parameters and Behavior Parameters" target="modelling_model_elements_description_parameter_synchronization_of_operation_parameters_with_behavior_parameters_htm" />
+     <tocitem text="Synchronization between Activity Parameters and Activity Parameter Node" target="select_activity_parameters" />
+     <tocitem text="Synchronization between Operation Parameters and Pins on Call Operation Action, and between Behavior Parameters and Pins of Call Behavior Action" target="select_operation_parameter" />
+     <tocitem text="Synchronization between Interaction Parameters and Interaction Use Arguments, and between Behavior Feature parameters and Message arguments" target="modelling_model_elements_description_parameter_synchronization_of_interaction_parameters_with_interaction_use_arguments_and_behavrion_feature_parameters_with_message_arguments_htm" />
+     <tocitem text="Synchronization between Interaction Parameters and Lifelines" target="display_parameters_as_lifelines" />
+     </tocitem>
+    <tocitem text="Part">
+     <tocitem text="Displaying Parts in a diagram" target="select_parts" />
+     </tocitem>
+    <tocitem text="Port" target="select_ports" />
+    <tocitem text="Primitive" target="PrimitiveType_specification" />
+    <tocitem text="Profile" target="Profile_specification" >
+     <tocitem text="Profile properties" target="modelling_model_elements_description_profile_profile_properties_htm" />
+     <tocitem text="Creating profiles" target="modelling_model_elements_description_profile_creating_profiles_htm" >
+      <tocitem text="To create a profile using the package / model / profile shortcut menu" target="modelling_model_elements_description_profile_to_create_a_profile_using_the_package_model_profile_shortcut_htm" />
+      <tocitem text="To create a profile using the profile diagram pallet" target="modelling_model_elements_description_profile_to_create_a_profile_using_the_profile_diagram_pallet_htm" />
+      <tocitem text="To create a profile using the package diagram pallet" target="modelling_model_elements_description_profile_to_create_a_profile_using_the_package_diagram_pallet_htm" />
+      <tocitem text="To create a profile using the class diagram pallet" target="modelling_model_elements_description_profile_to_create_a_profile_using_the_class_diagram_pallet_htm" />
+      </tocitem>
+     </tocitem>
+    <tocitem text="Profile Application" target="ProfileApplication_specification" />
+    <tocitem text="Property">
+     <tocitem text="Property" target="Property_specification" />
+     <tocitem text="Difference between attribute and property" target="modelling_model_elements_description_property_difference_between_attribute_and_property_html" />
+     <tocitem text="Creating associations from attributes and attributes from associations" target="modelling_working_with_model_elements_model_elements_create_role_html" />
+     <tocitem text="Generating Getters / Setters (Accessors and Mutators)" target="modelling_model_elements_description_property_model_elements_setters_getters_html" />
+     <tocitem text="Select Attributes/Association Ends dialog box" target="class.selattr" />
+     <tocitem text="Showing / hiding the default attribute value" target="modelling_model_elements_description_property_diagrams_attribute_initial_html" />
+     </tocitem>
+    <tocitem text="Pseudo State">
+     <tocitem text="Pseudo State" target="Pseudostate_specification" />
+     <tocitem text="Defining history state" target="modelling_model_elements_description_pseudo_state_state_history_html" />
+     </tocitem>
+    <tocitem text="Realization" target="Realization_specification" />
+    <tocitem text="Reception" target="Reception_specification" />
+    <tocitem text="Rectangular Shape" target="modelling_model_elements_description_rectangular_shape_html" />
+    <tocitem text="Region" target="Region_specification" />
+    <tocitem text="Role Binding" target="RoleBinding" />
+    <tocitem text="Separator">
+     <tocitem text="Separator" target="element.separator" />
+     <tocitem text="Setting separator line style (dashed or solid)" target="modelling_model_elements_description_separator_separator_line_style_html" />
+     <tocitem text="Setting the text position of the separator name" target="modelling_model_elements_description_separator_diagram_separator_html" />
+     </tocitem>
+    <tocitem text="Sequence Node" target="SequenceNode_specification" />
+    <tocitem text="Signal" target="Signal_specification" />
+    <tocitem text="Slot">
+     <tocitem text="Slot" target="Slot_specification" />
+     <tocitem text="Creating Slots on Link creation automatically" target="select_association" />
+     </tocitem>
+    <tocitem text="State" target="State_specification" >
+     <tocitem text="Including a state machine in a submachine state" target="modelling_model_elements_description_state_state_include_graph_html" />
+     <tocitem text="Suppressing / unsuppressing actions compartment on state" target="modelling_model_elements_description_state_state_suppress_actions_html" />
+     </tocitem>
+    <tocitem text="State Invariant" target="StateInvariant_specification" />
+    <tocitem text="State Machine" target="StateMachine_specification" />
+    <tocitem text="Stereotype" target="Stereotype_specification" >
+     <tocitem text="Adding a stereotype" target="modelling_model_elements_description_stereotype_add_stereotype_html" />
+     <tocitem text="Ordering stereotypes" target="modelling_model_elements_description_stereotype_ordering_stereotypes_htm" />
+     <tocitem text="Assigning an icon for the stereotype" target="modelling_model_elements_description_stereotype_model_element_stereotypes_icons_html" />
+     <tocitem text="Stereotype display mode" target="modelling_model_elements_description_stereotype_stereotype_display_mode_htm" />
+     <tocitem text="Importing / exporting stereotypes" target="modelling_model_elements_description_stereotype_importing_exporting_stereotypes_tags_constraints_html" />
+     <tocitem text="Stereotype notation" target="modelling_model_elements_description_stereotype_stereotype_notation_htm" />
+     </tocitem>
+    <tocitem text="Structured Activity Node" target="StructuredActivityNode_specification" />
+    <tocitem text="Substitution" target="Substitution_specification" />
+    <tocitem text="Subsystem" target="use.subsystem" />
+    <tocitem text="Swimlane">
+     <tocitem text="Swimlane" target="Swimlane_specification" />
+     <tocitem text="Adding model elements to a swimlane" target="modelling_model_elements_description_swimlane_adding_to_swimlane_html" />
+     </tocitem>
+    <tocitem text="Tag">
+     <tocitem text="Creating tag definitions" target="modelling_model_elements_description_tag_creating_tag_definitions_htm" />
+     <tocitem text="Editing Tagged value" target="modelling_model_elements_description_tag_model_elements_create_tagged_values_html" />
+     <tocitem text="Creating default tagged value" target="set_empty_tags_dialog" />
+     </tocitem>
+    <tocitem text="Template Binding" target="TemplateBinding_specification" />
+    <tocitem text="Template parameter">
+     <tocitem text="Template Parameter" target="ClassifierTemplateParameter_specification" />
+     <tocitem text="Defining a template parameter" target="modelling_model_elements_description_template_parameter_model_elements_template_html" />
+     </tocitem>
+    <tocitem text="Text Box" target="TextBox_specification" />
+    <tocitem text="Time Constraint" target="TimeConstraint_specification" />
+    <tocitem text="Time Event" target="modelling_model_elements_description_time_event_htm" />
+    <tocitem text="Transition" target="Transition_specification" >
+     <tocitem text="Easier way of event type assigning" target="modelling_model_elements_description_transition_easier_way_of_event_type_assigning_htm" />
+     </tocitem>
+    <tocitem text="Trigger" target="Trigger_specification" />
+    <tocitem text="Usage" target="Usage_specification" />
+    <tocitem text="Use Case">
+     <tocitem text="Use Case" target="modelling_model_elements_description_use_case_use_case_specification_html" />
+     <tocitem text="Use Case extensions" target="modelling_model_elements_description_use_case_use_case_extensions_htm" />
+     </tocitem>
+    <tocitem text="Value Pin" target="ValuePin_specification" />
+    <tocitem text="Value Specification" target="modelling_model_elements_description_value_specification_value_specification_htm" >
+     <tocitem text="To create a value specification from the element shortcut menu" target="modelling_model_elements_description_value_specification_to_create_a_value_specification_from_the_element_shortcut_menu_htm" />
+     <tocitem text="To assign a value specification in the Specification window" target="modelling_model_elements_description_value_specification_to_assign_a_value_specification_in_the_specification_window_htm" />
+     <tocitem text="To create a value specification automatically" target="modelling_model_elements_description_value_specification_to_create_a_value_specification_automatically_htm" />
+     <tocitem text="To change an assigned value specification" target="modelling_model_elements_description_value_specification_to_change_an_assigned_value_specification_htm" />
+     </tocitem>
+    <tocitem text="Variable" target="Variable_specification" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Analyzing Model" target="modelling_analyzing_model_elements_general_find_html" >
+   <tocitem text="Model Visualizer" target="Model_Visualizer" >
+    <tocitem text="Wizards description" target="modelling_analyzing_model_elements_model_visualizer_wizards_html" />
+    <tocitem text="Class Diagram Wizard" target="tools.clwiz" >
+     <tocitem text="Specify Name and Package" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_specify_name_and_package" />
+     <tocitem text="Select Elements" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_select_elements" />
+     <tocitem text="Select Relationships" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_select_relationships" />
+     <tocitem text="Specify Symbols Properties" target="modelling_diagrams_class_diagram_class_diagram_wizard_html_specify_symbols_properties" />
+     </tocitem>
+    <tocitem text="Package Dependency Diagram Wizard" target="tools.packwiz" >
+     <tocitem text="Specify Name and Package" target="modelling_analyzing_model_elements_model_visualizer_package_dependency_diagram_wizard_html_specify_name_and_package" />
+     <tocitem text="Select Packages" target="modelling_analyzing_model_elements_model_visualizer_package_dependency_diagram_wizard_html_select_packages" />
+     <tocitem text="Specify Symbols Properties" target="modelling_analyzing_model_elements_model_visualizer_package_dependency_diagram_wizard_html_specify_symbols_properties" />
+     </tocitem>
+    <tocitem text="Package Overview Diagram Wizard" target="Package_Overview_Diagram_Wizard" >
+     <tocitem text="Specify Name and Package" target="modelling_analyzing_model_elements_model_visualizer_package_overview_diagram_wizard_html_specify_name_and_package" />
+     <tocitem text="Select Packages" target="modelling_analyzing_model_elements_model_visualizer_package_overview_diagram_wizard_html_select_packages" />
+     <tocitem text="Define Advanced Options" target="modelling_analyzing_model_elements_model_visualizer_package_overview_diagram_wizard_html_define_advanced_options" />
+     <tocitem text="Select Relationships" target="modelling_analyzing_model_elements_model_visualizer_package_overview_diagram_wizard_html_select_relationships" />
+     <tocitem text="Specify Symbols Properties" target="modelling_analyzing_model_elements_model_visualizer_package_overview_diagram_wizard_html_specify_symbols_properties" />
+     </tocitem>
+    <tocitem text="Hierarchy Diagram Wizard" target="Hierarchy_Diagram_Wizard" >
+     <tocitem text="Specify Name and Package" target="modelling_analyzing_model_elements_model_visualizer_hierarchy_diagram_wizard_html_specify_name_and_package" />
+     <tocitem text="Select Scope" target="modelling_analyzing_model_elements_model_visualizer_hierarchy_diagram_wizard_html_select_scope" />
+     <tocitem text="Select Hierarchies" target="modelling_analyzing_model_elements_model_visualizer_hierarchy_diagram_wizard_html_select_hierarchies" />
+     <tocitem text="Specify Symbols Properties" target="modelling_analyzing_model_elements_model_visualizer_hierarchy_diagram_wizard_html_specify_symbols_properties" />
+     </tocitem>
+    <tocitem text="Realization Diagram Wizard" target="Realization_Diagram_Wizard" >
+     <tocitem text="Specify Name and Package" target="modelling_analyzing_model_elements_model_visualizer_realization_diagram_wizard_html_specify_name_and_package" />
+     <tocitem text="Select Scope" target="modelling_analyzing_model_elements_model_visualizer_realization_diagram_wizard_html_select_scope" />
+     <tocitem text="Select Implementations" target="modelling_analyzing_model_elements_model_visualizer_realization_diagram_wizard_html_select_implementations" />
+     <tocitem text="Specify Symbols Properties" target="modelling_analyzing_model_elements_model_visualizer_realization_diagram_wizard_html_specify_symbols_properties" />
+     </tocitem>
+    <tocitem text="Activity Decomposition Hierarchy Wizard" target="Activity_Decomposition_Hierarchies_Wizard" >
+     <tocitem text="Activity Decomposition Hierarchy Wizard#Specify_Name_and_Package" target="modelling_diagrams_activity_diagram_activity_decomposition_hierarchy_wizard_htm_specify_name_and_package" />
+     <tocitem text="Activity Decomposition Hierarchy Wizard#Select_Structure" target="modelling_diagrams_activity_diagram_activity_decomposition_hierarchy_wizard_htm_select_structure" />
+     <tocitem text="Activity Decomposition Hierarchy Wizard#Specify_sysmbols_properties" target="modelling_diagrams_activity_diagram_activity_decomposition_hierarchy_wizard_htm_specify_sysmbols_properties" />
+     </tocitem>
+    <tocitem text="Sequence Diagram from Java Source Wizard" target="modelling_analyzing_model_elements_model_visualizer_sequence_diagram_from_java_sequence_diagram_from_java_source_wizardnotethis_feature_is_htm" >
+     <tocitem text="Creating sequence diagram from Java source" target="modelling_analyzing_model_elements_model_visualizer_sequence_diagram_from_java_creating_sequance_diagram_from_java_source_htm" />
+     <tocitem text="Extending sequence diagrams" target="modelling_analyzing_model_elements_model_visualizer_sequence_diagram_from_java_extending_sequence_diagrams_htm" />
+     </tocitem>
+    <tocitem text="Content Diagram Wizard" target="content.wizard" >
+     <tocitem text="Specify Name and Package" target="modelling_diagrams_content_diagram_content_diagram_wizard_html_specify_name_and_package" />
+     <tocitem text="Select Diagrams Types" target="modelling_diagrams_content_diagram_content_diagram_wizard_html_select_diagrams_types" />
+     <tocitem text="Select Diagrams" target="modelling_diagrams_content_diagram_content_diagram_wizard_html_select_diagrams" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Searching">
+    <tocitem text="Searching for elements and shapes in your project" target="modelling_analyzing_model_elements_searching_find_html" />
+    <tocitem text="Searching for element symbols" target="modelling_analyzing_model_elements_searching_searching_for_element_symbols_html" />
+    <tocitem text="Searching for symbols in active diagram" target="modelling_analyzing_model_elements_searching_searching_for_symbols_in_active_diagram_html" />
+    <tocitem text="Find dialog box" target="dialog.find" />
+    <tocitem text="Performing a quick search" target="modelling_analyzing_model_elements_searching_quick_find_html" />
+    <tocitem text="Quick Find dialog box" target="modelling_analyzing_model_elements_searching_quick_find_dialog_box_html" />
+    </tocitem>
+   <tocitem text="Metrics" target="modelling_analyzing_model_elements_metrics_metrics_functionality_description_html" >
+    <tocitem text="Metrics suits" target="modelling_analyzing_model_elements_metrics_metrics_suits_html" />
+    <tocitem text="Selecting concrete elements for counting with metrics" target="select_elements" />
+    <tocitem text="Displaying metrics" target="modelling_analyzing_model_elements_metrics_displaying_metrics_html" />
+    <tocitem text="Exporting metrics" target="export_metrics" />
+    <tocitem text="Comparing metrics" target="modelling_analyzing_model_elements_metrics_comparing_metrics_html" />
+    <tocitem text="Metrics properties" target="modelling_analyzing_model_elements_metrics_metrics_properties_html" />
+    <tocitem text="Metrics dialog" target="metrics" />
+    <tocitem text="Metrics window" target="metrics_window" />
+    <tocitem text="Metrics Options dialog" target="metrics_options" />
+    </tocitem>
+   <tocitem text="Model Differencing" target="model_differencing_description" >
+    <tocitem text="Difference Viewer window" target="difference_viewer" />
+    <tocitem text="Diagram Difference Viewer window" target="diagram_difference_viewer" />
+    </tocitem>
+   <tocitem text="Usages and Dependent elements" target="modelling_analyzing_model_elements_usages_and_dependent_elements_usages_dependencies_html" >
+    <tocitem text="Elements used by / depends on windows" target="usages_dependencies_windows" />
+    <tocitem text="Usages / Dependencies Search Options dialog box" target="find_usages_options" />
+    <tocitem text="Showing related elements instead of paths" target="modelling_analyzing_model_elements_usages_and_dependent_elements_showing_related_elements_instead_of_paths_html" />
+    </tocitem>
+   <tocitem text="Dependency Matrix" target="Dependency_Matrix" >
+    <tocitem text="Dependency Matrix description" target="Dependency_Matrix" />
+    <tocitem text="Creating Dependency Matrix" target="Dep_Matrix_dialog" />
+    <tocitem text="Dependency Matrix View" target="Scope_dialog" />
+    <tocitem text="Dependency Matrix Pane" target="Dependency_List_dialog" />
+    <tocitem text="Working with Dependency Matrix template" target="load_matrix_template_dialog" />
+    <tocitem text="Dependency Matrix Templates dialog" target="Dep_Matrix_Templates_dialog" />
+    <tocitem text="Add Remove Elements dialog" target="Add_Remove_Elements_dialog" />
+    <tocitem text="Using Dependency Matrixes" target="modelling_analyzing_model_elements_dependency_matrix_using_dependency_matrixes_htm" />
+    <tocitem text="Modifying Dependency Matrix" target="modelling_analyzing_model_elements_dependency_matrix_modifying_dependency_matrix_htm" />
+    </tocitem>
+   <tocitem text="Relation Map" target="relation_map" >
+    <tocitem text="Creating the Relation Map" target="modelling_analyzing_model_elements_relation_map_creating_the_relation_map_htm" />
+    <tocitem text="Defining Relation Map filters, layout, and depth" target="modelling_analyzing_model_elements_relation_map_defining_relation_map_filters_layout_and_depth_htm" />
+    <tocitem text="Choosing the relation criterion" target="relation_criterion" />
+    <tocitem text="Manipulation of Relation Map" target="modelling_analyzing_model_elements_relation_map_manipulation_of_relation_map_htm" />
+    </tocitem>
+   <tocitem text="Traceability" target="modelling_analyzing_model_elements_traceability_traceability_htm" >
+    <tocitem text="Creating Traceability Relations" target="modelling_analyzing_model_elements_traceability_creating_traceability_relations_htm" />
+    <tocitem text="Traceability Relations Representation" target="modelling_analyzing_model_elements_traceability_traceability_relations_representation_htm" />
+    <tocitem text="Navigating between Different Levels of Abstraction" target="modelling_analyzing_model_elements_traceability_navigating_between_different_levels_of_abstraction_htm" />
+    <tocitem text="Analyzing Traceability Relations" target="modelling_analyzing_model_elements_traceability_analyzing_traceability_relations_htm" />
+    <tocitem text="Predefined Traceability Rules" target="modelling_analyzing_model_elements_traceability_predefined_traceability_rules_htm" />
+    </tocitem>
+   <tocitem text="Validation">
+    <tocitem text="Validation introduction" target="modelling_analyzing_model_elements_validation_validation_introduction_htm" />
+    <tocitem text="Constraint Types" target="modelling_analyzing_model_elements_validation_constraint_types_htm" />
+    <tocitem text="Predefined Validation Suites" target="modelling_analyzing_model_elements_validation_predefined_validation_suites_htm" />
+    <tocitem text="Validating" target="validating" />
+    <tocitem text="Validation Results window" target="modelling_analyzing_model_elements_validation_validation_results_window_htm" />
+    <tocitem text="Validation Rules">
+     <tocitem text="Validation rules introduction" target="modelling_analyzing_model_elements_validation_validation_rules_validation_rules_introduction_htm" />
+     <tocitem text="Validation Constraint dialog box" target="modelling_analyzing_model_elements_validation_validation_rules_validation_constraint_dialog_box_htm" />
+     <tocitem text="Validation rule expression" target="modelling_analyzing_model_elements_validation_validation_rules_validation_rule_expression_htm" />
+     </tocitem>
+    <tocitem text="Validation Suits" target="modelling_analyzing_model_elements_validation_validation_suits_validation_suits_htm" >
+     <tocitem text="Creating new validaton suit" target="modelling_analyzing_model_elements_validation_validation_suits_creating_new_validaton_suit_htm" />
+     <tocitem text="Grouping two suites into one" target="modelling_analyzing_model_elements_validation_validation_suits_grouping_two_suites_into_one_htm" />
+     <tocitem text="To share constraints" target="modelling_analyzing_model_elements_validation_validation_suits_to_share_constraints_htm" />
+     </tocitem>
+    <tocitem text="Advanced Topics">
+     <tocitem text="Global validation rules" target="modelling_analyzing_model_elements_validation_advanced_topics_global_validation_rules_htm" />
+     <tocitem text="Expressions in error messages" target="modelling_analyzing_model_elements_validation_advanced_topics_expressions_in_error_messages_htm" />
+     <tocitem text="Modeling other types OCL2.0 constraints/expressions" target="modelling_analyzing_model_elements_validation_advanced_topics_modeling_other_types_ocl2_0_constraints_expressions_htm" />
+     <tocitem text="Unsupported OCL2.0 features" target="modelling_analyzing_model_elements_validation_advanced_topics_unsupported_ocl2_0_features_htm" />
+     <tocitem text="Adding/customizing severity levels" target="modelling_analyzing_model_elements_validation_advanced_topics_adding_customizing_severity_levels_htm" />
+     <tocitem text="Performance Issues" target="modelling_analyzing_model_elements_validation_advanced_topics_performance_issues_htm" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Active Validation" target="parameters_synchronization_dialog" />
+   <tocitem text="Analyzing package dependencies" target="modelling_analyzing_model_elements_package_dependencies_htm" />
+   <tocitem text="Symbol ownership checking in diagrams" target="modelling_analyzing_model_elements_symbol_ownership_checking_in_diagrams_htm" />
+   <tocitem text="Usage in Diagrams" target="modelling_analyzing_model_elements_usage_in_diagrams_htm" />
+   <tocitem text="Replacing" target="dialog_find_replace" />
+   <tocitem text="Go To feature" target="modelling_analyzing_model_elements_go_to_html" />
+   <tocitem text="Java regular expressions" target="modelling_analyzing_model_elements_java_regular_expression_html" />
+   <tocitem text="Select Model Element / Symbol Types dialog box" target="select_model_element_types" />
+   </tocitem>
+  <tocitem text="Tools">
+   <tocitem text="Model Merge" target="merge" />
+   <tocitem text="Transformation" target="model_transformation_wizard" >
+    <tocitem text="Available Transformations" target="tour_around_magicdraw_tools_transformation_available_transformations_htm" />
+    <tocitem text="Working with Model Transformation Wizard" target="tour_around_magicdraw_tools_transformation_working_with_model_transformation_wizard_htm_xref_78534_model" />
+    <tocitem text="Transformation type mapping" target="tour_around_magicdraw_tools_transformation_transformation_type_mapping_htm_xref_16562_transformation" />
+    <tocitem text="Controlling type mapping rule behavior" target="tour_around_magicdraw_tools_transformation_controlling_type_mapping_rule_behavior_htm_xref_23003_controlling_type" />
+    <tocitem text="Transformation Traces and Update" target="model_refresh_options" />
+    <tocitem text="Profile Migration Transformation" target="tour_around_magicdraw_tools_transformation_profile_migration_transformation_htm" />
+    </tocitem>
+   <tocitem text="Reports generation">
+    <tocitem text="Reports generation" target="file.repf" />
+    </tocitem>
+   <tocitem text="Resource Manager" target="resource_manager" />
+   <tocitem text="Methodology Wizards" target="methodology_wizard" />
+   <tocitem text="Spell Checker" target="spell_checking" />
+   </tocitem>
+  <tocitem text="Data Partitioning" target="save_used_modules" >
+   <tocitem text="Partitioning the model" target="data_partitioning_restrictions_of_shared_packages_html" />
+   <tocitem text="Reusing model parts between models" target="data_partitioning_reusing_model_parts_between_models_html" />
+   <tocitem text="Working with partially loaded projects" target="data_partitioning_working_with_partially_loaded_projects_html" />
+   <tocitem text="Defining profiles" target="data_partitioning_define_profile_html" />
+   <tocitem text="Importing a project module" target="data_partitioning_import_module_html" />
+   <tocitem text="Using a project module" target="data_partitioning_use_module_html" />
+   <tocitem text="Export Module dialog box" target="data_partitioning_select_packages_html" />
+   <tocitem text="Exporting a project module" target="data_partitioning_export_project_module_html" />
+   <tocitem text="Opening a module as a project" target="data_partitioning_open_module_as_project_html" />
+   <tocitem text="Reloading a project module" target="data_partitioning_reload_module_html" />
+   <tocitem text="Indexing" target="data_partitioning_indexing_html" />
+   <tocitem text="Unresolved dependencies" target="data_partitioning_unresolved_dependencies_html" />
+   <tocitem text="Missing elements for proxies (orphaned proxies)" target="orphaned_proxy_resolution_instr" />
+   <tocitem text="Modules dialog" target="modules_remove_button" />
+   <tocitem text="Use Module dialog box" target="use_module" />
+   <tocitem text="Package Dependencies dialog box" target="dialog.pack_depend" />
+   <tocitem text="Shared packages" target="data_partitioning_shared_packages_shared_packages_html" >
+    <tocitem text="Dependencies between packages" target="data_partitioning_shared_packages_dependencies_between_shared_packages_html" />
+    <tocitem text="Viewing the list of all shared packages" target="data_partitioning_shared_packages_viewing_the_list_of_all_shared_packages_html" />
+    <tocitem text="Unsharing package(s)" target="data_partitioning_shared_packages_unsharing_packages_html" />
+    <tocitem text="Shared Packages dialog box" target="share_module" />
+    <tocitem text="Sharing package(s)" target="data_partitioning_shared_packages_sharing_package_html" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Working with Server Projects" target="working_with_server_projects_working_with_server_projects_htm" >
+   <tocitem text="Logging on to Server" target="cts_Login_Dialog" />
+   <tocitem text="Logging off from Server" target="working_with_server_projects_logging_off_from_server_htm" />
+   <tocitem text="Working with Cameo Team Server" target="working_with_server_projects_working_with_cameo_team_server_working_with_cameo_team_server_htm" >
+    <tocitem text="Customizing Server Properties" target="working_with_server_projects_working_with_cameo_team_server_customizing_server_properties_htm" />
+    <tocitem text="Cameo Team Server Concepts" target="working_with_server_projects_working_with_cameo_team_server_cameo_team_server_concepts_htm" />
+    <tocitem text="Working with Cameo Team Server Projects" target="working_with_server_projects_working_with_cameo_team_server_working_with_server_projects_htm" >
+     <tocitem text="Opening server projects" target="working_with_server_projects_working_with_cameo_team_server_opening_server_projects_htm" />
+     <tocitem text="Adding projects" target="working_with_server_projects_working_with_cameo_team_server_adding_projects_htm" />
+     <tocitem text="Managing server projects" target="working_with_server_projects_working_with_cameo_team_server_managing_server_projects_htm" />
+     <tocitem text="Comparing project versions" target="working_with_server_projects_working_with_cameo_team_server_comparing_project_versions_htm" />
+     <tocitem text="Removing server projects" target="cts_Removing_Server_Projects" />
+     <tocitem text="Creating and managing server modules" target="working_with_server_projects_working_with_cameo_team_server_creating_and_managing_server_modules_htm" />
+     <tocitem text="Committing projects to server" target="working_with_server_projects_working_with_cameo_team_server_committing_projects_to_server_htm" />
+     <tocitem text="Saving projects" target="working_with_server_projects_working_with_cameo_team_server_saving_projects_htm" />
+     <tocitem text="Converting server projects to local" target="working_with_server_projects_working_with_cameo_team_server_converting_server_projects_to_local_htm" />
+     <tocitem text="Updating project" target="working_with_server_projects_working_with_cameo_team_server_updating_project_htm" />
+     <tocitem text="Project versioning" target="working_with_server_projects_working_with_cameo_team_server_project_versioning_htm" />
+     <tocitem text="Importing standard / system profiles" target="working_with_server_projects_working_with_cameo_team_server_importing_standard___system_profiles_htm" />
+     <tocitem text="Migrating repositories from Teamwork Server to Cameo Team Server" target="working_with_server_projects_working_with_cameo_team_server_migrating_repositories_from_teamwork_server_to_cameo_team_server_htm" />
+     <tocitem text="Merging server projects" target="working_with_server_projects_working_with_cameo_team_server_migrating_server_projects_htm" />
+     <tocitem text="Controlling lost connection" target="working_with_server_projects_working_with_cameo_team_server_controlling_lost_connection_htm" />
+     </tocitem>
+    <tocitem text="Cameo Team Server User Interface" target="working_with_server_projects_working_with_cameo_team_server_cameo_team_server_user_interface_htm" >
+     <tocitem text="Add Exported Module dialog" target="cts_Add_Exported_Module_Dialog" />
+     <tocitem text="Add Project to Server dialog" target="cts_Add_Project_to_Server_Dialog" />
+     <tocitem text="Commit Changes dialog" target="cts_Commit_Changes_Dialog" />
+     <tocitem text="Commit / Discard Changes dialog" target="cts_Commit_Discard_Changes_Dialog" />
+     <tocitem text="Export Module dialog" target="cts_Export_Module_Dialog" />
+     <tocitem text="History dialog" target="cts_History_Dialog" />
+     <tocitem text="Manage Projects dialog" target="cts_Manage_Projects_Dialog" />
+     <tocitem text="Open Server Project dialog" target="cts_Open_Server_Project_Dialog" />
+     <tocitem text="Rename dialog" target="cts_Rename_dialog" />
+     <tocitem text="Save Options dialog" target="cts_Save_Options_Dialog" />
+     <tocitem text="Standard / System Profiles Importer dialog" target="cts_Standard_System_Profiles_Importer_Dialog" />
+     <tocitem text="Teamwork Server Repository Import Wizard" target="cts_Teamwork_Server_Repository_Import_Wizard" />
+     <tocitem text="Use Server Module wizard" target="cts_Use_Server_Module_Wizard" />
+     <tocitem text="Version Properties dialog" target="cts_Version_Properties_Dialog" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Working with MagicDraw Teamwork Server" target="working_with_server_projects_working_with_teamwork_server_working_with_magicdraw_teamwork_server_htm" >
+    <tocitem text="Teamwork Concepts" target="working_with_server_projects_working_with_teamwork_server_teamwork_concepts_htm" />
+    <tocitem text="Working with Teamwork Projects" target="working_with_server_projects_working_with_teamwork_server_working_with_teamwork_projectsview_online_demoworking_in_htm" >
+     <tocitem text="Creating and managing categories" target="working_with_server_projects_working_with_teamwork_server_creating_and_managing_categories_htm" />
+     <tocitem text="Creating teamwork projects" target="working_with_server_projects_working_with_teamwork_server_creating_a_teamwork_project_htm" />
+     <tocitem text="Adding a non-teamwork project to Teamwork Server" target="add_project_to_teamwork_settings" />
+     <tocitem text="Creating teamwork projects in IDE integration" target="working_with_server_projects_working_with_teamwork_server_creating_teamwork_project_in_ide_integration_htm" />
+     <tocitem text="Migrating server projects to MagicDraw Teamwork Server 17.0.1 or later" target="working_with_server_projects_working_with_teamwork_server_migrating_server_projects_htm" />
+     <tocitem text="Committing to Teamwork Server" target="working_with_server_projects_working_with_teamwork_server_committing_to_teamwork_server_htm" />
+     <tocitem text="Saving teamwork projects locally" target="Converting_teamwork_projects_to_local" />
+     <tocitem text="Saving teamwork projects" target="working_with_server_projects_working_with_teamwork_server_saving_a_teamwork_project_htm" />
+     <tocitem text="Updating" target="working_with_server_projects_working_with_teamwork_server_updating_htm" />
+     <tocitem text="Versioning" target="working_with_server_projects_working_with_teamwork_server_versioning_htm" />
+     <tocitem text="Sending messages" target="mu.send_message" />
+     <tocitem text="Unlocking with administrator permissions" target="working_with_server_projects_working_with_teamwork_server_unlocking_with_administrator_permissions_htm" />
+     <tocitem text="Updating lock information" target="working_with_server_projects_working_with_teamwork_server_updating_htm" />
+     </tocitem>
+    <tocitem text="Managing Teamwrok Server" target="working_with_server_projects_working_with_teamwork_server_managing_teamwork_server_htm" >
+     <tocitem text="Customizing Teamwork Server properties" target="working_with_server_projects_working_with_teamwork_server_customizing_teamwork_server_properties_htm" />
+     <tocitem text="Users management" target="working_with_server_projects_working_with_teamwork_server_users_management_htm" />
+     <tocitem text="User permissions" target="working_with_server_projects_working_with_teamwork_server_user_permissions_htm" />
+     </tocitem>
+    <tocitem text="Code Engineering in Teamwork Projects" target="working_with_server_projects_working_with_teamwork_server_code_engineering_in_teamwork_projects_htm" />
+    <tocitem text="Teamwork Dialogs" target="working_with_server_projects_working_with_teamwork_server_teamwork_dialogs_htm" >
+     <tocitem text="Edit Projects dialog" target="mu.prjs" />
+     <tocitem text="Edit Users dialog" target="mu.users" />
+     <tocitem text="Add/Edit User dialog" target="mu.edit" />
+     <tocitem text="Open Teamwork Project dialog" target="mu.open" />
+     <tocitem text="Commit Settings dialog" target="mu.commit" />
+     <tocitem text="Discard Changes dialog" target="discard_changes" />
+     <tocitem text="Project Versions dialog" target="mu.versions" />
+     <tocitem text="Change Password dialog" target="mu.passw" />
+     <tocitem text="Rename dialog in Teamwork" target="mu_rename" />
+     <tocitem text="Version Information dialog" target="mu.version_info" />
+     <tocitem text="Use Server Module wizard" target="use_profile_module" />
+     </tocitem>
+    <tocitem text="Data Partitioning on Teamwork Server" target="working_with_server_projects_working_with_teamwork_server_data_partitioning_on_teamwork_data_partitioning_on_teamwork_server_htm" >
+     <tocitem text="Creating teamwork modules" target="working_with_server_projects_working_with_teamwork_server_creating_teamwork_modules_htm" />
+     <tocitem text="Working with teamwork modules" target="working_with_server_projects_working_with_teamwork_server_working_with_teamwork_modules_htm" />
+     </tocitem>
+    <tocitem text="Project Branching in Teamwork" target="working_with_server_projects_working_with_teamwork_server_project_branching_project_branching_in_teamwork_htm" >
+     <tocitem text="Teamwork Server repository features" target="working_with_server_projects_working_with_teamwork_server_project_branching_teamwork_server_repository_features_htm" />
+     <tocitem text="Teamwork Server project repository structures" target="working_with_server_projects_working_with_teamwork_server_project_branching_teamwork_server_project_repository_structures_htm" />
+     <tocitem text="Module branching in Teamwork" target="working_with_server_projects_working_with_teamwork_server_project_branching_module_branching_in_teamwork_htm" />
+     <tocitem text="Branching scenarios" target="working_with_server_projects_working_with_teamwork_server_project_branching_branching_scenarios_htm" >
+      <tocitem text="Branching a project causes branching of all or part of used modules" target="working_with_server_projects_working_with_teamwork_server_project_branching_branching_a_project_causes_branching_of_all_or_part_of_used_modules_htm" />
+      <tocitem text="Branching a project does not cause branching of the modules it uses" target="working_with_server_projects_working_with_teamwork_server_project_branching_branching_a_project_does_not_cause_branching_of_the_modules_it_uses_htm" />
+      </tocitem>
+     <tocitem text="Managing Branches" target="working_with_server_projects_working_with_teamwork_server_project_branching_managing_branches_htm" >
+      <tocitem text="To create a project branch" target="create_branch" />
+      <tocitem text="To open a branch" target="working_with_server_projects_working_with_teamwork_server_project_branching_to_open_a_branch_htm" />
+      <tocitem text="To open the latest version of a branch" target="working_with_server_projects_working_with_teamwork_server_project_branching_to_open_the_latest_version_of_a_branch_htm" />
+      <tocitem text="To branch modules together with project" target="working_with_server_projects_working_with_teamwork_server_project_branching_to_branch_modules_together_with_project_htm" />
+      </tocitem>
+     </tocitem>
+    </tocitem>
+   <tocitem text="Editing Server Project" target="working_with_server_projects_editing_server_projects_editing_server_project_htm" >
+    <tocitem text="Locking Model Elements and Diagrams for Editing" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_locking_model_elements_and_diagrams_for_editing_htm" >
+     <tocitem text="Representation of locked elements" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_representation_of_locked_elements_htm" />
+     <tocitem text="To see the list of locked elements" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_new_to_see_the_list_of_locked_elements_htm" />
+     <tocitem text="Locking commands" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_locking_commands_htm" />
+     <tocitem text="Locking procedures" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_locking_procedures_htm" >
+      <tocitem text="To lock elements and / or diagrams" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_to_lock_elements_and_or_diagrams_htm" />
+      <tocitem text="To lock several elements" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_to_lock_several_elements_htm" />
+      <tocitem text="To lock an element in the Specification window" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_to_lock_an_element_in_the_specification_window_htm" />
+      <tocitem text="To lock an element assigned as a property value" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_to_lock_an_element_assigned_as_a_property_value_htm" />
+      <tocitem text="To lock elements for reverse engineering" target="teamwork.lock_reverse" />
+      </tocitem>
+     <tocitem text="Locking project structure" target="working_with_server_projects_editing_server_projects_locking_elements_and_diagrams_locking_project_structure_htm" />
+     </tocitem>
+    <tocitem text="Unlocking Model Elements and Diagrams" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_unlocking_model_elements_and_diagrams_htm" >
+     <tocitem text="Unlocking commands" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_unlocking_commands_htm" />
+     <tocitem text="Unlocking procedures" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_unlocking_procedures_htm" >
+      <tocitem text="To unlock elements or / and diagrams" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_unlock_elements_or_and_diagrams_htm" />
+      <tocitem text="To unlock several elements" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_unlock_several_elements_htm" />
+      <tocitem text="To unlock all elements" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_unlock_all_element_htm" />
+      <tocitem text="To unlock an element in the Specification window" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_unlock_an_element_in_the_specification_window_htm" />
+      <tocitem text="To unlock an element assigned as a property value" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_unlock_an_element_assigned_as_a_property_value_htm" />
+      <tocitem text="To unlock on project committing" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_unlock_on_project_committing_htm" />
+      <tocitem text="Unlocking with administrator permissions" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_unlocking_with_administrator_permissions_htm" />
+      </tocitem>
+     <tocitem text="Updating a project while discarding changes" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_teamwork_unlock_discard_html" />
+     <tocitem text="To delete an element from the server project" target="working_with_server_projects_editing_server_projects_unlocking_elements_and_diagrams_to_delete_an_element_from_the_teamwork_project_htm" />
+     </tocitem>
+    <tocitem text="Data Partitioning on Server" target="working_with_server_projects_data_partitioning_on_server_htm" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Advanced Profiling and domain specific customizations" target="advanced_profiling_dsl_customization_advanced_profiling_and_ds_customizations_htm" >
+   <tocitem text="Advanced Profiling and domain specific customizations description" target="advanced_profiling_dsl_customization_advanced_profiling_and_ds_customizations_htm" />
+   <tocitem text="Advanced customization engines" target="advanced_profiling_dsl_customization_advanced_customization_engines_htm" />
+   <tocitem text="XMI exchange" target="advanced_profiling_dsl_customization_xmi_exchange_htm" />
+   <tocitem text="Distrubuting resources" target="distrubuting_resources_htm" />
+   <tocitem text="Working with UML profiles" target="advanced_profiling_dsl_customization_working_with_uml_profiles_working_with_profiles_description_htm" >
+    <tocitem text="Creating Profile" target="advanced_profiling_dsl_customization_working_with_uml_profiles_creating_profile_htm" />
+    <tocitem text="Modifying Profile" target="advanced_profiling_dsl_customization_working_with_uml_profiles_modifying_profile_htm" />
+    <tocitem text="Using profile, stereotypes and tags" target="advanced_profiling_dsl_customization_working_with_uml_profiles_using_profile_stereotypes_and_tags_htm" />
+    </tocitem>
+   <tocitem text="Advanced Profiling" target="advanced_profiling_dsl_customization_advanced_profiling_advanced_profiling_description_htm" >
+    <tocitem text="Initializing opposite association end" target="advanced_profiling_dsl_customization_advanced_profiling_initializing_opposite_association_end_htm" />
+    <tocitem text="Invisible stereotypes and tags" target="advanced_profiling_dsl_customization_advanced_profiling_invisible_stereotypes_and_tags_htm" />
+    <tocitem text="Applying different icons" target="advanced_profiling_dsl_customization_advanced_profiling_applying_different_icons_htm" />
+    <tocitem text="Grouping tags in one stereotype scope" target="advanced_profiling_dsl_customization_advanced_profiling_grouping_tags_in_one_stereotype_scope_htm" />
+    <tocitem text="Creating tags with default values" target="advanced_profiling_dsl_customization_advanced_profiling_creating_tags_with_default_values_htm" />
+    <tocitem text="Customizing style of stereotyped elements" target="advanced_profiling_dsl_customization_advanced_profiling_customizing_style_of_stereotyped_elements_htm" />
+    </tocitem>
+   <tocitem text="Custom Diagram Wizard" target="advanced_profiling_dsl_customization_custom_diagram_wizard_custom_diagram_wizard_description_htm" >
+    <tocitem text="Name, base type, abbreviation, category, icon" target="advanced_profiling_dsl_customization_custom_diagram_wizard_name,_base_type,_abbreviation_htm" />
+    <tocitem text="Used Profiles" target="advanced_profiling_dsl_customization_custom_diagram_wizard_used_profiles_htm" />
+    <tocitem text="Custom diagram toolbars" target="advanced_profiling_dsl_customization_custom_diagram_wizard_custom_diagram_toolbars_htm" />
+    <tocitem text="Custom toolbar buttons" target="advanced_profiling_dsl_customization_custom_diagram_wizard_custom_toolbar_buttons_htm" />
+    <tocitem text="Custom styles" target="advanced_profiling_dsl_customization_custom_diagram_wizard_custom_styles_htm" />
+    <tocitem text="Smart manipulators" target="advanced_profiling_dsl_customization_custom_diagram_wizard_smart_manipulators_htm" />
+    </tocitem>
+   <tocitem text="DSL customization engine" target="advanced_profiling_dsl_customization_dsl_customization_engine_dsl_customization_engine_general_principles_htm" >
+    <tocitem text="DSL customization engine general principles" target="advanced_profiling_dsl_customization_dsl_customization_engine_dsl_customization_engine_general_principles_htm" />
+    <tocitem text="Creating Customization data" target="advanced_profiling_dsl_customization_dsl_customization_engine_creating_customization_data_htm" />
+    <tocitem text="Defining preferred metatype" target="advanced_profiling_dsl_customization_dsl_customization_engine_defining_preferred_metatype_htm" />
+    <tocitem text="Creating your own property groups and subgroups" target="advanced_profiling_dsl_customization_dsl_customization_engine_creating_your_own_property_groups_and_subgroups_dsl__htm" >
+     <tocitem text="Default visibility of property groups and subgroups" target="advanced_profiling_dsl_customization_dsl_customization_engine_creating_your_own_property_groups_and_subgroups_new_default_visibility_of_property_groups_and_subgroups_htm" />
+     <tocitem text="Merging property groups and subgroups" target="advanced_profiling_dsl_customization_dsl_customization_engine_creating_your_own_property_groups_and_subgroups_new_merging_property_groups_and_subgroups_htm" />
+     </tocitem>
+    <tocitem text="Customizing specification window" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_specification_dialog_box_customizing_specification_dialog_box_htm" >
+     <tocitem text="Hiding standard UML properties" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_specification_dialog_box_hiding_standard_uml_properties_htm" />
+     <tocitem text="Always visible properties" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_specification_dialog_box_always_visible_properties_htm" />
+     <tocitem text="Meta property substitution" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_specification_dialog_box_meta_property_substitution_htm" />
+     </tocitem>
+    <tocitem text="Attaching element-specific help topics" target="advanced_profiling_dsl_customization_dsl_customization_engine_attaching_element-specific_help_topics_htm" />
+    <tocitem text="Customizing element shortcut menu" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_element_shortcut_menu_customizing_element_shortcut_menu_htm" >
+     <tocitem text="Quick property editor" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_element_shortcut_menu_quick_property_editor_htm" />
+     <tocitem text="Quick stereotype applying" target="advanced_profiling_dsl_customization_dsl_customization_engine_customizing_element_shortcut_menu_quick_stereotype_applying_htm" />
+     </tocitem>
+    <tocitem text="Custom model initialization" target="advanced_profiling_dsl_customization_dsl_customization_engine_custom_model_initialization_custom_model_initialization_htm" >
+     <tocitem text="Default values" target="advanced_profiling_dsl_customization_dsl_customization_engine_custom_model_initialization_default_values_htm" />
+     <tocitem text="Stereotypes on relationship ends" target="advanced_profiling_dsl_customization_dsl_customization_engine_custom_model_initialization_stereotypes_on_relationship_ends_htm" />
+     <tocitem text="Required Generalization or Interface Realization" target="advanced_profiling_dsl_customization_dsl_customization_engine_custom_model_initialization_required_generalization_or_interface_realization_htm" />
+     <tocitem text="Initializing roles at both association ends" target="advanced_profiling_dsl_customization_dsl_customization_engine_custom_model_initialization_initializing_roles_at_both_association_ends_htm" />
+     </tocitem>
+    <tocitem text="Custom rules for relationships" target="advanced_profiling_dsl_customization_dsl_customization_engine_custom_rules_for_relationships_htm" />
+    <tocitem text="Customization of owned elements creation" target="advanced_profiling_dsl_customization_dsl_customization_engine_customization_of_owned_elements_creation_customization_of_owned_elements_creation_htm" >
+     <tocitem text="Custom owned types" target="advanced_profiling_dsl_customization_dsl_customization_engine_customization_of_owned_elements_creation_custom_owned_types_htm" />
+     <tocitem text="Custom owned diagrams" target="advanced_profiling_dsl_customization_dsl_customization_engine_customization_of_owned_elements_creation_custom_owned_diagrams_htm" />
+     <tocitem text="Custom suggested relationships" target="advanced_profiling_dsl_customization_dsl_customization_engine_customization_of_owned_elements_creation_custom_suggested_relationships_htm" />
+     </tocitem>
+    <tocitem text="Customization of symbols" target="advanced_profiling_dsl_customization_dsl_customization_engine_customization_of_symbols_htm" />
+    <tocitem text="Extending metamodel with derived properties" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_new_extending_metamodel_with_derived_properties_htm" >
+     <tocitem text="Specifying derived properties" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_specifying_derived_properties_htm" />
+     <tocitem text="Defining expressions" target="DSL_criterion" >
+      <tocitem text="Simple expressions" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_defining_expressions_htm_xref_20352_simple_expressions" />
+      <tocitem text="OCL expressions" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_defining_expressions_htm_xref_29491_ocl_expressions" />
+      <tocitem text="Binary expressions" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_defining_expressions_htm_xref_48722_binary_expresions" />
+      <tocitem text="Meta Chain expressions" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_defining_expressions_htm_xref_49005_meta_chain" />
+      </tocitem>
+     <tocitem text="Expressions merge" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_expressions_merge_htm" />
+     <tocitem text="Derived properties visibility" target="advanced_profiling_dsl_customization_dsl_customization_engine_derived_properties_derived_properties_visibility_htm" />
+     </tocitem>
+    <tocitem text="Creating numbering customizations" target="advanced_profiling_dsl_customization_creating_numbering_customizations_creating_numbering_customizations_htm" >
+     <tocitem text="Basic steps for creating numbering customization" target="advanced_profiling_dsl_customization_creating_numbering_customizations_basic_steps_for_creating_numbering_customization_htm" />
+     <tocitem text="Creating your first numbering customization" target="advanced_profiling_dsl_customization_creating_numbering_customizations_creating_your_first_numbering_customization_htm" />
+     <tocitem text="Relevant tag values" target="advanced_profiling_dsl_customization_creating_numbering_customizations_relevant_tag_values_htm" />
+     </tocitem>
+    </tocitem>
+   </tocitem>
+  <tocitem text="Code Engineering" target="code_engineering_and_databases_code_engineering_html" >
+   <tocitem text="Retrieve DB description" target="code_engineering_and_databases_retrieve_db_info_retrieve_db_info_html" />
+   <tocitem text="Creating a new code engineering set" target="class_field_creation_rules" />
+   <tocitem text="Generating code from a code engineering set" target="code_engineering_and_databases_codeeng_generatet_html" />
+   <tocitem text="Adding / removing files or classes to/from a code engineering set" target="code_engineering_and_databases_codeeng_edit_html" />
+   <tocitem text="Changing the language properties of a code engineering set" target="code_engineering_and_databases_codeeng_prop_html" />
+   <tocitem text="Rules of the association or attribute creation on reverse" target="class_field_creation_rules_dialog" />
+   <tocitem text="Changing the working directory for a code engineering set" target="Paths_for_references" />
+   <tocitem text="Renaming a selected set" target="code_engineering_and_databases_codeeng_rename_set_html" />
+   <tocitem text="Deleting a selected code engineering set" target="code_engineering_and_databases_codeeng_delete_set_html" />
+   <tocitem text="Checking the syntax of a code engineering set" target="code_engineering_and_databases_codeeng_syntax_html" />
+   <tocitem text="Java 6.0 support" target="code_engineering_and_databases_java_5_0_html" />
+   <tocitem text="Code Generation Options dialog box" target="file.codeopt" />
+   <tocitem text="Documentation Properties dialog box" target="dialog.java_documentation_properties" />
+   <tocitem text="Working Directory dialog box" target="dialog.working_directory" />
+   <tocitem text="Round Trip Set dialog box" target="tools.reverse" >
+    <tocitem text="Add Files tab" target="code_engineering_and_databases_round_trip_set_html_add_files_tab" />
+    <tocitem text="Add Data from Model" target="code_engineering_and_databases_round_trip_set_html_add_data_from_model" />
+    </tocitem>
+   <tocitem text="CG Properties Editor" target="common.lprop" >
+    <tocitem text="CG Properties Editor dialog box - Class" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_class_html" >
+     <tocitem text="Java tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_class_html_java_tab" />
+     <tocitem text="CIL tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_class_html_cil_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - Enumeration Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_enumeration_html" >
+     <tocitem text="Java tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_enumeration_html_java_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - Attribute" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_attribute_html" >
+     <tocitem text="Java tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_attribute_html_java_tab" />
+     <tocitem text="CIL tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_attribute_html_cil_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - Operation" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_operation_html" >
+     <tocitem text="Java tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_operation_html_java_tab" />
+     <tocitem text="CIL tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_operation_html_cil_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - Parameter" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_parameter_html" >
+     <tocitem text="CIL tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_parameter_html_cil_tab" />
+     <tocitem text="DDL tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_parameter_html_ddl_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - Generalization" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_generalization_html" />
+    <tocitem text="CG Properties Editor dialog box - Java Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - Java Bytecode Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_bytecode_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_bytecode_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_bytecode_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_java_bytecode_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - CIL Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - CIL Disassembler Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_disassembler_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_disassembler_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_disassembler_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_cil_disassembler_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - CORBA IDL Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_corba_idl_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_corba_idl_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_corba_idl_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_corba_idl_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - DDL Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ddl_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ddl_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ddl_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ddl_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - EJB 2.0 Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ejb_2_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ejb_2_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ejb_2_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_ejb_2_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - XML Schema Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_xml_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_xml_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_xml_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_xml_html_subobjects_tab" />
+     </tocitem>
+    <tocitem text="CG Properties Editor dialog box - WSDL Set Properties" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_wsdl_html" >
+     <tocitem text="Properties tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_wsdl_html_properties_tab" />
+     <tocitem text="Relations tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_wsdl_html_relations_tab" />
+     <tocitem text="Subobjects tab" target="code_engineering_and_databases_cg_properties_editor_cg_properties_editor_wsdl_html_subobjects_tab" />
+     </tocitem>
+    </tocitem>
+   <tocitem text="Reverse" target="code_engineering_and_databases_reverse_codeeng_reverse_html" >
+    <tocitem text="Reversing files that have been changed after reverse" target="code_engineering_and_databases_reverse_reverse_changedfiles_html" />
+    <tocitem text="Reversing quickly from classpath" target="code_engineering_and_databases_reverse_code_engineering_quick_html" />
+    <tocitem text="Setting destination of code reverse output" target="code_engineering_and_databases_destination_of_reverse_html" />
+    <tocitem text="Reverse Options dialog box" target="file.reverseopt" />
+    <tocitem text="Reversing source code files by creating a separate set" target="code_engineering_and_databases_reverse_reverse_reverse_html" />
+    <tocitem text="Reversing a source code file without the creation of a code engineering set" target="code_engineering_and_databases_reverse_reverse_without_creation_html" />
+    </tocitem>
+   <tocitem text="Mapping to UML rules for Java" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_mapping_to_uml_rules_htm" >
+    <tocitem text="Annotation Member" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_annotation_member_htm" />
+    <tocitem text="Annotation Type" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_annotation_type_htm" />
+    <tocitem text="Annotations Usage" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_annotations_usage_htm" />
+    <tocitem text="Class" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_class_htm" />
+    <tocitem text="Enumeration" target="Enumeration" />
+    <tocitem text="Enumeration Literal" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_enumeration_literal_htm" />
+    <tocitem text="Field" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_field_htm" />
+    <tocitem text="Imports" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_imports_htm" />
+    <tocitem text="Interface" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_interface_htm" />
+    <tocitem text="Operation" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_operation_htm" />
+    <tocitem text="Package" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_package_htm" />
+    <tocitem text="Parameterized Type" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_parameterized_type_htm" />
+    <tocitem text="Type Variables" target="code_engineering_and_databases_mapping_to_uml_rules_for_java_type_variables_htm" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Integrations" target="integrations_integrations_html" >
+   <tocitem text="Integrating MD and other tool" target="integrations_dialog" />
+   <tocitem text="Integration with Eclipse" target="integrations_integration_with_eclipse_integration_with_eclipse_html" >
+    <tocitem text="Creating integrated with eclipse MD project" target="integrations_integration_with_eclipse_creating_html" />
+    <tocitem text="Opening MagicDraw project" target="integrations_integration_with_eclipse_opening_magicdraw_project_html" />
+    <tocitem text="Creating MagicDraw project from eclipse" target="integrations_integration_with_eclipse_creating_magicdraw_project_from_eclipse_html" />
+    <tocitem text="Creating MagicDraw project from template" target="integrations_integration_with_eclipse_creating_magicdraw_project_from_template_html" />
+    <tocitem text="Integrating MagicDraw project with eclipse project" target="select_eclipse_project" />
+    <tocitem text="Integration Options dialog box (for Eclipse)" target="integration_properties_eclipse" />
+    <tocitem text="Unintegrating MagicDraw and eclipse projects" target="integrations_integration_with_eclipse_unintegrate_html" />
+    </tocitem>
+   <tocitem text="Creating new MD project in integration" target="new_project_wizard" />
+   <tocitem text="Integration with Sun ONE Studio / NetBeans" target="integrations_integration_with_sun_one_studio_netbeans_html" />
+   <tocitem text="Integration Properties dialog box (for Sun One Studio and NetBeans)" target="integration_properties" />
+   <tocitem text="Integration with IntelliJ" target="integrations_integration_with_intellij_html" />
+   <tocitem text="Integration Properties dialog box (for IntelliJ IDEA)" target="intellij_properties" />
+   <tocitem text="Integration with ProActivity" target="integrations_integration_with_proactivity_integration_with_proactivity_html" >
+    <tocitem text="Import ProActivity model" target="integrations_integration_with_proactivity_import_proactivity_html" />
+    <tocitem text="Export to ProActivity" target="export_to_proactivity_wizard" />
+    </tocitem>
+   <tocitem text="Integration with oAW" target="integrations_integration_with_oaw_htm" />
+   <tocitem text="Integration with AndroMDA" target="AndroMDA_Diagram" />
+   <tocitem text="Select Source Directory dialog box" target="select_source_directory" />
+   <tocitem text="Unintegrating MD and other tool" target="integrations_unintegrating_md_and_other_tool_html" />
+   <tocitem text="Integration with CVS" target="integrations_integration_with_cvs_cvs_integration_html" >
+    <tocitem text="Add Project to CVS dialog box" target="cvs.add" />
+    <tocitem text="Checkout Module dialog box" target="cvs.checkout" />
+    <tocitem text="Command Line dialog box" target="integrations_integration_with_cvs_command_line_html" />
+    <tocitem text="Commit Project to CVS dialog box" target="cvs.commit" />
+    <tocitem text="Revisions dialog box" target="revisions" />
+    <tocitem text="Update CVS Project dialog box" target="cvs.update" />
+    </tocitem>
+   <tocitem text="Integration with CaliberRM" target="integrations_integration_with_caliberrm_caliber_integration_html" >
+    <tocitem text="CaliberRM Requirements window" target="integrations_integration_with_caliberrm_caliberrm_requirements_window_html" />
+    </tocitem>
+   </tocitem>
+  <tocitem text="Enterprise Architect Import Plugin" target="ea_import_plugin" >
+   <tocitem text="Enterprise Architect Import Plugin" target="ea_import_plugin" />
+   <tocitem text="Import Enterprise Architect Files dialog" target="ea_import_dialog" />
+   </tocitem>
+  <tocitem text="References to MagicDraw UML User Guides and Tutorials" target="references_to_magicdraw_user_guides_and_manuals_contents_html" />
+  <tocitem text="Glossary" target="glossary_html" >
+   <tocitem text="A" target="glossary_html_a" />
+   <tocitem text="B" target="glossary_html_b" />
+   <tocitem text="C" target="glossary_html_c" />
+   <tocitem text="D" target="glossary_html_d" />
+   <tocitem text="E" target="glossary_html_e" />
+   <tocitem text="F" target="glossary_html_f" />
+   <tocitem text="G" target="glossary_html_g" />
+   <tocitem text="H" target="glossary_html_h" />
+   <tocitem text="I" target="glossary_html_i" />
+   <tocitem text="J" target="glossary_html_j" />
+   <tocitem text="L" target="glossary_html_l" />
+   <tocitem text="M" target="glossary_html_m" />
+   <tocitem text="N" target="glossary_html_n" />
+   <tocitem text="O" target="glossary_html_o" />
+   <tocitem text="P" target="glossary_html_p" />
+   <tocitem text="R" target="glossary_html_r" />
+   <tocitem text="S" target="glossary_html_s" />
+   <tocitem text="T" target="glossary_html_t" />
+   <tocitem text="U" target="glossary_html_u" />
+   <tocitem text="W" target="glossary_html_w" />
+   <tocitem text="X" target="glossary_html_x" />
+   <tocitem text="Z" target="glossary_html_z" />
+   </tocitem>
+  </tocitem>
+  -->
+</toc>

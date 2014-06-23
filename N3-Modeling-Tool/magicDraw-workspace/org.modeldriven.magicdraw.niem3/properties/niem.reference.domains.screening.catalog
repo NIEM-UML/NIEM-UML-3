@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./catalog.xsl"?>
+<!DOCTYPE catalog
+          PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+          "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         prefer="public">
+
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/screening/3.0/screening.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/jxdm/5.0/jxdm.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/maritime/3.0/maritime.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/intelligence/3.0/intelligence.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/cbrn/3.0/cbrn.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/internationalTrade/3.0/internationalTrade.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/cyfs/3.0/cyfs.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/ansi_d20/3.0/" 
+       uri="niem/domains/immigration/3.0/immigration.xsd"/>
+       
+</catalog>

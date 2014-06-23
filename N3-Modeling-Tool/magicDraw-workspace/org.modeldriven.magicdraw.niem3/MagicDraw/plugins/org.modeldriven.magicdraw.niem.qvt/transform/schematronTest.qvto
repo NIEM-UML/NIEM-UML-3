@@ -1,0 +1,918 @@
+import NIEMpim2psm;
+import NIEMpsm2xsd;
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype ECORE  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype CHANGELOG uses 'http://reference.niem.gov/niem/resource/mpd/changelog/1.0/';
+modeltype SCHEMATRON uses 'http://purl.oclc.org/dsdl/schematron';
+modeltype XML uses 'http://www.eclipse.org/emf/2003/XMLType';
+modeltype OCL uses 'http://www.eclipse.org/ocl/1.1.0/OCL/Expressions';
+
+transformation pim2psm(
+	inout niemUml:UML,
+	inout blackboxAdapter:ECORE
+	,out changeLog:CHANGELOG
+	,out sch:SCHEMATRON
+	)
+	extends NIEMpim2psm(UML)
+	;
+	main() {
+	log('schematronTest');
+		blackboxHook:=blackboxAdapter.objectsOfType(ECORE::EPackage)->asSequence()->first();
+		// look for information model packages which have classifier constraints
+		var topRoot:UML::Model:=niemUml.rootObjects()
+			->select(m|m.oclIsKindOf(UML::Model))
+			.oclAsType(UML::Model)->asSequence()->first();
+
+		topRoot.oclAsType(UML::Model).initializeProfileGlobals();
+
+		var allPimMpds:Set(UML::Component)=topRoot.allSubobjectsOfType(UML::Component).oclAsType(UML::Component)
+			->select(c|
+				c.IsStereotypeApplied(prompdStereotype)
+				and c.isEditable()
+				)->asSet();
+		// gather all pim schemas, then use to create schematrons
+		var allPimSchemas:Set(UML::Package)=allPimMpds.gatherAllPimSchemas()->asSet();
+		allPimSchemas->select(s|s.ownedType->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).ownedRule->notEmpty())
+			.map InformationModelSchematron();
+		/*
+		var root:SCHEMATRON::DocumentRoot=new SCHEMATRON::DocumentRoot();
+		var schema:SCHEMATRON::SchemaType=new SCHEMATRON::SchemaType();
+		root.schema+=schema;
+		var pattern:SCHEMATRON::PatternType=new SCHEMATRON::PatternType();
+		schema.pattern+=pattern;
+		pattern.id:='Check structure';
+		var rule:SCHEMATRON::RuleType=new SCHEMATRON::RuleType();
+		pattern.rule+=rule;
+		rule.context:='Person';
+		var myAssert:SCHEMATRON::AssertType=new SCHEMATRON::AssertType();
+		rule._assert+=myAssert;
+		myAssert.test:='@Title';
+		*/
+		//myAsset.mixed->select(featureMapEntry|featureMapEntry.)
+		//FeatureMap.Entry
+		//myAssert.setAssertText('The element Person should have the child elements Name and Sex.');
+		/*
+			java implementation:
+			static public void setAssertText(AssertType assert,String text){
+				FeatureMap featureMap=assert.getMixed();
+				featureMap.add(XMLTypePackage.Literals.XML_TYPE_DOCUMENT_ROOT__TEXT, text);
+				
+			}
+		*/
+		// ocl to xpath: can we get this to model form?
+		//var expression:OCL::OCLExpression=new OCL::OCLExpression();// actually need this from java based on ocl text
+		// map one of following:
+		// CallExp/FeatureCallExp,LoopExp/IteratorExp,IterateExp;LiteralExp;IfExp;VariableExp;TypeExp
+		
+		// get the ocl text from the constraint, convert to ocl model
+		//  conversion to xpath need to be via string, no 
+		/*
+		sch:pattern name="Check structure">
+������<sch:rule context="Person">
+���������<sch:assert test="@Title">The element Person must have a Title attribute</sch:assert>
+���������<sch:assert test="count(*) = 2 and count(Name) = 1 and count(Sex) = 1">The element Person should have the child elements Name and Sex.</sch:assert>
+		*/
+		//pim2psmMain();
+	}
+	
+	
+property currentSchemaType:SCHEMATRON::SchemaType=null;
+	
+mapping 	UML::Package::InformationModelSchematron():SCHEMATRON::DocumentRoot@sch
+{	
+	schema+=self.map InformationModelSchema();
+}
+mapping 	UML::Package::InformationModelSchema():SCHEMATRON::SchemaType@sch
+{
+	currentSchemaType:=result;
+	// should pattern be a schema, rule a classifier selection, assert a constraint?
+	id:=self.name.toNCName();
+	
+	// NIEM infrastructure namespaces
+	var infrastructureSchemas:Set(String)=Set{appinfoSchemaNamespace,appinfo2SchemaNamespace,structuresSchemaNamespace,proxySchemaNamespace};
+	infrastructureSchemas.map PrefixForNamespace(result);
+	
+	// set prefix to be used for Schema namespace
+	ns+=self.map PrefixForSchemaNamespace(result);
+
+	// prefixes for referenced schemas
+	// gather all references to schema components via typedElements, generalizations, dependencies;
+	// collect the schemas for those schema components in packageRefs
+	var packageRefs:Set(UML::Package)=Set{};
+	self.allSubobjectsOfKind(UML::Property).oclAsType(UML::Property)
+		->select(p|not(p.type.oclIsUndefined())).type->forEach(type){packageRefs+=type.getNearestNIEMSchemaPackage();};
+	self.allSubobjectsOfKind(UML::Classifier).oclAsType(UML::Classifier).general
+		->forEach(type){packageRefs+=type.getNearestNIEMSchemaPackage();};
+	self.allSubobjectsOfKind(UML::DirectedRelationship).oclAsType(UML::DirectedRelationship).target
+		->forEach(type){packageRefs+=type.getNearestNIEMSchemaPackage();};
+
+	// filter out those schemas which are unresolved or are this schema
+	packageRefs:= packageRefs->select(p|not(p.oclIsUndefined() or (p=self)));
+	// map each of those referenced Schemas to an XSDImport
+	ns+=packageRefs.map PrefixForSchemaNamespace(result);
+	title+=self.ownedComment.map Title();
+	if(self.ownedType->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).ownedRule->notEmpty())then{
+		pattern+=self.map InformationModelPattern();
+	}endif;	
+}
+mapping 	UML::Comment::Title():SCHEMATRON::TitleType@sch
+{
+	result.setTitleText(self.body);
+}
+mapping 	UML::Package::PrefixForSchemaNamespace(inout schema:SCHEMATRON::SchemaType):SCHEMATRON::NsType@sch
+{
+	var pimStereotypeInstance:Stdlib::Element=self.GetStereotypeApplication(NIEMSchemaStereotype).oclAsType(Stdlib::Element);
+	// set schema targetNamespace from <<Namespace>>
+	var targetNamespace:String=pimStereotypeInstance.getSchemaTargetNamespace();
+	var defaultPrefix:String=pimStereotypeInstance.getSchemaDefaultPrefix();
+	var isKnownNamespace:Boolean=false;
+	uri:=targetNamespace;
+	prefixToNamespace->forEach(entry){
+		if(entry.namespace=targetNamespace)then{
+			prefix:=entry.prefix;
+			isKnownNamespace:=true;
+			break;
+		}endif;
+	};
+	if(not(isKnownNamespace))then{
+		if(not(defaultPrefix.oclIsUndefined())and(defaultPrefix<>''))then{
+			prefix:=defaultPrefix;
+		}else{
+			prefix:='tns';
+		}endif;
+	}endif;
+	
+}
+mapping 	String::PrefixForNamespace(inout schema:SCHEMATRON::SchemaType):SCHEMATRON::NsType@sch
+{
+	// use standard prefixes
+	uri:=self;
+	prefixToNamespace->forEach(entry){
+		if(entry.namespace=self)then{
+			prefix:=entry.prefix;
+			break;
+		}endif;
+	};
+}
+mapping 	UML::Package::InformationModelPattern():SCHEMATRON::PatternType@sch
+{
+	// should pattern be a schema, rule a classifier selection, assert a constraint?
+	id:=self.name.toNCName()+'BusinessRules';
+	rule+=self.ownedType
+		->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+		->select(c|c.ownedRule->notEmpty()).map ClassifierRule();
+}
+mapping 	UML::Classifier::ClassifierRule():SCHEMATRON::RuleType@sch
+{
+	// should pattern be a schema, rule a classifier selection, assert a constraint?
+	// context: a containment property whose type is this Classifier, or any of its base types
+	/*
+	context:='';
+	self._typedElementOfType
+		->select(p|p.oclIsKindOf(UML::Property)).oclAsType(UML::Property)
+		->select(p|p.isNavigable() and (p.aggregation!=UML::AggregationKind::none))
+		->forEach(p){
+		if(result.context!='')then {context:=result.context+'|';}endif;
+		context:=result.context+p.QName();
+	};
+	*/
+	context:='element(*,'+self.QName()+')';
+	_assert+=self.ownedRule.map ConstraintAssert();
+}
+mapping 	UML::Constraint::ConstraintAssert():SCHEMATRON::AssertType@sch
+{
+	// should pattern be a schema, rule a classifier selection, assert a constraint?
+	self.ownedComment->forEach(comment){
+		result.setAssertText(comment.body);
+	};
+	test:=self.Expression().expressionToTest();
+}
+///////////////////
+abstract query OCL::OCLExpression::expressionToTest():String;// abstract
+abstract query OCL::CallExp::expressionToTest():String;// abstract
+abstract query OCL::FeatureCallExp::expressionToTest():String;// abstract
+abstract query OCL::AssociationClassCallExp::expressionToTest():String;
+abstract query OCL::NavigationCallExp::expressionToTest():String;// abstract
+abstract query OCL::LoopExp::expressionToTest():String;// abstract
+abstract query OCL::MessageExp::expressionToTest():String;// no counterpart
+abstract query OCL::StateExp::expressionToTest():String;// no counterpart
+abstract query OCL::LiteralExp::expressionToTest():String;// abstract
+abstract query OCL::PrimitiveLiteralExp::expressionToTest():String;// abstract
+abstract query OCL::NumericLiteralExp::expressionToTest():String;// abstract
+abstract query OCL::TupleLiteralExp::expressionToTest():String;// no counterpart
+abstract query OCL::CollectionLiteralPart::expressionToTest():String;// abstract
+abstract query OCL::IterateExp::expressionToTest():String;// no counterpart
+
+query OCL::CollectionItem::expressionToTest():String=self.item.expressionToTest();
+query OCL::CollectionRange::expressionToTest():String=self.first.expressionToTest()+' to '+self.last.expressionToTest();
+query OCL::CollectionLiteralExp::expressionToTest():String=
+	'('+self.part
+		->forEach(collectionLiteralPart){
+			if(self.part->indexOf(collectionLiteralPart)=1)then '' else ',' endif
+			+collectionLiteralPart.expressionToTest();
+		}+')'
+;
+query OCL::IteratorExp::expressionToTest():String=
+	switch{
+			case(self.expressionName()='select'){
+				'for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return if('+self.body.expressionToTest()+')then $'+self.iterator->at(1).variableName() 
+					+' else ()';
+				/*
+[4]    	ForExpr 	   ::=    	SimpleForClause "return" ExprSingle
+[5]    	SimpleForClause 	   ::=    	"for" "$" VarName "in" ExprSingle ("," "$" VarName "in" ExprSingle)*				
+				*/
+			};
+			case(self.expressionName()='reject'){
+				'for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return if('+self.body.expressionToTest()+')then () else $'
+					+self.iterator->at(1).variableName(); 
+			};
+			// TODO: if set, then should be unique
+			case(self.expressionName()='collect'){
+				'for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return '+self.body.expressionToTest(); 
+			};
+			case(self.expressionName()='collectNested'){
+				'for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return '+self.body.expressionToTest(); 
+			};
+			
+			case(self.expressionName()='forAll'){
+				'every $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' satisfies '+self.body.expressionToTest(); 
+			};
+			case(self.expressionName()='exists'){
+				'some $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' satisfies '+self.body.expressionToTest(); 
+			};
+			case(self.expressionName()='isUnique'){
+				'fn:count(for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return '+self.body.expressionToTest()
+					+') eq fn:count(fn:distinct-values(for $'
+					+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return '+self.body.expressionToTest()+'))'; 
+			};
+			case(self.expressionName()='any'){
+				'(for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return if('+self.body.expressionToTest()
+					+') then $'+self.iterator->at(1).variableName()
+					+' else ())[1]'; 
+			};
+			case(self.expressionName()='one'){
+				'fn:count(for $'+self.iterator->at(1).variableName()+' in '+self.source.expressionToTest()
+					+' return if('+self.body.expressionToTest()+')then $'+self.iterator->at(1).variableName() 
+					+' else ()) eq 1';
+			};
+			case(
+				(self.expressionName()='closure')// no counterpart
+				or(self.expressionName()='sortedBy')// no direct counterpart in xpath; sort at xlst/xquery level
+				){
+				
+				' '+self.expressionName()+'_UnsupportedOperation ';
+			};
+			/*
+			("some" | "every") "$" VarName "in" ExprSingle ("," "$" VarName "in" ExprSingle)* "satisfies" ExprSingle
+			*/
+			else{
+			//self.iterator->at(1);
+//				'fn:'+self.referredOperation.operationName();
+			};
+		};
+query OCL::PropertyCallExp::expressionToTest():String=
+		switch{
+			case(self.referredProperty().isReference()){
+				self.source.expressionToTest()+'/fn:id(@s:ref)';
+			};
+			else{
+				self.source.expressionToTest()+'/'+self.referredProperty().QName();
+				
+			};
+			};
+
+query OCL::OperationCallExp::xpathOperationName():String=
+		switch{
+			case(self.referredOperation.operationName()='toString'){
+				'fn:string';
+			};
+			case(self.referredOperation.operationName()='toUpperCase'){
+				'fn:upper-case';
+			};
+			case(self.referredOperation.operationName()='toLowerCase'){
+				'fn:lower-case';
+			};
+			case(self.referredOperation.operationName()='toInteger'){
+				'xs:integer';
+			};
+			case(self.referredOperation.operationName()='toBoolean'){
+				'xs:boolean';
+			};
+			case(self.referredOperation.operationName()='toReal'){
+				'xs:double';
+			};
+			case(self.referredOperation.operationName()='size'){
+				'fn:count';
+			};
+			
+			case(self.referredOperation.operationName()='isEmpty'){
+				'fn:empty';
+			};
+			case(self.referredOperation.operationName()='notEmpty'){
+				'fn:exists';
+			};
+			case(self.referredOperation.operationName()='asSet'){
+				'fn:distinct-values';
+			};
+			case(self.referredOperation.operationName()='asOrderedSet'){
+				'fn:distinct-values';
+			};
+			
+			case(self.referredOperation.operationName()='+'){
+				'fn:concat';
+			};
+			///////////////////////////////QVT
+			// TODO: following is string operation, above is collection operation
+			case(self.referredOperation.operationName()='size'){
+				'fn:string-length';
+			};
+			case(self.referredOperation.operationName()='length'){
+				'fn:string-length';
+			};
+			case(self.referredOperation.operationName()='toLower'){
+				'fn:lower-case';
+			};
+			case(self.referredOperation.operationName()='toUpper'){
+				'fn:upper-case';
+			};
+			case(self.referredOperation.operationName()='trim'){
+				'fn:normalize-space';
+			};
+			case(self.referredOperation.operationName()='normalizeSpace'){
+				'fn:normalize-space';
+			};
+							
+			
+			else{
+				'fn:'+self.referredOperation.operationName();
+			};
+		};
+query OCL::OperationCallExp::xpath2ArgOperationName():String=
+		switch{
+			///////////////////////////////QVT
+			case(self.referredOperation.operationName()='substringBefore'){
+				'fn:substring-before';
+			};
+			case(self.referredOperation.operationName()='substringAfter'){
+				'fn:substring-after';
+			};
+			case(self.referredOperation.operationName()='endsWith'){
+				'fn:ends-with';
+			};
+			case(self.referredOperation.operationName()='startsWith'){
+				'fn:starts-with';
+			};
+			case(self.referredOperation.operationName()='match'){
+				'fn:matches';
+			};
+			else{
+				'fn:'+self.referredOperation.operationName();
+			};
+		};
+query OCL::OperationCallExp::xpathInfixOperationName():String=
+		switch{
+			// these depend on operands, = might be eq,=, or is
+			// TODO
+			case(self.referredOperation.operationName()='='){
+				'eq';
+			};
+			case(self.referredOperation.operationName()='equals'){
+				'eq';
+			};
+			case(self.referredOperation.operationName()='<>'){
+				'ne';
+			};
+			case(self.referredOperation.operationName()='<='){
+				'le';
+			};
+			case(self.referredOperation.operationName()='>='){
+				'ge';
+			};
+			case(self.referredOperation.operationName()='<'){
+				'lt';
+			};
+			case(self.referredOperation.operationName()='>'){
+				'gt';
+			};
+			case(self.referredOperation.operationName()='/'){
+				'div';
+			};
+			case(self.referredOperation.operationName()='div'){
+				'idiv';
+			};
+			case(self.referredOperation.operationName()='union'){
+				'|';
+			};
+			case(self.referredOperation.operationName()='including'){
+				'|';
+			};
+			case(self.referredOperation.operationName()='excluding'){
+				'except';
+			};
+			case(self.referredOperation.operationName()='intersection'){
+				'intersect';
+			};
+			case(self.referredOperation.operationName()='range'){
+				'to';
+			};
+			else{
+				self.referredOperation.operationName()
+			};
+		};
+ 
+query OCL::OperationCallExp::expressionToTest():String=
+		switch{
+			case((self.argument->size()=1)and(
+					(self.referredOperation.operationName()='and') 
+					or (self.referredOperation.operationName()='or')
+					or ((self.referredOperation.operationName()='+') and not(self.source.getExpressionType().isString()))
+					or (self.referredOperation.operationName()='-')
+					or (self.referredOperation.operationName()='*')
+					or (self.referredOperation.operationName()='=')
+					or (self.referredOperation.operationName()='equals')
+					or (self.referredOperation.operationName()='<>')
+					or (self.referredOperation.operationName()='<=')
+					or (self.referredOperation.operationName()='>=')
+					or (self.referredOperation.operationName()='<')
+					or (self.referredOperation.operationName()='>')
+					or (self.referredOperation.operationName()='mod')
+					or (self.referredOperation.operationName()='/')
+					or (self.referredOperation.operationName()='div')
+					or (self.referredOperation.operationName()='union')
+					or (self.referredOperation.operationName()='including')
+					or (self.referredOperation.operationName()='excluding')
+					or (self.referredOperation.operationName()='intersection')
+					///QVT
+					or (self.referredOperation.operationName()='range')
+					
+				)){
+				//'('+self.argument->at(1).expressionToTest()+') '+self.xpathInfixOperationName()+' ('+self.argument->at(2).expressionToTest()+')';
+				'('+self.source.expressionToTest()+') '+self.xpathInfixOperationName()+' ('+self.argument->at(1).expressionToTest()+')';
+			};
+			case((self.argument->size()=1)and(
+					(self.referredOperation.operationName()='max') 
+					or (self.referredOperation.operationName()='min')
+					or (self.referredOperation.operationName()='+')
+				)){
+//				self.xpathOperationName()+'(('+self.argument->at(1).expressionToTest()+'),('+self.argument->at(2).expressionToTest()+'))';
+				self.xpathOperationName()+'(('+self.source.expressionToTest()+'),('+self.argument->at(1).expressionToTest()+'))';
+			};
+			case((self.argument->size()=0)and(
+					(self.referredOperation.operationName()='-') 
+				)){
+//				self.referredOperation.operationName()+'('+self.argument->at(1).expressionToTest()+')';
+				self.referredOperation.operationName()+'('+self.source.expressionToTest()+')';
+			};
+			case(
+				(self.referredOperation.operationName()='not')
+				or(self.referredOperation.operationName()='abs')
+				or(self.referredOperation.operationName()='floor')
+				or(self.referredOperation.operationName()='round')
+				or(self.referredOperation.operationName()='toString')
+				or(self.referredOperation.operationName()='toInteger')
+				or(self.referredOperation.operationName()='toReal')
+				or(self.referredOperation.operationName()='toBoolean')
+				or(self.referredOperation.operationName()='toUpperCase')
+				or(self.referredOperation.operationName()='toLowerCase')
+				or(self.referredOperation.operationName()='size')
+				or(self.referredOperation.operationName()='max')
+				or(self.referredOperation.operationName()='min')
+				or(self.referredOperation.operationName()='sum')
+				or(self.referredOperation.operationName()='isEmpty')
+				or(self.referredOperation.operationName()='notEmpty')
+				or(self.referredOperation.operationName()='asSet')
+				or(self.referredOperation.operationName()='asOrderedSet')
+				or(self.referredOperation.operationName()='reverse')
+				// QVT
+				//or(self.referredOperation.operationName()='size') // TODO: conflict with collection size
+				or(self.referredOperation.operationName()='length')
+				or(self.referredOperation.operationName()='toLower')
+				or(self.referredOperation.operationName()='toUpper')
+				or(self.referredOperation.operationName()='trim')
+				or(self.referredOperation.operationName()='normalizeSpace')
+				){
+//				self.xpathOperationName()+'('+self.argument->at(1).expressionToTest()+')';
+				self.xpathOperationName()+'('+self.source.expressionToTest()+')';
+			};
+			case((self.argument->size()=1)and(
+				(self.referredOperation.operationName()='substringBefore')
+				or(self.referredOperation.operationName()='substringAfter')
+				or(self.referredOperation.operationName()='endsWith')
+				or(self.referredOperation.operationName()='startsWith')
+				or(self.referredOperation.operationName()='match')
+				
+				)){
+				self.xpath2ArgOperationName()+'('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='xor'){
+//				'(('+self.argument->at(1).expressionToTest()+') or ('+self.argument->at(2).expressionToTest()
+//				+'))and fn:not(('+self.argument->at(1).expressionToTest()+') eq ('+self.argument->at(2).expressionToTest()+'))'
+				'(('+self.source.expressionToTest()+') or ('+self.argument->at(1).expressionToTest()
+				+'))and fn:not(('+self.source.expressionToTest()+') eq ('+self.argument->at(1).expressionToTest()+'))'
+				;
+			};
+			case(self.referredOperation.operationName()='implies'){
+//				'fn:not('+self.argument->at(1).expressionToTest()+') or (('+self.argument->at(1).expressionToTest()+') and ('+self.argument->at(2).expressionToTest()+'))';
+				'fn:not('+self.source.expressionToTest()+') or (('+self.source.expressionToTest()+') and ('+self.argument->at(1).expressionToTest()+'))';
+			};
+			case(self.referredOperation.operationName()='substring'){
+//				'fn:substring('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+',1+('
+//					 +self.argument->at(3).expressionToTest()+')-('+self.argument->at(2).expressionToTest()+'))';
+				'fn:substring('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+',1+('
+					 +self.argument->at(2).expressionToTest()+')-('+self.argument->at(1).expressionToTest()+'))';
+			};
+			// TODO: possible conflict with collection operation
+			case((self.referredOperation.operationName()='indexOf') and (self.argument->at(1).getExpressionType().isString())){
+//				'if(fn:contains('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()
+//					+')then (1+fn:string-length(fn:substring-before('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()
+//					+')) else 0';
+				'if(fn:contains('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+')then (1+fn:string-length(fn:substring-before('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+')) else 0';
+			};
+			
+			case(self.referredOperation.operationName()='find'){
+				'if(fn:contains('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+')then (1+fn:string-length(fn:substring-before('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+')) else 0';
+			};
+			case(self.referredOperation.operationName()='equalsIgnoreCase'){
+//				'fn:upper-case('+self.argument->at(1).expressionToTest()+') eq fn:upper-case('+self.argument->at(2).expressionToTest()+')';
+				'fn:upper-case('+self.source.expressionToTest()+') eq fn:upper-case('+self.argument->at(1).expressionToTest()+')';
+			};
+			case((self.referredOperation.operationName()='at') and (self.argument->at(1).getExpressionType().isString())){
+//				'fn:substring('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+',1)';
+				'fn:substring('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+',1)';
+			};
+			case(self.referredOperation.operationName()='count'){
+//				'fn:count(fn:index-of('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+'))';
+				'fn:count(fn:index-of('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+'))';
+			};
+			case(self.referredOperation.operationName()='includes'){
+//				'fn:count(fn:index-of('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+')) gt 0';
+				'fn:count(fn:index-of('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')) gt 0';
+			};
+			case(self.referredOperation.operationName()='excludes'){
+//				'fn:count(fn:index-of('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+')) eq 0';
+				'fn:count(fn:index-of('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')) eq 0';
+			};
+			case(self.referredOperation.operationName()='excludesAll'){
+//				'fn:count(('+self.argument->at(1).expressionToTest()+') intersect ('+self.argument->at(2).expressionToTest()+')) eq 0';
+				'fn:count(('+self.source.expressionToTest()+') intersect ('+self.argument->at(1).expressionToTest()+')) eq 0';
+			};
+			case(self.referredOperation.operationName()='includesAll'){
+//				'fn:count(('+self.argument->at(1).expressionToTest()+') intersect ('+self.argument->at(2).expressionToTest()
+//				+')) eq fn:count('+self.argument->at(2).expressionToTest()+')';
+				'fn:count(('+self.source.expressionToTest()+') intersect ('+self.argument->at(1).expressionToTest()
+				+')) eq fn:count('+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='symmetricDifference'){
+//				'(('+self.argument->at(1).expressionToTest()+') | ('+self.argument->at(2).expressionToTest()
+//				+')) except (('+self.argument->at(1).expressionToTest()+') intersect ('+self.argument->at(2).expressionToTest()+'))';
+				'(('+self.source.expressionToTest()+') | ('+self.argument->at(1).expressionToTest()
+				+')) except (('+self.source.expressionToTest()+') intersect ('+self.argument->at(1).expressionToTest()+'))';
+			};
+			case(self.referredOperation.operationName()='prepend'){
+//				'('+self.argument->at(2).expressionToTest()+'),('+self.argument->at(1).expressionToTest()+')';
+				'('+self.argument->at(1).expressionToTest()+'),('+self.source.expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='insertAt'){
+//				'fn:insert-before('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+','+self.argument->at(3).expressionToTest()+')';
+				'fn:insert-before('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='subOrderedSet'){
+//				'fn:subsequence('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+',1+('+self.argument->at(3).expressionToTest()+')-('+self.argument->at(2).expressionToTest()+'))';
+				'fn:subsequence('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+',1+('+self.argument->at(2).expressionToTest()+')-('+self.argument->at(1).expressionToTest()+'))';
+			};
+			case(self.referredOperation.operationName()='at'){
+//				'fn:subsequence('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+',1)';
+				//'fn:subsequence('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+',1)';
+				self.source.expressionToTest()+'['+self.argument->at(1).expressionToTest()+']';
+			};
+			case(self.referredOperation.operationName()='get'){
+//				'fn:subsequence('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+',1)';
+				//'fn:subsequence('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+',1)';
+				self.source.expressionToTest()+'['+self.argument->at(1).expressionToTest()+']';
+			};
+			case(self.referredOperation.operationName()='remove'){
+				self.source.expressionToTest()+'['+self.argument->at(1).expressionToTest()+']';
+			};
+			// collection operation; there is a string operation of same name
+			case(self.referredOperation.operationName()='indexOf'){
+//				'fn:subsequence(fn:index-of('+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+'),1,1)';
+//				'fn:subsequence('+self.source.expressionToTest()+',fn:index-of('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+'),1)';
+				'fn:index-of('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='replace'){
+				'fn:replace('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='first'){
+//				'fn:subsequence('+self.argument->at(1).expressionToTest()+',1,1)';
+				self.source.expressionToTest()+'[fn:first()]';
+			};
+			case(self.referredOperation.operationName()='last'){
+//				'fn:subsequence('+self.argument->at(1).expressionToTest()+',fn:count('+self.argument->at(1).expressionToTest()+'),1)';
+				self.source.expressionToTest()+'[fn:last()]';
+			};
+			
+			case(self.referredOperation.operationName()='asSequence'){
+				// no-op
+//				self.argument->at(1).expressionToTest();
+				self.source.expressionToTest();
+			};
+			case(self.referredOperation.operationName()='asBag'){
+				// no-op
+//				self.argument->at(1).expressionToTest();
+				self.source.expressionToTest();
+			};
+			case(self.referredOperation.operationName()='flatten'){
+				// no-op, collections are always flattened
+				self.source.expressionToTest();
+			};
+			case(self.referredOperation.operationName()='characters'){
+				'for $codepoint  in fn:string-to-codepoints('+self.source.expressionToTest()
+				+') return fn:codepoints-to-string($codepoint)';
+			};
+			case(self.referredOperation.operationName()='oclIsUndefined'){
+				'fn:empty('+self.source.expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='oclIsInvalid'){
+				'fn:empty('+self.source.expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='oclAsType'){
+				// TODO: could be attribute here and anywhere element used
+				self.source.expressionToTest()+' treat as element(*,'+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='oclIsTypeOf'){
+				// can not determine exactly if it is type?
+				self.source.expressionToTest()+' instance of element(*,'+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='oclIsKindOf'){
+				self.source.expressionToTest()+' instance of element(*,'+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='isInstanceOfType'){
+				self.source.expressionToTest()+' instance of element(*,'+self.argument->at(1).expressionToTest()+')';
+			};
+			
+			case(self.referredOperation.operationName()='matchBoolean'){
+				self.source.expressionToTest()+' castable as xs:boolean';
+			};
+			case(self.referredOperation.operationName()='matchInteger'){
+				self.source.expressionToTest()+' castable as xs:integer';
+			};
+			case(self.referredOperation.operationName()='matchFloat'){
+				self.source.expressionToTest()+' castable as xs:float';
+			};
+			case(self.referredOperation.operationName()='matchIdentifier'){
+				self.source.expressionToTest()+' castable as xs:NCName';
+			};
+			case(self.referredOperation.operationName()='asBoolean'){
+				self.source.expressionToTest()+' cast as xs:boolean';
+			};
+			case(self.referredOperation.operationName()='asInteger'){
+				self.source.expressionToTest()+' cast as xs:integer';
+			};
+			case(self.referredOperation.operationName()='asFloat'){
+				self.source.expressionToTest()+' cast as xs:float';
+			};
+			case(self.referredOperation.operationName()='firstToUpper'){
+				'fn:concat(fn:upper-case(fn:substring('
+					+self.source.expressionToTest()+',1,1)),fn:substring('
+					+self.source.expressionToTest()+',2))';
+			};
+			case(self.referredOperation.operationName()='lastToUpper'){
+				'fn:concat(fn:substring('
+					+self.source.expressionToTest()+',1,fn:string-length('+self.source.expressionToTest()
+					+')-1),fn:upper-case(fn:substring('
+					+self.source.expressionToTest()+',fn:string-length('+self.source.expressionToTest()+'),1)))';
+			};
+			case(self.referredOperation.operationName()='isQuoted'){
+				'fn:starts-with('
+					+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+') and fn:ends-with('
+					+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+')';
+			};
+			case(self.referredOperation.operationName()='quotify'){
+				'fn:concat('+self.argument->at(1).expressionToTest()
+					+','+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()
+					+')';
+			};
+			case(self.referredOperation.operationName()='unquotify'){
+				'for $q in '+self.argument->at(1).expressionToTest()
+				+' return for $qlength in fn:string-length($q) return for $s in '
+				+self.source.expressionToTest()
+				+' return for $length in fn:string-length($s)'
+				+' return fn:substring($s,if(fn:starts-with($s,$q))then $qlength else 1,'
+				+'$length - (if(fn:ends-with($s,$q)) then $qlength else 0)'
+				+' - (if(fn:starts-with($s,$q)) then $qlength else 0))';
+			};
+			case((self.referredOperation.operationName()='add')and(self.argument->size()=1)){
+				'('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='add'){
+				'fn:insert-before('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+','+self.argument->at(2).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='addAll'){
+				'('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='append'){
+				'('+self.source.expressionToTest()+','+self.argument->at(1).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='joinfields'){
+				'fn:concat('+self.argument->at(2).expressionToTest()
+					+',fn:string-join('+self.source.expressionToTest()
+					+','+self.argument->at(1).expressionToTest()
+					+'),'+self.argument->at(3).expressionToTest()+')';
+			};
+			case(self.referredOperation.operationName()='_localId'){
+				'('+self.source.expressionToTest()+')/fn:position()';
+			};
+			case(self.referredOperation.operationName()='_globalId'){
+				'('+self.source.expressionToTest()+')/@id';
+			};
+			case(self.referredOperation.operationName()='subobjects'){
+				'('+self.source.expressionToTest()+')/*';
+			};
+			case(self.referredOperation.operationName()='contents'){
+				'('+self.source.expressionToTest()+')/*';
+			};
+			case(self.referredOperation.operationName()='allSubobjects'){
+				'('+self.source.expressionToTest()+')//*';
+			};
+			case(self.referredOperation.operationName()='clone'){
+				self.source.expressionToTest();
+			};
+			case(self.referredOperation.operationName()='deepclone'){
+				self.source.expressionToTest();
+			};
+			case(self.referredOperation.operationName()='subobjectsOfType'){
+				self.source.expressionToTest()+'/*[instance of element(*,'+self.argument->at(1).expressionToTest()+')]';
+			};
+			case(self.referredOperation.operationName()='allSubobjectsOfType'){
+				self.source.expressionToTest()+'//*[instance of element(*,'+self.argument->at(1).expressionToTest()+')]';
+			};
+			case(self.referredOperation.operationName()='subobjectsOfKind'){
+				self.source.expressionToTest()+'/*[instance of element(*,'+self.argument->at(1).expressionToTest()+')]';
+			};
+			case(self.referredOperation.operationName()='allSubobjectsOfKind'){
+				self.source.expressionToTest()+'//*[instance of element(*,'+self.argument->at(1).expressionToTest()+')]';
+			};
+			case(self.referredOperation.operationName()='objects'){
+				'//*';
+			};
+			case(self.referredOperation.operationName()='elements'){
+				'//*';
+			};
+			case(self.referredOperation.operationName()='objectsOfType'){
+				'//*[instance of element(*,'+self.argument->at(1).expressionToTest()+')]';
+			};
+			case(self.referredOperation.operationName()='elementsOfType'){
+				'//*[instance of element(*,'+self.argument->at(1).expressionToTest()+')]';
+			};
+			case(self.referredOperation.operationName()='rootObjects'){
+				'/*';
+			};
+			case(self.referredOperation.operationName()='copy'){
+				'//*';
+			};
+			case(self.referredOperation.operationName()='createEmptyModel'){
+				'()';
+			};
+			case(self.referredOperation.operationName()='removeElement'){
+				'//* except '+self.argument->at(1).expressionToTest();
+			};
+			// MOF
+			case(self.referredOperation.operationName()='container'){
+				self.source.expressionToTest()+'/..';
+			};
+			case(self.referredOperation.operationName()='clear'){
+				'()';
+			};
+			case(self.referredOperation.operationName()='delete'){
+				'()';
+			};
+			// remove may have integer or object parameter
+			case((self.referredOperation.operationName()='remove')and(self.argument->at(1).getExpressionType().isInteger())){
+				self.source.expressionToTest()+' except '+self.source.expressionToTest()+'['+self.argument->at(1).expressionToTest()+']';
+			};
+			case(self.referredOperation.operationName()='remove'){
+				self.source.expressionToTest()+' except '+self.argument->at(1).expressionToTest();
+			};
+			case(
+				(self.expressionName()='product')// this results in a tuple, not expressible in xpath
+				or(self.expressionName()='oclIsNew')// this has no counterpart in xpath
+				or(self.expressionName()='oclIsInState')// this has no counterpart in xpath
+				or(self.expressionName()='oclType')// not directly accessible via xpath
+				or(self.expressionName()='hasReturned')// message operation, no xpath counterpart
+				or(self.expressionName()='result')// message operation, no xpath counterpart
+				or(self.expressionName()='isSignalSent')// message operation, no xpath counterpart
+				or(self.expressionName()='isOperationCall')// message operation, no xpath counterpart
+				/////////////////QVT
+				or(self.expressionName()='format')//  no xpath counterpart
+				or(self.expressionName()='startStrCounter')//  no xpath counterpart
+				or(self.expressionName()='getStrCounter')//  no xpath counterpart
+				or(self.expressionName()='incrStrCounter')//  no xpath counterpart
+				or(self.expressionName()='restartAllStrCounter')//  no xpath counterpart
+				or(self.expressionName()='addSuffixNumber')//  no xpath counterpart
+				or(self.expressionName()='rfind')//  no xpath counterpart
+				or(self.expressionName()='metaClassName')//  no xpath counterpart
+				or(self.expressionName()='markedAs')//  no xpath counterpart
+				or(self.expressionName()='markValue')//  no xpath counterpart
+				or(self.expressionName()='stereotypedBy')//  no xpath counterpart
+				or(self.expressionName()='stereotypedStrictlyBy')//  no xpath counterpart
+				or(self.expressionName()='asTransformation')//  no xpath counterpart
+				///////////////MOF
+				or(self.expressionName()='metaclass')//  no xpath counterpart
+				or(self.expressionName()='getMetaClass')//  no xpath counterpart
+				or(self.expressionName()='get')//  no xpath counterpart.  parameter is Property, a meta-property; but we can not get meta-class and have no access to the type definition from xpath
+				or(self.expressionName()='set')//  no xpath counterpart
+				or(self.expressionName()='isSet')//  no xpath counterpart
+				or(self.expressionName()='unset')//  no xpath counterpart
+				or(self.expressionName()='invoke')//  no xpath counterpart
+				or(self.expressionName()='createElement')//  no xpath counterpart
+				or(self.expressionName()='createLink')//  no xpath counterpart
+				or(self.expressionName()='linksOfType')//  no xpath counterpart
+				or(self.expressionName()='linkedElements')//  no xpath counterpart
+				or(self.expressionName()='linkExists')//  no xpath counterpart
+				){
+				
+				' '+self.expressionName()+'_UnsupportedOperation ';
+			};
+			case(self.referredOperation.operationName()='oclLocale'){
+				'fn:default-collation()';
+			};
+			/////////////////////////////////////QVT
+			/*
+*/			
+			else{
+				self.referredOperation.operationName()+'('+self.source.expressionToTest()+')';// TODO: fill in parameters
+			};
+		};
+
+query OCL::LetExp::expressionToTest():String=
+	'some $'+self.variable.variableName()+' in '+self.variable.initExpression.expressionToTest()+' satisfies '+self._in.expressionToTest();
+query OCL::IfExp::expressionToTest():String='if('+self.condition.expressionToTest()+')then '+self.thenExpression.expressionToTest()+' else '+self.elseExpression.expressionToTest();
+query OCL::VariableExp::expressionToTest():String='$'+self.referredVariable.getVariableName();
+query OCL::TypeExp::expressionToTest():String=self.referredType().QName();
+query OCL::TypeExp::referredType():UML::Classifier=self.referredType.oclAsType(UML::Classifier);
+query OCL::BooleanLiteralExp::expressionToTest():String=if(self.booleanSymbol)then 'fn:true()' else 'fn:false()' endif;
+query OCL::StringLiteralExp::expressionToTest():String='"'+self.stringSymbol.replace('"','""')+'"';
+query OCL::RealLiteralExp::expressionToTest():String=self.realSymbol.repr();
+query OCL::IntegerLiteralExp::expressionToTest():String=self.integerSymbol.repr();
+query OCL::UnlimitedNaturalLiteralExp::expressionToTest():String=self.integerSymbol.repr();
+query OCL::NullLiteralExp::expressionToTest():String='xs:untypedAtomic(\'\')';
+query OCL::InvalidLiteralExp::expressionToTest():String='xs:untypedAtomic(\'\')';
+query OCL::EnumLiteralExp::expressionToTest():String='"'+self.referredEnumLiteral.enumLiteralName()+'"';
+query OCL::OCLExpression::getExpressionType():UML::Type=self.oclAsType(UML::TypedElement).type;
+query OCL::OCLExpression::expressionName():String=self.oclAsType(UML::TypedElement).name;
+query UML::Property::isReference():Boolean=self.aggregation=UML::AggregationKind::none;
+query OCL::PropertyCallExp::referredProperty():UML::Property=self.referredProperty.oclAsType(UML::Property);
+query UML::Type::isInteger():Boolean=self.name.equalsIgnoreCase('integer');
+query UML::Type::isString():Boolean=self.name.equalsIgnoreCase('string');
+query OCL::Variable::getVariableName():String=self.oclAsType(UML::TypedElement).name;
+query ecore::EObject::operationName():String=self.oclAsType(UML::Operation).name;
+query ecore::EObject::enumLiteralName():String=self.oclAsType(UML::EnumerationLiteral).name;
+query OCL::Variable::variableName():String=self.oclAsType(UML::TypedElement).name;
+abstract query UML::NamedElement::QName():String;
+query UML::Classifier::QName():String=self.getNearestPackage().getPrefix()+':'+self.toNiemName();
+query UML::Property::QName():String=self.getResolvedProperty().getNearestPackage().getPrefix()+':'+self.getResolvedProperty().toNiemName();
+query UML::Package::getPrefix():String=self.map PrefixForSchemaNamespace(currentSchemaType).prefix;
+/////////////////TODO via bloackbox
+helper SCHEMATRON::AssertType::setAssertText(in message:String){
+	var annotation:ECORE::EAnnotation=new ECORE::EAnnotation('setAssertText');
+	annotation._references+=self.oclAsType(ecore::EObject);
+	"message".setAnnotationDetail(annotation,message);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+}	
+helper SCHEMATRON::TitleType::setTitleText(in message:String){
+	var annotation:ECORE::EAnnotation=new ECORE::EAnnotation('setTitleText');
+	annotation._references+=self.oclAsType(ecore::EObject);
+	"message".setAnnotationDetail(annotation,message);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+}	
+helper UML::Constraint::Expression():OCL::OCLExpression{
+//	self.oclAsType(OCL::OCLExpression);
+	var annotation:ECORE::EAnnotation=new ECORE::EAnnotation('Expression');
+	annotation._references+=self.oclAsType(ecore::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation._references->select(r|r<>self).oclAsType(OCL::OCLExpression)->asSequence()->first();
+
+}
+			
+
+	
+
+	
+/////////////////////platform-specific abstract bindings

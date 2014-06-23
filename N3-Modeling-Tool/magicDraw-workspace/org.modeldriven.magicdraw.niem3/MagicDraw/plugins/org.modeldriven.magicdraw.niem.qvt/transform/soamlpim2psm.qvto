@@ -1,0 +1,246 @@
+import NIEMpim2psm;
+import soamlPlatformBinding;
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype ECORE  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype CHANGELOG uses 'http://reference.niem.gov/niem/resource/mpd/changelog/1.0/';
+
+transformation soamlpim2psm(
+	inout niemUml:UML,
+	inout blackboxAdapter:ECORE
+	,out changeLog:CHANGELOG
+	)
+	extends NIEMpim2psm(UML)
+	,soamlPlatformBinding
+	;
+	main() {
+	log('soamlpim2psm');
+		blackboxHook:=blackboxAdapter.objectsOfType(ECORE::EPackage)->asSequence()->first();
+		var mpdRootPackage:UML::Model=
+				niemUml.rootObjects()
+				->select(r|r.oclIsKindOf(UML::Model)).oclAsType(UML::Model)
+				->asSequence()->first();
+		mpdRootPackage.oclAsType(UML::Model).initializeSoamlProfileGlobals();
+		pim2psmMain();
+	}
+/* we do not need this
+helper  UML::Package::gatherAllPimSchemas(){
+	if(gatherAllPimSchemas->includes(self))then{return;}endif;
+	if(self.isEditable())then{
+		gatherAllPimSchemas+=self;
+		self.ownedType
+			->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+			->forEach(c){
+				// pick up general, property, operation types
+                c.general.getNearestNIEMSchemaPackage().gatherAllPimSchemas();
+                c.attribute->select(a|not(a.type.oclIsUndefined())).type.getNearestNIEMSchemaPackage().gatherAllPimSchemas();
+                if(c.oclIsKindOf(UML::Class))then{
+                	c.oclAsType(UML::Class).ownedOperation.ownedParameter.type.getNearestNIEMSchemaPackage().gatherAllPimSchemas();
+                }endif;
+			};
+	}endif;
+	return;
+	}
+	*/
+	// TODO: need an extension of <<MPD>> so we can do <<Participant>> processing on it as well
+// instead of doing package, lets pick up the port/type from <<MPD>> and use that to create an <<MPDFile>> and bring in required elements
+// the <<mpdFile>> should already be in model, make sure we instantiate classifier via getSoamlPsmClassifier
+helper UML::Component::mapModelPackageDescription(inout psmOwner:UML::Model,domainContext:UML::Package,inout resultComponent:UML::Component){
+	/*
+	// if wsdl port exists, 
+	self.ownedPort.type->select(t|t.isServiceInterface()).oclAsType(UML::Class)->asSet()->forEach(serviceInterface){
+		// instantiate the serviceInterface, its package, and all referenced elements
+		var psmServiceInterface:UML::Classifier:=serviceInterface.getSoamlPsmClassifier();
+		// add the <<MPDFile>>
+			var mpdFileType:UML::Usage=new UML::Usage@niemUml();
+			mpdFileType.client+=resultComponent;
+			resultComponent.packagedElement+=mpdFileType;
+			mpdFileType.supplier+=psmServiceInterface;
+			var psmStereotypeInstance:Stdlib::Element=mpdFileType.ApplyStereotype(NIEMModelPackageDescriptionFileStereotype);
+			psmStereotypeInstance.setFileTypeNatureCode(natureWsdlURI);
+			psmStereotypeInstance.setFileTypePurposeCode(purposeWebServiceURI);
+		
+	};
+	*/
+	self.clientDependency
+		->select(s|s.IsStereotypeApplied(NIEMModelPackageDescriptionFileStereotype)).oclAsType(Usage)
+		->forEach(mpdFile){
+//			mpdFile.supplier->select(p|p.oclIsKindOf(UML::Class)).oclAsType(UML::Class)
+			mpdFile.supplier->select(p|p.oclIsKindOf(UML::Collaboration)).oclAsType(UML::Collaboration)
+			->forEach(pimClass){
+				
+				var psmClassifier:UML::Classifier=pimClass.getSoamlPsmClassifier();
+				log('map mpdFile to psmClassifier '+psmClassifier.qualifiedName);
+				mpdFile.map AbstractModelPackageDescriptionFile(resultComponent,psmClassifier);
+			};
+		};
+	// map any ports
+	if(self.isParticipant())then
+	{
+		var psmParticipantInstance:Stdlib::Element=resultComponent.ApplyStereotype(soamlParticipantStereotype);
+		self.ownedPort.map SoaMLPort(resultComponent);
+	}endif;
+	return;
+}
+
+query UML::Type::isServiceInterface():Boolean=self.IsStereotypeApplied(soamlServiceInterfaceStereotype);
+query UML::Type::isServicesArchitecture():Boolean=self.IsStereotypeApplied(soamlServicesArchitectureStereotype);
+
+/*	
+helper UML::Package::mapMpdFolderType(inout psmOwner:UML::Package,domainContext:UML::Package,inout resultOverride:UML::Package)
+{
+	// as a helper, it overrides (but not as map)
+	//log('MpdFolderType Soaml '+self.qualifiedName);
+	// for wsdl, add mpdFileType and map/copy the ownedTypes
+	if(self.isWsdlPackage())then{
+			var mpdFileType:UML::Usage=new UML::Usage@niemUml();
+			mpdFileType.client+=mpdComponent;
+			mpdComponent.packagedElement+=mpdFileType;
+			mpdFileType.supplier+=resultOverride;
+			var psmStereotypeInstance:Stdlib::Element=mpdFileType.ApplyStereotype(NIEMModelPackageDescriptionFileStereotype);
+			psmStereotypeInstance.setFileTypeNatureCode(natureWsdlURI);
+			psmStereotypeInstance.setFileTypePurposeCode(purposeURI+'web-service');
+			self.ownedType.map SoaMLType(resultOverride);
+	}endif;
+	return;
+}
+*/
+mapping UML::Type::SoaMLType(inout psmOwner:UML::Element):UML::Classifier@niemUml
+	disjuncts
+	UML::Component::SoaMLParticipant,
+	UML::Collaboration::SoaMLServicesArchitecture,
+	UML::Class::SoaMLServiceInterface,
+	UML::DataType::SoaMLMessageType,
+	UML::Interface::SoaMLInterface
+	{}
+mapping UML::Component::SoaMLParticipant(inout psmOwner:UML::Package):UML::Component@niemUml
+	inherits UML::Class::SoaMLClass
+	when{self.isParticipant()}
+{
+	var psmParticipantInstance:Stdlib::Element=result.ApplyStereotype(soamlParticipantStereotype);
+	self.ownedPort.map SoaMLPort(result);
+}
+mapping UML::Port::SoaMLPort(inout psmOwner:UML::Component):UML::Port@niemUml
+	inherits UML::NamedElement::SoaMLNamedElement
+{
+	psmOwner.ownedAttribute+=result;
+	if(self.type.oclIsUndefined())then{}else{
+		var pimClassifier:UML::Classifier=self.type.oclAsType(UML::Classifier);
+		type:=pimClassifier.getSoamlPsmClassifier();
+	}endif;
+	isConjugated:=self.isConjugated;
+}
+helper UML::Classifier::getSoamlPsmClassifier():UML::Classifier{
+	if(self.isXmlPrimitive())then {return self;}
+	else {
+        var myPackage:UML::Package=self.getNearestPackage();
+		var psmPackage:UML::Package=myPackage.getPsmPackage(myPackage);
+		return self.map SoaMLType(psmPackage);
+	} endif;
+}
+helper applyAdditionalProfiles(inout model:UML::Model){
+	model.applyProfile(soamlProfile);
+}
+
+mapping UML::Collaboration::SoaMLServicesArchitecture(inout psmOwner:UML::Package):UML::Collaboration@niemUml
+	inherits UML::BehavioredClassifier::SoaMLBehavioredClassifier
+	when{self.isServicesArchitecture()}
+{
+	var psmServiceInterfaceInstance:Stdlib::Element=result.ApplyStereotype(soamlServicesArchitectureStereotype);
+	collaborationRole+=self.collaborationRole.map CollaborationRole();
+	ownedAttribute+=result.collaborationRole.oclAsType(UML::Property);
+}
+mapping UML::ConnectableElement::CollaborationRole():UML::Property@niemUml
+{
+	name:=self.name;
+	type:=self.type->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).getSoamlPsmClassifier()->asSequence()->first();
+}
+mapping UML::Class::SoaMLServiceInterface(inout psmOwner:UML::Package):UML::Class@niemUml
+	inherits UML::Class::SoaMLClass
+	when{self.isServiceInterface()}
+{
+	var psmServiceInterfaceInstance:Stdlib::Element=result.ApplyStereotype(soamlServiceInterfaceStereotype);
+}
+mapping UML::DataType::SoaMLMessageType(inout psmOwner:UML::Package):UML::DataType@niemUml
+	inherits UML::Classifier::SoaMLClassifier
+	when{self.IsStereotypeApplied(soamlMessageTypeStereotype)}
+{
+	var psmServiceInterfaceInstance:Stdlib::Element=result.ApplyStereotype(soamlMessageTypeStereotype);
+	self.ownedAttribute->forEach(pimAttribute){
+		var psmAttribute:UML::Property=pimAttribute.map AbstractXSDFeature(result,psmOwner);
+		ownedAttribute+=psmAttribute;
+		pimAttribute.clientDependency
+			->select(d|d.oclIsKindOf(UML::Usage) and d.supplier->forAll(s|s.oclIsKindOf(UML::Property))).oclAsType(UML::Usage)
+			->forEach(pimUsage){
+				var pimUsedAttribute:UML::Property=pimUsage.supplier.oclAsType(UML::Property)->asSequence()->first();
+				var psmUsedAttribute:UML::Property=pimUsedAttribute.getPsmProperty(pimUsedAttribute.getNearestNIEMSchemaPackage());
+				var psmUsage:UML::Usage=new UML::Usage@niemUml();
+				psmOwner.packagedElement+=psmUsage;
+				psmUsage.client+=psmAttribute;
+				psmUsage.supplier+=psmUsedAttribute;
+		};
+	}
+	//ownedAttribute+=self.ownedAttribute.map AbstractXSDFeature(result,psmOwner);
+}
+mapping UML::Interface::SoaMLInterface(inout psmOwner:UML::Package):UML::Interface@niemUml
+	inherits UML::Classifier::SoaMLClassifier
+{
+	ownedOperation+=self.ownedOperation.map SoaMLOperation(result);
+}
+mapping UML::Class::SoaMLClass(inout psmOwner:UML::Package):UML::Class@niemUml
+	inherits UML::BehavioredClassifier::SoaMLBehavioredClassifier
+{
+	ownedOperation+=self.ownedOperation.map SoaMLOperation(result);
+}
+mapping UML::BehavioredClassifier::SoaMLBehavioredClassifier(inout psmOwner:UML::Package):UML::BehavioredClassifier@niemUml
+	inherits UML::Classifier::SoaMLClassifier
+{
+	init{}
+	interfaceRealization+=self.interfaceRealization.map SoaMLInterfaceRealization(result);
+}
+mapping UML::InterfaceRealization::SoaMLInterfaceRealization(inout psmOwner:UML::BehavioredClassifier):UML::InterfaceRealization@niemUml
+	inherits UML::NamedElement::SoaMLNamedElement
+{
+	contract:=self.contract.getSoamlPsmClassifier().oclAsType(UML::Interface);
+}
+mapping UML::Operation::SoaMLOperation(inout psmOwner:UML::Classifier):UML::Operation@niemUml
+	inherits UML::NamedElement::SoaMLNamedElement
+{
+	self.ownedParameter.map SoaMLParameter(result);
+}
+mapping UML::Parameter::SoaMLParameter(inout psmOwner:UML::Operation):UML::Parameter@niemUml
+	inherits UML::NamedElement::SoaMLNamedElement
+{
+	psmOwner.ownedParameter+=result;
+	if(self.type.oclIsUndefined())then{}else{
+		var pimClassifier:UML::Classifier=self.type.oclAsType(UML::Classifier);
+		type:=pimClassifier.getSoamlPsmClassifier();
+	}endif;
+}
+mapping UML::Classifier::SoaMLClassifier(inout psmOwner:UML::Package):UML::Classifier@niemUml
+	inherits UML::NamedElement::SoaMLNamedElement
+{
+	init{
+		psmOwner.oclAsType(UML::Package).packagedElement+=result;
+	}
+	isAbstract:=self.isAbstract;
+	self.clientDependency
+		->select(u|u.oclIsKindOf(UML::Usage) and u.supplier->forAll(p|p.oclIsKindOf(UML::Classifier)))
+		.oclAsType(UML::Usage)
+		.map SoamlClassifierUsage(psmOwner);
+}
+mapping UML::Usage::SoamlClassifierUsage(inout psmOwner:UML::Package):UML::Usage@niemUml
+	inherits UML::NamedElement::SoaMLNamedElement
+{
+	init{
+		psmOwner.packagedElement+=result;
+	}
+	client+=self.client.oclAsType(UML::Classifier).getSoamlPsmClassifier();
+	supplier+=self.supplier.oclAsType(UML::Classifier).getSoamlPsmClassifier();
+}
+mapping UML::NamedElement::SoaMLNamedElement(inout psmOwner:UML::Element):UML::NamedElement@niemUml
+{
+	init{}
+	name:=self.name;
+}
+	
+/////////////////////platform-specific abstract bindings

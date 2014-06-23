@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="OmgOdtBoilerPlate" nsURI="org::modeldriven::magicdraw::niem::m2t::OmgOdtBoilerPlate" startHeaderPosition="29" endHeaderPosition="143">
+    <input>
+      <takesTypesFrom href="pathmap://MAGICDRAW/UML.ecore#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/ocl/1.1.0/Ecore#/"/>
+    </input>
+    <imports href="odtBoilerPlate.emtl#/0"/>
+    <imports href="odtCommon.emtl#/0"/>
+    <imports href="commonQuery.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Comment">
+      <body startPosition="222" endPosition="1058" value="&#xA;NIEM UML &#xA;Copyright © 2011, ModelDriven.org and Tom Digre, all rights reserved worldwide.&#xA;&#xA;This program is free software: you can redistribute it and/or modify&#xA;it under the terms of the GNU General Public License as published by&#xA;the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;This program is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with this program.  If not, see http://www.gnu.org/licenses/gpl-3.0-standalone.html.&#xA;&#xA;There are also commercial licenses available for this software.&#xA;Contact ModelDriven.org for more information.&#xA;"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="omgOdtCoverPage" visibility="Public">
+      <init>
+        <variable name="FirstAssociatedFile">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <initExpression xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="AssociatedFiles" eType="/3/Sequence(String)" referredVariable="/0/omgOdtCoverPage/AssociatedFiles"/>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/first"/>
+          </initExpression>
+        </variable>
+        <variable name="RemainingAssociatedFiles" eType="/3/Sequence(String)">
+          <initExpression xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Sequence(String)">
+            <source xsi:type="ocl.ecore:VariableExp" name="AssociatedFiles" eType="/3/Sequence(String)" referredVariable="/0/omgOdtCoverPage/AssociatedFiles"/>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="af" referredVariable="/0/omgOdtCoverPage/@init/@variable.1/select/af">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </source>
+              <argument xsi:type="ocl.ecore:VariableExp" name="FirstAssociatedFile" referredVariable="/0/omgOdtCoverPage/@init/@variable.0">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/%3C%3E"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="af">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </iterator>
+          </initExpression>
+        </variable>
+        <variable name="ThisYear">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <initExpression xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="commonQuery.emtl#/0/year"/>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" ">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </initExpression>
+        </variable>
+      </init>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P87&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T6&quot;>Date:&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="commonQuery.emtl#/0/month"/>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:VariableExp" name="ThisYear" referredVariable="/0/omgOdtCoverPage/@init/@variable.2">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Front_20_Page_20_Label&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P9&quot;>"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="odtCommon.emtl#/0/headerTitleContent"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/13">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P37&quot;>Version "/>
+      <body xsi:type="ocl.ecore:VariableExp" name="mpdVersionID" referredVariable="/0/omgOdtCoverPage/mpdVersionID.1">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Standard&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P27&quot;>____________________________________________________&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P40&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;OMG Document Number:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;"/>
+      <body xsi:type="ocl.ecore:VariableExp" name="OMGDocumentNumber" referredVariable="/0/omgOdtCoverPage/OMGDocumentNumber.1">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P40&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;Standard document URL:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;"/>
+      <body xsi:type="ocl.ecore:VariableExp" name="StandarddocumentURL" referredVariable="/0/omgOdtCoverPage/StandarddocumentURL.1">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P39&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;Associated File(s)*:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:a xlink:type=&quot;simple&quot; xlink:href=&quot;"/>
+      <body xsi:type="ocl.ecore:VariableExp" name="FirstAssociatedFile" referredVariable="/0/omgOdtCoverPage/@init/@variable.0">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T11&quot;>"/>
+      <body xsi:type="ocl.ecore:VariableExp" name="FirstAssociatedFile" referredVariable="/0/omgOdtCoverPage/@init/@variable.0">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:a>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P41&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T24&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:s text:c=&quot;2&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:a xlink:type=&quot;simple&quot; xlink:href=&quot;"/>
+        <body xsi:type="ocl.ecore:VariableExp" name="associatedFile" referredVariable="/0/omgOdtCoverPage/%.11/associatedFile.2">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T24&quot;>"/>
+        <body xsi:type="ocl.ecore:VariableExp" name="associatedFile" referredVariable="/0/omgOdtCoverPage/%.11/associatedFile.2">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:a>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;"/>
+        <loopVariable name="associatedFile">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:VariableExp" name="RemainingAssociatedFiles" eType="/3/Sequence(String)" referredVariable="/0/omgOdtCoverPage/@init/@variable.1"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P41&quot;>____________________________________________________&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P45&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P44&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;Source document:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;Title (document number)&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P44&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;* Original file(s):&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;Title (document number)&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:list text:style-name=&quot;L1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-header>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P88&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-header>&#xA;&#x9;&#x9;&#x9;&lt;/text:list>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P42&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P43&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:soft-page-break />&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T14&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Copyright © "/>
+        <body xsi:type="ocl.ecore:VariableExp" name="ThisYear" referredVariable="/0/omgOdtCoverPage/@init/@variable.2">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+        <body xsi:type="ocl.ecore:VariableExp" name="copyright" referredVariable="/0/omgOdtCoverPage/%.13/copyright.1">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;"/>
+        <loopVariable name="copyright">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:VariableExp" name="copyrights" eType="/3/Sequence(String)" referredVariable="/0/omgOdtCoverPage/copyrights"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T12&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Copyright © 2008, Object Management Group, Inc.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P50&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P49&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P20&quot;>USE OF SPECIFICATION - TERMS,&#xA;&#x9;&#x9;&#x9;&#x9;CONDITIONS &amp;amp; NOTICES&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>The material in this document details&#xA;&#x9;&#x9;&#x9;&#x9;an Object Management Group specification in accordance with the&#xA;&#x9;&#x9;&#x9;&#x9;terms, conditions and notices set forth below. This document does&#xA;&#x9;&#x9;&#x9;&#x9;not represent a commitment to implement any portion of this&#xA;&#x9;&#x9;&#x9;&#x9;specification in any company&amp;apos;s products. The information&#xA;&#x9;&#x9;&#x9;&#x9;contained in this document is subject to change without notice.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P21&quot;>LICENSES&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>The companies listed above have&#xA;&#x9;&#x9;&#x9;&#x9;granted to the Object Management Group, Inc. (OMG) a nonexclusive,&#xA;&#x9;&#x9;&#x9;&#x9;royalty-free, paid up, worldwide license to copy and distribute this&#xA;&#x9;&#x9;&#x9;&#x9;document and to modify this document and distribute copies of the&#xA;&#x9;&#x9;&#x9;&#x9;modified version. Each of the copyright holders listed above has&#xA;&#x9;&#x9;&#x9;&#x9;agreed that no person shall be deemed to have infringed the&#xA;&#x9;&#x9;&#x9;&#x9;copyright in the included material of any such copyright holder by&#xA;&#x9;&#x9;&#x9;&#x9;reason of having used the specification set forth herein or having&#xA;&#x9;&#x9;&#x9;&#x9;conformed any computer software to the specification.&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>Subject to all of the terms and&#xA;&#x9;&#x9;&#x9;&#x9;conditions below, the owners of the copyright in this specification&#xA;&#x9;&#x9;&#x9;&#x9;hereby grant you a fully-paid up, non-exclusive, nontransferable,&#xA;&#x9;&#x9;&#x9;&#x9;perpetual, worldwide license (without the right to sublicense), to&#xA;&#x9;&#x9;&#x9;&#x9;use this specification to create and distribute software and special&#xA;&#x9;&#x9;&#x9;&#x9;purpose specifications that are based upon this specification, and&#xA;&#x9;&#x9;&#x9;&#x9;to use, copy, and distribute this specification as provided under&#xA;&#x9;&#x9;&#x9;&#x9;the Copyright Act; provided that: (1) both the copyright notice&#xA;&#x9;&#x9;&#x9;&#x9;identified above and this permission notice appear on any copies of&#xA;&#x9;&#x9;&#x9;&#x9;this specification; (2) the use of the specifications is for&#xA;&#x9;&#x9;&#x9;&#x9;informational purposes and will not be copied or posted on any&#xA;&#x9;&#x9;&#x9;&#x9;network computer or broadcast in any media and will not be otherwise&#xA;&#x9;&#x9;&#x9;&#x9;resold or transferred for commercial purposes; and (3) no&#xA;&#x9;&#x9;&#x9;&#x9;modifications are made to this specification. This limited&#xA;&#x9;&#x9;&#x9;&#x9;permission automatically terminates without notice if you breach any&#xA;&#x9;&#x9;&#x9;&#x9;of these terms or conditions. Upon termination, you will destroy&#xA;&#x9;&#x9;&#x9;&#x9;immediately any copies of the specifications in your possession or&#xA;&#x9;&#x9;&#x9;&#x9;control. &lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P23Center&quot;>PATENTS&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>The attention of adopters is directed&#xA;&#x9;&#x9;&#x9;&#x9;to the possibility that compliance with or adoption of OMG&#xA;&#x9;&#x9;&#x9;&#x9;specifications may require use of an invention covered by patent&#xA;&#x9;&#x9;&#x9;&#x9;rights. OMG shall not be responsible for identifying patents for&#xA;&#x9;&#x9;&#x9;&#x9;which a license may be required by any OMG specification, or for&#xA;&#x9;&#x9;&#x9;&#x9;conducting legal inquiries into the legal validity or scope of those&#xA;&#x9;&#x9;&#x9;&#x9;patents that are brought to its attention. OMG specifications are&#xA;&#x9;&#x9;&#x9;&#x9;prospective and advisory only. Prospective users are responsible for&#xA;&#x9;&#x9;&#x9;&#x9;protecting themselves against liability for infringement of patents.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P10&quot;>GENERAL USE RESTRICTIONS&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>Any unauthorized use of this&#xA;&#x9;&#x9;&#x9;&#x9;specification may violate copyright laws, trademark laws, and&#xA;&#x9;&#x9;&#x9;&#x9;communications regulations and statutes. This document contains&#xA;&#x9;&#x9;&#x9;&#x9;information which is protected by copyright. All Rights Reserved. No&#xA;&#x9;&#x9;&#x9;&#x9;part of this work covered by copyright herein may be reproduced or&#xA;&#x9;&#x9;&#x9;&#x9;used in any form or by any means--graphic, electronic, or&#xA;&#x9;&#x9;&#x9;&#x9;mechanical, including photocopying, recording, taping, or&#xA;&#x9;&#x9;&#x9;&#x9;information storage and retrieval systems--without permission of the&#xA;&#x9;&#x9;&#x9;&#x9;copyright owner.&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P51&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P51&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P24Center&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:soft-page-break />&#xA;&#x9;&#x9;&#x9;&#x9;DISCLAIMER OF WARRANTY&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>WHILE&#xA;&#x9;&#x9;&#x9;&#x9;THIS PUBLICATION IS BELIEVED TO BE ACCURATE, IT IS PROVIDED &amp;quot;AS&#xA;&#x9;&#x9;&#x9;&#x9;IS&amp;quot; AND MAY CONTAIN ERRORS OR MISPRINTS. THE OBJECT MANAGEMENT&#xA;&#x9;&#x9;&#x9;&#x9;GROUP AND THE COMPANIES LISTED ABOVE MAKE NO WARRANTY OF ANY KIND,&#xA;&#x9;&#x9;&#x9;&#x9;EXPRESS OR IMPLIED, WITH REGARD TO THIS PUBLICATION, INCLUDING BUT&#xA;&#x9;&#x9;&#x9;&#x9;NOT LIMITED TO ANY WARRANTY OF TITLE OR OWNERSHIP, IMPLIED WARRANTY&#xA;&#x9;&#x9;&#x9;&#x9;OF MERCHANTABILITY OR WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE&#xA;&#x9;&#x9;&#x9;&#x9;OR USE.&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;IN NO EVENT SHALL THE OBJECT MANAGEMENT GROUP OR ANY OF THE&#xA;&#x9;&#x9;&#x9;&#x9;COMPANIES LISTED ABOVE BE LIABLE FOR ERRORS CONTAINED HEREIN OR FOR&#xA;&#x9;&#x9;&#x9;&#x9;DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, RELIANCE OR&#xA;&#x9;&#x9;&#x9;&#x9;COVER DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA OR USE,&#xA;&#x9;&#x9;&#x9;&#x9;INCURRED BY ANY USER OR ANY THIRD PARTY IN CONNECTION WITH THE&#xA;&#x9;&#x9;&#x9;&#x9;FURNISHING, PERFORMANCE, OR USE OF THIS MATERIAL, EVEN IF ADVISED OF&#xA;&#x9;&#x9;&#x9;&#x9;THE POSSIBILITY OF SUCH DAMAGES.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>The entire risk as to the quality and&#xA;&#x9;&#x9;&#x9;&#x9;performance of software developed using this specification is borne&#xA;&#x9;&#x9;&#x9;&#x9;by you. This disclaimer of warranty constitutes an essential part of&#xA;&#x9;&#x9;&#x9;&#x9;the license granted to you to use this specification.&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P46&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P36&quot;>RESTRICTED RIGHTS LEGEND&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;Use, duplication or disclosure by the U.S. Government&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;is subject to the restrictions set forth in subparagraph (c) (1)&#xA;&#x9;&#x9;&#x9;&#x9;(ii) of The Rights in Technical Data and Computer Software Clause at&#xA;&#x9;&#x9;&#x9;&#x9;DFARS 252.227-7013 or in subparagraph (c)(1) and (2) of the&#xA;&#x9;&#x9;&#x9;&#x9;Commercial Computer Software - Restricted Rights clauses at 48&#xA;&#x9;&#x9;&#x9;&#x9;C.F.R. 52.227-19 or as specified in 48 C.F.R. 227-7202-2 of the DoD&#xA;&#x9;&#x9;&#x9;&#x9;F.A.R. Supplement and its successors, or as specified in 48 C.F.R.&#xA;&#x9;&#x9;&#x9;&#x9;12.212 of the Federal Acquisition Regulations and its successors, as&#xA;&#x9;&#x9;&#x9;&#x9;applicable. The specification copyright owners are as indicated&#xA;&#x9;&#x9;&#x9;&#x9;above and may be contacted through the Object Management Group, 140&#xA;&#x9;&#x9;&#x9;&#x9;Kendrick Street, Needham, MA 02494, U.S.A.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P46&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P22&quot;>TRADEMARKS&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>MDA®, Model Driven Architecture®,&#xA;&#x9;&#x9;&#x9;&#x9;UML®, UML Cube logo®, OMG Logo®, CORBA® and XMI® are registered&#xA;&#x9;&#x9;&#x9;&#x9;trademarks of the Object Management Group, Inc., and Object&#xA;&#x9;&#x9;&#x9;&#x9;Management Group©, OMG© , Unified Modeling Language©, Model Driven&#xA;&#x9;&#x9;&#x9;&#x9;Architecture Logo©, Model Driven Architecture Diagram©, CORBA&#xA;&#x9;&#x9;&#x9;&#x9;logo©, XMI Logo©, CWM©, CWM Logo©, IIOP© , MOF© , OMG Interface&#xA;&#x9;&#x9;&#x9;&#x9;Definition Language (IDL)© , and OMG SysML© are trademarks of the&#xA;&#x9;&#x9;&#x9;&#x9;Object Management Group. All other products or company names&#xA;&#x9;&#x9;&#x9;&#x9;mentioned are used for identification purposes only, and may be&#xA;&#x9;&#x9;&#x9;&#x9;trademarks of their respective owners.&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P46&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P22&quot;>COMPLIANCE&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>The copyright holders listed above&#xA;&#x9;&#x9;&#x9;&#x9;acknowledge that the Object Management Group (acting itself or&#xA;&#x9;&#x9;&#x9;&#x9;through its designees) is and shall at all times be the sole entity&#xA;&#x9;&#x9;&#x9;&#x9;that may authorize developers, suppliers and sellers of computer&#xA;&#x9;&#x9;&#x9;&#x9;software to use certification marks, trademarks or other special&#xA;&#x9;&#x9;&#x9;&#x9;designations to indicate compliance with these materials.&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Text_20_body&quot;>Software developed under the terms of&#xA;&#x9;&#x9;&#x9;&#x9;this license may claim compliance or conformance with this&#xA;&#x9;&#x9;&#x9;&#x9;specification if and only if the software compliance is of a nature&#xA;&#x9;&#x9;&#x9;&#x9;fully matching the applicable compliance points as stated in the&#xA;&#x9;&#x9;&#x9;&#x9;specification. Software developed only partially matching the&#xA;&#x9;&#x9;&#x9;&#x9;applicable compliance points may claim only that the software was&#xA;&#x9;&#x9;&#x9;&#x9;based on this specification, but may not claim compliance or&#xA;&#x9;&#x9;&#x9;&#x9;conformance with this specification. In the event that testing&#xA;&#x9;&#x9;&#x9;&#x9;suites are implemented or approved by Object Management Group, Inc.,&#xA;&#x9;&#x9;&#x9;&#x9;software developed using this specification may claim compliance or&#xA;&#x9;&#x9;&#x9;&#x9;conformance with the specification only if the software&#xA;&#x9;&#x9;&#x9;&#x9;satisfactorily completes the testing suites.&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P59&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P48&quot;>OMG's Issue Reporting Procedure&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Body&quot;>All OMG specifications are subject to&#xA;&#x9;&#x9;&#x9;&#x9;continuous review and improvement. As part of this process we&#xA;&#x9;&#x9;&#x9;&#x9;encourage readers to report any ambiguities, inconsistencies, or&#xA;&#x9;&#x9;&#x9;&#x9;inaccuracies they may find by completing the Issue Reporting Form&#xA;&#x9;&#x9;&#x9;&#x9;listed on the main web page http://www.omg.org, under Documents,&#xA;&#x9;&#x9;&#x9;&#x9;Report a Bug/Issue (http://www.omg.org/technology/agreement.)&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P47&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P89&quot; />&#xA;"/>
+      <parameter name="mpdVersionID">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="OMGDocumentNumber">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="StandarddocumentURL">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="AssociatedFiles" eType="/3/Sequence(String)"/>
+      <parameter name="copyrights" eType="/3/Sequence(String)"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="preface" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P56CENTER&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P56CENTER&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:soft-page-break />&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P55&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P38&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:soft-page-break />&#xA;&#x9;&#x9;&#x9;&#x9;Preface&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P35&quot;>OMG&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T28&quot;>Founded in 1989, the&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:alphabetical-index-mark&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;text:string-value=&quot;Object Management Group, Inc. (OMG)&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T28&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;Object Management Group, Inc. (OMG) is an open membership,&#xA;&#x9;&#x9;&#x9;&#x9;not-for-profit computer industry standards&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T28&quot;>consortium that produces and&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;maintains computer industry specifications for interoperable,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;portable, and reusable enterprise applications in distributed,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;heterogeneous environments. Membership includes Information&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Technology vendors, end users, government agencies, and academia.&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;OMG member companies write,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;adopt, and maintain its specifications following a mature, open process. OMG™s specifications&#xA;&#x9;&#x9;&#x9;&#x9;implement the Model Driven Architecture (MDA®), maximizing ROI&#xA;&#x9;&#x9;&#x9;&#x9;through a full-lifecycle approach to enterprise integration that&#xA;&#x9;&#x9;&#x9;&#x9;covers multiple operating systems, programming languages, middleware&#xA;&#x9;&#x9;&#x9;&#x9;and networking infrastructures, and software development&#xA;&#x9;&#x9;&#x9;&#x9;environments. OMG™s specifications include: UML® (Unified Modeling&#xA;&#x9;&#x9;&#x9;&#x9;Language); CORBA® (Common Object Request Broker Architecture); CWM&#xA;&#x9;&#x9;&#x9;&#x9;(Common Warehouse Metamodel); and industry-specific standards for&#xA;&#x9;&#x9;&#x9;&#x9;dozens of vertical markets.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T34&quot;>More information on the OMG is&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;available at&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;http://www.omg.org/.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P64TABBED&quot;>OMG Specifications&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;As noted,&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:alphabetical-index-mark&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;text:string-value=&quot;OMG specifications&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;OMG specifications address middleware, modeling and vertical domain&#xA;&#x9;&#x9;&#x9;&#x9;frameworks. A Specifications Catalog is available from the OMG&#xA;&#x9;&#x9;&#x9;&#x9;website at:&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P14&quot;>http://www.omg.org/technology/documents/spec_catalog.htm&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot;>Specifications within the Catalog are&#xA;&#x9;&#x9;&#x9;&#x9;organized by the following categories:&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P28TAB&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T31&quot;>OMG&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T4&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T5BOLD&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Modeling Specifications&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:list text:style-name=&quot;WW8Num10&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>UML&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>MOF&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>XMI&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>CWM&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>Profile specifications&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&lt;/text:list>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P29&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;OMG Middleware Specifications&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:list text:style-name=&quot;WW8Num10&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item text:start-value=&quot;1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>CORBA/IIOP&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>IDL/Language Mappings&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>Specialized CORBA specifications&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>CORBA Component Model (CCM)&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&lt;/text:list>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P30&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:bookmark-start text:name=&quot;DDE_LINK1&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T7&quot;>Platf&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:bookmark-end text:name=&quot;DDE_LINK1&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T7&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;orm Specific Model and Interface Specifications&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:list text:style-name=&quot;WW8Num10&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item text:start-value=&quot;1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>CORBAservices&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>CORBAfacilities&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>OMG Domain specifications&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>OMG Embedded Intelligence&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;specifications&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:list-item>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Bullet_5f_1&quot;>OMG Security specifications&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:list-item>&#xA;&#x9;&#x9;&#x9;&lt;/text:list>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot;>All of OMG™s formal specifications may&#xA;&#x9;&#x9;&#x9;&#x9;be downloaded without charge from our website. (Products&#xA;&#x9;&#x9;&#x9;&#x9;implementing OMG specifications are available from individual&#xA;&#x9;&#x9;&#x9;&#x9;suppliers.) Copies of specifications, available in PostScript and&#xA;&#x9;&#x9;&#x9;&#x9;PDF format, may be obtained from the Specifications Catalog cited&#xA;&#x9;&#x9;&#x9;&#x9;above or by contacting the Object Management Group, Inc. at:&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P26&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:soft-page-break />&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P25&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T19&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;OMG Headquarters&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;140 Kendrick Street&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Building A, Suite 300&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Needham, MA 02494&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;USA&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Tel: +1-781-444-0404&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Fax: +1-781-444-0320&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Email:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T20&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T29&quot;>pubs@omg.org&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P69&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T21&quot;>Certain OMG specifications are&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;also available as ISO standards. Please consult &lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:a xlink:type=&quot;simple&quot; xlink:href=&quot;http://www.iso.org/&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T30&quot;>http://www.iso.org&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:a>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:a xlink:type=&quot;simple&quot; xlink:href=&quot;http://www.iso.org/&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T30&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:line-break />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:a>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P31&quot;>Typographical Conventions&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P68&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T18&quot;>The type styles shown below are&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;used in this document to distinguish programming statements from&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ordinary English. However, these &lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:alphabetical-index-mark&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;text:string-value=&quot;typographical conventions&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T18&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T18&quot;>conventions are not used in&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;tables or section headings where no distinction is necessary.&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;PT10TIMES&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;Times/Times New Roman - 10 pt.:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;Standard body text&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P62&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T16&quot;>Helvetica/Arial - 10 pt. Bold:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T19&quot;> OMG Interface Definition&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Language (OMG IDL) and syntax elements.&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P62&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;ProgrammingLanguage&quot;>Courier - 10 pt. Bold:&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T19&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Programming language elements.&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P62&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T17&quot;>Helvetica/Arial - 10 pt&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T19&quot;>: Exceptions&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P34&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P33&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T19&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;NOTE:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:s text:c=&quot;2&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;Terms that appear in italics are defined in the glossary. Italic&#xA;&#x9;&#x9;&#x9;&#x9;text also represents the name of a document, specification, or other&#xA;&#x9;&#x9;&#x9;&#x9;publication.&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P33&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P11&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P90&quot; />&#xA;"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="AnnexA" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P17&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Annex2&quot;>(normative)&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P16&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P18&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P75&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Annex_5f_Head1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:bookmark text:name=&quot;_Toc443461104&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T32&quot;>A.1  &lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T23&quot;>Clause heading&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Body&quot;>Text&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Body&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T33&quot;>Normative annexes&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T32&quot;>are integral parts of the&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;standard. Their presence is optional. An annex™s normative status&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(as opposed to informative) shall be made clear by the way in which&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;it is referred to in the text and under the heading of the annex.&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Body&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T33&quot;>Informative annexes&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T32&quot;>give additional information&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;intended to assist the understanding or use of the standard and&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;shall not contain provisions to which it is necessary to conform in&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;order to be able to claim compliance with the standard. Their&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;presence is optional. An annex™s informative status (as opposed to&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;normative) shall be made clear by the way in which it is referred&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;to in the text and under the heading of the annex.&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P70&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Annex_5f_Head1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:bookmark text:name=&quot;_Toc4434611041&quot; />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T32&quot;>A.2  &lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T23&quot;>Clause heading&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Body&quot;>Text&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;class_20_-_20_item_20_description&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P66CAPTION&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Caption&quot; />"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="AnnexB" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P17&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Annex2&quot;>(normative)&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P16&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P19&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Annex_5f_Head1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T32&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;B.1&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T23&quot;>Sample IDL&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL&quot;>#pragma prefix&#xA;&#x9;&#x9;&#x9;&#x9;http_//example.com&amp;quot;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P63&quot;>module stockquote_wsdl {&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;interface StockQuotePortType {&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s text:c=&quot;5&quot; />typedef&#xA;&#x9;&#x9;&#x9;&#x9;sequence&amp;lt;float&amp;gt; ArrayOfFloat;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;typedef struct TimePeriod {&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;wstring startTime;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;wstring endTime;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;};&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;ArrayOfFloat GetTradePrices(&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;in&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;wstring tickerSymbol,&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;in TimePeriod timePeriod,&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;out float frequency);&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;};&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;IDL_5f_code&quot;>};&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P74&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P74&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P74&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Annex_5f_Head1&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T32&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;B.2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;text:s />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:span text:style-name=&quot;T23&quot;>Sample Code&lt;/text:span>&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot; />&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&amp;lt;definitions&#xA;&#x9;&#x9;&#x9;&#x9;name=&amp;quot;StockQuote&amp;quot;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;targetNamespace=&amp;quot;http://example.com/stockquote.wsdl&amp;quot;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />xmlns:tns=&amp;quot;http://example.com/stockquote.wsdl&amp;quot;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />xmlns:xsd1=&amp;quot;http://example.com/stockquote/schema&amp;quot;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />xmlns=&amp;quot;http://schemas.xmlsoap.org/wsdl/&amp;quot;&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;types&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;schema&#xA;&#x9;&#x9;&#x9;&#x9;targetNamespace=&amp;quot;http://example.com/stockquote/schema&amp;quot;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />xmlns:wsdl=&amp;quot;http://schemas.xmlsoap.org/wsdl/&amp;quot;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />xmlns=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;complexType name=&amp;quot;TimePeriod&amp;quot;&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;all&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;element name=&amp;quot;startTime&amp;quot;&#xA;&#x9;&#x9;&#x9;&#x9;type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;element name=&amp;quot;endTime&amp;quot;&#xA;&#x9;&#x9;&#x9;&#x9;type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;/all&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;/complexType&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;complexType name=&amp;quot;ArrayOfFloat&amp;quot;&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;complexContent&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;Code&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&amp;lt;restriction base=&amp;quot;soapenc:Array&amp;quot;&amp;gt;&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P65TABBED&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&#x9;&lt;text:tab />&#xA;&#x9;&#x9;&#x9;&lt;/text:p>&#xA;&#x9;&#x9;&#x9;&lt;text:p text:style-name=&quot;P67&quot; />"/>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="omgOdtCoverPage">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/omgOdtCoverPage"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="mpdVersionID">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="OMGDocumentNumber">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="StandarddocumentURL">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="AssociatedFiles" eType="/3/Sequence(String)"/>
+        <eParameters name="copyrights" eType="/3/Sequence(String)"/>
+      </eOperations>
+      <eOperations name="preface">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/preface"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+      <eOperations name="AnnexA">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/AnnexA"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+      <eOperations name="AnnexB">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/AnnexB"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+      <eOperations name="headerTitleContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="odtCommon.emtl#/0/headerTitleContent"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+      <eOperations name="year">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="commonQuery.emtl#/0/year"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="m">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="month">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="commonQuery.emtl#/0/month"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="m">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Boolean_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Module_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/QVT/1.0.0/Operational#//expressions/Module"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EOperation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//NamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ENamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Property_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Property"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeature_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//EnumerationLiteral"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Usage_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Usage"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Constraint"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EEnumLiteral_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDEnumerationFacet_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDEnumerationFacet"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EModelElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//MultiplicityElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Element_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Element"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ValueSpecification_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//ValueSpecification"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Association_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Association"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDElementDeclaration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDElementDeclaration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDAttributeDeclaration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDAttributeDeclaration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDFacet_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDFacet"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDTypeDefinition_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDTypeDefinition"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDAnnotation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDAnnotation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Package_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Package"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Classifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Type_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Type"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EPackage_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDNamedComponent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDNamedComponent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClassifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClass_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDSchema_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDSchema"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Comment_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Comment"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Diagram_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Diagram"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Artifact_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Artifact"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Extension_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Extension"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Stereotype_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Stereotype"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Profile_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Profile"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LiteralString_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//LiteralString"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Generalization_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Generalization"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Realization_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Realization"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="213"/>
+      <details key="end" value="1068"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/omgOdtCoverPage">
+      <details key="start" value="1070"/>
+      <details key="end" value="14945"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/omgOdtCoverPage/@init">
+      <details key="start" value="1238"/>
+      <details key="end" value="1420"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/omgOdtCoverPage/@init/@variable.0">
+      <details key="start" value="1241"/>
+      <details key="end" value="1292"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/omgOdtCoverPage/@init/@variable.0/%">
+      <details key="start" value="1268"/>
+      <details key="end" value="1292"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/omgOdtCoverPage/@init/@variable.0/%/AssociatedFiles">
+      <details key="start" value="1268"/>
+      <details key="end" value="1283"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/omgOdtCoverPage/@init/@variable.1">
+      <details key="start" value="1295"/>
+      <details key="end" value="1388"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/omgOdtCoverPage/@init/@variable.1/select">
+      <details key="start" value="1337"/>
+      <details key="end" value="1388"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/omgOdtCoverPage/@init/@variable.1/select/AssociatedFiles">
+      <details key="start" value="1337"/>
+      <details key="end" value="1352"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/omgOdtCoverPage/@init/@variable.1/select/%">
+      <details key="start" value="1364"/>
+      <details key="end" value="1387"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/omgOdtCoverPage/@init/@variable.1/select/%/af">
+      <details key="start" value="1364"/>
+      <details key="end" value="1366"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/omgOdtCoverPage/@init/@variable.1/select/%/FirstAssociatedFile">
+      <details key="start" value="1368"/>
+      <details key="end" value="1387"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/omgOdtCoverPage/@init/@variable.1/select/af">
+      <details key="start" value="1361"/>
+      <details key="end" value="1363"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/omgOdtCoverPage/@init/@variable.2">
+      <details key="start" value="1391"/>
+      <details key="end" value="1417"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/omgOdtCoverPage/@init/@variable.2/%">
+      <details key="start" value="1407"/>
+      <details key="end" value="1417"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/omgOdtCoverPage/@init/@variable.2/%/%">
+      <details key="start" value="1407"/>
+      <details key="end" value="1410"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/omgOdtCoverPage/%">
+      <details key="start" value="1422"/>
+      <details key="end" value="1529"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/omgOdtCoverPage/%.1">
+      <details key="start" value="1530"/>
+      <details key="end" value="1540"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/omgOdtCoverPage/%.1/%">
+      <details key="start" value="1530"/>
+      <details key="end" value="1532"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/omgOdtCoverPage/ThisYear">
+      <details key="start" value="1543"/>
+      <details key="end" value="1551"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/omgOdtCoverPage/%.2">
+      <details key="start" value="1553"/>
+      <details key="end" value="1813"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/omgOdtCoverPage/%.3">
+      <details key="start" value="1814"/>
+      <details key="end" value="1834"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/omgOdtCoverPage/%.3/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/omgOdtCoverPage/%.4">
+      <details key="start" value="1836"/>
+      <details key="end" value="2010"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/omgOdtCoverPage/mpdVersionID">
+      <details key="start" value="2011"/>
+      <details key="end" value="2023"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/omgOdtCoverPage/%.5">
+      <details key="start" value="2025"/>
+      <details key="end" value="2253"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/omgOdtCoverPage/%.6">
+      <details key="start" value="2780"/>
+      <details key="end" value="2784"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/omgOdtCoverPage/OMGDocumentNumber">
+      <details key="start" value="2785"/>
+      <details key="end" value="2802"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/omgOdtCoverPage/%.7">
+      <details key="start" value="2804"/>
+      <details key="end" value="2898"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/omgOdtCoverPage/StandarddocumentURL">
+      <details key="start" value="2899"/>
+      <details key="end" value="2918"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/omgOdtCoverPage/%.8">
+      <details key="start" value="2920"/>
+      <details key="end" value="3052"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/omgOdtCoverPage/FirstAssociatedFile">
+      <details key="start" value="3053"/>
+      <details key="end" value="3072"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/omgOdtCoverPage/%.9">
+      <details key="start" value="3074"/>
+      <details key="end" value="3115"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/omgOdtCoverPage/FirstAssociatedFile.1">
+      <details key="start" value="3116"/>
+      <details key="end" value="3135"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/omgOdtCoverPage/%.10">
+      <details key="start" value="3137"/>
+      <details key="end" value="3183"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/omgOdtCoverPage/%.11">
+      <details key="start" value="3186"/>
+      <details key="end" value="3584"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/omgOdtCoverPage/%.11/%">
+      <details key="start" value="3240"/>
+      <details key="end" value="3454"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/omgOdtCoverPage/%.11/associatedFile">
+      <details key="start" value="3455"/>
+      <details key="end" value="3469"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/omgOdtCoverPage/%.11/%.1">
+      <details key="start" value="3471"/>
+      <details key="end" value="3512"/>
+      <details key="line" value="91"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/omgOdtCoverPage/%.11/associatedFile.1">
+      <details key="start" value="3513"/>
+      <details key="end" value="3527"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/omgOdtCoverPage/%.11/%.2">
+      <details key="start" value="3529"/>
+      <details key="end" value="3575"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/omgOdtCoverPage/%.11/associatedFile.2">
+      <details key="start" value="3191"/>
+      <details key="end" value="3212"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/omgOdtCoverPage/%.11/RemainingAssociatedFiles">
+      <details key="start" value="3213"/>
+      <details key="end" value="3237"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/omgOdtCoverPage/%.12">
+      <details key="start" value="3585"/>
+      <details key="end" value="4442"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/omgOdtCoverPage/%.13">
+      <details key="start" value="4446"/>
+      <details key="end" value="4614"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/omgOdtCoverPage/%.13/%">
+      <details key="start" value="4481"/>
+      <details key="end" value="4536"/>
+      <details key="line" value="126"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/omgOdtCoverPage/%.13/ThisYear">
+      <details key="start" value="4537"/>
+      <details key="end" value="4545"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/omgOdtCoverPage/%.13/%.1">
+      <details key="start" value="4547"/>
+      <details key="end" value="4549"/>
+      <details key="line" value="127"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/omgOdtCoverPage/%.13/copyright">
+      <details key="start" value="4550"/>
+      <details key="end" value="4559"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/omgOdtCoverPage/%.13/%.2">
+      <details key="start" value="4561"/>
+      <details key="end" value="4604"/>
+      <details key="line" value="128"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/omgOdtCoverPage/%.13/copyright.1">
+      <details key="start" value="4451"/>
+      <details key="end" value="4467"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/omgOdtCoverPage/%.13/copyrights">
+      <details key="start" value="4468"/>
+      <details key="end" value="4478"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/omgOdtCoverPage/%.14">
+      <details key="start" value="4615"/>
+      <details key="end" value="4748"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/omgOdtCoverPage/%.15">
+      <details key="start" value="4862"/>
+      <details key="end" value="14933"/>
+      <details key="line" value="139"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/omgOdtCoverPage/mpdVersionID.1">
+      <details key="start" value="1103"/>
+      <details key="end" value="1122"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/omgOdtCoverPage/OMGDocumentNumber.1">
+      <details key="start" value="1123"/>
+      <details key="end" value="1147"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/omgOdtCoverPage/StandarddocumentURL.1">
+      <details key="start" value="1148"/>
+      <details key="end" value="1174"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/omgOdtCoverPage/AssociatedFiles">
+      <details key="start" value="1177"/>
+      <details key="end" value="1209"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/omgOdtCoverPage/copyrights">
+      <details key="start" value="1210"/>
+      <details key="end" value="1237"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/preface">
+      <details key="start" value="14947"/>
+      <details key="end" value="24878"/>
+      <details key="line" value="321"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/preface/%">
+      <details key="start" value="14975"/>
+      <details key="end" value="24866"/>
+      <details key="line" value="322"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/AnnexA">
+      <details key="start" value="24879"/>
+      <details key="end" value="27591"/>
+      <details key="line" value="586"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/AnnexA/%">
+      <details key="start" value="24906"/>
+      <details key="end" value="27579"/>
+      <details key="line" value="587"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/AnnexB">
+      <details key="start" value="27592"/>
+      <details key="end" value="33083"/>
+      <details key="line" value="645"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/AnnexB/%">
+      <details key="start" value="27619"/>
+      <details key="end" value="33071"/>
+      <details key="line" value="646"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

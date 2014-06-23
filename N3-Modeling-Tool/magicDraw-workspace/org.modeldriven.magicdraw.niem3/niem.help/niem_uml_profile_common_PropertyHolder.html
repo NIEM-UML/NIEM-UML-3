@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>&lt;&lt;PropertyHolder>></h1>
+PropertyHolder is a Class holding global Properties that are not the subject of any specific NIEM type. A Property of a NIEM type may then be defined by reference to a Property of a PropertyHolder by using a References realization with the Property in the PropertyHolder as the supplier. Note that the multiplicity of Properties in a PropertyHolder is immaterial -- the multiplicities are established by Properties in the corresponding References client. The target namespace of Properties in a PropertyHolder is the target namespace of the Namespace Package that contains the PropertyHolder (which may be different than the target namespace of NIEM types that use the Properties in the PropertyHolder).
+
+PropertyHolder does not represent any NIEM concept; it exists to permit the user to define a NIEM property that is not the subject of any NIEM type. There are significant differences between the UML representation and XML Schema implementation of a NIEM property. Sections 6.1.6.2 and 6.1.6.3 of NIEM NDR v1.3, Rule 6-14 and Rule 6-15, require that an attribute or element declaration be a top-level declaration, but NIEM NDR v1.3 does not require a corresponding attribute use or element particle; however, Section 7.3.44 of [UML] requires that a Property be the ownedAttribute of a Classifier. Thus in the UML representation, the declaration and use of a Property are not distinct, and the declaration of a Property requires its use. In the XML Schema implementation, the declaration and use are distinct, and the declaration does not require a corresponding use. To resolve this difference, any Property within a PropertyHolder shall represent an attribute or element declaration without a corresponding attribute use or element particle.
+
+PropertyHolders may be used to hold the properties of a substitution group.  Where a PropertyHolder is used to define a substitution group an extension of that substitution group shall be a subclass of the substitution group PropertyHolder.
+ <p/>
+	View Comprehensive <a 
+	href="http://lib.modeldriven.org/MDLibrary/trunk/Specifications/NIEM/magicdraw/reports/NIEM-UML_Profile/web.report.html?refid=NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder"
+	 target="_blank">&lt;&lt;PropertyHolder>></a> Detail Report in a new window
+</body></html>

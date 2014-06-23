@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+NIEM UML
+Copyright © 2011, ModelDriven.org and Tom Digre, all rights reserved worldwide.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see http://www.gnu.org/licenses/gpl-3.0-standalone.html.
+
+There are also commercial licenses available for this software.
+Contact ModelDriven.org for more information.
+-->
+<project name="magicdraw.plugin.build" default="build" basedir="." >
+    <property name="workspace" location="${basedir}/.."/>
+	<basename property="basedir.name" file="${basedir}"/>
+    <property name="magicdraw.folder" location="${basedir}/MagicDraw"/>
+    <property name="niem.mpd.folder" location="${magicdraw.folder}/samples/niem/mpd"/>
+    <property name="magicdraw.jar" location="${magicdraw.folder}/plugins/org.modeldriven.magicdraw.niem.qvt"/>
+    <property name="help.jar" location="${magicdraw.folder}/plugins/org.modeldriven.magicdraw.niem.qvt"/>
+
+        <target name="build" description="create magicdraw plugin parts" depends="help.jar,plugin.jar,transforms,all.mpd.zips,distribution.zip">
+        </target>
+    <target name="help.jar" description="create help jar">
+    	<!-- create jar from source -->
+    	<jar destfile="${help.jar}/help.jar">
+    		<fileset dir="${basedir}/niem.help"></fileset>
+    	</jar>
+    </target>
+    <target name="plugin.jar" description="create plugin jar">
+    	<tstamp/>
+    	<echo file="${basedir}/bin/org/modeldriven/magicdraw/niem/qvt/niem.properties" append="false"
+    		message="build=${DSTAMP}.${TSTAMP}${line.separator}schematronExpire=02/02/2013${line.separator}wsdlServiceExpire=03/28/2013">
+    	
+    	</echo>    	
+    	<echo file="${basedir}/${DSTAMP}.${TSTAMP}.txt" append="false"
+    		message="build=${DSTAMP}.${TSTAMP}">
+    	
+    	</echo>    	
+    	<!-- create jar from source -->
+    	<jar destfile="${magicdraw.jar}/org.modeldriven.magicdraw.niem.qvt.jar">
+    		<fileset dir="${basedir}/bin"></fileset>
+    	</jar>
+    </target>
+    <target name="transforms" description="copy transforms">
+    	<copy todir="${magicdraw.jar}/transform"><fileset dir="${basedir}/transform"></fileset></copy>
+    	<copy todir="${magicdraw.jar}/properties"><fileset dir="${basedir}/properties"></fileset></copy>
+    </target>
+    <target name="all.mpd.zips" description="zip up all mpds">
+    	<!-- based on eclipse project mpd overrides -->
+        <subant target="mpd.zip" genericantfile="${basedir}/magicdraw.plugin.build.xml">
+        	 <property name="niem.mpd.folder" value="${niem.mpd.folder}"/>
+            <dirset dir="${workspace}" includes="gov.niem.uml.example.iepd.*/mpd~/*" excludes="gov.niem.uml.example.iepd.lexs/mpd~/*"/>
+            <dirset dir="${workspace}" includes="gov.niem.uml.example.niem/mpd~/*"/>
+        </subant>
+    	<!-- lexs would otherwise be same name as incident arrest-->
+<!-- suppress for now
+    	  <zip destfile="${niem.mpd.folder}/lexs.mpd.zip"
+    	       basedir="${workspace}/gov.niem.uml.example.iepd.lexs/mpd~"
+    	  />        	
+-->    	
+    </target>
+    <target name="mpd.zip" description="zip up distributable">
+  	  <zip destfile="${niem.mpd.folder}/${basedir.name}.mpd.zip"
+  	       basedir="${basedir}/.."
+  	  />    
+    </target>
+    <target name="distribution.zip" description="zip up distributable">
+    	<!--
+  	  <zip destfile="${basedir}/org.modeldriven.magicdraw.niem.qvt.zip"
+  	       basedir="${magicdraw.folder}"
+  	  />    
+  	  -->    	
+    	  <zip destfile="${basedir}/org.modeldriven.magicdraw.niem3.zip"
+    	       basedir="${magicdraw.folder}"
+    	  />    
+    </target>
+</project>

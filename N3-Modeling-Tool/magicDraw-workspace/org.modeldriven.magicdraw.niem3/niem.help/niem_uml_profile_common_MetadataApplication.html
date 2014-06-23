@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>&lt;&lt;MetadataApplication>></h1>
+The MetadataApplication stereotype is a specialization of Application that is always between a MetadataType Class and another Class. It represents a constraint on a NIEM metadata type that limits the application of the NIEM metadata type to specific types. If a MetadataType Class is the client of a MetadataApplication Usage, then any Property with the MetadataType Class as its type must be for a Class that is a (direct or indirect) subclass of the supplier Class of the MetadataApplication. A MetadataType Class may be the client of multiple MetadataApplication Usages, in which case a Property for it may be in a Class that is a subclass of a supplier Class of any of the MetadataApplications. If a MetadataType is not a client of any MetadataApplication, then it applies to any type.
+
+A MetadataApplication Usage is implemented in XML schema as a NIEM AppliesTo element in the annotation element of the complex type definition represented by the client of the Usage, referencing the complex type represented by the supplier class of the Usage.
+ <p/>
+	View Comprehensive <a 
+	href="http://lib.modeldriven.org/MDLibrary/trunk/Specifications/NIEM/magicdraw/reports/NIEM-UML_Profile/web.report.html?refid=NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplication"
+	 target="_blank">&lt;&lt;MetadataApplication>></a> Detail Report in a new window
+</body></html>

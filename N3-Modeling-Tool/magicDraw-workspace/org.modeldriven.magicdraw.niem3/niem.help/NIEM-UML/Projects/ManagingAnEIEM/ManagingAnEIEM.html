@@ -1,0 +1,3516 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="ManagingAnEIEM_files/filelist.xml">
+<link rel=Edit-Time-Data href="ManagingAnEIEM_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Managing An EIEM</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Tom Digre</o:Author>
+  <o:LastAuthor>tom</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>2149</o:TotalTime>
+  <o:Created>2012-12-04T17:38:00Z</o:Created>
+  <o:LastSaved>2012-12-05T15:16:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>2481</o:Words>
+  <o:Characters>14145</o:Characters>
+  <o:Company>Hewlett-Packard</o:Company>
+  <o:Lines>117</o:Lines>
+  <o:Paragraphs>33</o:Paragraphs>
+  <o:CharactersWithSpaces>16593</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="ManagingAnEIEM_files/themedata.thmx">
+<link rel=colorSchemeMapping href="ManagingAnEIEM_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="267">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="99" Name="Hyperlink"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="99" Name="Normal (Web)"/>
+  <w:LsdException Locked="false" Priority="99" Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+  <w:LsdException Locked="false" Priority="99" Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h2
+	{mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+h3
+	{mso-style-noshow:yes;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	mso-style-unhide:no;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-unhide:no;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:24.0pt;
+	mso-bidi-font-size:24.0pt;
+	mso-font-kerning:18.0pt;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"HTML Preformatted";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+span.hcp1
+	{mso-style-name:hcp1;
+	mso-style-unhide:no;}
+span.hcp2
+	{mso-style-name:hcp2;
+	mso-style-unhide:no;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:87584422;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1563447076 -1701295850 1738588664 16833274 1831249858 968249524 -1917394268 877449998 1151114574 803661536;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level2
+	{mso-level-start-at:1693;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:102501122;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-460408546 1665533258 755252394 -1772303428 -1608094374 -1855013188 -562242072 -1398643334 1841832108 -261201284;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2
+	{mso-list-id:326328274;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1835900632 -1111966618 1004804626 -2024523176 -737771152 309380270 -997795982 -1389712120 -1800507702 -1666921018;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level2
+	{mso-level-start-at:1018;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3
+	{mso-list-id:424811750;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1508113474 -282944546 518056516 -1184870186 2091128812 754252892 366411462 -1404510822 -669776326 799052690;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4
+	{mso-list-id:548690988;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1142104676 1566611328 -1352626164 -1403505686 -102713518 1135229618 519844070 1792860638 -1485917340 -1313313068;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level2
+	{mso-level-start-at:1693;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l5
+	{mso-list-id:705715654;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1936481264 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6
+	{mso-list-id:805970154;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-998866790 423242856 107794334 -1775601400 -1139640954 146720046 -112188166 301597502 -1452623142 -245084470;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level2
+	{mso-level-start-at:1182;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l7
+	{mso-list-id:806702532;
+	mso-list-type:hybrid;
+	mso-list-template-ids:668137146 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l8
+	{mso-list-id:889876817;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-47522422 -1991470110 -570098428 476888606 74880698 196225110 -1235294996 -365128718 972726684 -2004964880;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level2
+	{mso-level-start-at:1783;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9
+	{mso-list-id:905337640;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1092690278 1277299168 819630550 1809994278 -201691372 -430571452 1841735014 -390183804 -813247658 520139108;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level2
+	{mso-level-start-at:1693;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10
+	{mso-list-id:958802421;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1336513162 -928872210 2056042200 -137332154 1554285700 720564452 -286198104 343210590 -1927239558 -503808330;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l10:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l11
+	{mso-list-id:1152256974;
+	mso-list-type:hybrid;
+	mso-list-template-ids:940889584 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l11:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l11:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l11:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l11:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l11:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l11:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l11:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l11:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l12
+	{mso-list-id:1208880723;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1686554038 1754021842 -879459128 1319402946 -407367496 -1402970040 585271962 -1277632754 -1374524124 -1918459932;}
+@list l12:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level2
+	{mso-level-start-at:2285;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l12:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l13
+	{mso-list-id:1260065485;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-911290868 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l13:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l13:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l13:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l13:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l13:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l13:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l13:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l13:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l13:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l14
+	{mso-list-id:1394348650;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1250704838 -1726048054 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l14:level1
+	{mso-level-start-at:2974;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l14:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l14:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l14:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l14:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l14:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l14:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l14:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l14:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l15
+	{mso-list-id:1585451261;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-326192138 -1954914634 -90832002 2047890816 -2092903158 1827863644 -284798938 549505080 -1750017054 533861796;}
+@list l15:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level2
+	{mso-level-start-at:1693;
+	mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l15:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16
+	{mso-list-id:1760372422;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1810526782 989909898 -313777370 -483218442 1867021674 -811693438 782017396 641087384 1101463326 -1251419438;}
+@list l16:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l16:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17
+	{mso-list-id:1792358281;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1562462804 309768838 944436374 -1271365994 -956634654 994769278 -572252354 -333441424 663682312 -837902318;}
+@list l17:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l17:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l18
+	{mso-list-id:1825854433;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1371721800 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l18:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l18:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l18:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l18:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l18:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l18:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l19
+	{mso-list-id:1946619493;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-513895298 463784368 -488464982 869036418 286950034 -2113636718 1534464630 -2026228258 -663069342 2800612;}
+@list l19:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l19:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20
+	{mso-list-id:2056925555;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2035087424 1180323246 1621666228 17062138 -964938810 -2020200482 -1589217208 -310077970 1437879898 1436871222;}
+@list l20:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+@list l20:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<h2><span style='font-size:24.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:windowtext;mso-font-kerning:18.0pt'>Managing an EIEM<o:p></o:p></span></h2>
+
+<h2>Creating an EIEM</h2>
+
+<p class=MsoNormal>To create a new EIEM Project, the following procedure may be
+used:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l12 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+Magic <span class=GramE>Draw</span> main menu: File<span style='font-family:
+Wingdings;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>è</span></span>New Project…</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l12 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Select
+NIEM Modeling category</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l12 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>The
+following options are available for EIEM Projects:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>NIEM
+EIEM-All Project.<span style='mso-spacerun:yes'>  </span><span
+style='mso-spacerun:yes'> </span>This project will include all NIEM Reference
+Models.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>NIEM
+EIEM-Core Project.<span style='mso-spacerun:yes'>  </span>This project will
+include the NIEM-Core Reference Model, plus all of its pre-requisite models.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l12 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Supply
+the Project Name, Project location if desired</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l12 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Click
+OK</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1045" type="#_x0000_t75" style='width:216.75pt;
+ height:384pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=289 height=512
+src="ManagingAnEIEM_files/image001.png" v:shapes="_x0000_i1045"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The new Project is similar to an IEPD except:</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:1.0in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l14 level1 lfo4;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>There is no exchange &lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l14 level1 lfo4;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>There are no XML Sample Document instances</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l14 level1 lfo4;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>The &lt;&lt;<span class=SpellE>ModelPackageDescription</span>&gt;&gt;
+Component is configured as an <span class=SpellE>eiem</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l14 level1 lfo4;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>The EIEM Model is shared.<span
+style='mso-spacerun:yes'>  </span>The EIEM Model will serve a role similar to
+NIEM Reference Models from the perspective of the enterprise IEPD modeler.</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l14 level1 lfo4;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>The NIEM Reference Models, NIEM-UML profiles,
+NIEM-DSL, and XML Primitive Types library are all shared.<span
+style='mso-spacerun:yes'>  </span>It is expected that the view of NIEM
+Reference Models is managed by the EIEM.<span style='mso-spacerun:yes'> 
+</span>Initially, the NIEM Reference Models are all directly accessible to an
+IEPD modeler.<span style='mso-spacerun:yes'>  </span>The EIEM model may subset
+some or all of the NIEM Reference Models in order to hide complexity.<span
+style='mso-spacerun:yes'>  </span>For <span class=SpellE>subsetted</span> NIEM
+Reference Models, the EIEM may disable sharing of the corresponding original
+NIEM Reference Models (this is implemented via IEPD Templates). <span
+style='mso-spacerun:yes'> </span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_5" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:235.5pt;
+ height:534pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image002.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=314 height=712
+src="ManagingAnEIEM_files/image002.png" v:shapes="Picture_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The New Project includes:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>NIEM
+Reference Models</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>NIEM-UML
+Profiles</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>XML
+Primitive Types</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>NIEM-DSL</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>&lt;&lt;<span
+class=SpellE>ModelPackageDescription</span>&gt;&gt; Component, configured as an
+IEPD and with required &lt;&lt;<span class=SpellE>ModelPackageDescriptionFile</span>&gt;&gt;
+Usages to <span class=SpellE>changelog</span>, xml samples, business-rules</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Skeletal
+exchange, extension, subset models to meet minimum NDR/MPD configuration requirements</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>XML
+Sample Documents, as required by MPD.<span style='mso-spacerun:yes'> 
+</span>These are expected to be replaced by XML Sample Documents based on the
+modeled exchange &lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>A
+change log configured for a new IEPD.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Business-rules
+package to manage business constraints and validation.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l12 level2 lfo2;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Various
+skeletal diagrams with some hints on how to start modeling the IEPD.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>Reduce Complexity</h2>
+
+<p class=MsoNormal>From the NIEM Business Information Exchange Components
+document:</p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'>Development of an IEPD involves discovering
+and defining the business data needs; mapping the business data to NIEM
+components and extension components; defining the extension components;
+developing NIEM subset schemas (to exclude NIEM content not used in a
+particular IEPD); developing extension schemas; and developing the exchange
+schema. <o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'>As an organization develops more and more
+IEPDs, and gains experience in the process, a number of questions inevitably
+arise: <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:9.25pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l5 level1 lfo7;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Performing
+all the steps to develop an IEPD can be time consuming, and developing many
+IEPDs can be costly. How can an organization realize economies of scale and
+reduce efforts as more IEPDs are developed? <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:9.25pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l5 level1 lfo7;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>NIEM
+encourages the reuse of IEPDs as a whole, but in many cases information
+exchanges, even within the same general business area, are not exactly the
+same, and reuse of the entire IEPD may not be possible. Is there a better way
+to reuse artifacts developed for one IEPD in the development of another? <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:9.25pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l5 level1 lfo7;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>NIEM has
+a great deal of content, most of which may not be applicable to a particular
+organization’s business and won’t be used by that organization for information
+sharing. It is often difficult for IEPD developers to find the appropriate NIEM
+content because there is so much to sift through. Is it possible to search only
+the NIEM components used by the organization’s business? <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l5 level1 lfo7;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Many
+IEPDs have similar business content; but if the IEPDs are developed at
+different times and/or by different people, similar business content may be
+reflected in arbitrarily different ways. How can an organization ensure that
+similar business content is reflected the same way in all IEPDs with that
+content? <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l5 level1 lfo7;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Extensions
+developed for one IEPD may be difficult to discover and reuse in another IEPD.
+How can organizations define and manage extensions specific to their business
+needs in a way that facilitates discovery and reuse of such extensions? <o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'>…<o:p></o:p></i></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'>As an organization develops IEPDs, the
+organization may realize that many of its IEPDs have similar business content.
+A collection of closely related business data could be organized at an object
+level and defined as extension data components. These extension components
+could be referred to as Business Information Exchange Components (BIEC),
+because they are either specific to an organization’s business or they
+represent a more general line of business that crosses organizational lines.
+Often they are business data components developed and used by multiple
+organizations within the same community of interest (COI). <o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>The use
+of BIECs has the potential for <b style='mso-bidi-font-weight:normal'>simplifying
+IEPD development and increasing consistency </b>of the business object
+definitions at all steps in the process, including exchange content modeling,
+mapping to NIEM, creating NIEM extension components, and generating XML
+schemas.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>…<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt'>Once an organization defines a number of BIECs, the
+collection of BIECs can either be used as a library of business components or
+can form the basis of an Enterprise Information Exchange Model (EIEM). Instead
+of developing each IEPD by mapping business data to NIEM and extension
+components, <span class=SpellE>subsetting</span> NIEM, and defining extensions,
+organizations can perform much of the IEPD development by mapping high-level
+business content to existing BIECs in their own EIEM. The concept is depicted
+in the following figure:<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_11" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:395.25pt;
+ height:387pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image003.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=527 height=516
+src="ManagingAnEIEM_files/image004.png" v:shapes="Picture_x0020_11"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt'>An information sharing enterprise</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:6.5pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt'>is a group of
+organizations with business interactions that agree to exchange information,
+often using multiple types of information exchanges. The member organizations
+have similar business definitions for objects used in an information exchange
+and can agree on common definitions for BIECs and an EIEM.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt'>…<o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'>An <b style='mso-bidi-font-weight:normal'>Enterprise
+Information Exchange Model (EIEM) is</b> a content data model of data
+components that meets the specific information sharing business needs of an
+enterprise. In a sense it is <b style='mso-bidi-font-weight:normal'>a tailored
+adaptation of NIEM, <span class=SpellE>subsetted</span>, extended, and
+constrained</b> to meet those needs. The EIEM consists of: <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:9.25pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l18 level1 lfo9;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>A
+“master” subset of NIEM that contains all NIEM components used or expected to
+be used by the enterprise. <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l18 level1 lfo9;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>One or
+more extension schemas that define BIECs and other extensions used or expected
+to be used by the enterprise. <o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'><o:p>&nbsp;</o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>For an
+enterprise that creates and maintains an EIEM, its IEPD development process is
+no longer required to create NIEM subsets or extensive mappings of business
+content to the XML data model—for the most part, this work has been
+accomplished in the process of EIEM development. IEPD developers can reuse
+definitions, the master NIEM subset, and business content mappings encapsulated
+in the BIECs that comprise the enterprise model.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>…<o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'>The goals of using BIECs and an EIEM are to <b
+style='mso-bidi-font-weight:normal'>reduce the effort</b> required to create a
+set of IEPDs <b style='mso-bidi-font-weight:normal'>and the incremental cost</b>
+of creating a new IEPD and <b style='mso-bidi-font-weight:normal'>to increase
+reuse and consistency</b> among IEPDs used by an enterprise to exchange
+information. Specifically: <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:9.25pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l11 level1 lfo8;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Improve
+the consistency of information representation across multiple IEPDs developed
+by an information sharing enterprise. <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:9.25pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l11 level1 lfo8;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Define
+and manage extensions specific to an enterprise’s business needs in a way that
+the extensions can be discovered and reused. <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l11 level1 lfo8;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Reduce
+the efforts required to develop multiple IEPDs by: <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:8.6pt;margin-left:1.0in;mso-add-space:auto;text-indent:-.25in;
+mso-list:l11 level2 lfo8;mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:black'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Defining
+BIECs once and reusing them in multiple IEPDs. <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l11 level2 lfo8;mso-layout-grid-align:none;
+text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Courier New";color:black'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Mapping
+IEPD business data primarily to NIEM and extensions at the BIEC level instead
+of lower levels. <o:p></o:p></span></i></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l11 level1 lfo8;
+mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>Make it
+easier to find NIEM content by limiting searches primarily to the NIEM
+components used by the enterprise. <o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt;font-family:
+"Arial","sans-serif";color:black'><o:p>&nbsp;</o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>The use
+of BIECs and EIEMs can extend the value of NIEM beyond its use in IEPD
+development.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>…<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt'>If desired, <b style='mso-bidi-font-weight:normal'>a
+subset of the EIEM</b> (a subset of the extension schemas and a subset of the
+master NIEM subset schemas) <b style='mso-bidi-font-weight:normal'>can be developed
+for each IEPD</b> to more specifically constraint the EIEM components used in
+the IEPD.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In addition to enterprise-specific extension models, an <span
+class=SpellE>eiem</span> contains enterprise-specific views (subsets) of NIEM
+Reference models.<span style='mso-spacerun:yes'>  </span><span
+style='mso-spacerun:yes'> </span>These subsets will be exposed to the IEPD
+modeler, who may further subset and tailor the EIEM components, consistent with
+the goals of the enterprise.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1042" type="#_x0000_t75" style='width:468pt;height:254.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=624 height=339
+src="ManagingAnEIEM_files/image006.jpg" v:shapes="_x0000_i1042"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>Modularizing the EIEM</h2>
+
+<p class=MsoNormal>An EIEM often includes one or more extension &lt;&lt;<span
+class=SpellE>InformationModel</span>&gt;&gt;s.<span style='mso-spacerun:yes'> 
+</span>These extension models may be oriented towards specific communities of
+interest (COI) within the enterprise.<span style='mso-spacerun:yes'> 
+</span>The development and use of such extension models may be largely independent
+from other COI extension models.<span style='mso-spacerun:yes'>   </span>Common
+concepts across the enterprise are captured in an enterprise-specific “core”
+model.</p>
+
+<p class=MsoNormal>To facilitate the parallel development of COI extension
+models, an EIEM may be modularized.<span style='mso-spacerun:yes'>  </span>In
+this scenario, there may be a “core” enterprise model project plus multiple COI
+extension model projects.<span style='mso-spacerun:yes'>  </span>The COI
+extension model projects would be tailored adaptations of the “core” enterprise
+model; <span class=SpellE>subsetted</span>, extended, and constrained to meet
+the needs of the COI.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>A COI extension model project may be created using the
+following procedure:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Create an EIEM <span class=SpellE>SubModule</span>
+Project</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Magic Draw Main menu File<span style='font-family:
+Wingdings;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>è</span></span>New Project.<span
+style='mso-spacerun:yes'>   </span>This will open the New Project Dialog.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>In the NIEM Modeling category, select one of the
+NIEM EIEM-* Projects</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Complete the New Project Dialog</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_12" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:247.5pt;
+ height:384pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=330 height=512
+src="ManagingAnEIEM_files/image007.png" v:shapes="Picture_x0020_12"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Use the EIEM Core module:</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Magic Draw Main menu File<span style='font-family:
+Wingdings;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>è</span></span>Use Module.<span
+style='mso-spacerun:yes'>   </span>This will open the Use Module Dialog.<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>On the Select Module Page:<span
+style='mso-spacerun:yes'>  </span>Select the EIEM “Core” model </p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>On the Module Setting Page: Select read-only,
+always load</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Complete the Use Module Dialog.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Be sure to Avoid circular module dependencies</p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_13" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:443.25pt;
+ height:273pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image008.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=591 height=364
+src="ManagingAnEIEM_files/image008.png" v:shapes="Picture_x0020_13"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Model the COI extension &lt;&lt;<span
+class=SpellE>InformationModel</span>&gt;&gt;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Subset <span
+style='mso-spacerun:yes'> </span>&lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;s
+from core to meet the needs of the COI</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Add COI extension &lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level3 lfo11'><![if !supportLists]><span
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>Extend/restrict components from the <span
+class=SpellE>eiem</span> core model.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level3 lfo11'><![if !supportLists]><span
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>Add components as required</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>By default, NIEM-UML Profiles are properly
+applied and &lt;&lt;<span class=SpellE>ModelPackageDescription</span>&gt;&gt;
+Component is shared (<span class=SpellE>referenceable</span>) from IEPD.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Be sure that NIEM-UML Profiles remain properly
+applied.</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Be sure that &lt;&lt;<span class=SpellE>ModelPackageDescription</span>&gt;&gt;
+Component remains shared so that IEPD may reference it via &lt;&lt;<span
+class=SpellE>ModelPackageDescriptionRelationship</span>&gt;&gt;. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In addition to NIEM-UML models, an EIEM may have other
+artifacts which are intended for reuse by IEPD modelers.<span
+style='mso-spacerun:yes'>  </span>This may include, for example,
+enterprise-specific UML Profiles (beyond NIEM-UML) which are to be applied to
+IEPD models.</p>
+
+<h2>The IEPD Template</h2>
+
+<p class=MsoNormal>To use an EIEM in the context of IEPD development, the
+modeler must create an IEPD Project, use a set of EIEM modules and other
+requisite artifacts,<span style='mso-spacerun:yes'>  </span>subset EIEM
+&lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;s,<span
+style='mso-spacerun:yes'>  </span>create the MPD required &lt;&lt;<span
+class=SpellE>ModelPackageDescriptionRelationship</span>&gt;&gt; between the
+IEPD and the EIEM, and develop the exchange-specific &lt;&lt;<span
+class=SpellE>InformationModel</span>&gt;&gt;s.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>To facilitate the use of EIEMs within an enterprise, the
+initial configuration/setup for an IEPD Project may be encapsulated in an IEPD Template.<span
+style='mso-spacerun:yes'>  </span>An IEPD Template is basically a model which
+can be replicated for use as a starting point for IEPD development.<span
+style='mso-spacerun:yes'>  </span>The IEPD Template should ensure that a
+synchronized set of EIEM modules and other artifacts are loaded, that &lt;&lt;<span
+class=SpellE>ModelPackageDescriptionRelationship</span>&gt;&gt; Usages are
+properly established with the EIEM models, and that common/useful EIEM subset
+&lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;s are provided.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Since an EIEM may contain several COI extensions, it may be
+useful to provide multiple IEPD Templates, each tailored to a COI or other perspective
+of IEPD usage.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>An IEPD Template may be constructed using the following
+procedure:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Create an IEPD Template Project<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Magic Draw Main menu File<span style='font-family:
+Wingdings;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>è</span></span>New Project.<span
+style='mso-spacerun:yes'>   </span>This will open the New Project Dialog.<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>In the NIEM Modeling category, select one of the
+NIEM IEPD-* Projects<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l13 level2 lfo11'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Complete the New Project Dialog<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_14" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:247.5pt;
+ height:384pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=330 height=512
+src="ManagingAnEIEM_files/image009.png" v:shapes="Picture_x0020_14"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Reuse the EIEM</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l6 level2 lfo12;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Magic Draw Main menu File<span style='font-family:
+Wingdings;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>è</span></span>Use Module.<span
+style='mso-spacerun:yes'>   </span>This will open the Use Module Dialog.<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l6 level2 lfo12;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>On the Select Module Page:<span
+style='mso-spacerun:yes'>  </span>Select the appropriate EIEM “Core” or COI model
+<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l6 level2 lfo12;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>On the Module Setting Page: Select read-only,
+always load<o:p></o:p></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l6 level2 lfo12;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]>Complete the Use Module Dialog.<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_15" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:443.25pt;
+ height:273pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image008.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=591 height=364
+src="ManagingAnEIEM_files/image008.png" v:shapes="Picture_x0020_15"><![endif]></span><o:p></o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l6 level1 lfo12;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Wire
+in the EIEM &lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;s</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Move
+&lt;&lt;References&gt;&gt; <span style='mso-spacerun:yes'> </span>(this will
+hide complexity, IEPD model will see the <span class=SpellE>eiem</span> view of
+<span class=SpellE>niem</span>-core)</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-.25in;mso-list:l6 level3 lfo12;
+tab-stops:list 1.5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>from
+Reference <span class=SpellE>niem</span>-core </p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-.25in;mso-list:l6 level3 lfo12;
+tab-stops:list 1.5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>To
+EIEM <span class=SpellE>niem</span>-core</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>And/Or</span><span style='mso-spacerun:yes'>  </span>add subsets
+of <span class=SpellE>eiem</span> &lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;s</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-.25in;mso-list:l6 level3 lfo12;
+tab-stops:list 1.5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Select
+a Package</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-.25in;mso-list:l6 level3 lfo12;
+tab-stops:list 1.5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Right
+click: NIEM<span style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>add
+<span class=SpellE>SubsetModels</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-.25in;mso-list:l6 level3 lfo12;
+tab-stops:list 1.5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Select
+<span class=SpellE>eiem</span> &lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;s
+to be subset</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-.25in;mso-list:l6 level3 lfo12;
+tab-stops:list 1.5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Tailor
+the subset models for each of IEPD development</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1037" type="#_x0000_t75" style='width:468pt;height:222pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image010.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=624 height=296
+src="ManagingAnEIEM_files/image011.jpg" v:shapes="_x0000_i1037"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l6 level1 lfo12;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Tailor
+visibility of NIEM Reference Models to reduce complexity</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Select
+<span class=SpellE>niem</span>::<span class=SpellE>niem</span>-core in
+containment browser</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Right-click<span
+style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>Modules<span
+style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>Module
+Options…</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Change
+Module Load Mode to Manual load</p>
+
+<p class=MsoNormal style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1036" type="#_x0000_t75" style='width:468pt;height:186.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image012.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=624 height=249
+src="ManagingAnEIEM_files/image013.jpg" v:shapes="_x0000_i1036"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l6 level1 lfo12;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Result
+of above action:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Only
+&lt;&lt;<span class=SpellE>InformationModel</span>&gt;&gt;<span
+style='mso-spacerun:yes'>  </span>Proxy will be visible to IEPD</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1035" type="#_x0000_t75" style='width:263.25pt;height:116.25pt;
+ visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image014.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=351 height=155
+src="ManagingAnEIEM_files/image014.png" v:shapes="_x0000_i1035"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l6 level1 lfo12;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Create
+&lt;&lt;<span class=SpellE>ModelPackageDocumentationRelationship</span>&gt;&gt;
+</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>from
+<span class=SpellE>iepd</span> &lt;&lt;<span class=SpellE>ModelPackageDescription</span>&gt;&gt;
+<span style='mso-spacerun:yes'> </span>Component</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l6 level2 lfo12;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>to
+<span class=SpellE>eiem</span> &lt;&lt;<span class=SpellE>ModelPackageDescription</span>&gt;&gt;
+<span style='mso-spacerun:yes'> </span>Component</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_4" o:spid="_x0000_i1034" type="#_x0000_t75" style='width:345.75pt;
+ height:447pt;visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image015.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=461 height=596
+src="ManagingAnEIEM_files/image016.jpg" v:shapes="Picture_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>Resource Bundle</h2>
+
+<p class=MsoNormal>A resource bundle may be used to facilitate the management,
+distribution, and use of EIEMs and their associated artifacts within an
+enterprise.<span style='mso-spacerun:yes'>  </span>A resource bundle is used import
+all the EIEM artifacts as a unit into the IEPD model developer’s environment. <span
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'>  </span>The
+resource bundle includes:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The EIEM Core model library</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>All COI EIEM extension model libraries.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>All EIEM requisite Profiles and other artifacts.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l13 level1 lfo11'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>All IEPD Templates</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>A resource bundle is a zip file constructed from a file
+folder having a specific structure which parallels the Magic Draw directory
+structure.<span style='mso-spacerun:yes'>  </span>The required resource bundle
+file structure and content may be produced with the following procedure:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l10 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Create
+an <span class=SpellE>eiem</span> resource folder</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l10 level1 lfo17;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Create
+“<span class=SpellE>modelLibraries</span>” folder within the resource folder
+and <span class=GramE>put<span style='mso-spacerun:yes'>  </span>all</span>
+EIEM models in it.<span style='mso-spacerun:yes'>  </span>This will result in
+the <span class=SpellE>eiem</span> model libraries being loaded to the <span
+class=SpellE>modelLibraries</span> folder within Magic Draw.</p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1033" type="#_x0000_t75" style='width:334.5pt;height:182.25pt;
+ visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image017.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=446 height=243
+src="ManagingAnEIEM_files/image017.png" v:shapes="_x0000_i1033"><![endif]></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l7 level1 lfo18'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Create “templates” folder within the resource
+folder.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l7 level1 lfo18'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Create a subfolder within “templates” for the
+IEPD Templates.<span style='mso-spacerun:yes'>  </span>The name of this
+subfolder will ultimately be displayed in the “New Project” Dialog.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l7 level1 lfo18'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-spacerun:yes'> </span>Put the IEPD
+template models in the subfolder just created.<span style='mso-spacerun:yes'>  
+</span>The name of the IEPD Templates will ultimately be displayed under the
+subfolder within the “New Project” Dialog.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" style='width:334.5pt;height:182.25pt;
+ visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image018.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=446 height=243
+src="ManagingAnEIEM_files/image018.png" v:shapes="_x0000_i1032"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>The Resource Builder</h2>
+
+<p class=MsoNormal>Magic Draw has a no-cost plugin named “Resource Builder”.<span
+style='mso-spacerun:yes'>  </span>That plugin is used to build the resource
+bundle zip file based on the resource folder we just constructed, plus a few
+internal Magic Draw files used to manage the install/uninstall resource
+process.<span style='mso-spacerun:yes'>  </span>The following procedure may be
+used to obtain the “Resource Builder”:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo20;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Start
+Resource/Plugin Manager </p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l4 level2 lfo20;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>From
+Magic <span class=GramE>Draw</span> main menu:<span style='mso-spacerun:yes'> 
+</span>Help<span style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>Resource/Plugin
+Manager.<span style='mso-spacerun:yes'>   </span>This will open the
+Resource/Plugin Manager dialog.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo20;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+the Resource/Plugin Manager Dialog:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l4 level2 lfo20;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Set
+Filter:<span style='mso-spacerun:yes'>  </span>All Resources</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l4 level2 lfo20;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Scroll
+down to Category: Plugins (no cost)</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l4 level2 lfo20;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Select
+Resource Builder checkbox.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l4 level2 lfo20;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Push
+Download/Install.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l4 level2 lfo20;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>When
+download is complete, close dialog.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo20;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Restart
+Magic Draw</p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1031" type="#_x0000_t75" style='width:300.75pt;height:370.5pt;
+ visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image019.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=401 height=494
+src="ManagingAnEIEM_files/image019.png" v:shapes="_x0000_i1031"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The resource builder may be used to build the distributable
+resource bundle zip file, using the following procedure:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l20 level1 lfo21;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+the Magic Draw Main menu:<span style='mso-spacerun:yes'>  </span>Tools<span
+style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>Build
+Custom Resource.<span style='mso-spacerun:yes'>  </span>This will result in
+opening the Custom Resource Building Wizard.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l20 level1 lfo21;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>For
+step 1:<span style='mso-spacerun:yes'>  </span>Locate your <span class=SpellE>eiem</span>
+resource folder</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l20 level1 lfo21;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Step
+through and Complete Wizard Dialogs as illustrated below</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l20 level1 lfo21;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-bidi-font-weight:bold'>For step 4<b>: the Resource file</b></span>: is
+the name of the distributable resource file, the suffix should be <b>.zip</b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l20 level1 lfo21;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Upon
+completion of the wizard, the distributable *.zip is generated</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1030" type="#_x0000_t75" style='width:374.25pt;height:172.5pt;
+ visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image020.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=499 height=230
+src="ManagingAnEIEM_files/image020.png" v:shapes="_x0000_i1030"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_16" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:294pt;
+ height:153pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image021.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=392 height=204
+src="ManagingAnEIEM_files/image021.png" v:shapes="Picture_x0020_16"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:350.25pt;height:261pt;
+ visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image022.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=467 height=348
+src="ManagingAnEIEM_files/image022.png" v:shapes="_x0000_i1028"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_17" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:324.75pt;
+ height:153pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="ManagingAnEIEM_files/image023.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=433 height=204
+src="ManagingAnEIEM_files/image023.png" v:shapes="Picture_x0020_17"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>Importing the EIEM Resource Bundle</h2>
+
+<p class=MsoNormal>The zipped resource file should be distributed to IEPD model
+developers.<span style='mso-spacerun:yes'>  </span>Each IEPD model developer
+may load the resource using the following procedure:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l16 level1 lfo23;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+the Magic Draw Main menu: help<span style='font-family:Wingdings;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'>è</span></span>Resource/Plugin Manager.<span
+style='mso-spacerun:yes'>  </span>This will open the Resource/Plugin Manager
+dialog.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l16 level1 lfo23;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+the Resource/Plugin Manager dialog: Click Import.<span
+style='mso-spacerun:yes'>  </span>This will open a file selection dialog.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l16 level1 lfo23;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+the file selection dialog:<span style='mso-spacerun:yes'>  </span>Select
+downloaded <span class=SpellE>eiem</span> resource zip</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l16 level1 lfo23;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Close
+all dialogs.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l16 level1 lfo23;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>For
+this type of distribution, no restart is required.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_2" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:363.75pt;
+ height:324pt;visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image024.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=485 height=432
+src="ManagingAnEIEM_files/image024.png" v:shapes="Picture_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2>Creating and IEPD Project from the IEPD Templates</h2>
+
+<p class=MsoNormal>The IEPD model developer may now create a new IEPD based on
+the provided IEPD templates using the following procedure:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>From
+the Magic Draw Main menu: File<span style='font-family:Wingdings;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'>è</span></span>New Project…<span style='mso-spacerun:yes'>  
+</span>This will open the New Project Dialog.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>On
+the left panel of the New Project Dialog, Select the <b style='mso-bidi-font-weight:
+normal'>Other</b> Category</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Within
+the <b style='mso-bidi-font-weight:normal'>Other</b> Category, select <b
+style='mso-bidi-font-weight:normal'>Project from Template</b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>On
+the right panel of the New Project Dialog:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo24;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Scroll
+down and open the <span class=SpellE>eiem</span>-specific IEPD template folder</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo24;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]>Within
+the folder, select the applicable IEPD Template</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+project name and Project location as appropriate.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Push
+OK</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l8 level1 lfo24;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Result
+will be a new Project, as specified in the corresponding IEPD template folder.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:422.25pt;
+ height:356.25pt;visibility:visible;mso-wrap-style:square' fillcolor="#4f81bd [3204]">
+ <v:imagedata src="ManagingAnEIEM_files/image025.png" o:title=""/>
+ <v:shadow color="#eeece1 [3214]"/>
+</v:shape><![endif]--><![if !vml]><img width=563 height=475
+src="ManagingAnEIEM_files/image025.png" v:shapes="Picture_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

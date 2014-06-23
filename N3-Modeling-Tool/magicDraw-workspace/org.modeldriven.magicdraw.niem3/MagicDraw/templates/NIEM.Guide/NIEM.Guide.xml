@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom_template>
+    <icon>mds.small.gif</icon>
+    <iconLabel>Guide to
+        NIEM
+        Project</iconLabel>
+    <perspective>Quick Start</perspective>
+    <tooltip>Start introduction guide for NIEM</tooltip>
+    <banner_title>Start guide to NIEM</banner_title>
+    <banner_description>Create a new NIEM project using quick tutorials to UML diagrams.</banner_description>
+    <banner_icon>mds.small.gif</banner_icon>
+    <category_id>NIEM Modeling</category_id>
+</custom_template>

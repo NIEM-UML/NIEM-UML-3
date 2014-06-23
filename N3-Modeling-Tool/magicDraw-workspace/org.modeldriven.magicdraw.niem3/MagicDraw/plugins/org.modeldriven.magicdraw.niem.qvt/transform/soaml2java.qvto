@@ -1,0 +1,717 @@
+//import NIEMmpdmodel2artifact;
+//import soaml2wsdlannotations;
+//import soamlPlatformBinding;
+//import soamlmpdmodel2artifact;
+import NIEMplatformBinding;
+// TODO:  Enumeration compilation untis not cleared;
+// TODO:  Java primitive types (e.g, Integer) are final, they can not be extended: must have alternate representation for simpleTypes
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype ECORE  uses 'http://www.eclipse.org/emf/2002/Ecore';
+//modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+//modeltype WSDL uses 'http://www.eclipse.org/wsdl/2003/WSDL';
+//modeltype SOAP uses 'http://www.eclipse.org/wsdl/2003/SOAP';
+//modeltype JAVA uses 'http://www.eclipse.org/emf/2002/Java';
+//modeltype JAVA uses 'http:///org/modeldriven/emf/java.ecore';
+modeltype JAVA uses 'http://www.modeldriven.org/emf/2013/Java';
+//modeltype CHANGELOG uses 'http://reference.niem.gov/niem/resource/mpd/changelog/1.0/';
+//modeltype PROXY uses 'http://niem.gov/niem/proxy/xsd/2.0';
+//modeltype WANTLIST uses 'http://niem.gov/niem/wantlist/2';// EXTRA
+modeltype CMOF  uses 'http://www.eclipse.org/emf/2002/Ecore';
+//modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';
+
+transformation soaml2java(
+	in uml:UML,
+//	in schemaForProxy:XSD,in schemaForStructures:XSD,in schemaForAppinfo:XSD,in schemaForAppinfo2:XSD,
+//	out changeLog:CHANGELOG,out xsd:XSD,
+	inout blackboxAdapter:CMOF,
+//	out cat:CAT
+//	,out wantlist:WANTLIST
+//	,out wsdl:WSDL 
+	out java:JAVA
+	)
+extends transformation 
+	NIEMplatformBinding
+//		soamlPlatformBinding
+//		,
+//		soaml2wsdlannotations(uml:UML,wsdl:WSDL),
+//		NIEMmpdmodel2artifact,
+////		soamlmpdmodel2artifact
+//		soamlmpdmodel2artifact(uml:UML,schemaForProxy:XSD,schemaForStructures:XSD,schemaForAppinfo:XSD,schemaForAppinfo2:XSD,
+//			changeLog:CHANGELOG,xsd:XSD,blackboxAdapter:CMOF,cat:CAT,wantlist:WANTLIST,wsdl:WSDL)
+;
+	main() {
+		soaml2javaRun();
+	}	
+// soaml uml to vanilla xsd; wsdl 	
+helper soaml2javaRun(){
+		//	soaml2xsdRun();
+		blackboxHook:=blackboxAdapter.objectsOfType(CMOF::EPackage)->asSequence()->first();
+		
+	// find the root UML Model
+	var rootUmlModel:UML::Model=uml.rootObjects()->select(r|r.oclIsKindOf(UML::Model)).oclAsType(UML::Model)->asSequence()->first();
+	// initialize the profile/stereotype/type library globals
+	rootUmlModel.initializeProfileGlobals();
+	// find and transform qualifying <<ModelPackageDescription>>s
+	log('root model '+rootUmlModel.qualifiedName+', mpdStereotype: '+prompdStereotype.qualifiedName+', '
+		+rootUmlModel.allSubobjectsOfType(UML::Component).oclAsType(UML::Component)->select(c|c.IsStereotypeApplied(prompdStereotype))->size().repr());
+	rootUmlModel.allSubobjectsOfType(UML::Component).oclAsType(UML::Component)
+			->select(c|c.IsStereotypeApplied(prompdStereotype)
+				and c.isEditable()
+				and not(c.getNearestPackage().getNearesProfileApplication(niemXsdProfile).oclIsUndefined())
+				and (c.getNearestPackage().getNearesProfileApplication(logicalProfile).oclIsUndefined())
+			).clientDependency
+		->select(t|t.isStereotypeApplied(NIEMModelPackageDescriptionFileStereotype)).oclAsType(UML::Usage).supplier
+		.getNearestPackage().map JPackage();
+	return;
+}		
+/*
+helper UML::Class::JavaService(){
+	// start at package level
+	log('javaService '+self.qualifiedName);
+	self.getNearestPackage().map JPackage();
+	return;
+}
+*/
+////////////////////////////////////disjunctive maps
+//     Annotation, ArrayAccess, ArrayCreation, ArrayInitializer, Assignment, BooleanLiteral, CastExpression, CharacterLiteral, 
+// ClassInstanceCreation, ConditionalExpression, FieldAccess, InfixExpression, InstanceofExpression, MethodInvocation, Name, 
+// NullLiteral, NumberLiteral, ParenthesizedExpression, PostfixExpression, PrefixExpression, StringLiteral, SuperFieldAccess, 
+// SuperMethodInvocation, ThisExpression, TypeLiteral, VariableDeclarationExpression
+mapping UML::Element::Annotation(context:JAVA::JASTNode):JAVA::JExpression@java
+	disjuncts UML::Element::MarkerAnnotation,
+		UML::Element::NormalAnnotation,
+		UML::Element::SingleMemberAnnotation;
+	    
+mapping UML::Element::Expression(context:JAVA::JASTNode):JAVA::JExpression@java
+	disjuncts UML::Element::Annotation,
+		UML::Element::ArrayAccess,
+		UML::Element::ArrayCreation,
+		UML::Element::ArrayInitializer,
+		UML::Element::Assignment,
+		UML::Element::BooleanLiteral,
+		UML::Element::CastExpression,
+		UML::Element::CharacterLiteral,
+		UML::Element::ClassInstanceCreation,
+		UML::Element::ConditionalExpression,
+		UML::Element::FieldAccess,
+		UML::Element::InfixExpression,
+		UML::Element::InstanceofExpression,
+		UML::Element::MethodInvocation,
+		UML::NamedElement::Name,
+		UML::Element::NullLiteral,
+		UML::Element::NumberLiteral,
+		UML::Element::ParenthesizedExpression,
+		UML::Element::PostfixExpression,
+		UML::Element::PrefixExpression,
+		UML::Element::StringLiteral,
+		UML::Element::SuperFieldAccess,
+		UML::Element::SuperMethodInvocation,
+		UML::Element::ThisExpression,
+		UML::Element::TypeLiteral,
+		UML::Element::VariableDeclarationExpression;
+		// TODO: check for javaTypes and change name
+mapping UML::NamedElement::Name(context:JAVA::JASTNode):JAVA::JName@java
+	disjuncts 
+		UML::NamedElement::ConditionalSimpleName,
+		UML::Classifier::JavaTypeName,
+		UML::NamedElement::QualifiedName;
+	//     AbstractTypeDeclaration, AnnotationTypeMemberDeclaration, EnumConstantDeclaration, FieldDeclaration, Initializer, MethodDeclaration
+		
+mapping UML::NamedElement::BodyDeclaration():JAVA::JBodyDeclaration@java
+	disjuncts UML::Classifier::AbstractTypeDeclaration,
+		UML::TypedElement::AnnotationTypeMemberDeclaration,
+		UML::EnumerationLiteral::EnumConstantDeclaration,
+		UML::Property::FieldDeclaration,
+		UML::NamedElement::Initializer,
+		UML::Operation::MethodDeclaration
+	;
+	    //ArrayType, ParameterizedType, PrimitiveType, QualifiedType, SimpleType, WildcardType
+mapping UML::Type::Type(context:JAVA::JASTNode):JAVA::JType@java
+	disjuncts UML::Type::ArrayType,
+		UML::Type::ParameterizedType,
+		UML::PrimitiveType::PrimitiveType,
+		UML::Classifier::QualifiedType,
+		UML::Classifier::SimpleType,
+		UML::Type::WildcardType;
+		// TODO: suppress javaType declarations
+mapping UML::Classifier::AbstractTypeDeclaration():JAVA::JAbstractTypeDeclaration@java
+	disjuncts UML::Classifier::AnnotationTypeDeclaration,
+		UML::Enumeration::EnumDeclaration,
+		UML::Classifier::TypeDeclaration;
+//    AnnotationTypeDeclaration, EnumDeclaration, TypeDeclaration		
+/////////////////////////////////////
+mapping UML::Element::MarkerAnnotation(context:JAVA::JASTNode):JAVA::JMarkerAnnotation@java	when{false}{}
+mapping UML::Element::NormalAnnotation(context:JAVA::JASTNode):JAVA::JNormalAnnotation@java	when{false}{}
+mapping UML::Element::SingleMemberAnnotation(context:JAVA::JASTNode):JAVA::JSingleMemberAnnotation@java	when{false}{}
+	
+mapping UML::Element::ArrayAccess(context:JAVA::JASTNode):JAVA::JArrayAccess@java	when{false}{}
+mapping UML::Element::ArrayCreation(context:JAVA::JASTNode):JAVA::JArrayCreation@java	when{false}{}
+mapping UML::Element::ArrayInitializer(context:JAVA::JASTNode):JAVA::JArrayInitializer@java	when{false}{}
+mapping UML::Element::Assignment(context:JAVA::JASTNode):JAVA::JAssignment@java	when{false}{}
+mapping UML::Element::BooleanLiteral(context:JAVA::JASTNode):JAVA::JBooleanLiteral@java	when{false}{}
+mapping UML::Element::CastExpression(context:JAVA::JASTNode):JAVA::JCastExpression@java	when{false}{}
+mapping UML::Element::CharacterLiteral(context:JAVA::JASTNode):JAVA::JCharacterLiteral@java	when{false}{}
+mapping UML::Element::ClassInstanceCreation(context:JAVA::JASTNode):JAVA::JClassInstanceCreation@java	when{false}{}
+
+mapping UML::Element::ConditionalExpression(context:JAVA::JASTNode):JAVA::JConditionalExpression@java	when{false}{}
+mapping UML::Element::FieldAccess(context:JAVA::JASTNode):JAVA::JFieldAccess@java	when{false}{}
+mapping UML::Element::InfixExpression(context:JAVA::JASTNode):JAVA::JInfixExpression@java	when{false}{}
+mapping UML::Element::InstanceofExpression(context:JAVA::JASTNode):JAVA::JInstanceofExpression@java	when{false}{}
+mapping UML::Element::MethodInvocation(context:JAVA::JASTNode):JAVA::JMethodInvocation@java	when{false}{}
+mapping UML::Element::NullLiteral(context:JAVA::JASTNode):JAVA::JNullLiteral@java	when{false}{}
+mapping UML::Element::NumberLiteral(context:JAVA::JASTNode):JAVA::JNumberLiteral@java	when{false}{}
+mapping UML::Element::ParenthesizedExpression(context:JAVA::JASTNode):JAVA::JParenthesizedExpression@java	when{false}{}
+mapping UML::Element::PostfixExpression(context:JAVA::JASTNode):JAVA::JPostfixExpression@java	when{false}{}
+mapping UML::Element::PrefixExpression(context:JAVA::JASTNode):JAVA::JPrefixExpression@java	when{false}{}
+mapping UML::Element::StringLiteral(context:JAVA::JASTNode):JAVA::JStringLiteral@java	when{false}{}
+mapping UML::Element::SuperFieldAccess(context:JAVA::JASTNode):JAVA::JSuperFieldAccess@java	when{false}{}
+mapping UML::Element::SuperMethodInvocation(context:JAVA::JASTNode):JAVA::JSuperMethodInvocation@java	when{false}{}
+mapping UML::Element::ThisExpression(context:JAVA::JASTNode):JAVA::JThisExpression@java	when{false}{}
+mapping UML::Element::TypeLiteral(context:JAVA::JASTNode):JAVA::JTypeLiteral@java	when{false}{}
+mapping UML::Element::VariableDeclarationExpression(context:JAVA::JASTNode):JAVA::JVariableDeclarationExpression@java	when{false}{}
+
+
+
+mapping UML::PrimitiveType::PrimitiveType(context:JAVA::JASTNode):JAVA::JPrimitiveType@java
+	when{false}
+{
+	//primitiveTypeCode:=
+}
+mapping UML::Classifier::QualifiedType(context:JAVA::JASTNode):JAVA::JQualifiedType@java
+	when{false}
+{
+	//qualifier:=
+	//name:=
+}
+mapping UML::Classifier::SimpleType(context:JAVA::JASTNode):JAVA::JSimpleType@java
+{
+	name:=self.map Name(result);
+}
+mapping UML::Type::WildcardType(context:JAVA::JASTNode):JAVA::JWildcardType@java
+	when{false}
+{
+	
+}
+mapping UML::Type::ArrayType(context:JAVA::JASTNode):JAVA::JArrayType@java
+	when{false}
+{
+	
+}
+mapping UML::Type::ParameterizedType(context:JAVA::JASTNode):JAVA::JParameterizedType@java
+	when{false}
+{
+	
+}
+mapping UML::Classifier::CompilationUnit():JAVA::JCompilationUnit@java
+
+{
+	package:=self.getNearestPackage().map JPackage();
+	types+=self.map AbstractTypeDeclaration();
+	var allReferencedTypes:Set(UML::Classifier)=self.getAllReferencedClassifiers().asSelf()->select(p|p<>self)->asSet();
+	imports+=allReferencedTypes.map ImportDeclaration(result);
+}
+mapping UML::NamedElement::BodyDeclarationImpl():JAVA::JBodyDeclaration@java
+	{
+		init{}
+	//    AbstractTypeDeclaration, AnnotationTypeMemberDeclaration, EnumConstantDeclaration, FieldDeclaration, Initializer, MethodDeclaration
+		self.ownedComment->forEach(comment){javadoc:=comment.map Javadoc()};
+		if(result.oclIsKindOf(JAVA::JEnumConstantDeclaration)
+			or result.oclIsKindOf(JAVA::JAnnotationTypeMemberDeclaration) 
+			or result.oclIsKindOf(JAVA::JInitializer)
+			)then{
+			
+		}else{
+			if(self.isPrivate())then{modifiers+=JAVA::JModifierKeyword::private.map Modifier(result);}
+			else{ 
+				if(self.isPublic())then{modifiers+=JAVA::JModifierKeyword::public.map Modifier(result);}
+				else{ 
+					if(self.isProtected())then{modifiers+=JAVA::JModifierKeyword::protected.map Modifier(result);}
+					else{log('BodyDeclarationImpl visibility '+self.visibility.repr());}
+					endif;
+				}endif;
+			}endif;
+		}endif;
+		//modifiers+=; // others handled by subtype
+		//  modifiers:   Annotation, MarkerAnnotation, Modifier, NormalAnnotation, SingleMemberAnnotation
+	}
+mapping UML::TypedElement::AnnotationTypeMemberDeclaration():JAVA::JAnnotationTypeMemberDeclaration@java
+	inherits UML::NamedElement::BodyDeclarationImpl
+	when{false}
+	{
+		//default:=
+		name:=self.map SimpleName(result);
+		type:=self.type.map Type(result);
+	}
+mapping UML::NamedElement::Initializer():JAVA::JInitializer@java
+	inherits UML::NamedElement::BodyDeclarationImpl
+	when{false}
+	{
+		//body:=
+	}
+mapping UML::EnumerationLiteral::EnumConstantDeclaration():JAVA::JEnumConstantDeclaration@java
+	inherits UML::NamedElement::BodyDeclarationImpl
+	{
+		//anonymousClassDeclaration:=
+		// parameters?
+		//arguments:=
+		name:=self.map SimpleName(result);
+	}
+mapping UML::Property::FieldDeclaration():JAVA::JFieldDeclaration@java
+	inherits UML::NamedElement::BodyDeclarationImpl
+	{
+	if(self.upper<>1)then{
+		if(self.isUnique)then{
+			// set
+			type:=new JAVA::JParameterizedType(self.type,result.getJavaUtilSetType());
+		}else{
+			// list
+			type:=new JAVA::JParameterizedType(self.type,result.getJavaUtilListType());
+		}endif;
+		self.map GetterMethod(result.type);		
+	}else{	
+		type:=self.type.map Type(result);
+		self.map GetterMethod(result.type);		
+		self.map SetterMethod();		
+	}endif;	
+		fragments+=self.map VariableDeclarationFragment(result);
+}		
+helper JAVA::JASTNode::getJavaUtilSetType():JAVA::JType{
+	return self.getJavaUtilType('Set');
+}
+helper JAVA::JASTNode::getJavaUtilListType():JAVA::JType{
+	return self.getJavaUtilType('List');
+}
+helper JAVA::JASTNode::getJavaUtilHashSetType():JAVA::JType{
+	return self.getJavaUtilType('HashSet');
+}
+helper JAVA::JASTNode::getJavaUtilVectorType():JAVA::JType{
+	return self.getJavaUtilType('Vector');
+}
+helper JAVA::JASTNode::getJavaUtilType(typeName:String):JAVA::JType{
+	return typeName.map QualifiedName(self,'util'.map QualifiedName(self,'java'.map SimpleName(self))).map SimpleType(self);
+}
+mapping String::SimpleName(context:JAVA::JASTNode):JAVA::JSimpleName@java
+	{
+		identifier:=self;
+	}
+mapping String::QualifiedName(context:JAVA::JASTNode,qualifiedName:JAVA::JName):JAVA::JQualifiedName@java
+	{
+		name:=self.map SimpleName(result);
+		qualifier:=qualifiedName;
+	}
+		
+constructor JAVA::JParameterizedType::JParameterizedType(context:UML::Type,baseType:JAVA::JType)
+{
+	type:=baseType;
+	typeArguments+=context.map Type(result);
+}
+mapping JAVA::JName::SimpleType(context:JAVA::JASTNode):JAVA::JSimpleType@java
+{
+	name:=self;
+}
+		
+
+mapping UML::Property::VariableDeclarationFragment(context:JAVA::JFieldDeclaration):JAVA::JVariableDeclarationFragment@java
+	{
+		name:=self.map SimpleName(result);
+	if(self.upper<>1)then{
+		if(self.isUnique)then{
+			// set
+			initializer:=new JParameterizedType(self.type,result.getJavaUtilHashSetType()).map ClassInstanceCreation(result);
+		}else{
+			// list
+			initializer:=new JParameterizedType(self.type,result.getJavaUtilVectorType()).map ClassInstanceCreation(result);
+		}endif;
+	}else{	
+		initializer:=self.defaultValue.map Expression(result);
+	}endif;	
+		extraDimensions:=0;
+	}
+mapping JAVA::JType::ClassInstanceCreation(context:JAVA::JASTNode):JAVA::JClassInstanceCreation@java
+	{
+		type:=self;
+		//expression:=
+		//anonymousClassDeclaration:=
+		//typeArguments+=
+		//arguments+=
+	}
+mapping UML::Parameter::SingleVariableDeclaration(context:JAVA::JASTNode):JAVA::JSingleVariableDeclaration@java
+	{
+		name:=self.map SimpleName(result);
+		initializer:=self.defaultValue.map Expression(result);
+		extraDimensions:=0;
+		type:=self.type.map Type(result);
+		varargs:=false;
+		if(self.isPrivate())then{modifiers+=JAVA::JModifierKeyword::private.map Modifier(result);}
+		else{ 
+			if(self.isPublic())then{modifiers+=JAVA::JModifierKeyword::public.map Modifier(result);}
+			else{ 
+				if(self.isProtected())then{modifiers+=JAVA::JModifierKeyword::protected.map Modifier(result);}
+				endif;
+			}endif;
+		}endif;
+		
+	}
+mapping UML::Operation::MethodDeclaration():JAVA::JMethodDeclaration@java
+	inherits UML::NamedElement::BodyDeclarationImpl
+	{
+		if(self.isAbstract)then{modifiers+=JAVA::JModifierKeyword::_abstract.map Modifier(result);}endif;
+		//body:=
+		extraDimensions:=0;
+		name:=self.map SimpleName(result);
+		isConstructor:=false;
+//		typeParameters+=
+		thrownExceptions+=self.raisedException.map Name(result);
+		self.ownedParameter->forEach(parameter){
+			if(parameter.direction=UML::ParameterDirectionKind::_in)then{
+				parameters+=parameter.map SingleVariableDeclaration(result);
+			}else{
+				returnType2:=parameter.type.map Type(result);
+			}endif;
+		};
+	}
+	
+mapping UML::Classifier::AbstractTypeDeclarationImpl():JAVA::JAbstractTypeDeclaration@java
+	inherits UML::NamedElement::BodyDeclarationImpl
+	{
+		init{}
+		if(self.isAbstract)then{modifiers+=JAVA::JModifierKeyword::_abstract.map Modifier(result);}endif;
+		if(self.isFinalSpecialization)then{modifiers+=JAVA::JModifierKeyword::final.map Modifier(result);}endif;
+		//     AbstractTypeDeclaration, AnnotationTypeMemberDeclaration, EnumConstantDeclaration, FieldDeclaration, Initializer, MethodDeclaration
+		bodyDeclarations+=self.ownedElement
+			->select(e|e.oclIsKindOf(UML::NamedElement) and not(e.oclIsKindOf(UML::EnumerationLiteral))).oclAsType(UML::NamedElement).map BodyDeclaration();
+		name:=self.map SimpleName(result);
+	}
+mapping JAVA::JModifierKeyword::Modifier(context:JAVA::JASTNode):JAVA::JModifier@java
+	{
+		keyword:=self;
+	}
+mapping UML::Classifier::AnnotationTypeDeclaration():JAVA::JAnnotationTypeDeclaration@java
+	inherits UML::Classifier::AbstractTypeDeclarationImpl
+	when{false}
+	{
+	}
+mapping UML::Enumeration::EnumDeclaration():JAVA::JEnumDeclaration@java
+	inherits UML::Classifier::AbstractTypeDeclarationImpl
+	{
+	superInterfaceTypes:=self.general.map Type(result);
+	enumConstants+=self.ownedLiteral.map EnumConstantDeclaration();
+	}
+mapping UML::Classifier::TypeDeclaration():JAVA::JTypeDeclaration@java
+	inherits UML::Classifier::AbstractTypeDeclarationImpl
+	{
+	superInterfaceTypes+=self.general->select(g|g.oclIsKindOf(UML::Interface)).map Type(result);
+	if(self.oclIsKindOf(UML::BehavioredClassifier))then{
+		superInterfaceTypes+=self.oclAsType(UML::BehavioredClassifier).interfaceRealization.contract.map Type(result);
+	}endif;
+	self.general->select(g|not(g.oclIsKindOf(UML::Interface)))->forEach(superType){superclassType:=superType.map Type(result);};
+	self.getXSDSimpleContent()->forEach(superType){superclassType:=superType.map Type(result);};
+	
+	isInterface:=self.oclIsKindOf(UML::Interface);
+	//typeParameter+=
+	}
+query UML::Dependency::isXSDSimpleContent():Boolean=self.isStereotypeApplied(NIEMSimpleContentStereotype);
+	
+query UML::Classifier::getXSDSimpleContent():Set(UML::Classifier)=
+	self.clientDependency->select(d|d.isXSDSimpleContent()).supplier->select(c|c.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)->asSet();	
+mapping UML::Classifier::ImportDeclaration(context:JAVA::JASTNode):JAVA::JImportDeclaration@java
+	{
+
+		isStatic:=false;
+		isOnDemand:=false;
+		name:=self.map Name(result);
+	}
+mapping UML::NamedElement::SimpleName(context:JAVA::JASTNode):JAVA::JSimpleName@java
+	{
+		identifier:=self.name;
+	}
+mapping UML::NamedElement::ConditionalSimpleName(context:JAVA::JASTNode):JAVA::JSimpleName@java
+	inherits UML::NamedElement::SimpleName
+	when{self.owner.oclIsUndefined() 
+		or (self.oclIsKindOf(UML::Package) and 
+				(self.oclAsType(UML::Package).isProfileApplied(structureProfile) or (self.name='XMLPrimitiveTypes'))
+			)
+		}
+	{
+	}
+helper UML::Classifier::getJavaTypeSimpleName():String{
+	var name:String=self.name;
+	if((name='anyAtomicType')or(name='anySimpleType'))then {return 'Object';} endif;
+	if((name='anyURI'))then {return 'URI';} endif;
+	if((name='decimal'))then {return 'BigDecimal';} endif;
+	if((name='int'))then {return 'Integer';} endif;
+	return name.firstToUpper();
+}
+constructor JAVA::JQualifiedName::JQualifiedName(simpleName:JAVA::JSimpleName,qualifierName:JAVA::JName)
+{
+	name:=simpleName;
+	qualifier:=qualifierName;
+}
+constructor JAVA::JSimpleName::JSimpleName(simpleName:String)
+{
+	identifier:=simpleName;
+}
+
+helper UML::Classifier::getJavaTypeQualifierName():JAVA::JQualifiedName{
+	var name:String=self.name;
+	if((name='decimal'))then {return new JAVA::JQualifiedName(new JAVA::JSimpleName('math'),new JAVA::JSimpleName('java'));} endif;
+	if((name='anyURI'))then {return new JAVA::JQualifiedName(new JAVA::JSimpleName('net'),new JAVA::JSimpleName('java'));	} endif;
+	return new JAVA::JQualifiedName(new JAVA::JSimpleName('lang'),new JAVA::JSimpleName('java'));	
+/*
+		  String qualifiedName=getQualifiedName(jclass);
+		  for(String name:qualifiedName.split("\\.")){
+			  if(!isFirst)result+=".";
+			  isFirst=false;
+			  result+=safeName(CodeGenUtil.validJavaIdentifier(name));
+		  }
+		  if(XMLPrimitiveTypes_integer.equals(qualifiedName))result="java.lang.Integer";
+		  else if(XMLPrimitiveTypes_string.equals(qualifiedName))result="java.lang.String";
+		  else if(XMLPrimitiveTypes_boolean.equals(qualifiedName))result="java.lang.Boolean";
+		  else if(XMLPrimitiveTypes_byte.equals(qualifiedName))result="java.lang.Byte";
+		  else if(XMLPrimitiveTypes_double.equals(qualifiedName))result="java.lang.Double";
+		  else if(XMLPrimitiveTypes_float.equals(qualifiedName))result="java.lang.Float";
+		  else if(XMLPrimitiveTypes_int.equals(qualifiedName))result="java.lang.Integer";
+		  else if(XMLPrimitiveTypes_long.equals(qualifiedName))result="java.lang.Long";
+		  else if(XMLPrimitiveTypes_short.equals(qualifiedName))result="java.lang.Short";
+		  else if(XMLPrimitiveTypes_decimal.equals(qualifiedName))result="java.math.BigDecimal";
+		  else if(XMLPrimitiveTypes_anyAtomicType.equals(qualifiedName))result="java.lang.Object";
+		  else if(XMLPrimitiveTypes_anySimpleType.equals(qualifiedName))result="java.lang.Object";
+		  else if(XMLPrimitiveTypes_anyURI.equals(qualifiedName))result="java.net.URI";
+
+*/	
+}
+helper UML::Classifier::isJavaType():Boolean{
+	if(not(self.owner.oclIsKindOf(UML::Package)))then {return false;}endif;
+	if(self.owner.oclAsType(UML::Package).name<>'XMLPrimitiveTypes')then {return false;}endif;
+	var name:String=self.name;
+	return (name='integer')
+		or(name='string')
+		or(name='boolean')
+		or(name='byte')
+		or(name='double')
+		or(name='float')
+		or(name='int')
+		or(name='long')
+		or(name='short')
+		or(name='decimal')
+		or(name='anyAtomicType')
+		or(name='anySimpleType')
+		or(name='anyURI')
+	;	
+}			
+mapping UML::Classifier::JavaTypeName(context:JAVA::JASTNode):JAVA::JQualifiedName@java
+	when{self.isJavaType()}
+	{
+		name:=self.getJavaTypeSimpleName().map SimpleName(result);
+		qualifier:=self.getJavaTypeQualifierName();
+	}
+	
+mapping UML::NamedElement::QualifiedName(context:JAVA::JASTNode):JAVA::JQualifiedName@java
+	{
+		name:=self.map SimpleName(result);
+		qualifier:=self.owner.oclAsType(UML::NamedElement).map Name(result);
+	}
+mapping UML::Package::JPackage():JAVA::JPackageDeclaration@java
+{
+	// no need for <<PropertyHolder>>
+	// let name be qualifiedName
+//	name:=self.relativeName(self.getNearesProfileApplication(niemXsdProfile)).replace("/",".").map Name(result);
+	name:=self.map Name(result);
+	self.ownedComment->forEach(comment){javadoc:=comment.map Javadoc()};
+	self.ownedType
+		->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+		->select(t|not(t.isPropertyHolder() or t.oclIsKindOf(UML::Collaboration) or t.oclIsKindOf(UML::Component) or t.isJavaType()))
+		->forEach(umlType){
+			umlType.map CompilationUnit();
+		};
+}
+mapping UML::Comment::Comment():JAVA::JComment@java
+	{
+		init{}
+	}
+mapping UML::Comment::Javadoc():JAVA::JJavadoc@java
+	inherits UML::Comment::Comment
+{
+	tags+=self.map TagElement();
+}
+mapping UML::Comment::TagElement():JAVA::JTagElement@java
+{
+	fragments+=self.body.map TextElement(result);
+}
+mapping String::TextElement(context:JAVA::JASTNode):JAVA::JTextElement@java
+{
+	text:=self;
+}
+query UML::NamedElement::isPrivate():Boolean=self.visibility.repr()='private';
+query UML::NamedElement::isPublic():Boolean=self.visibility.oclIsUndefined() or (self.visibility.repr()='public');
+query UML::NamedElement::isProtected():Boolean=self.visibility.repr()='protected';
+mapping UML::Property::ExtraMethod():JAVA::JMethodDeclaration@java
+{
+		extraDimensions:=0;
+		isConstructor:=false;
+		self.ownedComment->forEach(comment){javadoc:=comment.map Javadoc()};
+		if(self.isPrivate())then{modifiers+=JAVA::JModifierKeyword::private.map Modifier(result);}
+		else{ 
+			if(self.isPublic())then{modifiers+=JAVA::JModifierKeyword::public.map Modifier(result);}
+			else{ 
+				if(self.isProtected())then{modifiers+=JAVA::JModifierKeyword::protected.map Modifier(result);}
+				endif;
+			}endif;
+		}endif;
+		self.owner
+			->select(c|c.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+			->forEach(classifier){classifier.map AbstractTypeDeclaration().bodyDeclarations+=result;};
+}
+
+
+mapping UML::Property::GetterMethod(jtype:JAVA::JType):JAVA::JMethodDeclaration@java
+//inherits UML::Property::ExtraMethod
+{
+		extraDimensions:=0;
+		isConstructor:=false;
+		self.ownedComment->forEach(comment){javadoc:=comment.map Javadoc()};
+		if(self.isPrivate())then{modifiers+=JAVA::JModifierKeyword::private.map Modifier(result);}
+		else{ 
+			if(self.isPublic())then{modifiers+=JAVA::JModifierKeyword::public.map Modifier(result);}
+			else{ 
+				if(self.isProtected())then{modifiers+=JAVA::JModifierKeyword::protected.map Modifier(result);}
+				endif;
+			}endif;
+		}endif;
+		self.owner
+			->select(c|c.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+			->forEach(classifier){classifier.map AbstractTypeDeclaration().bodyDeclarations+=result;};
+			/////////////////////////////////////////
+		name:=('get'+self.name.firstToUpper()).map SimpleName(result);
+//		returnType2:=self.type.map Type(result);
+		returnType2:=jtype;
+		// make a Block which returns the field content
+		var block:JAVA::JBlock=new JAVA::JBlock();
+		var returnStatement:JAVA::JReturnStatement=result.map ReturnStatement();
+		returnStatement.expression:=self.map SimpleName(result);
+		
+		block.statements+=returnStatement;
+		body:=block;
+}
+mapping JAVA::JASTNode::PrimitiveTypeVoid():JAVA::JPrimitiveType@java{
+	primitiveTypeCode:=JAVA::JPrimitiveTypeCode::VOID;
+}
+mapping JAVA::JASTNode::ReturnStatement():JAVA::JReturnStatement@java{
+}
+mapping JAVA::JExpression::ExpressionStatement():JAVA::JExpressionStatement@java{
+	expression:=self;
+}
+mapping JAVA::JAssignmentOperator::Assignment(left:JAVA::JExpression,right:JAVA::JExpression):JAVA::JAssignment@java{
+	operator:=self;
+	leftHandSide:=left;
+	rightHandSide:=right;
+}
+mapping UML::NamedElement::FieldAccess(accessExpression:JAVA::JExpression):JAVA::JFieldAccess@java{
+	name:=self.map SimpleName(result);
+	expression:=accessExpression;
+}
+mapping JAVA::JASTNode::ThisExpression():JAVA::JThisExpression@java{
+}
+mapping UML::Property::SetterMethod():JAVA::JMethodDeclaration@java
+inherits UML::Property::ExtraMethod
+{
+		name:=('set'+self.name.firstToUpper()).map SimpleName(result);
+		returnType2:=result.map PrimitiveTypeVoid();
+		parameters+=self.map SingleVariableDeclaration();
+		// make a Block which sets the field content and returns
+		var block:JAVA::JBlock=new JAVA::JBlock();
+		
+		block.statements+=JAVA::JAssignmentOperator::ASSIGN.map Assignment(
+			self.map FieldAccess(block.map ThisExpression()),self.map SimpleName(block)
+			).map ExpressionStatement();
+		block.statements+=result.map ReturnStatement();
+		body:=block;
+}
+mapping UML::TypedElement::SingleVariableDeclaration():JAVA::JSingleVariableDeclaration@java
+{
+	name:=self.map SimpleName(result);
+	extraDimensions:=0;
+	varargs:=false;
+	//final:=?;
+	//method:=context;// via inverse
+	type:=self.type.map Type(result);
+}
+/*
+mapping UML::Parameter::Parameter():JAVA::JParameter@java
+	inherits UML::NamedElement::JModelElement
+{
+	//final:=?;
+	//method:=context;// via inverse
+	self.type->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)->forEach(umlType){type:=umlType.map Type();};
+	
+}
+
+mapping UML::Classifier::Type():JAVA::JClass@java
+	inherits UML::NamedElement::NamedElement
+{
+	//_static:=?? self._static;
+	_abstract:=self.isAbstract;
+	//final:=?;
+	interface:=self.oclIsKindOf(UML::Interface);
+	//throwable:=?;
+	//javaClass:=?;
+	fields+=self.attribute.map JField();
+	methods+=self.ownedElement->select(f|f.oclIsKindOf(UML::Operation)).oclAsType(UML::Operation).map JMethod();
+	superTypes+=self.general.map Type();
+	//allSuperTypes+=computed;
+	//members+=computed;
+	//componentType:=?;
+	//arrayType:=?
+	//unit:=?;// via inverse
+	//allMethods:=computed;
+	//allFields:=computed;
+	//package:=?;// via inverse, assuming we just do top level class
+	//types+=?;
+	//allTypes+=computed;
+}
+*/
+query UML::NamedElement::relativeName(mpdRootPackage:UML::Package):String{
+	if(mpdRootPackage.oclIsUndefined())then{return self.qualifiedName.replace('::','/');}endif;
+	var umlPackagePath:String=self.qualifiedName.substringAfter(mpdRootPackage.qualifiedName+'::').replace('::','/');
+	return umlPackagePath;
+}
+
+query UML::Classifier::asSelf():UML::Classifier=self;
+helper UML::Classifier::getAllReferencedClassifiers():List(UML::Classifier){
+	// inheritance, operation parameter types, property types, do not recurse
+	var classifiers:List(UML::Classifier)=List{};
+	self.getAllReferencedClassifiers(classifiers);
+	return classifiers;
+}
+helper UML::Classifier::getAllReferencedClassifiers(inout classifiers:List(UML::Classifier)){
+	// inheritance, operation parameter types, property types, recurse
+	// indirection via PropertyHolder?  should not need to traverse that?
+	if(classifiers->includes(self))then{return;}endif;
+	//classifiers:=classifiers->including(self);
+	//classifiers+=self;
+	classifiers->add(self);
+//	self.general.getAllReferencedClassifiers(classifiers);
+	self.general->forEach(g){classifiers->add(g);};
+	self.ownedElement
+		->select(f|f.oclIsKindOf(UML::Operation)).oclAsType(UML::Operation)->forEach(operation){
+			operation.raisedException->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+				->forEach(g){classifiers->add(g);};
+			operation.ownedParameter.type
+			->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+			->forEach(g){classifiers->add(g);};
+		};	
+	self.attribute.type->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier)
+		->forEach(g){classifiers->add(g);};
+	if(self.oclIsKindOf(UML::BehavioredClassifier))	
+		then{self.oclAsType(UML::BehavioredClassifier).interfaceRealization.contract->forEach(g){classifiers->add(g);};}
+		endif;
+	return;
+}
+/*
+helper UML::VisibilityKind::getJavaVisibility():JAVA::JVisibility{
+	if(self=UML::VisibilityKind::public)then {return JAVA::JVisibility::public;}endif;
+	if(self=UML::VisibilityKind::private)then {return JAVA::JVisibility::private;}endif;
+	if(self=UML::VisibilityKind::protected)then {return JAVA::JVisibility::protected;}endif;
+	return JAVA::JVisibility::_package;
+	}
+*/

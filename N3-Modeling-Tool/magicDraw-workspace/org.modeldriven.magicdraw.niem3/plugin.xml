@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+NIEM UML 
+Copyright © 2011, ModelDriven.org and Tom Digre, all rights reserved worldwide.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see http://www.gnu.org/licenses/gpl-3.0-standalone.html.
+
+There are also commercial licenses available for this software.
+Contact ModelDriven.org for more information.
+-->
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+		  <unit name="niem" namespace="org.modeldriven.magicdraw.niem.qvt">
+   		
+    		<library name="mpd" class="org.modeldriven.magicdraw.niem.qvt.Blackbox">
+		      <metamodel nsURI="http://www.eclipse.org/emf/2002/Ecore"/>
+		      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML"/>
+		      <metamodel nsURI="http://www.eclipse.org/xsd/2002/XSD"/>
+		      <metamodel nsURI="http://www.eclipse.org/MoDisco/Xml/0.1.incubation/XML"/>
+    		</library>
+		</unit>
+   </extension>
+  <extension
+        id="NIEMQVT"
+        name="NIEM QVT"
+        point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+     <pathmap
+           name="NIEM_TRANSFORMS"
+           path="transform"
+           plugin="org.modeldriven.magicdraw.niem.qvt"/>
+  </extension>
+    <extension
+     point="org.eclipse.emf.ecore.uri_mapping">
+    <mapping
+       source="pathmap://NIEM_TRANSFORMS/"
+       target="transform/">
+    </mapping>
+  </extension>
+  
+</plugin>

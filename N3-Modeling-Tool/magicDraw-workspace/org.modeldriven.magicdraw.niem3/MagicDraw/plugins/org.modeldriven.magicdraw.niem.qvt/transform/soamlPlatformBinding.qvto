@@ -1,0 +1,312 @@
+import NIEMglobals;
+import NIEMplatformBinding;
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype CMOF  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+modeltype WSDL uses 'http://www.eclipse.org/wsdl/2003/WSDL';
+//modeltype SOAP uses 'http://www.ibm.com/wsdl/2003/SOAP';
+modeltype SOAP uses 'http://www.eclipse.org/wsdl/2003/SOAP';
+//modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';
+modeltype CAT  uses 'urn:oasis:names:tc:entity:xmlns:xml:catalog';
+
+// assume uml already is NIEM-UML; we add wsdl and wire it up with existing <<InformationModel>>s
+//transformation wsdl2soaml(in wsdl:WSDL,inout uml:UML)
+transformation soamlPlatformBinding()
+	extends transformation
+		NIEMplatformBinding
+//		mpd2pim 
+//		wsdl,
+//		soaml2wsdlannotations
+		;
+	main() {
+	}	
+
+///////////////////////////////////////////////Profile initialization
+
+
+
+
+property soamlProfileName:String='SoaML Profile';
+property soamlProfile:UML::Profile=null;
+property soamlAgentStereotype:UML::Stereotype=null;
+property soamlAttachmentStereotype:UML::Stereotype=null;
+property soamlCapabilityStereotype:UML::Stereotype=null;
+property soamlConsumerStereotype:UML::Stereotype=null;
+property soamlCollaborationStereotype:UML::Stereotype=null;
+property soamlCollaborationUseStereotype:UML::Stereotype=null;
+property soamlExposeStereotype:UML::Stereotype=null;
+property soamlMessageTypeStereotype:UML::Stereotype=null;
+property soamlMilestoneStereotype:UML::Stereotype=null;
+property soamlParticipantStereotype:UML::Stereotype=null;
+//property soamlPortStereotype:UML::Stereotype=null;
+//property soamlPropertyStereotype:UML::Stereotype=null;
+//property soamlProviderStereotype:UML::Stereotype=null;
+//property soamlRequestStereotype:UML::Stereotype=null;
+property soamlServiceChannelStereotype:UML::Stereotype=null;
+property soamlServiceContractStereotype:UML::Stereotype=null;
+property soamlServicePointStereotype:UML::Stereotype=null;
+//property soamlServiceStereotype:UML::Stereotype=null;
+property soamlServiceInterfaceStereotype:UML::Stereotype=null;
+property soamlServicesArchitectureStereotype:UML::Stereotype=null;
+
+property wsdlProfileName:String='NIEM_SoaML_WSDL_Profile';
+property wsdlProfile:UML::Profile=null;
+property wsdlSoapAddressStereotype:UML::Stereotype=null;
+property wsdlSoapBindingStereotype:UML::Stereotype=null;
+property wsdlSoapBodyStereotype:UML::Stereotype=null;
+property wsdlSoapFaultStereotype:UML::Stereotype=null;
+property wsdlSoapHeaderStereotype:UML::Stereotype=null;
+property wsdlSoapHeaderfaultStereotype:UML::Stereotype=null;
+property wsdlSoapOperationStereotype:UML::Stereotype=null;
+property wsdlWsaActionStereotype:UML::Stereotype=null;
+property wsdlWsaAnonymousStereotype:UML::Stereotype=null;
+property wsdlWsaEndpointReferenceStereotype:UML::Stereotype=null;
+property wsdlWsaUsingAddressingStereotype:UML::Stereotype=null;
+//property wsdlWsaBindingStereotype:UML::Stereotype=null;
+property wsdlWsdlDefinitionsStereotype:UML::Stereotype=null;
+//property wsdlWsdlFaultStereotype:UML::Stereotype=null;
+//property wsdlWsdlMessageStereotype:UML::Stereotype=null;
+//property wsdlWsdlOperationStereotype:UML::Stereotype=null;
+//property wsdlWsdlParameterStereotype:UML::Stereotype=null;
+//property wsdlWsdlPartStereotype:UML::Stereotype=null;
+//property wsdlWsdlPartElementStereotype:UML::Stereotype=null;
+//property wsdlWsdlPortStereotype:UML::Stereotype=null;
+//property wsdlWsdlPortTypeStereotype:UML::Stereotype=null;
+//property wsdlWsdlServiceStereotype:UML::Stereotype=null;
+property wsdlWsidIdentityStereotype:UML::Stereotype=null;
+property wsdlWspAllStereotype:UML::Stereotype=null;
+property wsdlWspExactlyOneStereotype:UML::Stereotype=null;
+property wsdlWspPolicyStereotype:UML::Stereotype=null;
+property wsdlWspPolicyReferenceStereotype:UML::Stereotype=null;
+
+property policyProfileName:String='Policy Profile';
+property policyProfile:UML::Profile=null;
+property policyAuthenticationStereotype:UML::Stereotype=null;
+property policyConfidentialityStereotype:UML::Stereotype=null;
+property policyIntegrityStereotype:UML::Stereotype=null;
+property policyPolicyImplementationStereotype:UML::Stereotype=null;
+property policyPolicyIntentStereotype:UML::Stereotype=null;
+property policyPolicyProvisioningStereotype:UML::Stereotype=null;
+property policyReliabilityStereotype:UML::Stereotype=null;
+property policySecurityStereotype:UML::Stereotype=null;
+
+
+
+helper UML::Model::initializeSoamlProfileGlobals(){		
+
+		var pimRoot:UML::Model=self;
+		var allSourceProfiles:Set(UML::Profile)=pimRoot.allSubobjectsOfType(UML::Profile).oclAsType(UML::Profile)->asSet();
+		allSourceProfiles
+			->select(p|p.name=soamlProfileName)->asSequence()->first().initSoamlProfileStereotypes();//getProvisioningProfile();
+		allSourceProfiles
+			->select(p|p.name=wsdlProfileName)->asSequence()->first().initWsdlProfileStereotypes();
+		allSourceProfiles
+			->select(p|p.name=policyProfileName)->asSequence()->first().initPolicyProfileStereotypes();
+		return;
+}
+helper UML::Profile::initPolicyProfileStereotypes(){
+		policyProfile:=self;
+		policyAuthenticationStereotype:=policyProfile.getOwnedStereotype('Authentication');
+		policyConfidentialityStereotype:=policyProfile.getOwnedStereotype('Confidentiality');
+		policyIntegrityStereotype:=policyProfile.getOwnedStereotype('Integrity');
+		policyPolicyImplementationStereotype:=policyProfile.getOwnedStereotype('Policy Implementation');
+		policyPolicyIntentStereotype:=policyProfile.getOwnedStereotype('Policy Intent');
+		policyPolicyProvisioningStereotype:=policyProfile.getOwnedStereotype('Policy Provisioing');
+		policyReliabilityStereotype:=policyProfile.getOwnedStereotype('Reliability');
+		policySecurityStereotype:=policyProfile.getOwnedStereotype('Security');
+	return;
+	}
+helper UML::Profile::initWsdlProfileStereotypes(){
+		wsdlProfile:=self;
+		wsdlSoapAddressStereotype:=wsdlProfile.getOwnedStereotype('SoapAddress');
+		wsdlSoapBindingStereotype:=wsdlProfile.getOwnedStereotype('SoapBinding');
+		wsdlSoapBodyStereotype:=wsdlProfile.getOwnedStereotype('SoapBody');
+		wsdlSoapFaultStereotype:=wsdlProfile.getOwnedStereotype('SoapFault');
+		wsdlSoapHeaderStereotype:=wsdlProfile.getOwnedStereotype('SoapHeader');
+		wsdlSoapHeaderfaultStereotype:=wsdlProfile.getOwnedStereotype('SoapHeaderfault');
+		wsdlSoapOperationStereotype:=wsdlProfile.getOwnedStereotype('SoapOperation');
+		wsdlWsaActionStereotype:=wsdlProfile.getOwnedStereotype('WsaAction');
+		wsdlWsaAnonymousStereotype:=wsdlProfile.getOwnedStereotype('WsaAnonymous');
+		wsdlWsaEndpointReferenceStereotype:=wsdlProfile.getOwnedStereotype('WsaEndpointReference');
+		wsdlWsaUsingAddressingStereotype:=wsdlProfile.getOwnedStereotype('WsaUsingAddressing');
+		//wsdlWsaBindingStereotype:=wsdlProfile.getOwnedStereotype('WsaBinding');
+		wsdlWsdlDefinitionsStereotype:=wsdlProfile.getOwnedStereotype('WsdlDefinitions');
+		//wsdlWsdlFaultStereotype:=wsdlProfile.getOwnedStereotype('WsdlFault');
+		//wsdlWsdlMessageStereotype:=wsdlProfile.getOwnedStereotype('WsdlMessage');
+		//wsdlWsdlOperationStereotype:=wsdlProfile.getOwnedStereotype('WsdlOperation');
+		//wsdlWsdlParameterStereotype:=wsdlProfile.getOwnedStereotype('WsdlParameter');
+		//wsdlWsdlPartStereotype:=wsdlProfile.getOwnedStereotype('WsdlPart');
+		//wsdlWsdlPartElementStereotype:=wsdlProfile.getOwnedStereotype('WsdlPartElement');
+		//wsdlWsdlPortStereotype:=wsdlProfile.getOwnedStereotype('WsdlPort');
+		//wsdlWsdlPortTypeStereotype:=wsdlProfile.getOwnedStereotype('WsdlPortType');
+		//wsdlWsdlServiceStereotype:=wsdlProfile.getOwnedStereotype('WsdlService');
+		wsdlWsidIdentityStereotype:=wsdlProfile.getOwnedStereotype('WsidIdentity');
+		wsdlWspAllStereotype:=wsdlProfile.getOwnedStereotype('WspAll');
+		wsdlWspExactlyOneStereotype:=wsdlProfile.getOwnedStereotype('WspExactlyOne');
+		wsdlWspPolicyStereotype:=wsdlProfile.getOwnedStereotype('WspPolicy');
+		wsdlWspPolicyReferenceStereotype:=wsdlProfile.getOwnedStereotype('WspPolicyReference');
+	return;
+}
+helper UML::Profile::initSoamlProfileStereotypes(){
+		soamlProfile:=self;
+		soamlAgentStereotype:=soamlProfile.getOwnedStereotype('Agent');
+		soamlAttachmentStereotype:=soamlProfile.getOwnedStereotype('Attachment');
+		soamlCapabilityStereotype:=soamlProfile.getOwnedStereotype('Capability');
+		soamlConsumerStereotype:=soamlProfile.getOwnedStereotype('Consumer');
+		soamlCollaborationStereotype:=soamlProfile.getOwnedStereotype('Collaboration');
+		soamlCollaborationUseStereotype:=soamlProfile.getOwnedStereotype('CollaborationUse');
+		soamlExposeStereotype:=soamlProfile.getOwnedStereotype('Expose');
+		soamlMessageTypeStereotype:=soamlProfile.getOwnedStereotype('MessageType');
+		soamlMilestoneStereotype:=soamlProfile.getOwnedStereotype('Milestone');
+		soamlParticipantStereotype:=soamlProfile.getOwnedStereotype('Participant');
+//		soamlPortStereotype:=soamlProfile.getOwnedStereotype('Port');
+//		soamlPropertyStereotype:=soamlProfile.getOwnedStereotype('Property');
+//		soamlProviderStereotype:=soamlProfile.getOwnedStereotype('Provider');
+//		soamlRequestStereotype:=soamlProfile.getOwnedStereotype('Request');
+		soamlServiceChannelStereotype:=soamlProfile.getOwnedStereotype('ServiceChannel');
+		soamlServiceContractStereotype:=soamlProfile.getOwnedStereotype('ServiceContract');
+//		soamlServiceStereotype:=soamlProfile.getOwnedStereotype('Service');
+		soamlServiceInterfaceStereotype:=soamlProfile.getOwnedStereotype('ServiceInterface');
+		soamlServicePointStereotype:=soamlProfile.getOwnedStereotype('ServicePoint');
+		soamlServicesArchitectureStereotype:=soamlProfile.getOwnedStereotype('ServicesArchitecture');
+	return;
+}
+
+query UML::Package::isWsdlPackage():Boolean=self.ownedType->select(t|t.isWsdlDefinition())->notEmpty();
+//query UML::Type::isWsdlDefinition():Boolean=self.IsStereotypeApplied(soamlServiceInterfaceStereotype);
+query UML::Type::isServiceInterface():Boolean=self.IsStereotypeApplied(soamlServiceInterfaceStereotype);
+query UML::Type::isWsdlDefinition():Boolean=self.IsStereotypeApplied(soamlServicesArchitectureStereotype);
+query UML::Type::isParticipant():Boolean=self.IsStereotypeApplied(soamlParticipantStereotype);
+//////////////////////////////////////////////////////
+helper CMOF::EObject::getWsdlAtRelativeURI(relativeURI:String):CMOF::EObject{
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('getWsdlAtRelativeURI');
+	annotation._references+=self;
+	"relativeURI".setAnnotationDetail(annotation,relativeURI);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation._references->select(r|r<>self)->asSequence()->first();
+	}
+		/*		
+helper WSDL::ExtensibilityElement::getEndpointReferenceAddress():String{
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('getEndpointReferenceAddress');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation.getDetail('Address');
+	}
+	*/
+helper WSDL::ExtensibilityElement::getExtensibilityElementQNameLocalPart():String{
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('getExtensibilityElementQNameLocalPart');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation.getDetail('localPart');
+	}
+helper WSDL::Message::getMessageQNameLocalPart():String{
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('getMessageQNameLocalPart');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation.getDetail('localPart');
+	}
+helper WSDL::Service::getServiceQNameLocalPart():String{
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('getServiceQNameLocalPart');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation.getDetail('localPart');
+	}
+helper XSD::XSDSchema::getSchemaPrefix():String{
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('getSchemaPrefix');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return annotation.getDetail('schemaPrefix');
+	}
+helper WSDL::WSDLElement::setElementAttribute(namespaceURI:String,attributeName:String,value:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setElementAttribute');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"namespaceURI".setAnnotationDetail(annotation,namespaceURI);
+	"attributeName".setAnnotationDetail(annotation,attributeName);
+	"value".setAnnotationDetail(annotation,value);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::WSDLElement::setElementAttribute(attributeName:String,value:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setElementAttributeLocal');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"attributeName".setAnnotationDetail(annotation,attributeName);
+	"value".setAnnotationDetail(annotation,value);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::WSDLElement::setElementType(namespace:String,value:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setElementType');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"namespace".setAnnotationDetail(annotation,namespace);
+	"name".setAnnotationDetail(annotation,value);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::Message::setQName(name:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setQNameMessage');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"name".setAnnotationDetail(annotation,name);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::PortType::setQName(name:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setQNamePortType');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"name".setAnnotationDetail(annotation,name);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::Service::setQName(name:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setQNameService');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"name".setAnnotationDetail(annotation,name);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::Binding::setQName(name:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setQNameBinding');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"name".setAnnotationDetail(annotation,name);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::Definition::setQName(name:String){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setQNameDefinition');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	"name".setAnnotationDetail(annotation,name);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::Definition::updateDocument(){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('updateDocument');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+helper WSDL::Part::setElementName(element:XSD::XSDElementDeclaration){
+	var annotation:CMOF::EAnnotation=new CMOF::EAnnotation('setElementName');
+	annotation._references+=self.oclAsType(CMOF::EObject);
+	annotation._references+=element.oclAsType(CMOF::EObject);
+	blackboxHook.eAnnotations+=annotation;
+	return;
+	}
+//////////////////////////////////////////////////////////
+helper  Stdlib::Element::setWsdlPortName(name:String){
+	self.setTagValueConditionally('name',name);
+}
+helper  Stdlib::Element::setSoapAddressLocation(location:String){
+	self.setTagValueConditionally('location',location);
+}
+helper  Stdlib::Element::setSoapAddressWsdlRequired(wsdlRequired:Boolean){
+	self.setTagValueConditionally('wsdlRequired',wsdlRequired);
+}
+/*
+helper  Stdlib::Element::setEndpointReferenceAddress(Address:String){
+	self.setTagValueConditionally('Address',Address);
+}
+*/
+query UML::NamedElement::toPathNameFromRoot(mpdRootPackage:UML::Package,artifact:OclAny):String{
+	var umlPackagePath:String=self.toRelativePathName(mpdRootPackage,artifact);
+	if(umlPackagePath.startsWith('./'))then {umlPackagePath:=umlPackagePath.substringAfter('./');}endif;
+	return umlPackagePath;
+}

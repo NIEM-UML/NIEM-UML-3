@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>&lt;&lt;References>></h1>
+The References Stereotype applies to a Realization between Properties, Classes or Packages. It allows for Properties in one Class to be defined by reference to Properties in another class. A References Realization between two classes is defined to be equivalent to having References Realizations between matching Properties of the Classes where matching is determined by identical NIEM names. A References Realization between two packages is defined to be equivalent to having References Realizations between matching Classes contained in the Packages where matching is determined by having identical NIEM names. Matching is based on the NIEMName of the elements, either as derived implicitly or as set explicitly using the ReferenceName stereotype.
+
+If a Property is the client of a References Realization, then it represents a NIEM property defined by reference to the NIEM property declaration represented by the supplier of the Realization. It is implemented in XSD schema as an attribute use or element particle that references the attribute or element declaration that implements the supplier of the Realization. Note that the supplier Property may be in a different Namespace than the client property, in which case the attribute or element declaration represented by the supplier will be in a different target namespace than the use represented by the client.
+ <p/>
+	View Comprehensive <a 
+	href="http://lib.modeldriven.org/MDLibrary/trunk/Specifications/NIEM/magicdraw/reports/NIEM-UML_Profile/web.report.html?refid=NIEM_UML_Profile-NIEM_Common_Profile-References"
+	 target="_blank">&lt;&lt;References>></a> Detail Report in a new window
+</body></html>

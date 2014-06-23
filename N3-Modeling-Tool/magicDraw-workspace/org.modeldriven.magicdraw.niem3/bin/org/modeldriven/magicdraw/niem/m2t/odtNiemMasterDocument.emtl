@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="odtNiemMasterDocument" nsURI="org::modeldriven::magicdraw::niem::m2t::odtNiemMasterDocument" startHeaderPosition="29" endHeaderPosition="208">
+    <input>
+      <takesTypesFrom href="pathmap://MAGICDRAW/UML.ecore#/"/>
+    </input>
+    <input/>
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/ocl/1.1.0/Ecore#/"/>
+    </input>
+    <imports href="odtBoilerPlate.emtl#/0"/>
+    <imports href="commonQuery.emtl#/0"/>
+    <imports href="odtCommon.emtl#/0"/>
+    <imports href="odtNiemMasterContent.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Comment">
+      <body startPosition="320" endPosition="1426" value="&#xA;NIEM UML &#xA;Copyright © 2011, ModelDriven.org and Tom Digre, all rights reserved worldwide.&#xA;&#xA;This program is free software: you can redistribute it and/or modify&#xA;it under the terms of the GNU General Public License as published by&#xA;the Free Software Foundation, either version 3 of the License, or&#xA;(at your option) any later version.&#xA;&#xA;This program is distributed in the hope that it will be useful,&#xA;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;GNU General Public License for more details.&#xA;&#xA;You should have received a copy of the GNU General Public License&#xA;along with this program.  If not, see http://www.gnu.org/licenses/gpl-3.0-standalone.html.&#xA;&#xA;There are also commercial licenses available for this software.&#xA;Contact ModelDriven.org for more information.&#xA;&#xA;&#x9;mpdComponent:Component=mpd.getTargetDirectedRelationships()&#xA;&#x9;&#x9;->select(r|r.oclIsKindOf(ElementImport) and r.oclAsType(ElementImport).importingNamespace.oclIsKindOf(Component))&#xA;&#x9;&#x9;.oclAsType(ElementImport).importingNamespace.oclAsType(Component)->asSequence()->first();&#xA;"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="niemMasterDocument" visibility="Public">
+      <init>
+        <variable name="title">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <initExpression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="mpd" referredVariable="/0/niemMasterDocument/mpd">
+                <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="pathmap://MAGICDRAW/UML.ecore#//NamedElement/name"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" Information Exchange Package Master Documentation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </initExpression>
+        </variable>
+        <variable name="mpdCatalog">
+          <eAnnotations source="MTL">
+            <details key="type" value="mpdcat::CatalogType"/>
+          </eAnnotations>
+          <initExpression xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+            <definition href="commonQuery.emtl#/0/getMpdCatalog"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="mpd" referredVariable="/0/niemMasterDocument/mpd">
+              <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="catalog" referredVariable="/0/niemMasterDocument/catalog">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </initExpression>
+        </variable>
+        <variable name="mpdComponent">
+          <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Component"/>
+          <initExpression xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Component"/>
+            <definition href="commonQuery.emtl#/0/getProvisioningMpdComponent"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="mpd" referredVariable="/0/niemMasterDocument/mpd">
+              <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+            </argument>
+          </initExpression>
+        </variable>
+      </init>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;manifest:manifest xmlns:manifest=&quot;urn:oasis:names:tc:opendocument:xmlns:manifest:1.0&quot;>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;application/vnd.oasis.opendocument.text&quot; manifest:version=&quot;1.2&quot; manifest:full-path=&quot;/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/statusbar/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/accelerator/current.xml&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/accelerator/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/floater/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/popupmenu/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/progressbar/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/menubar/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/toolbar/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/images/Bitmaps/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Configurations2/images/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;application/vnd.sun.xml.ui.configuration&quot; manifest:full-path=&quot;Configurations2/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;image/png&quot; manifest:full-path=&quot;Pictures/10000201000001410000004B109CF868.png&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Pictures/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;application/binary&quot; manifest:full-path=&quot;layout-cache&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;text/xml&quot; manifest:full-path=&quot;content.xml&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;text/xml&quot; manifest:full-path=&quot;styles.xml&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;text/xml&quot; manifest:full-path=&quot;meta.xml&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Thumbnails/thumbnail.png&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;&quot; manifest:full-path=&quot;Thumbnails/&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;text/xml&quot; manifest:full-path=&quot;settings.xml&quot;/>&#xA; &lt;manifest:file-entry manifest:media-type=&quot;application/rdf+xml&quot; manifest:full-path=&quot;manifest.rdf&quot;/>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="../temp~/master-document/META-INF/manifest.xml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateExpression"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <body xsi:type="mtl:TemplateExpression"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/manifest:manifest>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="../temp~/master-document/META-INF/manifest.xml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <parameter name="mpd">
+        <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+      </parameter>
+      <parameter name="catalog">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="odtNiemMasterMeta" visibility="Public">
+      <init>
+        <variable name="title">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </variable>
+      </init>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="odtCommon.emtl#/0/odtMasterMeta"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="title" referredVariable="/0/odtNiemMasterMeta/@init/@variable.0">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="NIEM Information Exchange Package Master Documentation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="../temp~/master-document/meta.xml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="mpd">
+        <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+      </parameter>
+      <parameter name="mpdCatalog">
+        <eAnnotations source="MTL">
+          <details key="type" value="mpdcat::CatalogType"/>
+        </eAnnotations>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Comment">
+      <body startPosition="4558" endPosition="4793" value="&#xA;&#x9;[mpd.mpdname(mpdCatalog)/]&#xA;[template public mpdname(mpd : Model , mpdCatalog:mpdcat::CatalogType){&#xA;&#x9;title:String=mpdCatalog.mpdName+'-'+mpdCatalog.mpdVersionID;&#xA;}]&#xA;[file ('../mpdname.txt', false, 'UTF-8')][title/][/file]&#xA;[/template]&#xA;"/>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="niemMasterDocument">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/niemMasterDocument"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="mpd">
+          <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+        </eParameters>
+        <eParameters name="catalog">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="odtNiemMasterMeta">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/odtNiemMasterMeta"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="mpd">
+          <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+        </eParameters>
+        <eParameters name="mpdCatalog">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getMpdCatalog">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="commonQuery.emtl#/0/getMpdCatalog"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        <eParameters name="m">
+          <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Element"/>
+        </eParameters>
+        <eParameters name="catalog">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getProvisioningMpdComponent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="commonQuery.emtl#/0/getProvisioningMpdComponent"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Component"/>
+        <eParameters name="umlPackage">
+          <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="odtMasterMeta">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="odtCommon.emtl#/0/odtMasterMeta"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="title">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="subject">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Model_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDSchema_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDSchema"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Comment_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Comment"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Element_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Element"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Diagram_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Diagram"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Artifact_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Artifact"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDAnnotation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDAnnotation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Classifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Property_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Property"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDNamedComponent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDNamedComponent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Package_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Package"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//NamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Extension_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Extension"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Stereotype_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Stereotype"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Profile_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Profile"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ValueSpecification_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//ValueSpecification"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LiteralString_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//LiteralString"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Generalization_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Generalization"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Realization_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Realization"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ENamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Boolean_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Module_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/QVT/1.0.0/Operational#//expressions/Module"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EOperation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeature_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//EnumerationLiteral"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Usage_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Usage"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Constraint"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EEnumLiteral_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDEnumerationFacet_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDEnumerationFacet"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EModelElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//MultiplicityElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Association_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Association"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDElementDeclaration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDElementDeclaration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDAttributeDeclaration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDAttributeDeclaration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDFacet_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDFacet"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XSDTypeDefinition_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/xsd/2002/XSD#//XSDTypeDefinition"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Type_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Type"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EPackage_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClassifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClass_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Namespace_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="pathmap://MAGICDRAW/UML.ecore#//Namespace"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="pathmap://MAGICDRAW/UML.ecore#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="311"/>
+      <details key="end" value="1436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/niemMasterDocument">
+      <details key="start" value="1439"/>
+      <details key="end" value="4265"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/niemMasterDocument/@init">
+      <details key="start" value="1506"/>
+      <details key="end" value="1705"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/niemMasterDocument/@init/@variable.0">
+      <details key="start" value="1509"/>
+      <details key="end" value="1583"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/niemMasterDocument/@init/@variable.0/%">
+      <details key="start" value="1522"/>
+      <details key="end" value="1583"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/niemMasterDocument/@init/@variable.0/%/%">
+      <details key="start" value="1522"/>
+      <details key="end" value="1530"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/niemMasterDocument/@init/@variable.0/%/%/mpd">
+      <details key="start" value="1522"/>
+      <details key="end" value="1525"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/niemMasterDocument/@init/@variable.0/%/%.1">
+      <details key="start" value="1531"/>
+      <details key="end" value="1583"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/niemMasterDocument/@init/@variable.1">
+      <details key="start" value="1586"/>
+      <details key="end" value="1643"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/niemMasterDocument/@init/@variable.1/%">
+      <details key="start" value="1617"/>
+      <details key="end" value="1643"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/niemMasterDocument/@init/@variable.1/%/mpd">
+      <details key="start" value="1617"/>
+      <details key="end" value="1620"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/niemMasterDocument/@init/@variable.1/%/catalog">
+      <details key="start" value="1635"/>
+      <details key="end" value="1642"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/niemMasterDocument/@init/@variable.2">
+      <details key="start" value="1646"/>
+      <details key="end" value="1702"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/niemMasterDocument/@init/@variable.2/%">
+      <details key="start" value="1669"/>
+      <details key="end" value="1702"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/niemMasterDocument/@init/@variable.2/%/mpd">
+      <details key="start" value="1669"/>
+      <details key="end" value="1672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/niemMasterDocument/%">
+      <details key="start" value="1708"/>
+      <details key="end" value="4057"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/niemMasterDocument/%/%">
+      <details key="start" value="1780"/>
+      <details key="end" value="4049"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/niemMasterDocument/%/%.1">
+      <details key="start" value="1714"/>
+      <details key="end" value="1762"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/niemMasterDocument/%/%.2">
+      <details key="start" value="1770"/>
+      <details key="end" value="1777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/niemMasterDocument/%.1">
+      <details key="start" value="4058"/>
+      <details key="end" value="4059"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/niemMasterDocument/%.2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/niemMasterDocument/%.3">
+      <details key="start" value="4111"/>
+      <details key="end" value="4113"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/niemMasterDocument/%.4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/niemMasterDocument/%.5">
+      <details key="start" value="4149"/>
+      <details key="end" value="4150"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/niemMasterDocument/%.6">
+      <details key="start" value="4151"/>
+      <details key="end" value="4251"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/niemMasterDocument/%.6/%">
+      <details key="start" value="4222"/>
+      <details key="end" value="4243"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/niemMasterDocument/%.6/%.1">
+      <details key="start" value="4157"/>
+      <details key="end" value="4205"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/niemMasterDocument/%.6/%.2">
+      <details key="start" value="4212"/>
+      <details key="end" value="4219"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/niemMasterDocument/%.7">
+      <details key="start" value="4252"/>
+      <details key="end" value="4253"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/niemMasterDocument/mpd">
+      <details key="start" value="1475"/>
+      <details key="end" value="1486"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/niemMasterDocument/catalog">
+      <details key="start" value="1489"/>
+      <details key="end" value="1505"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/odtNiemMasterMeta">
+      <details key="start" value="4267"/>
+      <details key="end" value="4548"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/odtNiemMasterMeta/@init">
+      <details key="start" value="4347"/>
+      <details key="end" value="4384"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/odtNiemMasterMeta/@init/@variable.0">
+      <details key="start" value="4350"/>
+      <details key="end" value="4381"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/odtNiemMasterMeta/%">
+      <details key="start" value="4387"/>
+      <details key="end" value="4536"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/odtNiemMasterMeta/%/%">
+      <details key="start" value="4448"/>
+      <details key="end" value="4525"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/odtNiemMasterMeta/%/%/title">
+      <details key="start" value="4448"/>
+      <details key="end" value="4453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/odtNiemMasterMeta/%/%/%">
+      <details key="start" value="4468"/>
+      <details key="end" value="4524"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/odtNiemMasterMeta/%/%.1">
+      <details key="start" value="4527"/>
+      <details key="end" value="4528"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/odtNiemMasterMeta/%/%.2">
+      <details key="start" value="4394"/>
+      <details key="end" value="4429"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/odtNiemMasterMeta/%/%.3">
+      <details key="start" value="4438"/>
+      <details key="end" value="4445"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/odtNiemMasterMeta/mpd">
+      <details key="start" value="4302"/>
+      <details key="end" value="4313"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/odtNiemMasterMeta/mpdCatalog">
+      <details key="start" value="4316"/>
+      <details key="end" value="4346"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/%.1">
+      <details key="start" value="4549"/>
+      <details key="end" value="4803"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./catalog.xsl"?>
+<!DOCTYPE catalog
+          PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+          "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         prefer="public">
+<!-- name may be incorrect in this catalog, actual namespace used from schema -->
+
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/applicationSchema.xsd"/>
+	 
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/xlink/1.0.0/xlinks.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/basicTypes.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/gmlBase.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/dictionary.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/units.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/measures.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/geometryBasic0d1d.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/geometryBasic2d.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/geometryPrimitives.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/geometryAggregates.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/temporal.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/feature.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/direction.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/dynamicFeature.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/geometryComplexes.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/topology.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/grids.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/valueObjects.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/coverage.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/coordinateSystems.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/observation.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/temporalTopology.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/temporalReferenceSystems.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/metadataEntity.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/metadataApplication.xsd"/>
+         <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/gmd.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/referenceSystems.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/datums.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/coordinateOperations.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/coordinateReferenceSystems.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/deprecatedTypes.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/gml/3.2.1/gml.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gco/gco.xsd"/>
+
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gco/gcoBase.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd"/>
+
+<!-- moved up
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/applicationSchema.xsd"/>
+-->	 
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/citation.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/constraints.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/content.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/dataQuality.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/distribution.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/extent.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/freeText.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/identification.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/maintenance.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/metadataExtension.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/portrayalCatalogue.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/referenceSystem.xsd"/>
+         <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gmd/spatialRepresentation.xsd"/>
+
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gsr/gsr.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gsr/spatialReferencing.xsd"/>
+
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gss/geometry.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gss/gss.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gts/gts.xsd"/>
+	 <uri name="http://www.opengis.net/gml/3.2" uri="./niem/external/ogc/iso/19139/20070417/gts/temporalObjects.xsd"/>
+</catalog>
+

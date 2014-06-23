@@ -1,0 +1,251 @@
+import NIEMplatformBinding;
+import soamlPlatformBinding;
+import soaml;
+
+modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype ECORE  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+modeltype CMOF  uses 'http://www.eclipse.org/emf/2002/Ecore';
+//modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';
+modeltype CAT  uses 'urn:oasis:names:tc:entity:xmlns:xml:catalog';
+
+//modeltype JAXB  uses 'http://java.sun.com/xml/ns/jaxb';
+modeltype JAXWS  uses 'http://java.sun.com/xml/ns/jaxws';
+
+transformation soaml2jaxws(
+	in uml:UML,
+	inout blackboxAdapter:CMOF,
+	out jaxws:JAXWS
+	)
+extends transformation 
+	soaml,
+	NIEMplatformBinding
+;
+	main() {
+		soaml2jaxwsRun();
+	}	
+// soaml uml to vanilla jaxb 	
+helper soaml2jaxwsRun(){
+		blackboxHook:=blackboxAdapter.objectsOfType(CMOF::EPackage)->asSequence()->first();
+	// find the root UML Model
+	var rootUmlModel:UML::Model=uml.rootObjects()->select(r|r.oclIsKindOf(UML::Model)).oclAsType(UML::Model)->asSequence()->first();
+	// initialize the profile/stereotype/type library globals
+	rootUmlModel.initializeProfileGlobals();
+	rootUmlModel.initializeSoamlProfileGlobals();
+	// find and transform qualifying <<ServicesArchitecture>> Collaboration
+	log('jaxws root model '+rootUmlModel.qualifiedName+', mpdStereotype: '+prompdStereotype.qualifiedName+', '
+		+rootUmlModel.allSubobjectsOfType(UML::Collaboration).oclAsType(UML::Collaboration)
+			->select(c|c.IsStereotypeApplied(soamlServicesArchitectureStereotype)
+				and c.isEditable()
+				and not(c.getNearestPackage().getNearesProfileApplication(niemXsdProfile).oclIsUndefined())
+				and (c.getNearestPackage().getNearesProfileApplication(logicalProfile).oclIsUndefined())
+			)->size().repr());
+			
+	rootUmlModel.allSubobjectsOfType(UML::Collaboration).oclAsType(UML::Collaboration)
+			->select(c|c.IsStereotypeApplied(soamlServicesArchitectureStereotype)
+				and c.isEditable()
+				and not(c.getNearestPackage().getNearesProfileApplication(niemXsdProfile).oclIsUndefined())
+				and (c.getNearestPackage().getNearesProfileApplication(logicalProfile).oclIsUndefined())
+			).map ServiceDefinitionDocumentRoot();
+//			).map ServiceDefinitionsBindingsType();
+	return;
+}		
+property documentRootBinding:JAXWS::BindingsType=null;
+
+////////////////////////////////////disjunctive maps
+//////////////////////////////////////instantiated maps
+
+mapping UML::Collaboration::ServiceDefinitionDocumentRoot():JAXWS::DocumentRoot@jaxws
+{
+	bindings+=self.map TopLevelBindingsType();
+//	self.map BindingDefinitionDocumentRoot();
+	// we need to set xmlns:wsdl  
+	var mapEntry:ECORE::EStringToStringMapEntry=new ECORE::EStringToStringMapEntry();
+	mapEntry.key:="wsdl";
+	mapEntry.value:="http://schemas.xmlsoap.org/wsdl/";
+	xMLNSPrefixMap+=mapEntry; 
+}
+mapping UML::Collaboration::TopLevelBindingsType():JAXWS::BindingsType@jaxws
+{
+	documentRootBinding:=result;
+	version:='2.0';
+	bindings+=self.map ServiceDefinitionsBindingsType();
+} 
+
+mapping UML::Collaboration::ServiceDefinitionsBindingsType():JAXWS::BindingsType@jaxws
+{
+	documentRootBinding:=result;
+	//group+=
+	package+=self.map Package();
+	enableWrapperStyle+=self.enableWrapperStyle();
+	enableAsyncMapping+=self.enableAsyncMapping();
+	enableMIMEContent+=self.enableMIMEContent();
+	//any+=
+	bindings+=self.ownedAttribute.type->select(t|t.oclIsKindOf(UML::Component)).oclAsType(UML::Component).map ServiceBindingsType();
+	//version:='2.0';
+//	wsdlLocation:=self.getRelativeLocation(self,'.wsdl');
+	wsdlLocation:=self.toPathNameFromRoot(self.getNearestPackage().getNearesProfileApplication(niemXsdProfile),result)+'.wsdl';
+	
+}
+mapping UML::NamedElement::JavaDoc():JAXWS::TJavaDoc@jaxws
+{
+	self.ownedComment->forEach(comment){javadoc:=comment.body;};
+}
+mapping UML::Classifier::Package():JAXWS::PackageType@jaxws
+	inherits UML::NamedElement::JavaDoc
+{
+//	name:=self.getNIEMName();
+//	name:=self.qualifiedName.replace('::','.');
+//	name:=self.toRelativePathName(self.getNearestPackage().getNearesProfileApplication(niemXsdProfile),result);
+	name:=self.toPathNameFromRoot(self.getNearestPackage().getNearesProfileApplication(niemXsdProfile),result).replace('/','.');
+
+}
+mapping UML::Classifier::Class():JAXWS::ClassType@jaxws
+	inherits UML::NamedElement::JavaDoc
+{
+	name:=self.getNIEMName();
+}
+mapping UML::Operation::Method():JAXWS::MethodType@jaxws
+	inherits UML::NamedElement::JavaDoc
+{
+	name:=self.getNIEMName();
+}
+mapping UML::Classifier::PortMethod():JAXWS::MethodType@jaxws
+	inherits UML::NamedElement::JavaDoc
+{
+	name:='get'+self.getNIEMName();
+}
+mapping UML::Parameter::Parameter():JAXWS::ParameterType@jaxws
+{
+	name:=self.getNIEMName();
+	// childElementName:= // TODO
+	//part:= // TODO
+}
+mapping UML::NamedElement::Provider():JAXWS::TJavaDoc@jaxws
+	when{self.isProvider()}
+{
+}
+
+mapping UML::Component::ServiceBindingsType():JAXWS::BindingsType@jaxws
+	when{self.isParticipant()}
+{
+	//group+=
+	_class+=self.map Class();
+	//any+=
+	bindings+=self.ownedPort.type->select(t|t.oclIsKindOf(UML::Class)).oclAsType(UML::Class).map PortBindingsType();
+	node:='wsdl:service[@name="'+self.getNIEMName()+'"]';
+}
+mapping UML::Class::PortBindingsType():JAXWS::BindingsType@jaxws
+	when{self.isServiceInterface()}
+{
+	//group+=
+	method+=self.map PortMethod();
+	provider+=self.map Provider().oclAsType(ECORE::EObject);
+	//any+=
+	node:='wsdl:port[@name="'+self.getNIEMName()+'"]';
+//	self.map BindingDefinitionDocumentRoot();
+	documentRootBinding.bindings+=self.map BindingDefinitionsBindingsType();
+}
+/*
+mapping UML::Class::BindingDefinitionDocumentRoot():JAXWS::DocumentRoot@jaxws
+{
+	bindings+=self.map BindingDefinitionsBindingsType();
+//	self.map PortTypeDefinitionDocumentRoot();
+}
+*/
+mapping UML::Class::BindingDefinitionsBindingsType():JAXWS::BindingsType@jaxws
+{
+	//group+=
+	package+=self.map Package();
+	enableWrapperStyle+=self.enableWrapperStyle();
+	enableAsyncMapping+=self.enableAsyncMapping();
+	enableMIMEContent+=self.enableMIMEContent();
+	//any+=
+	bindings+=self.map BindingBindingsType();
+	version:='2.0';
+//	wsdlLocation:=self.getRelativeLocation(self,'.wsdl');
+	wsdlLocation:=self.toPathNameFromRoot(self.getNearestPackage().getNearesProfileApplication(niemXsdProfile),result)+'.wsdl';
+}
+mapping UML::Class::BindingBindingsType():JAXWS::BindingsType@jaxws
+	when{self.isServiceInterface()}
+{
+	//group+=
+	enableMIMEContent+=self.enableMIMEContent();
+	//any+=
+	bindings+=self.ownedOperation.map BindingOperationBindingsType();
+	node:='wsdl:binding[@name="'+self.getNIEMName()+'"]';
+	//self.interfaceRealization.contract.map PortTypeDefinitionDocumentRoot();
+	documentRootBinding.bindings+=self.interfaceRealization.contract.map PortTypeDefinitionsBindingsType();
+}
+mapping UML::Operation::BindingOperationBindingsType():JAXWS::BindingsType@jaxws
+{
+	//group+=
+	enableMIMEContent+=self.enableMIMEContent();
+	_class+=self.raisedException->select(t|t.oclIsKindOf(UML::DataType)).oclAsType(UML::DataType).map Class();
+	parameter+=self.ownedParameter.map Parameter();
+	//any+=
+	node:='wsdl:operation[@name="'+self.getNIEMName()+'"]';
+}
+/*
+mapping UML::Interface::PortTypeDefinitionDocumentRoot():JAXWS::DocumentRoot@jaxws
+{
+	bindings+=self.map PortTypeDefinitionsBindingsType();
+}
+*/
+mapping UML::Interface::PortTypeDefinitionsBindingsType():JAXWS::BindingsType@jaxws
+{
+	//group+=
+	package+=self.map Package();
+	enableWrapperStyle+=self.enableWrapperStyle();
+	enableAsyncMapping+=self.enableAsyncMapping();
+	enableMIMEContent+=self.enableMIMEContent();
+	//any+=
+	bindings+=self.map PortTypeBindingsType();
+	version:='2.0';
+//	wsdlLocation:=self.getRelativeLocation(self,'.wsdl');
+	wsdlLocation:=self.toPathNameFromRoot(self.getNearestPackage().getNearesProfileApplication(niemXsdProfile),result)+'.wsdl';
+	
+}
+mapping UML::Interface::PortTypeBindingsType():JAXWS::BindingsType@jaxws
+{
+	//group+=
+	enableWrapperStyle+=self.enableWrapperStyle();
+	enableAsyncMapping+=self.enableAsyncMapping();
+	_class+=self.map Class();
+	//any+=
+	bindings+=self.ownedOperation.map PortTypeOperationBindingsType();
+	bindings+=self.ownedOperation.raisedException->select(t|t.oclIsKindOf(UML::DataType)).oclAsType(UML::DataType).map PortTypeFaultMessageBindingsType();
+	node:='wsdl:portType[@name="'+self.getNIEMName()+'"]';
+}
+mapping UML::Operation::PortTypeOperationBindingsType():JAXWS::BindingsType@jaxws
+{
+	//group+=
+	enableWrapperStyle+=self.enableWrapperStyle();
+	enableAsyncMapping+=self.enableAsyncMapping();
+	method+=self.map Method();
+	parameter+=self.ownedParameter.map Parameter();
+	//any+=
+	node:='wsdl:operation[@name="'+self.getNIEMName()+'"]';
+}
+mapping UML::DataType::PortTypeFaultMessageBindingsType():JAXWS::BindingsType@jaxws
+{
+	//group+=
+	_class+=self.map Class();
+	//any+=
+	node:='wsdl:fault[@name="'+self.getNIEMName()+'"]';
+}
+////////////////////TODO
+// check above for access via stereotype; initialize the stereotypes; 
+//  tie in as with jaxb; including split and use of wsdlLocation for serialization
+// based on stereotype, with default 
+query UML::NamedElement::enableWrapperStyle():Boolean=true;
+query UML::NamedElement::enableAsyncMapping():Boolean=false;
+query UML::NamedElement::enableMIMEContent():Boolean=false;
+// could use NIEMName stereotype, possible adjust for java?
+query UML::NamedElement::getNIEMName():String=self.name;	
+helper UML::NamedElement::isProvider():Boolean
+{
+	var isProvider:Boolean= self.getStereotypeApplication().getBooleanValue('isProvider');
+	if(isProvider.oclIsUndefined() or not(isProvider)) then {return false;}endif;
+	return true;
+}
