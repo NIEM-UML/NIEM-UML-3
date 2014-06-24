@@ -1,0 +1,19 @@
+We want an emf/xsd model for schematron.
+Schematron is published in the form of a relax NG schema (compact syntax).
+We need to convert this to xsd, then build an emf/xsd model from that.
+
+We use trang to convert relax NG schema to xsd, via ant script; 
+the source file, ant script, and conversion tools are located in the relaxng folder;
+the result xsd is placed in the xsd folder.  This is a one time build.
+
+Use xsd to create a "new" genmodel for schematron, namespace.  
+There may be some problems with the schematron schema, including overlapping definitions.
+This may result in some fabricated names within ecore model, but we will try to live with that.
+Result is, in addition to genmodel, xsd2ecore, schematron.ecore and namespace.ecore.
+
+Open schematron.genmodel and gen java model code.  This will also update plugin.xml as required.
+
+Use Export from plugin.xml to create jar and put into org.modeldriven.emf.niem/dropins.
+From there, copy to niem-uml plugin library, include in resource file, plugin, and project libraries.
+Copy to eclipse dropins; restart eclipse.
+The schematron should now be available to qvt.

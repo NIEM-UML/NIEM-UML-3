@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.w3.org/Xpath20" 
+       class = "org.w3.xpath20.Xpath20Package"
+       genModel = "model/generated/Xpath20.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

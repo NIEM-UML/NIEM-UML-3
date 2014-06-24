@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://purl.oclc.org/dsdl/schematron"
+            class="org.oclc.purl.dsdl.schematron.SchematronPackage"
+            genModel="model/schematron.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="schematron"
+            class="org.oclc.purl.dsdl.schematron.util.SchematronResourceFactoryImpl"/>
+   </extension>
+<!--
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.w3.org/XML/1998/namespace"
+            class="org.w3.xml._1998.namespace.NamespacePackage"
+            genModel="model/schematron.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="namespace"
+            class="org.w3.xml._1998.namespace.util.NamespaceResourceFactoryImpl"/>
+   </extension>
+-->
+</plugin>
